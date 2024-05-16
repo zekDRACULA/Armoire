@@ -12,18 +12,18 @@ class WardrobeCompatibiltyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveOutfitAlertButton(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Item Saved Successfully", message: "You can find this item in wardrobe section", preferredStyle: .alert)
+        
+        let saveButton = UIAlertAction(title: "OK", style: .default){(action) in
+            print("Saved Successfully")
+        }
+        self.performSegue(withIdentifier: "unwindSegueToHome", sender: self)
+        
+        alert.addAction(saveButton)
+        present(alert, animated: true, completion: nil)
     }
-    */
-
 }
