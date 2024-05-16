@@ -7,7 +7,12 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController {
+class CalendarViewController: UIViewController,UICalendarViewDelegate {
+    
+    func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
+        return nil
+    }
+    
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -18,10 +23,39 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        createCalendar()
+        
         tabBarItem.title = "Calendar"
         tabBarItem.image = UIImage(systemName: "calendar")
         // Do any additional setup after loading the view.
     }
+    
+    func createCalendar(){
+        let calendarView = UICalendarView()
+        
+        calendarView.calendar  = .current
+        calendarView.locale = .current
+        calendarView.fontDesign = .rounded
+        calendarView.delegate = self
+        calendarView.translatesAutoresizingMaskIntoConstraints = false
+//        calendarView.frame = CGRect(x: 0, y: 0, width: 400, height: 600)
+        view.addSubview(calendarView)
+        //adding constraints to this calendar
+        
+        NSLayoutConstraint.activate([
+            calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20),
+            calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
+            calendarView.heightAnchor.constraint(equalToConstant: 600),
+            calendarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20)
+        ])
+        
+        
+    }
+    
+    
+    
+    
+    
     
 
     /*
