@@ -8,9 +8,18 @@
 import UIKit
 
 class WardrobeViewController: UIViewController {
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.tabBarItem.title = "Wardrobe"
+        self.tabBarItem.image = UIImage(systemName: "hanger")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tabBarItem.title = "Wardrobe"
+        tabBarItem.image = UIImage(systemName: "hanger")
 
         // Do any additional setup after loading the view.
     }

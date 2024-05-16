@@ -10,14 +10,15 @@ import UIKit
 class HomeViewController: UIViewController {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.title = "second"
-        self.tabBarItem.image = UIImage(systemName: "hanger")
+        self.tabBarItem.title = "Home"
+        self.tabBarItem.image = UIImage(systemName: "house")
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tabBarItem.title = "Home"
+        tabBarItem.image = UIImage(systemName: "house")
         // Do any additional setup after loading the view.
     }
     
