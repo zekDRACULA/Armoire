@@ -23,7 +23,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="h70-UG-9S0">
                             <color key="tintColor" red="0.5725490196078431" green="0.10980392156862745" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="SnH-fR-9w9" kind="presentation" id="Zzv-0p-B9F"/>
+                                <segue destination="ZgE-Ip-1gJ" kind="presentation" id="7Cf-B9-WSz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -32,7 +32,7 @@
             </objects>
             <point key="canvasLocation" x="1057.2519083969464" y="-34.507042253521128"/>
         </scene>
-        <!--Add Event-->
+        <!--Add Event Table View Controller-->
         <scene sceneID="8hM-VA-SeD">
             <objects>
                 <tableViewController id="ZgE-Ip-1gJ" customClass="AddEventTableViewController" customModule="Armoire" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,30 +73,19 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Add Event" id="NNI-md-5Gj">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eeF-Im-O8B">
-                            <connections>
-                                <action selector="cancelButton:" destination="ZgE-Ip-1gJ" id="qAn-o1-jh6"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="hEh-vI-jf9">
-                            <connections>
-                                <segue destination="URY-ae-uEe" kind="presentation" id="4Uh-yN-Zfr"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FfH-ct-Qya" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4100" y="-20.422535211267608"/>
+            <point key="canvasLocation" x="2196" y="-35"/>
         </scene>
         <!--Suggestions View Controller-->
         <scene sceneID="BPV-Hi-et5">
             <objects>
                 <viewController id="3b5-v5-6Xh" customClass="SuggestionsViewController" customModule="Armoire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qdZ-Yd-LKV">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Suggestions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXI-2L-UZE">
@@ -111,19 +100,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="xis-M2-13P">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="caJ-U0-d3q">
-                            <connections>
-                                <action selector="backButton:" destination="3b5-v5-6Xh" id="And-Sd-JCz"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="bTn-k6-4CL"/>
-                    </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7d-CB-Z10" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6035.8778625954192" y="-20.422535211267608"/>
+            <point key="canvasLocation" x="3135" y="-24"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jCU-lq-TFr">
@@ -142,42 +124,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wia-Z9-4fk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Xta-6h-KLS">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="URY-ae-uEe" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AEj-8j-Zek">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="3b5-v5-6Xh" kind="relationship" relationship="rootViewController" id="fhW-AN-tcA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2BX-HY-a04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5060.3053435114498" y="-35.211267605633807"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="WE3-15-E4v">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SnH-fR-9w9" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d9D-jo-0Hv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ZgE-Ip-1gJ" kind="relationship" relationship="rootViewController" id="Knq-3c-kth"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SG7-0N-3NR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3173.2824427480914" y="-20.422535211267608"/>
         </scene>
     </scenes>
     <resources>
