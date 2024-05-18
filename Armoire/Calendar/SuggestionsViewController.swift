@@ -1,25 +1,17 @@
 //
-//  CalendarViewController.swift
+//  SuggestionsViewController.swift
 //  Armoire
 //
-//  Created by Hitesh Rupani on 16/05/24.
+//  Created by Aditya on 17/05/24.
 //
 
 import UIKit
 
-class CalendarViewController: UIViewController {
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        self.tabBarItem.title = "Calendar"
-        self.tabBarItem.image = UIImage(systemName: "calendar")
-    }
+class SuggestionsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tabBarItem.title = "Calendar"
-        tabBarItem.image = UIImage(systemName: "calendar")
+
         // Do any additional setup after loading the view.
     }
     
@@ -33,5 +25,8 @@ class CalendarViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func backButton(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
