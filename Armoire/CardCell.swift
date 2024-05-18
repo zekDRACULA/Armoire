@@ -9,15 +9,17 @@ import UIKit
 
 class CardCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var pictureView: UIImageView!
+    
+    func configure(picture : UIImage){
+        pictureView.image = picture
+        cardView.layer.shadowColor = UIColor.gray.cgColor
+        cardView.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        cardView.layer.shadowOpacity = 1.0
+        cardView.layer.masksToBounds = false
+        cardView.layer.masksToBounds = false
+        cardView.layer.cornerRadius = 14.0
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }
