@@ -17,9 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.89019607840000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.5725490196078431" green="0.10980392156862745" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" title="Calendar" id="hEq-1s-jEu">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="h70-UG-9S0">
+                            <color key="tintColor" red="0.5725490196078431" green="0.10980392156862745" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="SnH-fR-9w9" kind="presentation" id="Zzv-0p-B9F"/>
                             </connections>

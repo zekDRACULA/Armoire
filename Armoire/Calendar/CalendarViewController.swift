@@ -7,7 +7,11 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController,UICalendarViewDelegate {
+class CalendarViewController: UIViewController,UICalendarViewDelegate,UICalendarSelectionSingleDateDelegate {
+    func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
+        print(selection)
+    }
+    
     
     func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
         return nil
@@ -36,6 +40,10 @@ class CalendarViewController: UIViewController,UICalendarViewDelegate {
         calendarView.calendar  = .current
         calendarView.locale = .current
         calendarView.fontDesign = .rounded
+        
+        let dateSelection = UICalendarSelectionSingleDate(delegate: self)
+        calendarView.selectionBehavior = dateSelection
+        
         calendarView.delegate = self
         calendarView.translatesAutoresizingMaskIntoConstraints = false
 //        calendarView.frame = CGRect(x: 0, y: 0, width: 400, height: 600)
