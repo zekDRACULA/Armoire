@@ -16,8 +16,11 @@ class footerCollectionViewCell: UICollectionViewCell {
     @IBOutlet var travel: UILabel!
     
     @IBAction func compatibilityButton(_ sender: UIButton) {
+       
     }
     
+    @IBAction func travelButton(_ sender: UIButton) {
+    }
     
     
 }
