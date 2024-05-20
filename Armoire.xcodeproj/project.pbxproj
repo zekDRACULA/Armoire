@@ -13,6 +13,7 @@
 		0A546A272BED34C6004EBA3D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0A546A262BED34C6004EBA3D /* Base */; };
 		0A546A292BED34C7004EBA3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A546A282BED34C7004EBA3D /* Assets.xcassets */; };
 		0A546A2C2BED34C7004EBA3D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0A546A2B2BED34C7004EBA3D /* Base */; };
+		483A2C5E2BFBF0440005B65E /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 483A2C5D2BFBF0440005B65E /* View.xib */; };
 		48B68BA82BF6AA4F00D9F0E7 /* AddEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B68BA72BF6AA4F00D9F0E7 /* AddEventTableViewController.swift */; };
 		48B68BAA2BF6AB7A00D9F0E7 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B68BA92BF6AB7A00D9F0E7 /* SuggestionsViewController.swift */; };
 		674274542BF61665001304A8 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 674274532BF61665001304A8 /* Home.storyboard */; };
@@ -21,9 +22,9 @@
 		6742745A2BF617B6001304A8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674274592BF617B6001304A8 /* HomeViewController.swift */; };
 		6742745C2BF617E3001304A8 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742745B2BF617E3001304A8 /* CalendarViewController.swift */; };
 		6742745E2BF617F5001304A8 /* WardrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742745D2BF617F5001304A8 /* WardrobeViewController.swift */; };
-		BC78BAAA2BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC78BAA92BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift */; };
 		B12D51732BF67BC8002324F4 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D51722BF67BC8002324F4 /* SuggestionViewController.swift */; };
 		B12D51772BF68197002324F4 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D51762BF68197002324F4 /* CardCell.swift */; };
+		BC78BAAA2BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC78BAA92BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		0A546A282BED34C7004EBA3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A546A2B2BED34C7004EBA3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A546A2D2BED34C7004EBA3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		483A2C5D2BFBF0440005B65E /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		48B68BA72BF6AA4F00D9F0E7 /* AddEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventTableViewController.swift; sourceTree = "<group>"; };
 		48B68BA92BF6AB7A00D9F0E7 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		674274532BF61665001304A8 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -43,9 +45,9 @@
 		674274592BF617B6001304A8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6742745B2BF617E3001304A8 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		6742745D2BF617F5001304A8 /* WardrobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
-		BC78BAA92BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCompatibiltyViewController.swift; sourceTree = "<group>"; };
 		B12D51722BF67BC8002324F4 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		B12D51762BF68197002324F4 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		BC78BAA92BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCompatibiltyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		05A07D4E2BFB1DA2001DD00B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				483A2C5D2BFBF0440005B65E /* View.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -71,6 +74,7 @@
 			children = (
 				0A546A1E2BED34C6004EBA3D /* Armoire */,
 				0A546A1D2BED34C6004EBA3D /* Products */,
+				483A2C5C2BFBF0040005B65E /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +106,14 @@
 				0A546A2D2BED34C7004EBA3D /* Info.plist */,
 			);
 			path = Armoire;
+			sourceTree = "<group>";
+		};
+		483A2C5C2BFBF0040005B65E /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				BC78BAA92BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		48B68BA62BF6A90700D9F0E7 /* Calendar */ = {
@@ -173,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				483A2C5E2BFBF0440005B65E /* View.xib in Resources */,
 				0A546A292BED34C7004EBA3D /* Assets.xcassets in Resources */,
 				0A546A2C2BED34C7004EBA3D /* Base in Resources */,
 				0A546A272BED34C6004EBA3D /* Base in Resources */,
