@@ -22,6 +22,8 @@
 		6742745C2BF617E3001304A8 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742745B2BF617E3001304A8 /* CalendarViewController.swift */; };
 		6742745E2BF617F5001304A8 /* WardrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742745D2BF617F5001304A8 /* WardrobeViewController.swift */; };
 		BC78BAAA2BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC78BAA92BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift */; };
+		B12D51732BF67BC8002324F4 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D51722BF67BC8002324F4 /* SuggestionViewController.swift */; };
+		B12D51772BF68197002324F4 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D51762BF68197002324F4 /* CardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		6742745B2BF617E3001304A8 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		6742745D2BF617F5001304A8 /* WardrobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
 		BC78BAA92BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCompatibiltyViewController.swift; sourceTree = "<group>"; };
+		B12D51722BF67BC8002324F4 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
+		B12D51762BF68197002324F4 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				0A546A252BED34C6004EBA3D /* Main.storyboard */,
 				0A546A232BED34C6004EBA3D /* ViewController.swift */,
 				674274532BF61665001304A8 /* Home.storyboard */,
+				B12D51762BF68197002324F4 /* CardCell.swift */,
+				B12D51722BF67BC8002324F4 /* SuggestionViewController.swift */,
 				674274592BF617B6001304A8 /* HomeViewController.swift */,
 				48B68BA62BF6A90700D9F0E7 /* Calendar */,
 				674274572BF6169D001304A8 /* Wardrobe.storyboard */,
@@ -175,8 +181,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B12D51732BF67BC8002324F4 /* SuggestionViewController.swift in Sources */,
 				6742745C2BF617E3001304A8 /* CalendarViewController.swift in Sources */,
 				0A546A242BED34C6004EBA3D /* ViewController.swift in Sources */,
+				B12D51772BF68197002324F4 /* CardCell.swift in Sources */,
 				6742745E2BF617F5001304A8 /* WardrobeViewController.swift in Sources */,
 				BC78BAAA2BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift in Sources */,
 				0A546A202BED34C6004EBA3D /* AppDelegate.swift in Sources */,
