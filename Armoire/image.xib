@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="884-gc-F67" customClass="imageCollectionViewCell" customModule="Armoire" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="417" height="331"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yPs-Q7-bjn">
+                <rect key="frame" x="0.0" y="0.0" width="417" height="331"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_1" translatesAutoresizingMaskIntoConstraints="NO" id="Qmy-nO-YwN">
+                        <rect key="frame" x="88" y="10" width="241" height="128"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="128" id="gWm-Ya-Y9D"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_2" translatesAutoresizingMaskIntoConstraints="NO" id="sLb-ev-c2i">
+                        <rect key="frame" x="88" y="139" width="241" height="128"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpx-aV-6f8">
+                        <rect key="frame" x="97" y="275" width="47" height="35"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="⚫️"/>
+                        <connections>
+                            <action selector="b1:" destination="884-gc-F67" eventType="touchUpInside" id="n3w-Tx-M5o"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJg-c5-hh6">
+                        <rect key="frame" x="152" y="275" width="47" height="35"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="⚫️"/>
+                        <connections>
+                            <action selector="b2:" destination="884-gc-F67" eventType="touchUpInside" id="cbA-dZ-l0l"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvz-3r-Lch">
+                        <rect key="frame" x="207" y="275" width="47" height="35"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="⚫️"/>
+                        <connections>
+                            <action selector="b3:" destination="884-gc-F67" eventType="touchUpInside" id="8vV-oS-y2C"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfl-Hl-W3M">
+                        <rect key="frame" x="262" y="275" width="47" height="35"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="⚫️"/>
+                        <connections>
+                            <action selector="b4:" destination="884-gc-F67" eventType="touchUpInside" id="Tpo-WY-fO4"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Qmy-nO-YwN" firstAttribute="top" secondItem="yPs-Q7-bjn" secondAttribute="top" constant="10" id="0tm-k4-GeB"/>
+                    <constraint firstItem="sLb-ev-c2i" firstAttribute="top" secondItem="Qmy-nO-YwN" secondAttribute="bottom" constant="1" id="5T0-w3-R6g"/>
+                    <constraint firstItem="rvz-3r-Lch" firstAttribute="baseline" secondItem="sfl-Hl-W3M" secondAttribute="baseline" id="8QO-AN-bin"/>
+                    <constraint firstItem="xpx-aV-6f8" firstAttribute="baseline" secondItem="FJg-c5-hh6" secondAttribute="baseline" id="8cp-Jj-IbQ"/>
+                    <constraint firstItem="Qmy-nO-YwN" firstAttribute="centerX" secondItem="yPs-Q7-bjn" secondAttribute="centerX" id="CJO-OA-jYX"/>
+                    <constraint firstItem="FJg-c5-hh6" firstAttribute="baseline" secondItem="xpx-aV-6f8" secondAttribute="firstBaseline" id="FxT-UB-GJ9"/>
+                    <constraint firstItem="Qmy-nO-YwN" firstAttribute="trailing" secondItem="sLb-ev-c2i" secondAttribute="trailing" id="HOn-jl-R9d"/>
+                    <constraint firstItem="Qmy-nO-YwN" firstAttribute="leading" secondItem="sLb-ev-c2i" secondAttribute="leading" id="HnT-gk-VOO"/>
+                    <constraint firstItem="xpx-aV-6f8" firstAttribute="top" secondItem="sLb-ev-c2i" secondAttribute="bottom" constant="8" id="ICm-qv-p2W"/>
+                    <constraint firstItem="FJg-c5-hh6" firstAttribute="baseline" secondItem="rvz-3r-Lch" secondAttribute="baseline" id="Ppd-Bp-kZ3"/>
+                    <constraint firstItem="FJg-c5-hh6" firstAttribute="leading" secondItem="xpx-aV-6f8" secondAttribute="trailing" constant="8" id="Ukt-zA-XE3"/>
+                    <constraint firstAttribute="bottom" secondItem="xpx-aV-6f8" secondAttribute="bottom" constant="21" id="aox-Cf-pA6"/>
+                    <constraint firstItem="rvz-3r-Lch" firstAttribute="leading" secondItem="FJg-c5-hh6" secondAttribute="trailing" constant="8" id="eKk-h4-6oG"/>
+                    <constraint firstItem="xpx-aV-6f8" firstAttribute="leading" secondItem="yPs-Q7-bjn" secondAttribute="leading" constant="97" id="gKI-bb-lxp"/>
+                    <constraint firstItem="Qmy-nO-YwN" firstAttribute="leading" secondItem="yPs-Q7-bjn" secondAttribute="leading" constant="88" id="ibf-fT-axP"/>
+                    <constraint firstItem="sfl-Hl-W3M" firstAttribute="leading" secondItem="rvz-3r-Lch" secondAttribute="trailing" constant="8" id="k9S-qg-oSM"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="417" height="331"/>
+            <connections>
+                <outlet property="image1" destination="Qmy-nO-YwN" id="KgI-k6-OmL"/>
+                <outlet property="image2" destination="sLb-ev-c2i" id="cEh-Nj-hTW"/>
+            </connections>
+            <point key="canvasLocation" x="287.78625954198475" y="57.394366197183103"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Image_1" width="800" height="1000"/>
+        <image name="Image_2" width="550" height="754"/>
+    </resources>
+</document>
