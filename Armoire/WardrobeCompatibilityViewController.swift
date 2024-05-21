@@ -2,28 +2,33 @@
 //  WardrobeCompatibilityViewController.swift
 //  Armoire
 //
-//  Created by Kanika Gupta on 20/05/24.
+//  Created by Kanika Gupta on 21/05/24.
 //
 
 import UIKit
 
 class WardrobeCompatibilityViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+    }
+
+    @IBAction func saveOutfitButton(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Item Saved Successfully", message: "You can find this item in wardrobe section", preferredStyle: .alert)
+        
+        let saveButton = UIAlertAction(title: "OK", style: .default){(action) in
+            print("Saved Successfully")
+            self.navigationController?.popViewController(animated: true)
+        }
+//        self.performSegue(withIdentifier: "unwindSegueToHome", sender: self)
+        
+        alert.addAction(saveButton)
+        present(alert, animated: true, completion: nil)
+        
+//        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+//        self.navigationController?.pushViewController(detailVC, animated: true)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

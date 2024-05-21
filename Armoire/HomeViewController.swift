@@ -51,19 +51,36 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath) as! headerCollectionViewCell
+            
             return cell
         case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
             return cell
         case 2:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "footer", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "footer", for: indexPath) as! footerCollectionViewCell
+            cell.compatibilityButton.tag = indexPath.row
+            cell.compatibilityButton.addTarget(self, action: #selector(viewDetail), for: .touchUpInside)
+//            cell.travelButton.tag = indexPath.row
+//            cell.travelButton.addTarget(self, action: #selector(viewDetail1), for: .touchUpInside)
             return cell
         default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath) as! headerCollectionViewCell
             return cell
         }
     }
+    @objc func viewDetail(sender: UIButton){
+        let home = self.storyboard?.instantiateViewController(identifier: "WardrobeCompatibilityViewController") as! WardrobeCompatibilityViewController
+        self.navigationController?.pushViewController(home, animated: true)
+        
+    }
+    
+//    @objc func viewDetail1(sender: UIButton){
+//        let ipath = IndexPath(row: sender.tag, section: 0)
+//        let home = self.storyboard?.instantiateViewController(identifier: "TravelBagViewController") as! TravelBagViewController
+//        self.navigationController?.pushViewController(home, animated: true)
+//
+//    }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
@@ -75,7 +92,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.90), heightDimension: .fractionalHeight(0.90))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(500))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(410), heightDimension: .absolute(410))
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
 //                row spacing ke liye
                 group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
@@ -91,7 +108,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(500))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(461), heightDimension: .absolute(421))
 
                 
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
@@ -107,7 +124,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(300))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(300))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(396), heightDimension: .absolute(220))
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
                 group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
                 let section = NSCollectionLayoutSection(group: group)

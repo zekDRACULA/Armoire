@@ -27,6 +27,7 @@ struct Section3Data{
 
 
 
+
 class DataModel{
    static var section1:[Section1Data] = [Section1Data(label: "Party", button1: "Party", button2: "Meeting", button3: "Wardrobe")]
     

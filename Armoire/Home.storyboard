@@ -13,7 +13,7 @@
         <!--homeViewController-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController title="homeViewController" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="Armoire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="homeViewController" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="Armoire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,7 @@
         <!--WardrobeCompatibility-->
         <scene sceneID="GNP-ev-1rI">
             <objects>
-                <viewController title="WardrobeCompatibility" id="ZPy-NY-Xo0" customClass="WardrobeCompatibiltyViewController" customModule="Armoire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WardrobeCompatibilityViewController" title="WardrobeCompatibility" id="ZPy-NY-Xo0" customClass="WardrobeCompatibiltyViewController" customModule="Armoire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iG2-dO-DwL" customClass="war">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,7 +145,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="LaI-NP-Wxb">
                             <color key="tintColor" red="0.5725490196078431" green="0.10980392156862745" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <action selector="saveOutfitAlertButton:" destination="ZPy-NY-Xo0" id="UVu-Q5-Ia9"/>
+                                <action selector="saveOutfitButton:" destination="ZPy-NY-Xo0" id="0YJ-38-Iry"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -179,10 +179,10 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
