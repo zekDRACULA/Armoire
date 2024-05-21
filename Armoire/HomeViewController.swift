@@ -70,7 +70,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         }
     }
     @objc func viewDetail(sender: UIButton){
-        let home = self.storyboard?.instantiateViewController(identifier: "WardrobeCompatibilityViewController") as! WardrobeCompatibilityViewController
+        let home = self.storyboard?.instantiateViewController(identifier: "WardrobeCompatibilityViewController") as! CompatibilityViewController
         self.navigationController?.pushViewController(home, animated: true)
         
     }

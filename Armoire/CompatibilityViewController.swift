@@ -1,13 +1,16 @@
 //
-//  WardrobeCompatibilityViewController.swift
+//  CompatibilityViewController.swift
 //  Armoire
 //
-//  Created by Kanika Gupta on 21/05/24.
+//  Created by Kanika Gupta on 22/05/24.
 //
 
 import UIKit
 
-class WardrobeCompatibilityViewController: UIViewController {
+
+import UIKit
+
+class CompatibilityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
