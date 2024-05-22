@@ -15,26 +15,6 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qI-5f-hbH">
-                                <rect key="frame" x="223" y="711" width="154" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="More Suggestion"/>
-                                <connections>
-                                    <segue destination="Rqc-63-WOY" kind="presentation" id="Zry-sX-bAS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAF-SC-Huk">
-                                <rect key="frame" x="16" y="711" width="110" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="ItemDetails"/>
-                                <connections>
-                                    <segue destination="wyl-2W-Rda" kind="show" id="nca-10-PB3"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.89019607840000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
@@ -46,24 +26,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1103" y="-35"/>
-        </scene>
-        <!--itemDetails-->
-        <scene sceneID="XwP-Ok-5Ha">
-            <objects>
-                <viewControllerPlaceholder storyboardName="itemDetails" id="wyl-2W-Rda" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="b1F-gv-jrb"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tEb-jP-aqc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="862" y="367"/>
-        </scene>
-        <!--MainScreenSuggestion-->
-        <scene sceneID="m8x-hk-eDT">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MainScreenSuggestion" id="Rqc-63-WOY" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GKd-nj-4EE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1325" y="405"/>
         </scene>
         <!--WardrobeCompatibility-->
         <scene sceneID="GNP-ev-1rI">
