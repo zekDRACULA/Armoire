@@ -56,6 +56,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
+//            cell.viewImage.layer.shadowColor = UIColor.gray.cgColor
+//            cell.viewImage.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+//            cell.viewImage.layer.shadowOpacity = 1.0
+            cell.viewImage.layer.masksToBounds = false
+            cell.viewImage.layer.masksToBounds = false
+            cell.viewImage.layer.cornerRadius = 14.0
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "footer", for: indexPath) as! footerCollectionViewCell
@@ -63,6 +69,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
             cell.compatibilityButton.addTarget(self, action: #selector(viewDetail), for: .touchUpInside)
 //            cell.travelButton.tag = indexPath.row
 //            cell.travelButton.addTarget(self, action: #selector(viewDetail1), for: .touchUpInside)
+ 
+
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath) as! headerCollectionViewCell
@@ -123,6 +131,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(300))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
                 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(396), heightDimension: .absolute(220))
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
