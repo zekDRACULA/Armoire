@@ -13,6 +13,7 @@
 		0A546A272BED34C6004EBA3D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0A546A262BED34C6004EBA3D /* Base */; };
 		0A546A292BED34C7004EBA3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A546A282BED34C7004EBA3D /* Assets.xcassets */; };
 		0A546A2C2BED34C7004EBA3D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0A546A2B2BED34C7004EBA3D /* Base */; };
+		487A828A2BFE284F004AF22A /* tstingfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487A82892BFE284F004AF22A /* tstingfile.swift */; };
 		48B68BA82BF6AA4F00D9F0E7 /* AddEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B68BA72BF6AA4F00D9F0E7 /* AddEventTableViewController.swift */; };
 		48B68BAA2BF6AB7A00D9F0E7 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B68BA92BF6AB7A00D9F0E7 /* SuggestionsViewController.swift */; };
 		674274542BF61665001304A8 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 674274532BF61665001304A8 /* Home.storyboard */; };
@@ -42,6 +43,7 @@
 		0A546A282BED34C7004EBA3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A546A2B2BED34C7004EBA3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A546A2D2BED34C7004EBA3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		487A82892BFE284F004AF22A /* tstingfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tstingfile.swift; sourceTree = "<group>"; };
 		48B68BA72BF6AA4F00D9F0E7 /* AddEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventTableViewController.swift; sourceTree = "<group>"; };
 		48B68BA92BF6AB7A00D9F0E7 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		674274532BF61665001304A8 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -99,9 +101,7 @@
 				B12D51722BF67BC8002324F4 /* SuggestionViewController.swift */,
 				674274592BF617B6001304A8 /* HomeViewController.swift */,
 				B12D51762BF68197002324F4 /* CardCell.swift */,
-				BC11BC7B2BFB6B340093DDBE /* imageCollectionViewCell.swift */,
-				BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */,
-				BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */,
+				487A82882BFE281F004AF22A /* kuch toh folder hai */,
 				0A546A252BED34C6004EBA3D /* Main.storyboard */,
 				674274532BF61665001304A8 /* Home.storyboard */,
 				BCCEF7EE2BFD244A00DDC726 /* CompatibilityViewController.swift */,
@@ -117,6 +117,17 @@
 				0A546A2D2BED34C7004EBA3D /* Info.plist */,
 			);
 			path = Armoire;
+			sourceTree = "<group>";
+		};
+		487A82882BFE281F004AF22A /* kuch toh folder hai */ = {
+			isa = PBXGroup;
+			children = (
+				BC11BC7B2BFB6B340093DDBE /* imageCollectionViewCell.swift */,
+				BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */,
+				BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */,
+				487A82892BFE284F004AF22A /* tstingfile.swift */,
+			);
+			path = "kuch toh folder hai";
 			sourceTree = "<group>";
 		};
 		48B68BA62BF6A90700D9F0E7 /* Calendar */ = {
@@ -218,6 +229,7 @@
 				6742745C2BF617E3001304A8 /* CalendarViewController.swift in Sources */,
 				BC11BC7C2BFB6B340093DDBE /* imageCollectionViewCell.swift in Sources */,
 				0A546A242BED34C6004EBA3D /* ViewController.swift in Sources */,
+				487A828A2BFE284F004AF22A /* tstingfile.swift in Sources */,
 				B12D51772BF68197002324F4 /* CardCell.swift in Sources */,
 				6742745E2BF617F5001304A8 /* WardrobeViewController.swift in Sources */,
 				BC11BC7A2BFB6B2C0093DDBE /* headerCollectionViewCell.swift in Sources */,
