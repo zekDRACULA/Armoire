@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,14 +16,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="461" height="421"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_1" translatesAutoresizingMaskIntoConstraints="NO" id="Qmy-nO-YwN">
-                        <rect key="frame" x="0.0" y="7" width="455" height="141"/>
+                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="65y-Cz-b5o">
+                        <rect key="frame" x="54" y="0.0" width="353" height="366.33333333333331"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_1" translatesAutoresizingMaskIntoConstraints="NO" id="Qmy-nO-YwN">
+                                <rect key="frame" x="0.0" y="0.0" width="353" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="6FV-2Y-Oyz"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_2" translatesAutoresizingMaskIntoConstraints="NO" id="sLb-ev-c2i">
+                                <rect key="frame" x="0.0" y="146.33333333333337" width="353" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="cge-SW-IBB"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99607843159999998" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="141" id="syK-FK-QuK"/>
+                            <constraint firstItem="Qmy-nO-YwN" firstAttribute="leading" secondItem="65y-Cz-b5o" secondAttribute="leading" id="4Vp-Pi-TEk"/>
+                            <constraint firstItem="Qmy-nO-YwN" firstAttribute="leading" secondItem="sLb-ev-c2i" secondAttribute="leading" id="7wY-hT-ubM"/>
+                            <constraint firstAttribute="trailing" secondItem="Qmy-nO-YwN" secondAttribute="trailing" id="Ski-qx-Xdo"/>
+                            <constraint firstAttribute="bottom" secondItem="sLb-ev-c2i" secondAttribute="bottom" id="Zhf-Iw-ln7"/>
+                            <constraint firstItem="Qmy-nO-YwN" firstAttribute="top" secondItem="65y-Cz-b5o" secondAttribute="top" id="h4S-I7-0TO"/>
+                            <constraint firstItem="Qmy-nO-YwN" firstAttribute="trailing" secondItem="sLb-ev-c2i" secondAttribute="trailing" id="nWJ-rK-u6g"/>
                         </constraints>
-                    </imageView>
+                    </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpx-aV-6f8">
-                        <rect key="frame" x="123" y="366" width="42" height="35"/>
+                        <rect key="frame" x="139" y="372.66666666666669" width="42" height="28.333333333333314"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system">
                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
@@ -34,7 +54,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJg-c5-hh6">
-                        <rect key="frame" x="170" y="369" width="42" height="29.333333333333314"/>
+                        <rect key="frame" x="186" y="372.33333333333331" width="42" height="29.333333333333314"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system">
                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
@@ -45,7 +65,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvz-3r-Lch">
-                        <rect key="frame" x="217" y="369" width="42" height="29.333333333333314"/>
+                        <rect key="frame" x="233" y="372.33333333333331" width="42" height="29.333333333333314"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system">
                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
@@ -56,7 +76,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfl-Hl-W3M">
-                        <rect key="frame" x="264" y="369" width="42" height="29.333333333333314"/>
+                        <rect key="frame" x="280" y="372.66666666666669" width="42" height="28.333333333333314"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system">
                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
@@ -66,33 +86,27 @@
                             <action selector="b4:" destination="884-gc-F67" eventType="touchUpInside" id="Tpo-WY-fO4"/>
                         </connections>
                     </button>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_2" translatesAutoresizingMaskIntoConstraints="NO" id="sLb-ev-c2i">
-                        <rect key="frame" x="1" y="150" width="461" height="208"/>
-                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Qmy-nO-YwN" secondAttribute="trailing" constant="6" id="0yf-2v-WPH"/>
-                    <constraint firstItem="xpx-aV-6f8" firstAttribute="top" secondItem="sLb-ev-c2i" secondAttribute="bottom" constant="8" symbolic="YES" id="3jF-Na-m1Y"/>
-                    <constraint firstItem="sLb-ev-c2i" firstAttribute="top" secondItem="Qmy-nO-YwN" secondAttribute="bottom" constant="2" id="4NH-EI-xZy"/>
-                    <constraint firstItem="rvz-3r-Lch" firstAttribute="baseline" secondItem="sfl-Hl-W3M" secondAttribute="baseline" id="8G4-50-D3y"/>
-                    <constraint firstItem="xpx-aV-6f8" firstAttribute="baseline" secondItem="FJg-c5-hh6" secondAttribute="baseline" id="9KQ-KD-HF0"/>
-                    <constraint firstItem="Qmy-nO-YwN" firstAttribute="leading" secondItem="yPs-Q7-bjn" secondAttribute="leading" id="GdW-Hc-K6s"/>
-                    <constraint firstItem="sLb-ev-c2i" firstAttribute="leading" secondItem="yPs-Q7-bjn" secondAttribute="leading" constant="1" id="M6h-wY-zzT"/>
-                    <constraint firstItem="FJg-c5-hh6" firstAttribute="baseline" secondItem="xpx-aV-6f8" secondAttribute="firstBaseline" id="M8A-Sw-FBo"/>
-                    <constraint firstAttribute="bottom" secondItem="xpx-aV-6f8" secondAttribute="bottom" constant="20" id="VJj-EV-MZs"/>
-                    <constraint firstItem="xpx-aV-6f8" firstAttribute="leading" secondItem="yPs-Q7-bjn" secondAttribute="leading" constant="123" id="aaB-bA-8H3"/>
-                    <constraint firstItem="Qmy-nO-YwN" firstAttribute="top" secondItem="yPs-Q7-bjn" secondAttribute="top" constant="7" id="boM-sM-TlP"/>
-                    <constraint firstItem="sfl-Hl-W3M" firstAttribute="leading" secondItem="rvz-3r-Lch" secondAttribute="trailing" constant="5" id="lpn-MS-2Gq"/>
-                    <constraint firstItem="FJg-c5-hh6" firstAttribute="leading" secondItem="xpx-aV-6f8" secondAttribute="trailing" constant="5" id="mb6-2d-K3u"/>
-                    <constraint firstItem="FJg-c5-hh6" firstAttribute="baseline" secondItem="rvz-3r-Lch" secondAttribute="baseline" id="trs-1u-me1"/>
-                    <constraint firstAttribute="trailing" secondItem="sLb-ev-c2i" secondAttribute="trailing" constant="-1" id="uIa-3y-1HX"/>
-                    <constraint firstItem="rvz-3r-Lch" firstAttribute="leading" secondItem="FJg-c5-hh6" secondAttribute="trailing" constant="5" id="zmp-0p-3mG"/>
+                    <constraint firstItem="xpx-aV-6f8" firstAttribute="baseline" secondItem="sfl-Hl-W3M" secondAttribute="baseline" id="6Gf-U0-GOc"/>
+                    <constraint firstItem="65y-Cz-b5o" firstAttribute="leading" secondItem="yPs-Q7-bjn" secondAttribute="leading" constant="54" id="B7W-ev-pPx"/>
+                    <constraint firstItem="xpx-aV-6f8" firstAttribute="leading" secondItem="yPs-Q7-bjn" secondAttribute="leading" constant="139" id="CuY-w6-Fic"/>
+                    <constraint firstAttribute="bottom" secondItem="xpx-aV-6f8" secondAttribute="bottom" constant="20.000000000000057" id="DzP-3a-M65"/>
+                    <constraint firstItem="xpx-aV-6f8" firstAttribute="centerY" secondItem="FJg-c5-hh6" secondAttribute="centerY" id="IVR-QF-Bgw"/>
+                    <constraint firstItem="sfl-Hl-W3M" firstAttribute="leading" secondItem="rvz-3r-Lch" secondAttribute="trailing" constant="5" id="JKB-IE-bqJ"/>
+                    <constraint firstItem="FJg-c5-hh6" firstAttribute="baseline" secondItem="rvz-3r-Lch" secondAttribute="baseline" id="QMx-BN-psq"/>
+                    <constraint firstItem="FJg-c5-hh6" firstAttribute="leading" secondItem="xpx-aV-6f8" secondAttribute="trailing" constant="5" id="VsW-vT-mwi"/>
+                    <constraint firstItem="65y-Cz-b5o" firstAttribute="top" secondItem="yPs-Q7-bjn" secondAttribute="top" id="jqe-lN-IUu"/>
+                    <constraint firstItem="65y-Cz-b5o" firstAttribute="centerX" secondItem="yPs-Q7-bjn" secondAttribute="centerX" id="of8-5S-ZD4"/>
+                    <constraint firstItem="xpx-aV-6f8" firstAttribute="top" secondItem="65y-Cz-b5o" secondAttribute="bottom" constant="6.3333333333332575" id="rn6-yM-blP"/>
+                    <constraint firstItem="rvz-3r-Lch" firstAttribute="leading" secondItem="FJg-c5-hh6" secondAttribute="trailing" constant="5" id="z0w-ip-b2E"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="417" height="331"/>
             <connections>
                 <outlet property="image1" destination="Qmy-nO-YwN" id="KgI-k6-OmL"/>
                 <outlet property="image2" destination="sLb-ev-c2i" id="cEh-Nj-hTW"/>
+                <outlet property="viewImage" destination="65y-Cz-b5o" id="FaR-QS-GfL"/>
             </connections>
             <point key="canvasLocation" x="287.78625954198475" y="57.394366197183103"/>
         </collectionViewCell>
