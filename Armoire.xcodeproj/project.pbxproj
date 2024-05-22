@@ -24,7 +24,10 @@
 		6742745E2BF617F5001304A8 /* WardrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742745D2BF617F5001304A8 /* WardrobeViewController.swift */; };
 		B12D51732BF67BC8002324F4 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D51722BF67BC8002324F4 /* SuggestionViewController.swift */; };
 		B12D51772BF68197002324F4 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D51762BF68197002324F4 /* CardCell.swift */; };
-		BC78BAAA2BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC78BAA92BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift */; };
+		B17E03CF2BFCA69000A647C1 /* MainScreenSuggestion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B17E03CE2BFCA69000A647C1 /* MainScreenSuggestion.storyboard */; };
+		B1DA6E5F2BFD2B5F00644279 /* ItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1DA6E5E2BFD2B5F00644279 /* ItemDetail.storyboard */; };
+		B1DA6E632BFD3BC000644279 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DA6E622BFD3BC000644279 /* ItemDetailViewController.swift */; };
+		B1DA6E672BFD4FAF00644279 /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DA6E662BFD4FAF00644279 /* DropDownTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +50,10 @@
 		6742745D2BF617F5001304A8 /* WardrobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
 		B12D51722BF67BC8002324F4 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		B12D51762BF68197002324F4 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
-		BC78BAA92BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCompatibiltyViewController.swift; sourceTree = "<group>"; };
+		B17E03CE2BFCA69000A647C1 /* MainScreenSuggestion.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScreenSuggestion.storyboard; sourceTree = "<group>"; };
+		B1DA6E5E2BFD2B5F00644279 /* ItemDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemDetail.storyboard; sourceTree = "<group>"; };
+		B1DA6E622BFD3BC000644279 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		B1DA6E662BFD4FAF00644279 /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +80,6 @@
 			children = (
 				0A546A1E2BED34C6004EBA3D /* Armoire */,
 				0A546A1D2BED34C6004EBA3D /* Products */,
-				483A2C5C2BFBF0040005B65E /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,7 +94,9 @@
 		0A546A1E2BED34C6004EBA3D /* Armoire */ = {
 			isa = PBXGroup;
 			children = (
+				B1DA6E5D2BFD2B1300644279 /* ItemDetail */,
 				05A07D4E2BFB1DA2001DD00B /* Home */,
+				B17E03CE2BFCA69000A647C1 /* MainScreenSuggestion.storyboard */,
 				0A546A1F2BED34C6004EBA3D /* AppDelegate.swift */,
 				0A546A212BED34C6004EBA3D /* SceneDelegate.swift */,
 				0A546A252BED34C6004EBA3D /* Main.storyboard */,
@@ -108,14 +115,6 @@
 			path = Armoire;
 			sourceTree = "<group>";
 		};
-		483A2C5C2BFBF0040005B65E /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				BC78BAA92BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		48B68BA62BF6A90700D9F0E7 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +124,16 @@
 				6742745B2BF617E3001304A8 /* CalendarViewController.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		B1DA6E5D2BFD2B1300644279 /* ItemDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B1DA6E5E2BFD2B5F00644279 /* ItemDetail.storyboard */,
+				B1DA6E662BFD4FAF00644279 /* DropDownTableViewCell.swift */,
+				B1DA6E622BFD3BC000644279 /* ItemDetailViewController.swift */,
+			);
+			path = ItemDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,9 +197,11 @@
 				483A2C5E2BFBF0440005B65E /* View.xib in Resources */,
 				0A546A292BED34C7004EBA3D /* Assets.xcassets in Resources */,
 				0A546A2C2BED34C7004EBA3D /* Base in Resources */,
+				B17E03CF2BFCA69000A647C1 /* MainScreenSuggestion.storyboard in Resources */,
 				0A546A272BED34C6004EBA3D /* Base in Resources */,
 				674274562BF6168D001304A8 /* Calendar.storyboard in Resources */,
 				674274582BF6169D001304A8 /* Wardrobe.storyboard in Resources */,
+				B1DA6E5F2BFD2B5F00644279 /* ItemDetail.storyboard in Resources */,
 				674274542BF61665001304A8 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,14 +215,15 @@
 			files = (
 				B12D51732BF67BC8002324F4 /* SuggestionViewController.swift in Sources */,
 				6742745C2BF617E3001304A8 /* CalendarViewController.swift in Sources */,
+				B1DA6E632BFD3BC000644279 /* ItemDetailViewController.swift in Sources */,
 				0A546A242BED34C6004EBA3D /* ViewController.swift in Sources */,
 				B12D51772BF68197002324F4 /* CardCell.swift in Sources */,
 				6742745E2BF617F5001304A8 /* WardrobeViewController.swift in Sources */,
-				BC78BAAA2BF682C30009DC04 /* WardrobeCompatibiltyViewController.swift in Sources */,
 				0A546A202BED34C6004EBA3D /* AppDelegate.swift in Sources */,
 				48B68BAA2BF6AB7A00D9F0E7 /* SuggestionsViewController.swift in Sources */,
 				0A546A222BED34C6004EBA3D /* SceneDelegate.swift in Sources */,
 				6742745A2BF617B6001304A8 /* HomeViewController.swift in Sources */,
+				B1DA6E672BFD4FAF00644279 /* DropDownTableViewCell.swift in Sources */,
 				48B68BA82BF6AA4F00D9F0E7 /* AddEventTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
