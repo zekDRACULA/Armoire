@@ -8,16 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ItemDetail-->
-        <scene sceneID="qSq-iU-Qcc">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ItemDetail" id="Bst-76-8MP" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="cX1-nJ-3uH"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YML-oW-rB2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="689" y="411"/>
-        </scene>
         <!--homeViewController-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -41,7 +31,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="ItemDetails"/>
                                 <connections>
-                                    <segue destination="Bst-76-8MP" kind="show" id="vc1-up-XmS"/>
+                                    <segue destination="wyl-2W-Rda" kind="show" id="nca-10-PB3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -57,13 +47,23 @@
             </objects>
             <point key="canvasLocation" x="1103" y="-35"/>
         </scene>
+        <!--itemDetails-->
+        <scene sceneID="XwP-Ok-5Ha">
+            <objects>
+                <viewControllerPlaceholder storyboardName="itemDetails" id="wyl-2W-Rda" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="b1F-gv-jrb"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEb-jP-aqc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="862" y="367"/>
+        </scene>
         <!--MainScreenSuggestion-->
         <scene sceneID="m8x-hk-eDT">
             <objects>
                 <viewControllerPlaceholder storyboardName="MainScreenSuggestion" id="Rqc-63-WOY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GKd-nj-4EE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1727" y="411"/>
+            <point key="canvasLocation" x="1325" y="405"/>
         </scene>
         <!--WardrobeCompatibility-->
         <scene sceneID="GNP-ev-1rI">
