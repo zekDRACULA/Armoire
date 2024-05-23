@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cQu-5w-BeV" customClass="EventSuggestionsTagCollectionViewCell" customModule="Armoire" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="324" height="177"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="i5T-aY-otX">
+                <rect key="frame" x="0.0" y="0.0" width="324" height="177"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIF-PF-b7Y">
+                        <rect key="frame" x="0.0" y="0.0" width="324" height="177"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" title="Button" cornerStyle="dynamic">
+                            <backgroundConfiguration key="background" cornerRadius="14">
+                                <color key="backgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </backgroundConfiguration>
+                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </buttonConfiguration>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="yIF-PF-b7Y" secondAttribute="trailing" id="FEc-cO-eqz"/>
+                    <constraint firstItem="yIF-PF-b7Y" firstAttribute="leading" secondItem="i5T-aY-otX" secondAttribute="leading" id="Otr-XM-455"/>
+                    <constraint firstAttribute="bottom" secondItem="yIF-PF-b7Y" secondAttribute="bottom" id="bof-6M-Nwv"/>
+                    <constraint firstItem="yIF-PF-b7Y" firstAttribute="top" secondItem="i5T-aY-otX" secondAttribute="top" id="xAM-PQ-4xj"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="324" height="177"/>
+            <connections>
+                <outlet property="tagButton" destination="yIF-PF-b7Y" id="W7Z-2R-98r"/>
+            </connections>
+            <point key="canvasLocation" x="25.954198473282442" y="-59.507042253521128"/>
+        </collectionViewCell>
+    </objects>
+</document>
