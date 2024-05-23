@@ -82,8 +82,8 @@ class EventSuggestionsViewController: UIViewController,UICollectionViewDataSourc
             case 0:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets.trailing = 20
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.29), heightDimension: .absolute(50))
+                item.contentInsets.trailing = 10
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.29), heightDimension: .absolute(40))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
@@ -94,7 +94,7 @@ class EventSuggestionsViewController: UIViewController,UICollectionViewDataSourc
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets.trailing = 20
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(300))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
                 group.contentInsets.bottom = 20
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets.top = 20
@@ -117,4 +117,13 @@ class EventSuggestionsViewController: UIViewController,UICollectionViewDataSourc
         }
         return layout
     }
+    
+    
+    
+    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
 }

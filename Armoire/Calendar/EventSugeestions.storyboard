@@ -48,7 +48,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Suggestions" id="zva-4T-JNP">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="4YK-R8-16A"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="l65-3y-b24"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="l65-3y-b24">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="Y6W-OH-hqX" id="dMo-sC-tmE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionViewOutlet" destination="8UI-ne-3rD" id="geK-0s-sZr"/>
