@@ -13,10 +13,14 @@ import UIKit
 class CompatibilityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.tabBar.isHidden = true
 
         
     }
 
+    @IBOutlet var imageView: UIImageView!
+    
+    
     @IBAction func saveOutfitButton(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Item Saved Successfully", message: "You can find this item in wardrobe section", preferredStyle: .alert)
         

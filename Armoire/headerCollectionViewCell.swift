@@ -15,7 +15,9 @@ class headerCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var partyButton: UIButton!
     
-    
+    @IBOutlet var calenderLabel: UILabel!
+    @IBOutlet var waetherLabel: UILabel!
+    @IBOutlet var outfitLabel: UILabel!
     
     @IBOutlet var eventButton: [UIButton]!
     

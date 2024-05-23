@@ -7,7 +7,8 @@
 
 import UIKit
 
-class footerCollectionViewCell: UICollectionViewCell {
+
+class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @IBOutlet var label1: UILabel!
     
@@ -16,8 +17,10 @@ class footerCollectionViewCell: UICollectionViewCell {
     @IBOutlet var travel: UILabel!
     
     @IBOutlet var compatibilityButton: UIButton!
-    
     @IBOutlet var travelButton: UIButton!
     
     
+    @IBAction func compatibilityTapped(_ sender: UIButton) {
+        
+    }
 }
