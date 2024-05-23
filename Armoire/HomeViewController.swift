@@ -75,8 +75,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "footer", for: indexPath) as! footerCollectionViewCell
             
-            cell.compatibilityButton.tag = indexPath.row
-            cell.compatibilityButton.addTarget(self, action: #selector(viewDetail), for: .touchUpInside)
+            cell.homeViewController = self
+//            cell.compatibilityButton.tag = indexPath.row
+//            cell.compatibilityButton.addTarget(self, action: #selector(viewDetail), for: .touchUpInside)
 //            cell.travelButton.tag = indexPath.row
 //            cell.travelButton.addTarget(self, action: #selector(viewDetail1), for: .touchUpInside)
  
@@ -84,6 +85,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
             cell.compatibility.clipsToBounds = true
             cell.travel.layer.cornerRadius = 10.0
             cell.travel.clipsToBounds = true
+            
 
             return cell
         default:
@@ -91,11 +93,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
             return cell
         }
     }
-    @objc func viewDetail(sender: UIButton){
-        let home = self.storyboard?.instantiateViewController(identifier: "WardrobeCompatibilityViewController") as! CompatibilityViewController
-        self.navigationController?.pushViewController(home, animated: true)
-        
-    }
+//    @objc func viewDetail(sender: UIButton){
+//        let home = self.storyboard?.instantiateViewController(identifier: "WardrobeCompatibilityViewController") as! CompatibilityViewController
+//        self.navigationController?.pushViewController(home, animated: true)
+//        
+//    }
     
 //    @objc func viewDetail1(sender: UIButton){
 //        let ipath = IndexPath(row: sender.tag, section: 0)
@@ -172,9 +174,5 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         }
         return layout
     }
-
-    
-    
-
 
 }

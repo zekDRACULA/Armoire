@@ -65,7 +65,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="TH7-OA-b0n" id="poH-WA-kRS"/>
-                        <segue destination="ZPy-NY-Xo0" kind="show" id="e3o-pD-nna"/>
+                        <segue destination="ZPy-NY-Xo0" kind="show" identifier="wardrobeCompatibility" id="e3o-pD-nna"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -75,7 +75,7 @@
         <!--WardrobeCompatibility-->
         <scene sceneID="GNP-ev-1rI">
             <objects>
-                <viewController storyboardIdentifier="WardrobeCompatibilityViewController" title="WardrobeCompatibility" id="ZPy-NY-Xo0" customClass="CompatibilityViewController" customModule="Armoire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CompatibilityViewController" title="WardrobeCompatibility" id="ZPy-NY-Xo0" customClass="CompatibilityViewController" customModule="Armoire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iG2-dO-DwL" customClass="war">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -257,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6QM-L7-D1K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1838.9312977099237" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="1702" y="-35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OXz-Hl-VA8">
