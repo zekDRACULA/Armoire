@@ -6,8 +6,16 @@
 //
 
 import UIKit
+import EventKitUI
+import EventKit
 
-class CalendarViewController: UIViewController,UICalendarViewDelegate,UICalendarSelectionSingleDateDelegate {
+
+class CalendarViewController: UIViewController,UICalendarViewDelegate,UICalendarSelectionSingleDateDelegate,EKEventEditViewDelegate{
+    
+    
+    
+    let store = EKEventStore()
+    
     func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
         print(selection)
     }
@@ -31,6 +39,12 @@ class CalendarViewController: UIViewController,UICalendarViewDelegate,UICalendar
         
         tabBarItem.title = "Calendar"
         tabBarItem.image = UIImage(systemName: "calendar")
+        
+        //added navigation for add button
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
+        
+        
+      
         // Do any additional setup after loading the view.
     }
     
@@ -59,10 +73,93 @@ class CalendarViewController: UIViewController,UICalendarViewDelegate,UICalendar
         
         
     }
+    // event kit functions
+    func didTapAdd(){
+        
+//        switch EKEventStore.authorizationStatus(for: .event) {
+//        case .notDetermined:
+//            EKEventStore.authorizationStatus(for: .event){granted,error in
+//            }
+//
+//        case .authorized:
+//            print("Authorired")
+//        default:
+//            break
+//        }
+        
+        
+        
+        
+        
+        
+//        store.requestAccess(to: .event){ [weak self] success,error in
+//            if success,error == nil {
+//                DispatchQueue.main.async {
+//                    guard let store = self?.store else{return}
+//                    let newEvent = EKEvent(eventStore: store)
+//                    
+//                
+//                    newEvent.title = ""
+//                    newEvent.startDate = Date()
+//                    newEvent.endDate = Date()
+//
+//                    
+//                    let otherVC = EKEventEditViewController()
+//                    otherVC.eventStore = store
+//                    otherVC.event = newEvent
+//                    self?.present(otherVC, animated: true, completion: nil)
+        
+        let eventVC = EKEventEditViewController()
+        eventVC.editViewDelegate = self
+        eventVC.eventStore = EKEventStore()
+        
+        
+        let event = EKEvent(eventStore: eventVC.eventStore)
+        event.title = ""
+        event.startDate = Date()
+        event.endDate = Date()
+        
+        eventVC.event = event
+        
+        self.present(eventVC, animated: true, completion: nil)
+        
+        
+        
+//
+//                    
+//                    
+////                    let vc = EKEventViewController()
+////                    vc.delegate=self
+////                    vc.event = newEvent
+////                    let navVc = UINavigationController(rootViewController: vc)
+////                    self?.present(navVc, animated: true)
+//                }
+//            }
+//        }
+        
+        
+        
+    }
+    
+    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+//
+//    func eventViewController(_ controller: EKEventViewController, didCompleteWith action: EKEventViewAction) {
+//        
+//        controller.dismiss(animated: true, completion: nil)
+//        
+//    }
+//    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+//        controller.dismiss(animated: true, completion: nil)
+//    }
     
     
     
     
+    @IBAction func addButtonTApped(_ sender: UIBarButtonItem) {
+        didTapAdd()
+    }
     
     
 
