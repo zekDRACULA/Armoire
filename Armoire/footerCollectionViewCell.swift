@@ -15,6 +15,7 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
     @IBOutlet var compatibility: UILabel!
     
     @IBOutlet var travel: UILabel!
+    
     var selectedImage: UIImage?
     @IBOutlet var compatibilityButton: UIButton!
     @IBOutlet var travelButton: UIButton!
@@ -52,7 +53,24 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
         
         
     }
+    //updating after selecting
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+      // Update selectedImage after image selection
+      if let image = info[.originalImage] as? UIImage {
+        selectedImage = image
+      }
+        homeViewController?.performSegue(withIdentifier: "wardrobeCompatibility", sender: self)
+        homeViewController?.navigationController?.presentedViewController?.dismiss(animated: true, completion: nil)
+        
+    }
     
+    
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "wardrobeCompatibility", let image = selectedImage {
+        let compatibilityViewController = segue.destination as! CompatibilityViewController
+        compatibilityViewController.selectedImage = image
+      }
+    }
     
     
 }

@@ -5,20 +5,15 @@
 //  Created by Kanika Gupta on 22/05/24.
 //
 
-import UIKit
-
 
 import UIKit
 
 class CompatibilityViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tabBarController?.tabBar.isHidden = true
-
-        
-    }
+    
 
     @IBOutlet var imageView: UIImageView!
+    
+    var selectedImage: UIImage?
     
     
     @IBAction func saveOutfitButton(_ sender: UIBarButtonItem) {
@@ -37,5 +32,15 @@ class CompatibilityViewController: UIViewController {
 //        self.navigationController?.pushViewController(detailVC, animated: true)
         
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tabBarController?.tabBar.isHidden = true
+        if let image = selectedImage {
+            imageView.image = image
+            
+        }
+    }
+    
+    
     
 }

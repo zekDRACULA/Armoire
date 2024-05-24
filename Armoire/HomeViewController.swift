@@ -57,11 +57,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
             cell.username.layer.cornerRadius = 10.0
             cell.username.clipsToBounds = true
             cell.waetherLabel.layer.cornerRadius = 10.0
-            cell.username.clipsToBounds = true
+            cell.waetherLabel.clipsToBounds = true
             cell.calenderLabel.layer.cornerRadius = 10.0
-            cell.username.clipsToBounds = true
-            cell.partyButton.layer.cornerRadius = 20.0
-            cell.username.clipsToBounds = true
+            cell.calenderLabel.clipsToBounds = true
+            cell.partyButton.layer.cornerRadius = 8.0
+            cell.partyButton.clipsToBounds = true
             
             return cell
         case 1:
@@ -76,11 +76,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "footer", for: indexPath) as! footerCollectionViewCell
             
             cell.homeViewController = self
+            
 //            cell.compatibilityButton.tag = indexPath.row
 //            cell.compatibilityButton.addTarget(self, action: #selector(viewDetail), for: .touchUpInside)
 //            cell.travelButton.tag = indexPath.row
 //            cell.travelButton.addTarget(self, action: #selector(viewDetail1), for: .touchUpInside)
  
+            
             cell.compatibility.layer.cornerRadius = 10.0
             cell.compatibility.clipsToBounds = true
             cell.travel.layer.cornerRadius = 10.0
