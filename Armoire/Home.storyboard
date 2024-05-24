@@ -3,9 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,17 +53,7 @@
                             <constraint firstItem="TH7-OA-b0n" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jRp-f9-G9t"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IdD-Mb-Jk9">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="lIe-PU-Anr">
-                            <imageReference key="image" image="person.crop.circle" catalog="system" renderingMode="hierarchical-single">
-                                <hierarchicalColors>
-                                    <color systemColor="labelColor"/>
-                                    <color systemColor="secondaryLabelColor"/>
-                                    <color systemColor="tertiaryLabelColor"/>
-                                </hierarchicalColors>
-                            </imageReference>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="IdD-Mb-Jk9"/>
                     <connections>
                         <outlet property="collectionView" destination="TH7-OA-b0n" id="poH-WA-kRS"/>
                     </connections>
@@ -104,8 +92,8 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Oq-YH-Tep">
                                         <rect key="frame" x="0.0" y="403" width="361" height="346"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5SE-dT-K55">
-                                                <rect key="frame" x="0.0" y="0.0" width="1224" height="346"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5SE-dT-K55">
+                                                <rect key="frame" x="0.0" y="0.0" width="1245" height="346"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgB-IJ-oVs">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="346"/>
@@ -136,7 +124,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4G-kS-cTs">
-                                                        <rect key="frame" x="308" y="0.0" width="300" height="346"/>
+                                                        <rect key="frame" x="315" y="0.0" width="300" height="346"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Mjv-RD-iOW">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="346"/>
@@ -164,7 +152,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4D-XV-71R">
-                                                        <rect key="frame" x="616" y="0.0" width="300" height="346"/>
+                                                        <rect key="frame" x="630" y="0.0" width="300" height="346"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="leR-s6-5G5">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="346"/>
@@ -192,7 +180,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faI-61-3LY">
-                                                        <rect key="frame" x="924" y="0.0" width="300" height="346"/>
+                                                        <rect key="frame" x="945" y="0.0" width="300" height="346"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="I8r-5j-QWk">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="346"/>
@@ -220,6 +208,7 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
+                                                <color key="backgroundColor" red="0.92156862750000001" green="0.89019607840000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </stackView>
                                         </subviews>
                                         <constraints>
@@ -254,6 +243,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="Oac-2Y-38B" id="mSy-x6-ViQ"/>
+                        <outlet property="view1" destination="GgB-IJ-oVs" id="NmA-MO-geg"/>
+                        <outlet property="view2" destination="h4G-kS-cTs" id="fc1-0v-YxR"/>
+                        <outlet property="view3" destination="s4D-XV-71R" id="xbJ-Aq-TLo"/>
+                        <outlet property="view4" destination="faI-61-3LY" id="9P1-eu-BRH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6QM-L7-D1K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -282,15 +275,5 @@
     <resources>
         <image name="Image_1" width="800" height="1000"/>
         <image name="Image_2" width="550" height="754"/>
-        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

@@ -14,8 +14,12 @@ class CompatibilityViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     
     var selectedImage: UIImage?
+    @IBOutlet var view1: UIView!
+    @IBOutlet var view3: UIView!
     
+    @IBOutlet var view2: UIView!
     
+    @IBOutlet var view4: UIView!
     @IBAction func saveOutfitButton(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Item Saved Successfully", message: "You can find this item in wardrobe section", preferredStyle: .alert)
         
@@ -39,8 +43,15 @@ class CompatibilityViewController: UIViewController {
             imageView.image = image
             
         }
+        imageView.layer.cornerRadius = 20.0
+        imageView.layer.masksToBounds = false
+        view1.layer.cornerRadius = 20.0
+        view1.layer.masksToBounds = false
+        view2.layer.cornerRadius = 20.0
+        view2.layer.masksToBounds = false
+        view3.layer.cornerRadius = 20.0
+        view3.layer.masksToBounds = false
+        view4.layer.cornerRadius = 20.0
+        view4.layer.masksToBounds = false
     }
-    
-    
-    
 }

@@ -118,7 +118,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.90), heightDimension: .fractionalHeight(0.90))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 
-                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(410), heightDimension: .absolute(410))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(417), heightDimension: .absolute(420))
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
 //                row spacing ke liye
                 group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
