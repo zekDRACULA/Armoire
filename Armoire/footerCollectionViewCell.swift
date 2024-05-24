@@ -12,7 +12,7 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
     
     @IBOutlet var label1: UILabel!
     
-    @IBOutlet var compatibility: UILabel!
+    @IBOutlet var compatibility: UIButton!
     
     @IBOutlet var travel: UILabel!
     
