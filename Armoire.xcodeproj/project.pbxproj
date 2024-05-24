@@ -29,6 +29,11 @@
 		6742745A2BF617B6001304A8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674274592BF617B6001304A8 /* HomeViewController.swift */; };
 		6742745C2BF617E3001304A8 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742745B2BF617E3001304A8 /* CalendarViewController.swift */; };
 		6742745E2BF617F5001304A8 /* WardrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742745D2BF617F5001304A8 /* WardrobeViewController.swift */; };
+		679E64962BFF91E800CB211F /* WardrobeTag.xib in Resources */ = {isa = PBXBuildFile; fileRef = 679E64952BFF91E800CB211F /* WardrobeTag.xib */; };
+		679E64982BFF920E00CB211F /* WardrobeItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 679E64972BFF920E00CB211F /* WardrobeItem.xib */; };
+		679E649A2BFF925500CB211F /* WardrobeTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679E64992BFF925500CB211F /* WardrobeTagCollectionViewCell.swift */; };
+		679E649C2BFF927000CB211F /* WardrobeItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679E649B2BFF927000CB211F /* WardrobeItemCollectionViewCell.swift */; };
+		679E649E2BFF92E800CB211F /* WardrobeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679E649D2BFF92E800CB211F /* WardrobeData.swift */; };
 		B12D51732BF67BC8002324F4 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D51722BF67BC8002324F4 /* SuggestionViewController.swift */; };
 		B12D51772BF68197002324F4 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D51762BF68197002324F4 /* CardCell.swift */; };
 		BC11BC702BFB6AE50093DDBE /* footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC11BC6F2BFB6AE50093DDBE /* footer.xib */; };
@@ -66,6 +71,11 @@
 		674274592BF617B6001304A8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6742745B2BF617E3001304A8 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		6742745D2BF617F5001304A8 /* WardrobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
+		679E64952BFF91E800CB211F /* WardrobeTag.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WardrobeTag.xib; sourceTree = "<group>"; };
+		679E64972BFF920E00CB211F /* WardrobeItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WardrobeItem.xib; sourceTree = "<group>"; };
+		679E64992BFF925500CB211F /* WardrobeTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		679E649B2BFF927000CB211F /* WardrobeItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		679E649D2BFF92E800CB211F /* WardrobeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeData.swift; sourceTree = "<group>"; };
 		B12D51722BF67BC8002324F4 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		B12D51762BF68197002324F4 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		BC11BC6F2BFB6AE50093DDBE /* footer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = footer.xib; sourceTree = "<group>"; };
@@ -125,8 +135,7 @@
 				BC11BC6F2BFB6AE50093DDBE /* footer.xib */,
 				BC11BC7D2BFB70530093DDBE /* HomeModel.swift */,
 				48B68BA62BF6A90700D9F0E7 /* Calendar */,
-				674274572BF6169D001304A8 /* Wardrobe.storyboard */,
-				6742745D2BF617F5001304A8 /* WardrobeViewController.swift */,
+				67F5042D2BFF8EE100FBB7A3 /* Wardrobe */,
 				0A546A282BED34C7004EBA3D /* Assets.xcassets */,
 				0A546A2A2BED34C7004EBA3D /* LaunchScreen.storyboard */,
 				0A546A2D2BED34C7004EBA3D /* Info.plist */,
@@ -168,6 +177,20 @@
 				6742745B2BF617E3001304A8 /* CalendarViewController.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		67F5042D2BFF8EE100FBB7A3 /* Wardrobe */ = {
+			isa = PBXGroup;
+			children = (
+				674274572BF6169D001304A8 /* Wardrobe.storyboard */,
+				6742745D2BF617F5001304A8 /* WardrobeViewController.swift */,
+				679E649D2BFF92E800CB211F /* WardrobeData.swift */,
+				679E64952BFF91E800CB211F /* WardrobeTag.xib */,
+				679E64992BFF925500CB211F /* WardrobeTagCollectionViewCell.swift */,
+				679E64972BFF920E00CB211F /* WardrobeItem.xib */,
+				679E649B2BFF927000CB211F /* WardrobeItemCollectionViewCell.swift */,
+			);
+			path = Wardrobe;
 			sourceTree = "<group>";
 		};
 		BC11BC6D2BFB6A770093DDBE /* Recovered References */ = {
@@ -238,10 +261,12 @@
 				4881AA8C2BFF6C14008052DF /* SuggestionOutfits.xib in Resources */,
 				0A546A292BED34C7004EBA3D /* Assets.xcassets in Resources */,
 				0A546A2C2BED34C7004EBA3D /* Base in Resources */,
+				679E64982BFF920E00CB211F /* WardrobeItem.xib in Resources */,
 				0A546A272BED34C6004EBA3D /* Base in Resources */,
 				4881AA822BFF5DA2008052DF /* EventSugeestions.storyboard in Resources */,
 				BC11BC702BFB6AE50093DDBE /* footer.xib in Resources */,
 				BC11BC722BFB6AF00093DDBE /* header.xib in Resources */,
+				679E64962BFF91E800CB211F /* WardrobeTag.xib in Resources */,
 				674274562BF6168D001304A8 /* Calendar.storyboard in Resources */,
 				674274582BF6169D001304A8 /* Wardrobe.storyboard in Resources */,
 				674274542BF61665001304A8 /* Home.storyboard in Resources */,
@@ -271,8 +296,13 @@
 				6742745E2BF617F5001304A8 /* WardrobeViewController.swift in Sources */,
 				BC11BC7A2BFB6B2C0093DDBE /* headerCollectionViewCell.swift in Sources */,
 				BC11BC782BFB6B220093DDBE /* footerCollectionViewCell.swift in Sources */,
+				679E649C2BFF927000CB211F /* WardrobeItemCollectionViewCell.swift in Sources */,
+				679E649E2BFF92E800CB211F /* WardrobeData.swift in Sources */,
 				BC11BC7E2BFB70530093DDBE /* HomeModel.swift in Sources */,
+
+				679E649A2BFF925500CB211F /* WardrobeTagCollectionViewCell.swift in Sources */,
 				4881AA862BFF6672008052DF /* EventSuggestionsViewController.swift in Sources */,
+
 				0A546A202BED34C6004EBA3D /* AppDelegate.swift in Sources */,
 				0A546A222BED34C6004EBA3D /* SceneDelegate.swift in Sources */,
 				6742745A2BF617B6001304A8 /* HomeViewController.swift in Sources */,
