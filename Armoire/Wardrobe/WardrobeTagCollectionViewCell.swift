@@ -10,7 +10,6 @@ import UIKit
 class WardrobeTagCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var tagButton: UIButton!
-    
     var isActive: Bool = false
     @IBAction func tagButtonPressed(_ sender: UIButton) {
         sender.isSelected.toggle()
