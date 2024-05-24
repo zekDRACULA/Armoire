@@ -27,10 +27,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         // Do any additional setup after loading the view.
         let firstNib = UINib(nibName: "header", bundle: nil)
         let secondNib = UINib(nibName: "image", bundle: nil)
+        let second1Nib = UINib(nibName: "OneImageHome", bundle: nil)
         let thirdNib = UINib(nibName: "footer", bundle: nil)
+        
         
         collectionView.register(firstNib, forCellWithReuseIdentifier: "header")
         collectionView.register(secondNib, forCellWithReuseIdentifier: "image")
+        collectionView.register(second1Nib, forCellWithReuseIdentifier: "OneImageHome")
         collectionView.register(thirdNib, forCellWithReuseIdentifier: "footer")
         collectionView.dataSource = self
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
@@ -62,16 +65,35 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
             cell.calenderLabel.clipsToBounds = true
             cell.partyButton.layer.cornerRadius = 8.0
             cell.partyButton.clipsToBounds = true
+            cell.eventButton[0].layer.cornerRadius = 10.0
+            cell.eventButton[0].clipsToBounds = true
+            cell.eventButton[1].layer.cornerRadius = 10.0
+            cell.eventButton[1].clipsToBounds = true
+            cell.eventButton[2].layer.cornerRadius = 10.0
+            cell.eventButton[2].clipsToBounds = true
             
             return cell
         case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
+            if indexPath.row != 3{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
+                cell.viewImage.layer.masksToBounds = false
+                cell.viewImage.layer.cornerRadius = 14.0
+
+                return cell
+            }
+            else{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneImageHome", for: indexPath) as! oneImageCVC
+                cell.image.layer.masksToBounds = false
+                cell.image.layer.cornerRadius = 14.0
+                cell.viewImage.layer.masksToBounds = false
+                cell.viewImage.layer.cornerRadius = 14.0
+                
+                return cell
+            }
 //            cell.viewImage.layer.shadowColor = UIColor.gray.cgColor
 //            cell.viewImage.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
 //            cell.viewImage.layer.shadowOpacity = 1.0
-            cell.viewImage.layer.masksToBounds = false
-            cell.viewImage.layer.cornerRadius = 14.0
-            return cell
+            
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "footer", for: indexPath) as! footerCollectionViewCell
             
@@ -118,9 +140,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.90), heightDimension: .fractionalHeight(0.90))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 
-                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(417), heightDimension: .absolute(420))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(633), heightDimension: .absolute(564))
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
 //                row spacing ke liye
+                
                 group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
                 
                 let section = NSCollectionLayoutSection(group: group)

@@ -21,6 +21,9 @@ class headerCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var eventButton: [UIButton]!
     
+//    @IBOutlet var myStackView: UIStackView!
+    
+    
     var button = false
     
     func showButtonVisibility(){
