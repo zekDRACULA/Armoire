@@ -56,11 +56,14 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
     //updating after selecting
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
       // Update selectedImage after image selection
-      if let image = info[.originalImage] as? UIImage {
-        selectedImage = image
-      }
-        homeViewController?.performSegue(withIdentifier: "wardrobeCompatibility", sender: self)
+//      if let image = info[.originalImage] as? UIImage {
+//        selectedImage = image
+//      }
+        guard let imageToUse = info[.originalImage] as? UIImage else {return}
+        selectedImage = imageToUse
+        
         homeViewController?.navigationController?.presentedViewController?.dismiss(animated: true, completion: nil)
+        homeViewController?.performSegue(withIdentifier: "wardrobeCompatibility", sender: self)
         
     }
     
@@ -71,6 +74,4 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
         compatibilityViewController.selectedImage = image
       }
     }
-    
-    
 }
