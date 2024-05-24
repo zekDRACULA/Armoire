@@ -30,7 +30,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
         case 0:
             return WardrobeData.wardrobeTag.count
         case 1:
-            return wardrobeItem.count
+            return WardrobeData.wardrobeItem.count
         default:
             return 0
         }
@@ -43,10 +43,10 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
             let buttonTitle = WardrobeData.wardrobeTag[indexPath.row].title
             cell.tagButton.setTitle("\(buttonTitle)", for: .normal)
             return cell
-//        case 1:
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeItem", for: indexPath) as! WardrobeItemCollectionViewCell
-//            cell.itemImage.image = UIImage(named: wardrobeItem[indexPath.row])
-//            return cell
+        case 1:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeApparel", for: indexPath) as! WardrobeApparelCollectionViewCell
+            cell.apparelImage.image = UIImage(named: WardrobeData.wardrobeItem[indexPath.row])
+            return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeTag", for: indexPath) as! WardrobeTagCollectionViewCell
             let buttonTitle = WardrobeData.wardrobeTag[indexPath.row].title
@@ -65,8 +65,8 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
         let firstNib = UINib(nibName: "WardrobeTag", bundle: nil)
         collectionView.register(firstNib, forCellWithReuseIdentifier: "WardrobeTag")
         
-        let secondNib = UINib(nibName: "WardrobeItem", bundle: nil)
-        collectionView.register(secondNib, forCellWithReuseIdentifier: "WardrobeItem")
+        let secondNib = UINib(nibName: "WardrobeApparel", bundle: nil)
+        collectionView.register(secondNib, forCellWithReuseIdentifier: "WardrobeApparel")
         
         // setting collection view
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
@@ -86,6 +86,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .absolute(40))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets.top = 16
                 section.contentInsets.leading = 16
                 section.orthogonalScrollingBehavior = .continuous
                 return section
@@ -95,7 +96,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets.trailing = 20
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(300))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
                 group.contentInsets.bottom = 20
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets.top = 20
