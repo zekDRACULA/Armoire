@@ -87,9 +87,9 @@
 		BC11BC6F2BFB6AE50093DDBE /* footer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = footer.xib; sourceTree = "<group>"; };
 		BC11BC712BFB6AF00093DDBE /* header.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = header.xib; sourceTree = "<group>"; };
 		BC11BC732BFB6AFA0093DDBE /* image.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = image.xib; sourceTree = "<group>"; };
-		BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = footerCollectionViewCell.swift; sourceTree = "<group>"; };
-		BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerCollectionViewCell.swift; sourceTree = "<group>"; };
-		BC11BC7B2BFB6B340093DDBE /* imageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCollectionViewCell.swift; sourceTree = "<group>"; };
+		BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = footerCollectionViewCell.swift; path = "kuch toh folder hai/footerCollectionViewCell.swift"; sourceTree = "<group>"; };
+		BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = headerCollectionViewCell.swift; path = "kuch toh folder hai/headerCollectionViewCell.swift"; sourceTree = "<group>"; };
+		BC11BC7B2BFB6B340093DDBE /* imageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = imageCollectionViewCell.swift; path = "Armoire/kuch toh folder hai/imageCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		BC11BC7D2BFB70530093DDBE /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		BC28A2F42C011F02009B833E /* OneImageHome.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneImageHome.xib; sourceTree = "<group>"; };
 		BC28A2F62C012089009B833E /* oneImageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneImageCVC.swift; sourceTree = "<group>"; };
@@ -161,9 +161,6 @@
 		487A82882BFE281F004AF22A /* kuch toh folder hai */ = {
 			isa = PBXGroup;
 			children = (
-				BC11BC7B2BFB6B340093DDBE /* imageCollectionViewCell.swift */,
-				BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */,
-				BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */,
 				487A82892BFE284F004AF22A /* tstingfile.swift */,
 			);
 			path = "kuch toh folder hai";
@@ -287,7 +284,6 @@
 				67A3E4E52C00596500CC5880 /* WardrobeApparel.xib in Resources */,
 				674274542BF61665001304A8 /* Home.storyboard in Resources */,
 				487A82912BFE2F1A004AF22A /* itemDetails.storyboard in Resources */,
-
 				67A3E4E92C0063D600CC5880 /* WardrobeTag.xib in Resources */,
 				4881AA882BFF6ADC008052DF /* SuggestionsTag.xib in Resources */,
 				BC11BC742BFB6AFA0093DDBE /* image.xib in Resources */,
@@ -317,12 +313,9 @@
 				BC11BC782BFB6B220093DDBE /* footerCollectionViewCell.swift in Sources */,
 				679E649E2BFF92E800CB211F /* WardrobeData.swift in Sources */,
 				BC11BC7E2BFB70530093DDBE /* HomeModel.swift in Sources */,
-
 				679E649A2BFF925500CB211F /* WardrobeTagCollectionViewCell.swift in Sources */,
 				4881AA862BFF6672008052DF /* EventSuggestionsViewController.swift in Sources */,
-
 				0A546A202BED34C6004EBA3D /* AppDelegate.swift in Sources */,
-				48B68BAA2BF6AB7A00D9F0E7 /* SuggestionsViewController.swift in Sources */,
 				BC28A2F72C012089009B833E /* oneImageCVC.swift in Sources */,
 				0A546A222BED34C6004EBA3D /* SceneDelegate.swift in Sources */,
 				67A3E4E72C0059F200CC5880 /* WardrobeApparelCollectionViewCell.swift in Sources */,
