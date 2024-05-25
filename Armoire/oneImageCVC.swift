@@ -10,6 +10,7 @@ import UIKit
 class oneImageCVC: UICollectionViewCell {
     @IBOutlet var image: UIImageView!
     @IBOutlet var suggestionButton: UIButton!
+    @IBOutlet var button: [UIButton]!
     
     @IBOutlet var viewImage: UIView!
     

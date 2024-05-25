@@ -3,6 +3,8 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,37 +19,101 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="65y-Cz-b5o">
-                        <rect key="frame" x="54" y="0.0" width="353" height="366.33333333333331"/>
+                        <rect key="frame" x="54" y="0.0" width="353" height="328"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_1" translatesAutoresizingMaskIntoConstraints="NO" id="Qmy-nO-YwN">
                                 <rect key="frame" x="0.0" y="0.0" width="353" height="140"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="6FV-2Y-Oyz"/>
+                                    <constraint firstAttribute="height" constant="140" id="3Nw-QZ-Kis"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_2" translatesAutoresizingMaskIntoConstraints="NO" id="sLb-ev-c2i">
-                                <rect key="frame" x="0.0" y="146.33333333333337" width="353" height="220"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="cge-SW-IBB"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="146" width="353" height="182"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843159999998" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Qmy-nO-YwN" firstAttribute="leading" secondItem="65y-Cz-b5o" secondAttribute="leading" id="4Vp-Pi-TEk"/>
-                            <constraint firstItem="Qmy-nO-YwN" firstAttribute="leading" secondItem="sLb-ev-c2i" secondAttribute="leading" id="7wY-hT-ubM"/>
-                            <constraint firstAttribute="trailing" secondItem="Qmy-nO-YwN" secondAttribute="trailing" id="Ski-qx-Xdo"/>
-                            <constraint firstAttribute="bottom" secondItem="sLb-ev-c2i" secondAttribute="bottom" id="Zhf-Iw-ln7"/>
-                            <constraint firstItem="Qmy-nO-YwN" firstAttribute="top" secondItem="65y-Cz-b5o" secondAttribute="top" id="h4S-I7-0TO"/>
-                            <constraint firstItem="Qmy-nO-YwN" firstAttribute="trailing" secondItem="sLb-ev-c2i" secondAttribute="trailing" id="nWJ-rK-u6g"/>
-                            <constraint firstItem="sLb-ev-c2i" firstAttribute="top" secondItem="Qmy-nO-YwN" secondAttribute="bottom" constant="6.3333333333333712" id="vUx-a7-6ba"/>
+                            <constraint firstItem="Qmy-nO-YwN" firstAttribute="trailing" secondItem="sLb-ev-c2i" secondAttribute="trailing" id="9Gi-At-DOf"/>
+                            <constraint firstItem="Qmy-nO-YwN" firstAttribute="top" secondItem="65y-Cz-b5o" secondAttribute="top" id="LSM-Qg-RiU"/>
+                            <constraint firstAttribute="bottom" secondItem="sLb-ev-c2i" secondAttribute="bottom" id="QjX-SK-lQ5"/>
+                            <constraint firstItem="Qmy-nO-YwN" firstAttribute="centerX" secondItem="65y-Cz-b5o" secondAttribute="centerX" id="XIU-GY-SdJ"/>
+                            <constraint firstItem="Qmy-nO-YwN" firstAttribute="leading" secondItem="65y-Cz-b5o" secondAttribute="leading" id="XTr-Jf-FZ2"/>
+                            <constraint firstItem="sLb-ev-c2i" firstAttribute="top" secondItem="Qmy-nO-YwN" secondAttribute="bottom" constant="6" id="gWN-XE-mEy"/>
+                            <constraint firstItem="Qmy-nO-YwN" firstAttribute="leading" secondItem="sLb-ev-c2i" secondAttribute="leading" id="zB3-rY-aov"/>
                         </constraints>
                     </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wce-jk-q67">
+                        <rect key="frame" x="142" y="343" width="177" height="23.333333333333314"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvG-nA-cbb">
+                                <rect key="frame" x="0.0" y="0.0" width="42" height="23.333333333333332"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="circle.fill" catalog="system" renderingMode="hierarchical-single">
+                                        <hierarchicalColors>
+                                            <color red="0.64313727620000005" green="0.62352943419999995" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fN6-7I-RiW">
+                                <rect key="frame" x="45" y="0.0" width="42" height="23.333333333333332"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="circle.fill" catalog="system" renderingMode="hierarchical-single">
+                                        <hierarchicalColors>
+                                            <color red="0.64313727620000005" green="0.62352943419999995" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYI-2z-sKL">
+                                <rect key="frame" x="90" y="0.0" width="42" height="23.333333333333332"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="circle.fill" catalog="system" renderingMode="hierarchical-single">
+                                        <hierarchicalColors>
+                                            <color red="0.64313727620000005" green="0.62352943419999995" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9s-5B-bIo">
+                                <rect key="frame" x="135" y="0.0" width="42" height="23.333333333333332"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="circle.fill" catalog="system" renderingMode="hierarchical-single">
+                                        <hierarchicalColors>
+                                            <color red="0.64313727620000005" green="0.62352943419999995" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="65y-Cz-b5o" firstAttribute="leading" secondItem="yPs-Q7-bjn" secondAttribute="leading" constant="54" id="B7W-ev-pPx"/>
-                    <constraint firstItem="65y-Cz-b5o" firstAttribute="top" secondItem="yPs-Q7-bjn" secondAttribute="top" id="jqe-lN-IUu"/>
-                    <constraint firstItem="65y-Cz-b5o" firstAttribute="centerX" secondItem="yPs-Q7-bjn" secondAttribute="centerX" id="of8-5S-ZD4"/>
+                    <constraint firstItem="65y-Cz-b5o" firstAttribute="top" secondItem="yPs-Q7-bjn" secondAttribute="top" id="88W-Wn-NFm"/>
+                    <constraint firstItem="65y-Cz-b5o" firstAttribute="leading" secondItem="yPs-Q7-bjn" secondAttribute="leading" constant="54" id="MmV-X8-2qu"/>
+                    <constraint firstItem="Wce-jk-q67" firstAttribute="centerX" secondItem="65y-Cz-b5o" secondAttribute="centerX" id="PB7-i1-C1h"/>
+                    <constraint firstAttribute="trailing" secondItem="Wce-jk-q67" secondAttribute="trailing" constant="142" id="QXJ-dC-bVf"/>
+                    <constraint firstItem="Wce-jk-q67" firstAttribute="leading" secondItem="yPs-Q7-bjn" secondAttribute="leading" constant="142" id="TfI-k9-iqR"/>
+                    <constraint firstItem="Wce-jk-q67" firstAttribute="top" secondItem="65y-Cz-b5o" secondAttribute="bottom" constant="15" id="VRA-de-GKU"/>
+                    <constraint firstAttribute="bottom" secondItem="Wce-jk-q67" secondAttribute="bottom" constant="19.670000000000002" id="fzM-7e-6tM"/>
+                    <constraint firstAttribute="bottom" secondItem="65y-Cz-b5o" secondAttribute="bottom" constant="58" id="kEl-du-5lU"/>
+                    <constraint firstItem="65y-Cz-b5o" firstAttribute="centerX" secondItem="yPs-Q7-bjn" secondAttribute="centerX" id="tKN-hl-fgZ"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="417" height="296"/>
@@ -55,6 +121,10 @@
                 <outlet property="image1" destination="Qmy-nO-YwN" id="KgI-k6-OmL"/>
                 <outlet property="image2" destination="sLb-ev-c2i" id="cEh-Nj-hTW"/>
                 <outlet property="viewImage" destination="65y-Cz-b5o" id="FaR-QS-GfL"/>
+                <outletCollection property="button" destination="jvG-nA-cbb" collectionClass="NSMutableArray" id="cey-8X-lOn"/>
+                <outletCollection property="button" destination="fN6-7I-RiW" collectionClass="NSMutableArray" id="rnr-Fx-NvQ"/>
+                <outletCollection property="button" destination="lYI-2z-sKL" collectionClass="NSMutableArray" id="NXf-t7-1J5"/>
+                <outletCollection property="button" destination="n9s-5B-bIo" collectionClass="NSMutableArray" id="OCy-ac-7FB"/>
             </connections>
             <point key="canvasLocation" x="287.78625954198475" y="45.070422535211272"/>
         </collectionViewCell>
@@ -62,5 +132,12 @@
     <resources>
         <image name="Image_1" width="800" height="1000"/>
         <image name="Image_2" width="550" height="754"/>
+        <image name="circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

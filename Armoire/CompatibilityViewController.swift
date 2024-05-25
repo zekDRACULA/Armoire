@@ -8,9 +8,11 @@
 
 import UIKit
 
-class CompatibilityViewController: UIViewController {
+class CompatibilityViewController: UIViewController , UIScrollViewDelegate{
     
 
+    @IBOutlet var scrollView: UIScrollView!
+    let viewWidth: CGFloat = 100.0
     @IBOutlet var imageView: UIImageView!
     
     var selectedImage: UIImage?
@@ -20,6 +22,9 @@ class CompatibilityViewController: UIViewController {
     @IBOutlet var view2: UIView!
     
     @IBOutlet var view4: UIView!
+    
+    @IBOutlet var button: [UIButton]!
+    
     @IBAction func saveOutfitButton(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Item Saved Successfully", message: "You can find this item in wardrobe section", preferredStyle: .alert)
         
@@ -36,9 +41,12 @@ class CompatibilityViewController: UIViewController {
 //        self.navigationController?.pushViewController(detailVC, animated: true)
         
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        tabBarController?.tabBar.isHidden = true
+        scrollView.delegate = self
         if let image = selectedImage {
             imageView.image = image
             
@@ -53,6 +61,6 @@ class CompatibilityViewController: UIViewController {
         view3.clipsToBounds = true
         view4.layer.cornerRadius = 20.0
         view4.clipsToBounds = true
-
+        
     }
 }

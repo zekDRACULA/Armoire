@@ -3,6 +3,8 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,15 +19,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWD-4h-1I3">
-                        <rect key="frame" x="54" y="0.0" width="353" height="360"/>
+                        <rect key="frame" x="54" y="0.0" width="353" height="328"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pngwing.com-11" translatesAutoresizingMaskIntoConstraints="NO" id="8Rr-gP-CXE">
-                                <rect key="frame" x="0.0" y="-4" width="353" height="366.33333333333326"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pngwing.com-11" translatesAutoresizingMaskIntoConstraints="NO" id="8Rr-gP-CXE">
+                                <rect key="frame" x="0.0" y="-4" width="345" height="348"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVl-IW-zjh">
                                 <rect key="frame" x="62" y="157" width="229" height="46"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="WPu-Y1-ZB5"/>
+                                    <constraint firstAttribute="height" constant="46" id="Ve9-Gc-AF5"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="More Suggestions">
@@ -36,21 +39,82 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="8Rr-gP-CXE" firstAttribute="leading" secondItem="QWD-4h-1I3" secondAttribute="leading" id="7aL-uZ-eAK"/>
-                            <constraint firstItem="8Rr-gP-CXE" firstAttribute="top" secondItem="QWD-4h-1I3" secondAttribute="top" constant="-4" id="Ygj-2R-AGi"/>
-                            <constraint firstItem="8Rr-gP-CXE" firstAttribute="centerY" secondItem="QWD-4h-1I3" secondAttribute="centerY" id="ePC-HK-GrM"/>
-                            <constraint firstItem="PVl-IW-zjh" firstAttribute="leading" secondItem="QWD-4h-1I3" secondAttribute="leading" constant="62" id="laz-Ld-GMz"/>
-                            <constraint firstItem="8Rr-gP-CXE" firstAttribute="centerX" secondItem="PVl-IW-zjh" secondAttribute="centerX" id="lka-Sm-axf"/>
-                            <constraint firstItem="8Rr-gP-CXE" firstAttribute="centerY" secondItem="PVl-IW-zjh" secondAttribute="centerY" id="ny0-OL-Ndv"/>
-                            <constraint firstAttribute="trailing" secondItem="8Rr-gP-CXE" secondAttribute="trailing" id="rg9-Zv-C7L"/>
+                            <constraint firstItem="PVl-IW-zjh" firstAttribute="top" secondItem="QWD-4h-1I3" secondAttribute="top" constant="157" id="0dX-mx-qjh"/>
+                            <constraint firstItem="PVl-IW-zjh" firstAttribute="centerX" secondItem="QWD-4h-1I3" secondAttribute="centerX" id="5ie-g7-oqz"/>
+                            <constraint firstItem="PVl-IW-zjh" firstAttribute="leading" secondItem="QWD-4h-1I3" secondAttribute="leading" constant="62" id="wIk-c7-kCl"/>
                         </constraints>
                     </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="g8v-7r-URQ">
+                        <rect key="frame" x="142" y="338" width="177" height="28.333333333333314"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F57-jF-JoR">
+                                <rect key="frame" x="0.0" y="0.0" width="42" height="28.333333333333332"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="circle.fill" catalog="system" renderingMode="hierarchical-single">
+                                        <hierarchicalColors>
+                                            <color red="0.64313727620000005" green="0.62352943419999995" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufe-02-Xdd">
+                                <rect key="frame" x="45" y="0.0" width="42" height="28.333333333333332"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="circle.fill" catalog="system" renderingMode="hierarchical-single">
+                                        <hierarchicalColors>
+                                            <color red="0.64313727620000005" green="0.62352943419999995" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nF-8M-awl">
+                                <rect key="frame" x="90" y="0.0" width="42" height="28.333333333333332"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="circle.fill" catalog="system" renderingMode="hierarchical-single">
+                                        <hierarchicalColors>
+                                            <color red="0.64313727620000005" green="0.62352943419999995" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3z-J0-deX">
+                                <rect key="frame" x="135" y="0.0" width="42" height="28.333333333333332"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="circle.fill" catalog="system" renderingMode="hierarchical-single">
+                                        <hierarchicalColors>
+                                            <color red="0.64313727620000005" green="0.62352943419999995" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="QWD-4h-1I3" secondAttribute="bottom" constant="26" id="8CJ-lD-Qh7"/>
-                    <constraint firstItem="QWD-4h-1I3" firstAttribute="top" secondItem="CVp-G1-O2p" secondAttribute="top" id="OLv-c9-W5J"/>
-                    <constraint firstItem="QWD-4h-1I3" firstAttribute="leading" secondItem="CVp-G1-O2p" secondAttribute="leading" constant="54" id="mw4-8v-XKp"/>
-                    <constraint firstItem="QWD-4h-1I3" firstAttribute="centerX" secondItem="CVp-G1-O2p" secondAttribute="centerX" id="yqs-G3-XcZ"/>
+                    <constraint firstItem="g8v-7r-URQ" firstAttribute="leading" secondItem="CVp-G1-O2p" secondAttribute="leading" constant="142" id="3v2-3j-Xp3"/>
+                    <constraint firstAttribute="bottom" secondItem="g8v-7r-URQ" secondAttribute="bottom" constant="19.670000000000002" id="9Kb-uf-WJX"/>
+                    <constraint firstAttribute="trailing" secondItem="g8v-7r-URQ" secondAttribute="trailing" constant="142" id="El6-Cc-MqV"/>
+                    <constraint firstItem="QWD-4h-1I3" firstAttribute="centerX" secondItem="g8v-7r-URQ" secondAttribute="centerX" id="Uaj-jR-Nyo"/>
+                    <constraint firstItem="QWD-4h-1I3" firstAttribute="top" secondItem="CVp-G1-O2p" secondAttribute="top" id="gMg-he-DWW"/>
+                    <constraint firstItem="QWD-4h-1I3" firstAttribute="leading" secondItem="CVp-G1-O2p" secondAttribute="leading" constant="54" id="lup-Ws-CaY"/>
+                    <constraint firstItem="g8v-7r-URQ" firstAttribute="top" secondItem="QWD-4h-1I3" secondAttribute="bottom" constant="10" id="vCz-fG-eRr"/>
+                    <constraint firstAttribute="bottom" secondItem="QWD-4h-1I3" secondAttribute="bottom" constant="58" id="w1e-0F-7m1"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="574" height="508"/>
@@ -58,11 +122,22 @@
                 <outlet property="image" destination="8Rr-gP-CXE" id="Vrf-bY-ade"/>
                 <outlet property="suggestionButton" destination="PVl-IW-zjh" id="Yan-jL-1AR"/>
                 <outlet property="viewImage" destination="QWD-4h-1I3" id="FTK-br-g0F"/>
+                <outletCollection property="button" destination="F57-jF-JoR" collectionClass="NSMutableArray" id="d4A-8w-zjL"/>
+                <outletCollection property="button" destination="ufe-02-Xdd" collectionClass="NSMutableArray" id="hg4-x3-kiO"/>
+                <outletCollection property="button" destination="0nF-8M-awl" collectionClass="NSMutableArray" id="5QM-K2-v00"/>
+                <outletCollection property="button" destination="X3z-J0-deX" collectionClass="NSMutableArray" id="k6o-Qh-rTI"/>
             </connections>
             <point key="canvasLocation" x="-406.87022900763355" y="-157.74647887323945"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="circle.fill" catalog="system" width="128" height="123"/>
         <image name="pngwing.com-11" width="800" height="800"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

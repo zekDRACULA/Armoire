@@ -72,6 +72,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_1" translatesAutoresizingMaskIntoConstraints="NO" id="AFz-0h-dke">
+                                <rect key="frame" x="78" y="103" width="227" height="213"/>
+                                <color key="backgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="Ckd-Hw-z3p"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggestions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neL-Lw-sDg">
                                 <rect key="frame" x="16" y="353" width="361" height="49"/>
                                 <constraints>
@@ -341,24 +348,82 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="ypW-fI-X43"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="iRO-kU-WhT"/>
                             </scrollView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_1" translatesAutoresizingMaskIntoConstraints="NO" id="AFz-0h-dke">
-                                <rect key="frame" x="78" y="103" width="227" height="213"/>
-                                <color key="backgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="213" id="Ckd-Hw-z3p"/>
-                                </constraints>
-                            </imageView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="FtF-I6-cCu">
+                                <rect key="frame" x="108" y="752" width="177" height="31.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzF-HQ-PlJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="28.333333333333332"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="circle.fill" catalog="system" renderingMode="hierarchical-single">
+                                                <hierarchicalColors>
+                                                    <color red="0.64313727620000005" green="0.62352943419999995" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color systemColor="secondaryLabelColor"/>
+                                                    <color systemColor="tertiaryLabelColor"/>
+                                                </hierarchicalColors>
+                                            </imageReference>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKg-0V-Vi5">
+                                        <rect key="frame" x="45" y="0.0" width="42" height="28.333333333333332"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="circle.fill" catalog="system" renderingMode="hierarchical-single">
+                                                <hierarchicalColors>
+                                                    <color red="0.64313727620000005" green="0.62352943419999995" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color systemColor="secondaryLabelColor"/>
+                                                    <color systemColor="tertiaryLabelColor"/>
+                                                </hierarchicalColors>
+                                            </imageReference>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIZ-H8-VYP">
+                                        <rect key="frame" x="90" y="0.0" width="42" height="28.333333333333332"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="circle.fill" catalog="system" renderingMode="hierarchical-single">
+                                                <hierarchicalColors>
+                                                    <color red="0.64313727620000005" green="0.62352943419999995" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color systemColor="secondaryLabelColor"/>
+                                                    <color systemColor="tertiaryLabelColor"/>
+                                                </hierarchicalColors>
+                                            </imageReference>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHK-8I-uZK">
+                                        <rect key="frame" x="135" y="0.0" width="42" height="28.333333333333332"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="circle.fill" catalog="system" renderingMode="hierarchical-single">
+                                                <hierarchicalColors>
+                                                    <color red="0.64313727620000005" green="0.62352943419999995" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color systemColor="secondaryLabelColor"/>
+                                                    <color systemColor="tertiaryLabelColor"/>
+                                                </hierarchicalColors>
+                                            </imageReference>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hkE-bo-4Bk"/>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.89019607840000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="hkE-bo-4Bk" firstAttribute="trailing" secondItem="AFz-0h-dke" secondAttribute="trailing" constant="88" id="9uK-Ge-5Sm"/>
                             <constraint firstItem="8vK-GI-BeM" firstAttribute="leading" secondItem="hkE-bo-4Bk" secondAttribute="leading" id="EDP-cP-6c3"/>
+                            <constraint firstItem="FtF-I6-cCu" firstAttribute="top" secondItem="8vK-GI-BeM" secondAttribute="bottom" constant="5" id="F8n-CZ-WKK"/>
                             <constraint firstItem="AFz-0h-dke" firstAttribute="leading" secondItem="hkE-bo-4Bk" secondAttribute="leading" constant="78" id="GIz-0g-vFK"/>
+                            <constraint firstItem="hkE-bo-4Bk" firstAttribute="bottom" secondItem="FtF-I6-cCu" secondAttribute="bottom" constant="34.670000000000002" id="Ncf-fg-TUI"/>
                             <constraint firstItem="AFz-0h-dke" firstAttribute="top" secondItem="hkE-bo-4Bk" secondAttribute="top" id="Nzr-aP-SQ4"/>
                             <constraint firstItem="neL-Lw-sDg" firstAttribute="centerX" secondItem="8vK-GI-BeM" secondAttribute="centerX" id="TpB-OA-Bda"/>
                             <constraint firstItem="neL-Lw-sDg" firstAttribute="trailing" secondItem="iG2-dO-DwL" secondAttribute="trailingMargin" id="Upo-kX-vnX"/>
+                            <constraint firstItem="hkE-bo-4Bk" firstAttribute="trailing" secondItem="FtF-I6-cCu" secondAttribute="trailing" constant="108" id="WQO-6g-0iE"/>
                             <constraint firstItem="8vK-GI-BeM" firstAttribute="top" secondItem="neL-Lw-sDg" secondAttribute="bottom" constant="8" id="bpa-vF-qrm"/>
+                            <constraint firstItem="FtF-I6-cCu" firstAttribute="leading" secondItem="hkE-bo-4Bk" secondAttribute="leading" constant="108" id="eTy-cn-xim"/>
                             <constraint firstItem="neL-Lw-sDg" firstAttribute="top" secondItem="AFz-0h-dke" secondAttribute="bottom" constant="37" id="hHP-RD-gNM"/>
                             <constraint firstItem="hkE-bo-4Bk" firstAttribute="bottom" secondItem="8vK-GI-BeM" secondAttribute="bottom" constant="71" id="wCR-T2-XYb"/>
                             <constraint firstItem="neL-Lw-sDg" firstAttribute="leading" secondItem="iG2-dO-DwL" secondAttribute="leadingMargin" id="y95-qb-an0"/>
@@ -374,10 +439,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="AFz-0h-dke" id="SzV-Rh-m9p"/>
+                        <outlet property="scrollView" destination="8vK-GI-BeM" id="R5W-gG-svP"/>
                         <outlet property="view1" destination="Gfr-jZ-avo" id="yp2-xB-nNd"/>
                         <outlet property="view2" destination="Pvi-ld-vru" id="lsH-1W-wkI"/>
                         <outlet property="view3" destination="bZp-qR-HLL" id="PgY-pO-xEf"/>
                         <outlet property="view4" destination="9d9-Dd-M4U" id="wTH-tP-g1Q"/>
+                        <outletCollection property="button" destination="EzF-HQ-PlJ" collectionClass="NSMutableArray" id="CHZ-Yj-Hz7"/>
+                        <outletCollection property="button" destination="xKg-0V-Vi5" collectionClass="NSMutableArray" id="1Xu-4C-ve1"/>
+                        <outletCollection property="button" destination="FIZ-H8-VYP" collectionClass="NSMutableArray" id="wVp-a3-HFr"/>
+                        <outletCollection property="button" destination="xHK-8I-uZK" collectionClass="NSMutableArray" id="9TI-g6-cqQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6QM-L7-D1K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -406,6 +476,7 @@
     <resources>
         <image name="Image_1" width="800" height="1000"/>
         <image name="Image_2" width="550" height="754"/>
+        <image name="circle.fill" catalog="system" width="128" height="123"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
