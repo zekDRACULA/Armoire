@@ -38,7 +38,7 @@ class CompatibilityViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBarController?.tabBar.isHidden = true
+//        tabBarController?.tabBar.isHidden = true
         if let image = selectedImage {
             imageView.image = image
             
@@ -46,12 +46,13 @@ class CompatibilityViewController: UIViewController {
         imageView.layer.cornerRadius = 20.0
         imageView.layer.masksToBounds = false
         view1.layer.cornerRadius = 20.0
-        view1.layer.masksToBounds = false
+        view1.clipsToBounds = true
         view2.layer.cornerRadius = 20.0
-        view2.layer.masksToBounds = false
+        view2.clipsToBounds = true
         view3.layer.cornerRadius = 20.0
-        view3.layer.masksToBounds = false
+        view3.clipsToBounds = true
         view4.layer.cornerRadius = 20.0
-        view4.layer.masksToBounds = false
+        view4.clipsToBounds = true
+
     }
 }
