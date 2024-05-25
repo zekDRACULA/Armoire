@@ -10,6 +10,7 @@ import UIKit
 class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate {
     
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return BagPackerDataModel.clothData.count
         }
@@ -25,13 +26,33 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
         return 1
     }
     
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var selectedData = BagPackerDataModel.clothData[indexPath.row].imageName
-        print(selectedData)
+            if !selectedCellIndexPath.contains(indexPath){
+                selectedCellIndexPath.append(indexPath)
+            }
+            if let cell = collectionView.cellForItem(at: indexPath) as? ClothesCellCollectionViewCell{
+                cell.imageView.backgroundColor = UIColor(named: "selected")
+            }
+        print(selectedCellIndexPath.count)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let index = selectedCellIndexPath.firstIndex(of: indexPath){
+            selectedCellIndexPath.remove(at: index)
+        }
+        if let cell = collectionView.cellForItem(at: indexPath) as? ClothesCellCollectionViewCell{
+            cell.imageView.backgroundColor = UIColor(named: "foreground")
+        }
+        print(selectedCellIndexPath.count)
+    }
+    
+    
     
     @IBOutlet var bagPackerCollectionView: UICollectionView!
     @IBOutlet var BagPackerNavigationBar: UINavigationBar!
+    
+    var selectedCellIndexPath = [IndexPath]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +61,8 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
         bagPackerCollectionView.setCollectionViewLayout(generateLayout(), animated: true)
         bagPackerCollectionView.dataSource = self
         bagPackerCollectionView.delegate = self
+        bagPackerCollectionView.allowsMultipleSelection = true
+        print(selectedCellIndexPath.count)
     }
     
     
