@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,10 +10,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="884-gc-F67" customClass="imageCollectionViewCell" customModule="Armoire" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="461" height="421"/>
+            <rect key="frame" x="0.0" y="0.0" width="461" height="386"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yPs-Q7-bjn">
-                <rect key="frame" x="0.0" y="0.0" width="461" height="421"/>
+                <rect key="frame" x="0.0" y="0.0" width="461" height="386"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="65y-Cz-b5o">
@@ -40,80 +40,27 @@
                             <constraint firstAttribute="bottom" secondItem="sLb-ev-c2i" secondAttribute="bottom" id="Zhf-Iw-ln7"/>
                             <constraint firstItem="Qmy-nO-YwN" firstAttribute="top" secondItem="65y-Cz-b5o" secondAttribute="top" id="h4S-I7-0TO"/>
                             <constraint firstItem="Qmy-nO-YwN" firstAttribute="trailing" secondItem="sLb-ev-c2i" secondAttribute="trailing" id="nWJ-rK-u6g"/>
+                            <constraint firstItem="sLb-ev-c2i" firstAttribute="top" secondItem="Qmy-nO-YwN" secondAttribute="bottom" constant="6.3333333333333712" id="vUx-a7-6ba"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpx-aV-6f8">
-                        <rect key="frame" x="139" y="372.66666666666669" width="42" height="28.333333333333314"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system">
-                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
-                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </buttonConfiguration>
-                        <connections>
-                            <action selector="b1:" destination="884-gc-F67" eventType="touchUpInside" id="n3w-Tx-M5o"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJg-c5-hh6">
-                        <rect key="frame" x="186" y="372.33333333333331" width="42" height="29.333333333333314"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system">
-                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
-                            <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </buttonConfiguration>
-                        <connections>
-                            <action selector="b2:" destination="884-gc-F67" eventType="touchUpInside" id="cbA-dZ-l0l"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvz-3r-Lch">
-                        <rect key="frame" x="233" y="372.33333333333331" width="42" height="29.333333333333314"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system">
-                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
-                            <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </buttonConfiguration>
-                        <connections>
-                            <action selector="b3:" destination="884-gc-F67" eventType="touchUpInside" id="8vV-oS-y2C"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfl-Hl-W3M">
-                        <rect key="frame" x="280" y="372.66666666666669" width="42" height="28.333333333333314"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system">
-                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
-                            <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </buttonConfiguration>
-                        <connections>
-                            <action selector="b4:" destination="884-gc-F67" eventType="touchUpInside" id="Tpo-WY-fO4"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="xpx-aV-6f8" firstAttribute="baseline" secondItem="sfl-Hl-W3M" secondAttribute="baseline" id="6Gf-U0-GOc"/>
                     <constraint firstItem="65y-Cz-b5o" firstAttribute="leading" secondItem="yPs-Q7-bjn" secondAttribute="leading" constant="54" id="B7W-ev-pPx"/>
-                    <constraint firstItem="xpx-aV-6f8" firstAttribute="leading" secondItem="yPs-Q7-bjn" secondAttribute="leading" constant="139" id="CuY-w6-Fic"/>
-                    <constraint firstAttribute="bottom" secondItem="xpx-aV-6f8" secondAttribute="bottom" constant="20.000000000000057" id="DzP-3a-M65"/>
-                    <constraint firstItem="xpx-aV-6f8" firstAttribute="centerY" secondItem="FJg-c5-hh6" secondAttribute="centerY" id="IVR-QF-Bgw"/>
-                    <constraint firstItem="sfl-Hl-W3M" firstAttribute="leading" secondItem="rvz-3r-Lch" secondAttribute="trailing" constant="5" id="JKB-IE-bqJ"/>
-                    <constraint firstItem="FJg-c5-hh6" firstAttribute="baseline" secondItem="rvz-3r-Lch" secondAttribute="baseline" id="QMx-BN-psq"/>
-                    <constraint firstItem="FJg-c5-hh6" firstAttribute="leading" secondItem="xpx-aV-6f8" secondAttribute="trailing" constant="5" id="VsW-vT-mwi"/>
                     <constraint firstItem="65y-Cz-b5o" firstAttribute="top" secondItem="yPs-Q7-bjn" secondAttribute="top" id="jqe-lN-IUu"/>
                     <constraint firstItem="65y-Cz-b5o" firstAttribute="centerX" secondItem="yPs-Q7-bjn" secondAttribute="centerX" id="of8-5S-ZD4"/>
-                    <constraint firstItem="xpx-aV-6f8" firstAttribute="top" secondItem="65y-Cz-b5o" secondAttribute="bottom" constant="6.3333333333332575" id="rn6-yM-blP"/>
-                    <constraint firstItem="rvz-3r-Lch" firstAttribute="leading" secondItem="FJg-c5-hh6" secondAttribute="trailing" constant="5" id="z0w-ip-b2E"/>
                 </constraints>
             </collectionViewCellContentView>
-            <size key="customSize" width="417" height="331"/>
+            <size key="customSize" width="417" height="296"/>
             <connections>
                 <outlet property="image1" destination="Qmy-nO-YwN" id="KgI-k6-OmL"/>
                 <outlet property="image2" destination="sLb-ev-c2i" id="cEh-Nj-hTW"/>
                 <outlet property="viewImage" destination="65y-Cz-b5o" id="FaR-QS-GfL"/>
             </connections>
-            <point key="canvasLocation" x="287.78625954198475" y="57.394366197183103"/>
+            <point key="canvasLocation" x="287.78625954198475" y="45.070422535211272"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="Image_1" width="800" height="1000"/>
         <image name="Image_2" width="550" height="754"/>
-        <image name="circle.fill" catalog="system" width="128" height="123"/>
     </resources>
 </document>

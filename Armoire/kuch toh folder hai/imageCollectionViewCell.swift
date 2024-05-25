@@ -15,19 +15,7 @@ class imageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var viewImage: UIView!
     
-    
-    @IBAction func b1(_ sender: UIButton) {
-    }
-    
-    @IBAction func b2(_ sender: UIButton) {
-    }
-    
-    @IBAction func b3(_ sender: UIButton) {
-    }
-    
-    
-    @IBAction func b4(_ sender: UIButton) {
-    }
+
     
     func configure(picture1 : UIImage,picture2: UIImage ){
         image1.image = picture1
