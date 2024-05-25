@@ -11,8 +11,6 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
     
     @IBOutlet var collectionView: UICollectionView!
     
-    var wardrobeItem: [String] = ["Image_1", "Image_2", "Image_3", "Image_4", "Image_5"]
-    
     var imageToUse: UIImage = UIImage(named: "Image_1")!
     
     required init?(coder: NSCoder) {
@@ -28,9 +26,9 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return WardrobeData.wardrobeTag.count
+            return MainDataModel.tags.count
         case 1:
-            return WardrobeData.wardrobeItem.count
+            return MainDataModel.Wardrobe.count
         default:
             return 0
         }
@@ -40,16 +38,16 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeTag", for: indexPath) as! WardrobeTagCollectionViewCell
-            let buttonTitle = WardrobeData.wardrobeTag[indexPath.row].title
+            let buttonTitle = MainDataModel.tags[indexPath.row]
             cell.tagButton.setTitle("\(buttonTitle)", for: .normal)
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeApparel", for: indexPath) as! WardrobeApparelCollectionViewCell
-            cell.apparelImage.image = UIImage(named: WardrobeData.wardrobeItem[indexPath.row])
+            cell.apparelImage.image = MainDataModel.Wardrobe[indexPath.row].image
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeTag", for: indexPath) as! WardrobeTagCollectionViewCell
-            let buttonTitle = WardrobeData.wardrobeTag[indexPath.row].title
+            let buttonTitle = MainDataModel.tags[indexPath.row]
             cell.tagButton.setTitle("\(buttonTitle)", for: .normal)
             return cell
         }
@@ -83,8 +81,10 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets.trailing = 8
+                
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .absolute(40))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets.top = 16
                 section.contentInsets.leading = 16
@@ -95,9 +95,11 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets.trailing = 20
+                
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(300))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
                 group.contentInsets.bottom = 20
+                
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets.top = 20
                 section.contentInsets.leading = 16
@@ -107,8 +109,10 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets.trailing = 8
+                
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .absolute(40))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets.leading = 16
                 section.orthogonalScrollingBehavior = .continuous

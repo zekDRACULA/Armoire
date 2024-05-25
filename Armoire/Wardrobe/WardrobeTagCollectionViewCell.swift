@@ -9,15 +9,18 @@ import UIKit
 
 class WardrobeTagCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet var tagButton: UIButton!
     var isActive: Bool = false
+    
+    @IBOutlet var tagButton: UIButton!
+    
     @IBAction func tagButtonPressed(_ sender: UIButton) {
-        sender.isSelected.toggle()
+        isActive.toggle()
         
-        if sender.isSelected{
-            sender.tintColor = .red
+        if isActive{
+            tagButton.tintColor = UIColor(cgColor: CGColor(red: 1.0, green: 0.96, blue: 0.92, alpha: 1))
+        }
+        else{
+            tagButton.tintColor = UIColor(cgColor: CGColor(red: 0.71, green: 0.64, blue: 0.57, alpha: 1))
         }
     }
-    
-    
 }
