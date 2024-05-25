@@ -48,6 +48,15 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
     }
     
     
+    var floatingView: UIView = {
+           let view = UIView()
+           view.backgroundColor = UIColor(named: "floatingViewColor")
+           view.layer.cornerRadius = 14.0
+           return view
+       }()
+    
+    
+    
     
     @IBOutlet var bagPackerCollectionView: UICollectionView!
     @IBOutlet var BagPackerNavigationBar: UINavigationBar!
@@ -63,6 +72,16 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
         bagPackerCollectionView.delegate = self
         bagPackerCollectionView.allowsMultipleSelection = true
         print(selectedCellIndexPath.count)
+        view.addSubview(floatingView)
+        floatingView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            floatingView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32),
+            floatingView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            floatingView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            floatingView.widthAnchor.constraint(equalToConstant: 350),
+            floatingView.heightAnchor.constraint(equalToConstant:  57)
+        ])
     }
     
     
@@ -79,7 +98,6 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
             let section = NSCollectionLayoutSection(group: group)
             section.contentInsets = .init(top: 16, leading: 16, bottom: 0, trailing: 0)
-            
             return section
         }
         return layout
