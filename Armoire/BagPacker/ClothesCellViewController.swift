@@ -26,7 +26,9 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
         return 1
     }
     
-
+//select and deseletItemRow at refresh the UIView so changes can be shows by updating 
+//    them inside selected and deselet method if they are connected to those func
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             if !selectedCellIndexPath.contains(indexPath){
                 selectedCellIndexPath.append(indexPath)
@@ -35,6 +37,7 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
                 cell.imageView.backgroundColor = UIColor(named: "selected")
             }
         print(selectedCellIndexPath.count)
+        updateFloatingViewLabel()
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -45,18 +48,12 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
             cell.imageView.backgroundColor = UIColor(named: "foreground")
         }
         print(selectedCellIndexPath.count)
+        updateFloatingViewLabel()
     }
     
     
-    var floatingView: UIView = {
-           let view = UIView()
-           view.backgroundColor = UIColor(named: "floatingViewColor")
-           view.layer.cornerRadius = 14.0
-           return view
-       }()
     
-    
-    
+    var countLabel : UILabel!
     
     @IBOutlet var bagPackerCollectionView: UICollectionView!
     @IBOutlet var BagPackerNavigationBar: UINavigationBar!
@@ -76,13 +73,69 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
         floatingView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            floatingView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32),
-            floatingView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            floatingView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            floatingView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -64),
+            floatingView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            floatingView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             floatingView.widthAnchor.constraint(equalToConstant: 350),
             floatingView.heightAnchor.constraint(equalToConstant:  57)
         ])
+        configureFloatingViewForItemCountLabel()
+        configureFloatingViewForIcon()
     }
+    
+    
+    
+    // floating view
+    var floatingView: UIView = {
+           let view = UIView()
+           view.backgroundColor = UIColor(named: "floatingViewColor")
+           view.layer.cornerRadius = 14.0
+           return view
+       }()
+    
+  
+    // this configures the item count in the floating View
+    func configureFloatingViewForItemCountLabel(){
+        
+        countLabel = UILabel()
+        countLabel.translatesAutoresizingMaskIntoConstraints = false
+        countLabel.text = String(selectedCellIndexPath.count) + " Items in the Bag"
+        countLabel.textColor = .black
+        countLabel.font = UIFont.systemFont(ofSize: 20)
+        
+        floatingView.addSubview(countLabel)
+        
+        NSLayoutConstraint.activate([
+            countLabel.leadingAnchor.constraint(equalTo: floatingView.leadingAnchor, constant: 16),
+            countLabel.centerYAnchor.constraint(equalTo: floatingView.centerYAnchor),
+            countLabel.heightAnchor.constraint(equalToConstant: 30),
+            countLabel.widthAnchor.constraint(equalToConstant: 200)
+        ])
+    }
+    
+    // this configures the bag icon in the floating View
+    func configureFloatingViewForIcon(){
+        let bagIcon = UIImageView()
+        bagIcon.image = UIImage(systemName: "gym.bag")
+        bagIcon.tintColor =  .black   /*UIColor(named: "assentColor")*/
+        bagIcon.contentMode = .scaleAspectFill
+        bagIcon.translatesAutoresizingMaskIntoConstraints = false
+        
+        floatingView.addSubview(bagIcon)
+        
+        NSLayoutConstraint.activate([
+            bagIcon.trailingAnchor.constraint(equalTo: floatingView.trailingAnchor, constant: -24),
+            bagIcon.centerYAnchor.constraint(equalTo: floatingView.centerYAnchor),
+            bagIcon.widthAnchor.constraint(equalToConstant: 30),
+            bagIcon.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    
+    
+    //this updates the item count each time a cell is selected or deselected
+    //and this is callled in select and deselect functions
+    func updateFloatingViewLabel(){
+        countLabel.text = String(selectedCellIndexPath.count) + " Items in the Bag"    }
     
     
     
