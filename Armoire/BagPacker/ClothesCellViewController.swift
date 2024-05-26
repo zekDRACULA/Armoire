@@ -73,7 +73,7 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
         floatingView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            floatingView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -64),
+            floatingView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32),
             floatingView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             floatingView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             floatingView.widthAnchor.constraint(equalToConstant: 350),
