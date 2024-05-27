@@ -140,7 +140,8 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
     //this updates the item count each time a cell is selected or deselected
     //and this is callled in select and deselect functions
     func updateFloatingViewLabel(){
-        countLabel.text = String(selectedItems.count) + " Items in the Bag"    }
+        countLabel.text = String(selectedItems.count) + " Items in the Bag"
+    }
     
     
     

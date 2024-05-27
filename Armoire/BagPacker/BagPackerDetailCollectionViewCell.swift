@@ -13,9 +13,9 @@ class BagPackerDetailCollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var clothType: UILabel!
-    @IBOutlet var clothColor: UILabel!
 
+    
+    
     override class func awakeFromNib() {
         super.awakeFromNib()
     }

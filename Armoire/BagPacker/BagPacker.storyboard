@@ -134,6 +134,9 @@
                             <constraint firstItem="XYA-xg-69P" firstAttribute="leading" secondItem="Hwk-lM-Frb" secondAttribute="leading" id="zrq-8A-mIW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="BagPackerDetailCollectionView" destination="XYA-xg-69P" id="f9L-Cl-CFv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfL-eX-Gv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

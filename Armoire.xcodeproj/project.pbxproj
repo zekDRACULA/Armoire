@@ -41,6 +41,9 @@
 		B1BFFAEC2C023ACA00B2EC9B /* ClothesCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFFAE62C023ACA00B2EC9B /* ClothesCellCollectionViewCell.swift */; };
 		B1BFFAED2C023ACA00B2EC9B /* ClothesCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFFAE72C023ACA00B2EC9B /* ClothesCellViewController.swift */; };
 		B1BFFAEE2C023ACA00B2EC9B /* BagPackerDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFFAE82C023ACA00B2EC9B /* BagPackerDataModel.swift */; };
+		B1D8004C2C0376D70081F999 /* BagPackerDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1D8004B2C0376D70081F999 /* BagPackerDetailCollectionViewCell.xib */; };
+		B1D8004E2C0379DD0081F999 /* BagPackerDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D8004D2C0379DD0081F999 /* BagPackerDetailCollectionViewCell.swift */; };
+		B1D800502C03AFF00081F999 /* BagPackerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D8004F2C03AFF00081F999 /* BagPackerDetailViewController.swift */; };
 		BC11BC702BFB6AE50093DDBE /* footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC11BC6F2BFB6AE50093DDBE /* footer.xib */; };
 		BC11BC722BFB6AF00093DDBE /* header.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC11BC712BFB6AF00093DDBE /* header.xib */; };
 		BC11BC742BFB6AFA0093DDBE /* image.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC11BC732BFB6AFA0093DDBE /* image.xib */; };
@@ -88,6 +91,9 @@
 		B1BFFAE62C023ACA00B2EC9B /* ClothesCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1BFFAE72C023ACA00B2EC9B /* ClothesCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesCellViewController.swift; sourceTree = "<group>"; };
 		B1BFFAE82C023ACA00B2EC9B /* BagPackerDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagPackerDataModel.swift; sourceTree = "<group>"; };
+		B1D8004B2C0376D70081F999 /* BagPackerDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BagPackerDetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		B1D8004D2C0379DD0081F999 /* BagPackerDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagPackerDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1D8004F2C03AFF00081F999 /* BagPackerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagPackerDetailViewController.swift; sourceTree = "<group>"; };
 		BC11BC6F2BFB6AE50093DDBE /* footer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = footer.xib; sourceTree = "<group>"; };
 		BC11BC712BFB6AF00093DDBE /* header.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = header.xib; sourceTree = "<group>"; };
 		BC11BC732BFB6AFA0093DDBE /* image.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = image.xib; sourceTree = "<group>"; };
@@ -210,7 +216,10 @@
 				B1BFFAE42C023ACA00B2EC9B /* BagPacker.storyboard */,
 				B1BFFAE52C023ACA00B2EC9B /* clothesCell.xib */,
 				B1BFFAE62C023ACA00B2EC9B /* ClothesCellCollectionViewCell.swift */,
+				B1D8004F2C03AFF00081F999 /* BagPackerDetailViewController.swift */,
 				B1BFFAE72C023ACA00B2EC9B /* ClothesCellViewController.swift */,
+				B1D8004B2C0376D70081F999 /* BagPackerDetailCollectionViewCell.xib */,
+				B1D8004D2C0379DD0081F999 /* BagPackerDetailCollectionViewCell.swift */,
 				B1BFFAE82C023ACA00B2EC9B /* BagPackerDataModel.swift */,
 			);
 			path = BagPacker;
@@ -290,6 +299,7 @@
 				BC11BC702BFB6AE50093DDBE /* footer.xib in Resources */,
 				BC11BC722BFB6AF00093DDBE /* header.xib in Resources */,
 				674274562BF6168D001304A8 /* Calendar.storyboard in Resources */,
+				B1D8004C2C0376D70081F999 /* BagPackerDetailCollectionViewCell.xib in Resources */,
 				674274582BF6169D001304A8 /* Wardrobe.storyboard in Resources */,
 				67A3E4E52C00596500CC5880 /* WardrobeApparel.xib in Resources */,
 				674274542BF61665001304A8 /* Home.storyboard in Resources */,
@@ -321,6 +331,7 @@
 				B12D51772BF68197002324F4 /* CardCell.swift in Sources */,
 				6742745E2BF617F5001304A8 /* WardrobeViewController.swift in Sources */,
 				B1BFFAED2C023ACA00B2EC9B /* ClothesCellViewController.swift in Sources */,
+				B1D800502C03AFF00081F999 /* BagPackerDetailViewController.swift in Sources */,
 				BC11BC7A2BFB6B2C0093DDBE /* headerCollectionViewCell.swift in Sources */,
 				BC11BC782BFB6B220093DDBE /* footerCollectionViewCell.swift in Sources */,
 				679E649E2BFF92E800CB211F /* WardrobeData.swift in Sources */,
@@ -332,6 +343,7 @@
 				0A546A222BED34C6004EBA3D /* SceneDelegate.swift in Sources */,
 				67A3E4E72C0059F200CC5880 /* WardrobeApparelCollectionViewCell.swift in Sources */,
 				6742745A2BF617B6001304A8 /* HomeViewController.swift in Sources */,
+				B1D8004E2C0379DD0081F999 /* BagPackerDetailCollectionViewCell.swift in Sources */,
 				BCCEF7EF2BFD244A00DDC726 /* CompatibilityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
