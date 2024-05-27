@@ -25,6 +25,7 @@
 		6742745A2BF617B6001304A8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674274592BF617B6001304A8 /* HomeViewController.swift */; };
 		6742745C2BF617E3001304A8 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742745B2BF617E3001304A8 /* CalendarViewController.swift */; };
 		6742745E2BF617F5001304A8 /* WardrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742745D2BF617F5001304A8 /* WardrobeViewController.swift */; };
+		677FAA172C03D0A900E2C783 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677FAA162C03D0A900E2C783 /* FavouritesViewController.swift */; };
 		679E649A2BFF925500CB211F /* WardrobeTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679E64992BFF925500CB211F /* WardrobeTagCollectionViewCell.swift */; };
 		67A285EA2C022F900086997B /* MainDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A285E92C022F900086997B /* MainDataModel.swift */; };
 		67A3E4E52C00596500CC5880 /* WardrobeApparel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67A3E4E42C00596500CC5880 /* WardrobeApparel.xib */; };
@@ -63,6 +64,7 @@
 		674274592BF617B6001304A8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6742745B2BF617E3001304A8 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		6742745D2BF617F5001304A8 /* WardrobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
+		677FAA162C03D0A900E2C783 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		679E64992BFF925500CB211F /* WardrobeTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		67A285E92C022F900086997B /* MainDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataModel.swift; sourceTree = "<group>"; };
 		67A3E4E42C00596500CC5880 /* WardrobeApparel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WardrobeApparel.xib; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				679E64992BFF925500CB211F /* WardrobeTagCollectionViewCell.swift */,
 				67A3E4E42C00596500CC5880 /* WardrobeApparel.xib */,
 				67A3E4E62C0059F200CC5880 /* WardrobeApparelCollectionViewCell.swift */,
+				677FAA162C03D0A900E2C783 /* FavouritesViewController.swift */,
 			);
 			path = Wardrobe;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				BC11BC782BFB6B220093DDBE /* footerCollectionViewCell.swift in Sources */,
 				BC11BC7E2BFB70530093DDBE /* HomeModel.swift in Sources */,
 				679E649A2BFF925500CB211F /* WardrobeTagCollectionViewCell.swift in Sources */,
+				677FAA172C03D0A900E2C783 /* FavouritesViewController.swift in Sources */,
 				0A546A202BED34C6004EBA3D /* AppDelegate.swift in Sources */,
 				48B68BAA2BF6AB7A00D9F0E7 /* SuggestionsViewController.swift in Sources */,
 				0A546A222BED34C6004EBA3D /* SceneDelegate.swift in Sources */,

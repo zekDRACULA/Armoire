@@ -10,7 +10,7 @@ import UIKit
 class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var collectionView: UICollectionView!
-    
+
     var imageToUse: UIImage = UIImage(named: "Image_1")!
     
     required init?(coder: NSCoder) {
@@ -69,8 +69,6 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
         // setting collection view
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
         collectionView.dataSource = self
-
-        // Do any additional setup after loading the view.
     }
     
     // to generate layout for collection view
@@ -122,6 +120,11 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
         return layout
     }
     
+    @IBAction func changedSegment(_ sender: UISegmentedControl) {
+        
+    }
+    
+    
     
     // for alert controller on pressing add button
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
@@ -159,10 +162,6 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
         performSegue(withIdentifier: "toDetails", sender: nil)
     }
     
-    // for 3 dot button
-    @IBAction func DotButtonTapped(_ sender: UIBarButtonItem) {
-    }
-    
     // to use image in details screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetails"{
@@ -170,5 +169,9 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
 //            something.imageToUse = imageToUse
             
         }
+    }
+    
+    // for 3 dot button
+    @IBAction func DotButtonTapped(_ sender: UIBarButtonItem) {
     }
 }

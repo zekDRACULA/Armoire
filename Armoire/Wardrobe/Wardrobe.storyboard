@@ -46,6 +46,9 @@
                                     <segment title="Bottoms"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" red="1" green="0.96862745100000003" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="changedSegment:" destination="9mE-SX-vm8" eventType="valueChanged" id="ekl-Ti-bfH"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0eP-mk-QUE"/>
@@ -63,23 +66,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Wardrobe" largeTitleDisplayMode="always" id="iBZ-29-CMZ">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="wand.and.stars" catalog="system" id="Fyr-ET-ksS">
+                            <barButtonItem systemItem="add" id="AVH-Mb-rUT">
                                 <color key="tintColor" red="0.57254901960000004" green="0.10980392160000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
-                                    <action selector="DotButtonTapped:" destination="9mE-SX-vm8" id="V2f-yE-hh3"/>
-                                    <segue destination="8Sr-dJ-ydj" kind="show" id="zcZ-lL-5KU"/>
+                                    <action selector="addButtonTapped:" destination="9mE-SX-vm8" id="aOd-1u-dZZ"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="heart" catalog="system" changesSelectionAsPrimaryAction="YES" id="5xT-jb-ZwG" userLabel="Favorites">
                                 <color key="tintColor" red="0.57254901960000004" green="0.10980392160000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="WWR-B8-szP" kind="show" id="KHp-2j-Sb1"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="add" id="AVH-Mb-rUT">
-                                <color key="tintColor" red="0.57254901960000004" green="0.10980392160000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="addButtonTapped:" destination="9mE-SX-vm8" id="aOd-1u-dZZ"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -100,6 +96,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dik-f6-9nX">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.96862745100000003" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -113,7 +110,7 @@
         <!--Favourites-->
         <scene sceneID="gHm-Hs-h3o">
             <objects>
-                <viewController id="WWR-B8-szP" sceneMemberID="viewController">
+                <viewController id="WWR-B8-szP" customClass="FavouritesViewController" customModule="Armoire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7un-Gf-eqd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,6 +154,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favourites" largeTitleDisplayMode="never" id="hdn-SB-F59"/>
+                    <connections>
+                        <outlet property="collectionView" destination="uAe-E5-X08" id="dCE-2u-9YB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hts-fw-fnp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,7 +171,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UA8-rp-5DC">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.89019607840000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BpQ-2K-wWO">
                                     <size key="itemSize" width="128" height="128"/>
@@ -210,6 +210,5 @@
     </scenes>
     <resources>
         <image name="heart" catalog="system" width="128" height="107"/>
-        <image name="wand.and.stars" catalog="system" width="128" height="115"/>
     </resources>
 </document>
