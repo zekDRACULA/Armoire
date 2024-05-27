@@ -35,8 +35,9 @@ class BagPackerDetailViewController: UIViewController, UICollectionViewDelegate,
         BagPackerDetailCollectionView.setCollectionViewLayout(generateLayout(), animated: true)
         BagPackerDetailCollectionView.delegate = self
         BagPackerDetailCollectionView.dataSource = self
-        print(selectedItems.count)
-
+        print("BagPackerDetailViewController: \(selectedItems.count)")
+        print(selectedItems[0])
+        print(selectedItems[0])
     }
     
     func generateLayout() -> UICollectionViewLayout{
