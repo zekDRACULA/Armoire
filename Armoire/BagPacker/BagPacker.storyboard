@@ -52,7 +52,8 @@
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="9LL-y8-tmo"/>
                                         <barButtonItem key="rightBarButtonItem" title="Next" id="SNh-lD-6dS">
                                             <connections>
-                                                <segue destination="hOf-b1-cIF" kind="presentation" id="pE4-Li-RmU"/>
+                                                <action selector="nextButtonPressed:" destination="Y6W-OH-hqX" id="ZhF-3D-AgX"/>
+                                                <segue destination="hOf-b1-cIF" kind="presentation" identifier="BagPackerDetail" id="DZv-cm-AFi"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -79,12 +80,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054.1984732824426" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="975" y="-11"/>
         </scene>
-        <!--View Controller-->
+        <!--Bag Packer Detail View Controller-->
         <scene sceneID="2WO-89-iBT">
             <objects>
-                <viewController id="hOf-b1-cIF" sceneMemberID="viewController">
+                <viewController id="hOf-b1-cIF" customClass="BagPackerDetailViewController" customModule="Armoire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D7S-eC-5Ki">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfL-eX-Gv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869" y="-2"/>
+            <point key="canvasLocation" x="1868" y="-11"/>
         </scene>
     </scenes>
     <resources>

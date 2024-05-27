@@ -11,9 +11,12 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
     
     
     
+    //stores indexPath of selected cells
+    var selectedItems = [ClothesData]()
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return BagPackerDataModel.clothData.count
-        }
+        return BagPackerDataModel.clothData.count
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -26,28 +29,30 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
         return 1
     }
     
-//select and deseletItemRow at refresh the UIView so changes can be shows by updating 
-//    them inside selected and deselet method if they are connected to those func
+    //select and deseletItemRow at refresh the UIView so changes can be shows by updating
+    //    them inside selected and deselet method if they are connected to those func
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            if !selectedCellIndexPath.contains(indexPath){
-                selectedCellIndexPath.append(indexPath)
+        let selectedItem = BagPackerDataModel.clothData[indexPath.row]
+        if !selectedItems.contains(where: { $0.imageName == selectedItem.imageName }) {
+                selectedItems.append(selectedItem)
             }
-            if let cell = collectionView.cellForItem(at: indexPath) as? ClothesCellCollectionViewCell{
-                cell.imageView.backgroundColor = UIColor(named: "selected")
-            }
-        print(selectedCellIndexPath.count)
+        if let cell = collectionView.cellForItem(at: indexPath) as? ClothesCellCollectionViewCell{
+            cell.imageView.backgroundColor = UIColor(named: "selected")
+        }
+        print(selectedItems.count)
         updateFloatingViewLabel()
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        if let index = selectedCellIndexPath.firstIndex(of: indexPath){
-            selectedCellIndexPath.remove(at: index)
+        let deselectedItem = BagPackerDataModel.clothData[indexPath.row]
+        if let index = selectedItems.firstIndex(where: {$0.imageName == deselectedItem.imageName}){
+            selectedItems.remove(at: index)
         }
         if let cell = collectionView.cellForItem(at: indexPath) as? ClothesCellCollectionViewCell{
             cell.imageView.backgroundColor = UIColor(named: "foreground")
         }
-        print(selectedCellIndexPath.count)
+        print(selectedItems.count)
         updateFloatingViewLabel()
     }
     
@@ -58,7 +63,7 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
     @IBOutlet var bagPackerCollectionView: UICollectionView!
     @IBOutlet var BagPackerNavigationBar: UINavigationBar!
     
-    var selectedCellIndexPath = [IndexPath]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +73,7 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
         bagPackerCollectionView.dataSource = self
         bagPackerCollectionView.delegate = self
         bagPackerCollectionView.allowsMultipleSelection = true
-        print(selectedCellIndexPath.count)
+        print(selectedItems.count)
         view.addSubview(floatingView)
         floatingView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -87,19 +92,19 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
     
     // floating view
     var floatingView: UIView = {
-           let view = UIView()
-           view.backgroundColor = UIColor(named: "floatingViewColor")
-           view.layer.cornerRadius = 14.0
-           return view
-       }()
+        let view = UIView()
+        view.backgroundColor = UIColor(named: "floatingViewColor")
+        view.layer.cornerRadius = 14.0
+        return view
+    }()
     
-  
+    
     // this configures the item count in the floating View
     func configureFloatingViewForItemCountLabel(){
         
         countLabel = UILabel()
         countLabel.translatesAutoresizingMaskIntoConstraints = false
-        countLabel.text = String(selectedCellIndexPath.count) + " Items in the Bag"
+        countLabel.text = String(selectedItems.count) + " Items in the Bag"
         countLabel.textColor = .black
         countLabel.font = UIFont.systemFont(ofSize: 20)
         
@@ -135,7 +140,7 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
     //this updates the item count each time a cell is selected or deselected
     //and this is callled in select and deselect functions
     func updateFloatingViewLabel(){
-        countLabel.text = String(selectedCellIndexPath.count) + " Items in the Bag"    }
+        countLabel.text = String(selectedItems.count) + " Items in the Bag"    }
     
     
     
@@ -155,4 +160,19 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
         }
         return layout
     }
+
+    // going to next page when next is clicked
+    @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "BagPackerDetail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "BagPackerDetail" {
+            if let destinationVC = segue.destination as? BagPackerDetailViewController {
+                destinationVC.selectedItems = self.selectedItems
+            }
+        }
+    }
 }
+
+

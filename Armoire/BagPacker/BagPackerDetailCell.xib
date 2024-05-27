@@ -27,8 +27,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QpN-4R-2fu">
-                        <rect key="frame" x="124" y="54" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QpN-4R-2fu">
+                        <rect key="frame" x="124" y="54" width="41" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -43,6 +43,11 @@
                     </label>
                 </subviews>
             </collectionViewCellContentView>
+            <connections>
+                <outlet property="clothColor" destination="vGF-ng-zKv" id="dFO-KT-eKw"/>
+                <outlet property="clothType" destination="CiO-7a-1iA" id="Lff-oK-dxG"/>
+                <outlet property="imageView" destination="vgO-gV-WE7" id="HfF-1w-4yu"/>
+            </connections>
             <point key="canvasLocation" x="-93" y="-181"/>
         </collectionViewCell>
     </objects>
