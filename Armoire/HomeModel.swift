@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 struct Section1Data{
     var label:String
     var button1: String
@@ -24,7 +25,6 @@ struct Section3Data{
     var compatibility:String
     var travel: String
 }
-
 
 
 

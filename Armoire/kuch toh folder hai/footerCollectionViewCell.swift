@@ -59,19 +59,34 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
 //      if let image = info[.originalImage] as? UIImage {
 //        selectedImage = image
 //      }
-        guard let imageToUse = info[.originalImage] as? UIImage else {return}
-        selectedImage = imageToUse
+        guard let imageToUse = info[.originalImage] as? UIImage else {
+            print(#function)
+            return}
+        
+        
+        var storyboard = UIStoryboard(name: "Home", bundle: nil)
+        
+        var nextVC = storyboard.instantiateViewController(identifier: "CompatibilityViewController") as! CompatibilityViewController
+        nextVC.selectedImage = imageToUse
+        
+        let navVC = homeViewController?.navigationController
         
         homeViewController?.navigationController?.presentedViewController?.dismiss(animated: true, completion: nil)
-        homeViewController?.performSegue(withIdentifier: "wardrobeCompatibility", sender: self)
+        navVC?.pushViewController(nextVC, animated: true)
+        
+        
+//        homeViewController?.performSegue(withIdentifier: "wardrobeCompatibility", sender: self)
+//        homeViewController?.navigationController?.presentedViewController?.dismiss(animated: true, completion: nil)
+//        
         
     }
     
     
-    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if segue.identifier == "wardrobeCompatibility", let image = selectedImage {
-        let compatibilityViewController = segue.destination as! CompatibilityViewController
-        compatibilityViewController.selectedImage = image
-      }
-    }
+//    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//      if segue.identifier == "wardrobeCompatibility", let image = selectedImage {
+//        let compatibilityViewController = segue.destination as! CompatibilityViewController
+//          compatibilityViewController.title = "hey"
+//          print(#function)
+//      }
+//    }
 }
