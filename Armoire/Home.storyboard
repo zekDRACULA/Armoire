@@ -438,6 +438,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="image1" destination="jue-e0-2vX" id="AeN-4Z-GFr"/>
+                        <outlet property="image2" destination="GeS-jl-0g5" id="3m6-33-fcv"/>
+                        <outlet property="image3" destination="iro-jN-x6b" id="OI6-ev-P3H"/>
+                        <outlet property="image4" destination="Mom-z0-RXk" id="9H6-0h-FfE"/>
                         <outlet property="imageView" destination="AFz-0h-dke" id="SzV-Rh-m9p"/>
                         <outlet property="scrollView" destination="8vK-GI-BeM" id="R5W-gG-svP"/>
                         <outlet property="view1" destination="Gfr-jZ-avo" id="yp2-xB-nNd"/>
@@ -483,13 +487,13 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
