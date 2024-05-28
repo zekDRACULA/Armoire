@@ -10,6 +10,8 @@ import UIKit
 class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var collectionView: UICollectionView!
+    
+    @IBOutlet var segmentedControl: UISegmentedControl!
 
     var imageToUse: UIImage = UIImage(named: "Image_1")!
     
@@ -122,7 +124,10 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
     
     @IBAction func changedSegment(_ sender: UISegmentedControl) {
         
+        
     }
+    
+    
     
     
     

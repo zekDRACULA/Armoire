@@ -82,6 +82,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="C73-DC-sH9" id="vIA-wt-pMT"/>
+                        <outlet property="segmentedControl" destination="quw-zl-UC3" id="eSl-oW-g6q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eO0-eK-ULF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

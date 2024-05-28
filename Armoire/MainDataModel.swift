@@ -14,6 +14,7 @@ class MainDataModel {
         var id: Int
         var color: UIColor
         var pattern: Pattern
+        var type: OfType?
         var tag: [String]
         var isFavourite: Bool = false
     }
@@ -25,6 +26,10 @@ class MainDataModel {
 
     enum Pattern {
         case solid, stripes, checks, printed, dots, floral
+    }
+    
+    enum OfType {
+        case top, bottom
     }
 
     static var tags: [String] = ["Summer", "Winter", "Top", "Bottom", "Dress"]
