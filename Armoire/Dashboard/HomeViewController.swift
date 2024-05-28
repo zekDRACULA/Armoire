@@ -79,6 +79,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 cell.viewImage.layer.masksToBounds = false
                 cell.viewImage.layer.cornerRadius = 14.0
 
+                cell.button[indexPath.row].tintColor = .black
+                let config = UIImage.SymbolConfiguration(hierarchicalColor: .black)
+                cell.button[indexPath.row].setImage(UIImage(systemName: "circle.fill", withConfiguration: config), for: .normal)
                 return cell
             }
             else{
@@ -87,7 +90,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 cell.image.layer.cornerRadius = 14.0
                 cell.viewImage.layer.masksToBounds = false
                 cell.viewImage.layer.cornerRadius = 14.0
-                
+                let config = UIImage.SymbolConfiguration(hierarchicalColor: .black)
+                cell.button[indexPath.row].setImage(UIImage(systemName: "circle.fill", withConfiguration: config), for: .normal)
                 return cell
             }
 //            cell.viewImage.layer.shadowColor = UIColor.gray.cgColor
@@ -140,7 +144,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.90), heightDimension: .fractionalHeight(0.90))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 
-                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(633), heightDimension: .absolute(564))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(633), heightDimension: .absolute(463))
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
 //                row spacing ke liye
                 

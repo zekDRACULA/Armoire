@@ -14,7 +14,6 @@
 		0A546A292BED34C7004EBA3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A546A282BED34C7004EBA3D /* Assets.xcassets */; };
 		0A546A2C2BED34C7004EBA3D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0A546A2B2BED34C7004EBA3D /* Base */; };
 		4804B2F92C01D55E00FAC9A3 /* ProfileTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4804B2F82C01D55E00FAC9A3 /* ProfileTab.storyboard */; };
-		487A828A2BFE284F004AF22A /* tstingfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487A82892BFE284F004AF22A /* tstingfile.swift */; };
 		487A828F2BFE2F1A004AF22A /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487A828B2BFE2F1A004AF22A /* DetailsTableViewCell.swift */; };
 		487A82902BFE2F1A004AF22A /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487A828C2BFE2F1A004AF22A /* DetailsTableViewController.swift */; };
 		487A82912BFE2F1A004AF22A /* itemDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487A828D2BFE2F1A004AF22A /* itemDetails.storyboard */; };
@@ -72,7 +71,6 @@
 		0A546A2B2BED34C7004EBA3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A546A2D2BED34C7004EBA3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4804B2F82C01D55E00FAC9A3 /* ProfileTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileTab.storyboard; sourceTree = "<group>"; };
-		487A82892BFE284F004AF22A /* tstingfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tstingfile.swift; sourceTree = "<group>"; };
 		487A828B2BFE2F1A004AF22A /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		487A828C2BFE2F1A004AF22A /* DetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		487A828D2BFE2F1A004AF22A /* itemDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = itemDetails.storyboard; sourceTree = "<group>"; };
@@ -111,9 +109,9 @@
 		BC11BC6F2BFB6AE50093DDBE /* footer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = footer.xib; sourceTree = "<group>"; };
 		BC11BC712BFB6AF00093DDBE /* header.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = header.xib; sourceTree = "<group>"; };
 		BC11BC732BFB6AFA0093DDBE /* image.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = image.xib; sourceTree = "<group>"; };
-		BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = footerCollectionViewCell.swift; path = "kuch toh folder hai/footerCollectionViewCell.swift"; sourceTree = "<group>"; };
-		BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = headerCollectionViewCell.swift; path = "kuch toh folder hai/headerCollectionViewCell.swift"; sourceTree = "<group>"; };
-		BC11BC7B2BFB6B340093DDBE /* imageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = imageCollectionViewCell.swift; path = "Armoire/kuch toh folder hai/imageCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = footerCollectionViewCell.swift; sourceTree = "<group>"; };
+		BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerCollectionViewCell.swift; sourceTree = "<group>"; };
+		BC11BC7B2BFB6B340093DDBE /* imageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = imageCollectionViewCell.swift; path = Armoire/Dashboard/imageCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		BC11BC7D2BFB70530093DDBE /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		BC28A2F42C011F02009B833E /* OneImageHome.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneImageHome.xib; sourceTree = "<group>"; };
 		BC28A2F62C012089009B833E /* oneImageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneImageCVC.swift; sourceTree = "<group>"; };
@@ -131,6 +129,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05B9922D2C05CDCC00EAC5C8 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				BC11BC7D2BFB70530093DDBE /* HomeModel.swift */,
+				674274592BF617B6001304A8 /* HomeViewController.swift */,
+				BCCEF7EE2BFD244A00DDC726 /* CompatibilityViewController.swift */,
+				674274532BF61665001304A8 /* Home.storyboard */,
+				BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */,
+				BC11BC712BFB6AF00093DDBE /* header.xib */,
+				BC11BC7B2BFB6B340093DDBE /* imageCollectionViewCell.swift */,
+				BC11BC732BFB6AFA0093DDBE /* image.xib */,
+				BC28A2F62C012089009B833E /* oneImageCVC.swift */,
+				BC28A2F42C011F02009B833E /* OneImageHome.xib */,
+				BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */,
+				BC11BC6F2BFB6AE50093DDBE /* footer.xib */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 		0A546A132BED34C6004EBA3D = {
 			isa = PBXGroup;
 			children = (
@@ -153,26 +170,14 @@
 			children = (
 				B15F21322C05300800C46793 /* EventDetails */,
 				B1BFFAE92C023ACA00B2EC9B /* BagPacker */,
+				05B9922D2C05CDCC00EAC5C8 /* Dashboard */,
 				487A828E2BFE2F1A004AF22A /* itemDetails */,
 				0A546A1F2BED34C6004EBA3D /* AppDelegate.swift */,
 				0A546A212BED34C6004EBA3D /* SceneDelegate.swift */,
 				0A546A232BED34C6004EBA3D /* ViewController.swift */,
 				B12D51722BF67BC8002324F4 /* SuggestionViewController.swift */,
-				674274592BF617B6001304A8 /* HomeViewController.swift */,
 				B12D51762BF68197002324F4 /* CardCell.swift */,
-				487A82882BFE281F004AF22A /* kuch toh folder hai */,
-				BC11BC7B2BFB6B340093DDBE /* imageCollectionViewCell.swift */,
-				BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */,
-				BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */,
-				BC28A2F62C012089009B833E /* oneImageCVC.swift */,
 				0A546A252BED34C6004EBA3D /* Main.storyboard */,
-				674274532BF61665001304A8 /* Home.storyboard */,
-				BC28A2F42C011F02009B833E /* OneImageHome.xib */,
-				BCCEF7EE2BFD244A00DDC726 /* CompatibilityViewController.swift */,
-				BC11BC732BFB6AFA0093DDBE /* image.xib */,
-				BC11BC712BFB6AF00093DDBE /* header.xib */,
-				BC11BC6F2BFB6AE50093DDBE /* footer.xib */,
-				BC11BC7D2BFB70530093DDBE /* HomeModel.swift */,
 				48B68BA62BF6A90700D9F0E7 /* Calendar */,
 				67F5042D2BFF8EE100FBB7A3 /* Wardrobe */,
 				67A285E92C022F900086997B /* MainDataModel.swift */,
@@ -183,14 +188,6 @@
 				BC06A9192BFF60980071F6FE /* MixAndMatch.storyboard */,
 			);
 			path = Armoire;
-			sourceTree = "<group>";
-		};
-		487A82882BFE281F004AF22A /* kuch toh folder hai */ = {
-			isa = PBXGroup;
-			children = (
-				487A82892BFE284F004AF22A /* tstingfile.swift */,
-			);
-			path = "kuch toh folder hai";
 			sourceTree = "<group>";
 		};
 		487A828E2BFE2F1A004AF22A /* itemDetails */ = {
@@ -365,7 +362,6 @@
 				487A82902BFE2F1A004AF22A /* DetailsTableViewController.swift in Sources */,
 				4881AA8E2BFF6C8D008052DF /* EventSuggestionOutfitsCollectionViewCell.swift in Sources */,
 				0A546A242BED34C6004EBA3D /* ViewController.swift in Sources */,
-				487A828A2BFE284F004AF22A /* tstingfile.swift in Sources */,
 				B12D51772BF68197002324F4 /* CardCell.swift in Sources */,
 				6742745E2BF617F5001304A8 /* WardrobeViewController.swift in Sources */,
 				B1BFFAED2C023ACA00B2EC9B /* ClothesCellViewController.swift in Sources */,
