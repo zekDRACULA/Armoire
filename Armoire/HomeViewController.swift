@@ -79,6 +79,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 cell.viewImage.layer.masksToBounds = false
                 cell.viewImage.layer.cornerRadius = 14.0
 
+                cell.button[indexPath.row].tintColor = .black
+                let config = UIImage.SymbolConfiguration(hierarchicalColor: .black)
+                cell.button[indexPath.row].setImage(UIImage(systemName: "circle.fill", withConfiguration: config), for: .normal)
                 return cell
             }
             else{
@@ -87,7 +90,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 cell.image.layer.cornerRadius = 14.0
                 cell.viewImage.layer.masksToBounds = false
                 cell.viewImage.layer.cornerRadius = 14.0
-                
+                let config = UIImage.SymbolConfiguration(hierarchicalColor: .black)
+                cell.button[indexPath.row].setImage(UIImage(systemName: "circle.fill", withConfiguration: config), for: .normal)
                 return cell
             }
 //            cell.viewImage.layer.shadowColor = UIColor.gray.cgColor
