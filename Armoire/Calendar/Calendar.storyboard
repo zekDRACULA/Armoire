@@ -24,6 +24,15 @@
                                     <segue destination="BRU-7Y-mHX" kind="presentation" id="xC8-X5-VM3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8t-Pb-xdU">
+                                <rect key="frame" x="17" y="647" width="73" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Profile"/>
+                                <connections>
+                                    <segue destination="NB2-dI-Z7X" kind="presentation" id="s4j-C9-Cq2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.89019607840000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -41,6 +50,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1055.7251908396945" y="-34.507042253521128"/>
+        </scene>
+        <!--ProfileTab-->
+        <scene sceneID="lNp-Zh-RPI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProfileTab" id="NB2-dI-Z7X" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0b-kk-M5S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737" y="341"/>
         </scene>
         <!--EventSugeestions-->
         <scene sceneID="CGo-aT-DJ6">
