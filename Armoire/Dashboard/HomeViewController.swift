@@ -8,8 +8,8 @@
 import UIKit
 
 
-class HomeViewController: UIViewController, UICollectionViewDataSource {
-    
+class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate {
+    var isExpanded: Bool = false
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.tabBarItem.title = "Home"
@@ -21,7 +21,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = "Hi Shreya"
         tabBarItem.title = "Home"
         tabBarItem.image = UIImage(systemName: "house")
         // Do any additional setup after loading the view.
@@ -37,7 +37,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         collectionView.register(thirdNib, forCellWithReuseIdentifier: "footer")
         collectionView.dataSource = self
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
+        collectionView.register(Header.self, forSupplementaryViewOfKind: categoryHeaderId, withReuseIdentifier: headerId)
     }
+    func toggleLayout(isExpanded: Bool) {
+            self.isExpanded = isExpanded
+            collectionView.collectionViewLayout = generateLayout()
+        }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         switch section {
@@ -57,11 +62,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath) as! headerCollectionViewCell
-            cell.username.layer.cornerRadius = 10.0
-            cell.username.clipsToBounds = true
-            cell.waetherLabel.layer.cornerRadius = 10.0
+            cell.waetherLabel.layer.cornerRadius = 20.0
             cell.waetherLabel.clipsToBounds = true
-            cell.calenderLabel.layer.cornerRadius = 10.0
+            cell.calenderLabel.layer.cornerRadius = 20.0
             cell.calenderLabel.clipsToBounds = true
             cell.partyButton.layer.cornerRadius = 8.0
             cell.partyButton.clipsToBounds = true
@@ -78,10 +81,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
                 cell.viewImage.layer.masksToBounds = false
                 cell.viewImage.layer.cornerRadius = 14.0
-
-                cell.button[indexPath.row].tintColor = .black
+                
                 let config = UIImage.SymbolConfiguration(hierarchicalColor: .black)
-                cell.button[indexPath.row].setImage(UIImage(systemName: "circle.fill", withConfiguration: config), for: .normal)
                 return cell
             }
             else{
@@ -90,8 +91,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 cell.image.layer.cornerRadius = 14.0
                 cell.viewImage.layer.masksToBounds = false
                 cell.viewImage.layer.cornerRadius = 14.0
-                let config = UIImage.SymbolConfiguration(hierarchicalColor: .black)
-                cell.button[indexPath.row].setImage(UIImage(systemName: "circle.fill", withConfiguration: config), for: .normal)
                 return cell
             }
 //            cell.viewImage.layer.shadowColor = UIColor.gray.cgColor
@@ -102,17 +101,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "footer", for: indexPath) as! footerCollectionViewCell
             
             cell.homeViewController = self
-            
-//            cell.compatibilityButton.tag = indexPath.row
-//            cell.compatibilityButton.addTarget(self, action: #selector(viewDetail), for: .touchUpInside)
-//            cell.travelButton.tag = indexPath.row
-//            cell.travelButton.addTarget(self, action: #selector(viewDetail1), for: .touchUpInside)
- 
-            
+
             cell.compatibility.layer.cornerRadius = 10.0
             cell.compatibility.clipsToBounds = true
-            cell.travel.layer.cornerRadius = 10.0
-            cell.travel.clipsToBounds = true
+            
             
 
             return cell
@@ -121,70 +113,70 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
             return cell
         }
     }
-//    @objc func viewDetail(sender: UIButton){
-//        let home = self.storyboard?.instantiateViewController(identifier: "WardrobeCompatibilityViewController") as! CompatibilityViewController
-//        self.navigationController?.pushViewController(home, animated: true)
-//        
-//    }
-    
-//    @objc func viewDetail1(sender: UIButton){
-//        let ipath = IndexPath(row: sender.tag, section: 0)
-//        let home = self.storyboard?.instantiateViewController(identifier: "TravelBagViewController") as! TravelBagViewController
-//        self.navigationController?.pushViewController(home, animated: true)
-//
-//    }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
     
-    func generateLayout()->UICollectionViewLayout{
-        let layout = UICollectionViewCompositionalLayout{(section, env)-> NSCollectionLayoutSection? in
+    func generateLayout()->UICollectionViewCompositionalLayout{
+        return  UICollectionViewCompositionalLayout{(section, env)-> NSCollectionLayoutSection? in
             switch section {
             case 0:
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.90), heightDimension: .fractionalHeight(0.90))
+                
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                
-                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(633), heightDimension: .absolute(463))
-                let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
+                item.contentInsets.trailing = 16
+                item.contentInsets.bottom = 8
+                let groupSize: NSCollectionLayoutSize
+                if self.isExpanded {
+                    groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(442))
+                } else {
+                    groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(442))
+                }
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 //                row spacing ke liye
-                
-                group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
-                
                 let section = NSCollectionLayoutSection(group: group)
 //                column ke space ke liye
-                section.interGroupSpacing = 8.0
-                section.orthogonalScrollingBehavior = .groupPagingCentered
+                section.contentInsets.leading = 16
                 
                 return section
             case 1:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                
-                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(461), heightDimension: .absolute(386))
+                item.contentInsets.trailing = 32
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8), heightDimension: .absolute(386))
 
                 
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 
                 let section = NSCollectionLayoutSection(group: group)
-                section.orthogonalScrollingBehavior = .groupPagingCentered
+                section.orthogonalScrollingBehavior = .continuous
+                section.contentInsets.leading = 16
                 
                 return section
                 
             
             case 2:
                 
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(300))
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(149))
+                
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
                 
-                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(396), heightDimension: .absolute(184))
-                let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
-                group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
+                item.contentInsets.trailing = 16
+                item.contentInsets.bottom = 16
+                // creating the group size
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(1000))
+                
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                //        group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0)
+ //               group.contentInsets.leading = 16
                 let section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 8.0
-                section.orthogonalScrollingBehavior = .groupPagingCentered
-                
+ //               section.orthogonalScrollingBehavior = .paging
+                section.contentInsets = .init(top: 0, leading: 16, bottom: 0, trailing: 0)
+ //               section.contentInsets.leading = 16
+                section.boundarySupplementaryItems = [
+                 .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: self.categoryHeaderId, alignment: .topLeading)
+                ]
                 return section
                 
             default:
@@ -201,7 +193,32 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 
             }
         }
-        return layout
     }
-
+    let headerId = "headerId"
+    let categoryHeaderId = "More"
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
+//        header.backgroundColor = .cyan
+        return header
+    }
+    
 }
+class Header: UICollectionReusableView{
+    let label = UILabel()
+    override init(frame: CGRect){
+        super.init(frame: frame)
+        
+        label.text = "More"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        addSubview(label)
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        label.frame = bounds
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+

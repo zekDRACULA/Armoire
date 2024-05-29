@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,22 +10,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Cqi-3H-hV5" customClass="footerCollectionViewCell" customModule="Armoire" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="396" height="184"/>
+            <rect key="frame" x="0.0" y="0.0" width="396" height="140"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1il-8C-Qc5">
-                <rect key="frame" x="0.0" y="0.0" width="396" height="184"/>
+                <rect key="frame" x="0.0" y="0.0" width="396" height="140"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ix-LE-FrZ">
-                        <rect key="frame" x="20" y="40" width="286" height="60"/>
+                        <rect key="frame" x="0.0" y="0.0" width="286" height="66"/>
                         <color key="backgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="286" id="4lg-lg-9if"/>
-                            <constraint firstAttribute="height" constant="60" id="HDR-YU-GCB"/>
+                            <constraint firstAttribute="height" constant="66" id="dPn-Zs-JYh"/>
+                            <constraint firstAttribute="width" constant="286" id="yxS-C1-JzW"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="filled" title="Check Compatibility">
-                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="15"/>
+                        <buttonConfiguration key="configuration" style="filled" image="link" catalog="system" title="  Check Compatibility">
+                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
+                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="baseBackgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </buttonConfiguration>
@@ -33,26 +34,15 @@
                             <action selector="compatibilityTapped:" destination="Cqi-3H-hV5" eventType="touchUpInside" id="PV0-2v-Sdd"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Travel Bag Planner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6V2-iA-Oaa">
-                        <rect key="frame" x="20" y="108" width="286" height="60"/>
-                        <color key="backgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="60" id="nqk-0x-hdc"/>
-                            <constraint firstAttribute="width" constant="286" id="ybp-hK-v3P"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGa-sd-Ixx">
-                        <rect key="frame" x="296" y="40" width="80" height="60"/>
+                        <rect key="frame" x="281" y="0.0" width="115" height="66"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="60" id="6Bi-W5-Ov5"/>
-                            <constraint firstAttribute="width" constant="80" id="qD1-JI-w4x"/>
+                            <constraint firstAttribute="width" constant="115" id="Oct-xf-tfL"/>
+                            <constraint firstAttribute="height" constant="66" id="YrU-cI-mdl"/>
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="filled" image="chevron.right" catalog="system">
-                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="8"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
                             <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="baseBackgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </buttonConfiguration>
@@ -61,54 +51,63 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujY-Bw-OPn">
-                        <rect key="frame" x="296" y="108" width="80" height="60"/>
+                        <rect key="frame" x="281" y="74" width="115" height="66"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="2v1-2S-a0t"/>
-                            <constraint firstAttribute="height" constant="60" id="gmg-2p-6qk"/>
+                            <constraint firstAttribute="height" constant="66" id="Fgp-k5-XKE"/>
+                            <constraint firstAttribute="width" constant="115" id="Smg-y4-4di"/>
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="filled" image="chevron.right" catalog="system">
-                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="8"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
                             <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="baseBackgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="travelTapped:" destination="Cqi-3H-hV5" eventType="touchUpInside" id="AU3-Q0-hhb"/>
+                        </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpB-AE-6WH">
-                        <rect key="frame" x="20" y="0.0" width="356" height="40"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNN-RN-nps">
+                        <rect key="frame" x="0.0" y="74" width="286" height="66"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="nv1-s6-tRR"/>
+                            <constraint firstAttribute="height" constant="66" id="OBr-Ry-PDK"/>
+                            <constraint firstAttribute="width" constant="286" id="bw6-mk-cqD"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" image="suitcase.rolling.fill" catalog="system" title="  TravelBag Planner">
+                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
+                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="baseBackgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="travelTapped:" destination="Cqi-3H-hV5" eventType="touchUpInside" id="Z05-aQ-8cw"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ZpB-AE-6WH" firstAttribute="leading" secondItem="1il-8C-Qc5" secondAttribute="leading" constant="20" id="3pf-0p-vZk"/>
-                    <constraint firstItem="lGa-sd-Ixx" firstAttribute="top" secondItem="ZpB-AE-6WH" secondAttribute="bottom" id="EN9-ui-ttE"/>
-                    <constraint firstItem="ZpB-AE-6WH" firstAttribute="top" secondItem="1il-8C-Qc5" secondAttribute="top" id="FL5-33-oyb"/>
-                    <constraint firstItem="6V2-iA-Oaa" firstAttribute="top" secondItem="0ix-LE-FrZ" secondAttribute="bottom" constant="8" id="OTt-la-Jlx"/>
-                    <constraint firstAttribute="trailing" secondItem="lGa-sd-Ixx" secondAttribute="trailing" constant="20" id="YZ3-KW-j06"/>
-                    <constraint firstItem="0ix-LE-FrZ" firstAttribute="top" secondItem="ZpB-AE-6WH" secondAttribute="bottom" id="j6h-yv-NOc"/>
-                    <constraint firstAttribute="trailing" secondItem="ZpB-AE-6WH" secondAttribute="trailing" constant="20" id="mBN-Cx-5Fb"/>
-                    <constraint firstItem="ujY-Bw-OPn" firstAttribute="top" secondItem="0ix-LE-FrZ" secondAttribute="bottom" constant="8" id="qPX-Ba-22f"/>
-                    <constraint firstItem="0ix-LE-FrZ" firstAttribute="leading" secondItem="1il-8C-Qc5" secondAttribute="leading" constant="20" id="xAh-bi-557"/>
-                    <constraint firstItem="6V2-iA-Oaa" firstAttribute="leading" secondItem="1il-8C-Qc5" secondAttribute="leading" constant="20" id="y3u-S0-nIp"/>
-                    <constraint firstAttribute="trailing" secondItem="ujY-Bw-OPn" secondAttribute="trailing" constant="20" id="z7f-Yc-Bw4"/>
+                    <constraint firstAttribute="bottom" secondItem="ujY-Bw-OPn" secondAttribute="bottom" id="0LO-Ca-ukD"/>
+                    <constraint firstAttribute="bottom" secondItem="pNN-RN-nps" secondAttribute="bottom" id="C5g-3x-QOp"/>
+                    <constraint firstItem="lGa-sd-Ixx" firstAttribute="top" secondItem="1il-8C-Qc5" secondAttribute="top" id="HMh-JP-fjG"/>
+                    <constraint firstItem="0ix-LE-FrZ" firstAttribute="leading" secondItem="1il-8C-Qc5" secondAttribute="leading" id="dRJ-8f-8K1"/>
+                    <constraint firstAttribute="trailing" secondItem="lGa-sd-Ixx" secondAttribute="trailing" id="dw5-vU-1GG"/>
+                    <constraint firstItem="0ix-LE-FrZ" firstAttribute="top" secondItem="1il-8C-Qc5" secondAttribute="top" id="pR7-cB-JxC"/>
+                    <constraint firstAttribute="trailing" secondItem="ujY-Bw-OPn" secondAttribute="trailing" id="sml-v2-feW"/>
+                    <constraint firstItem="pNN-RN-nps" firstAttribute="leading" secondItem="1il-8C-Qc5" secondAttribute="leading" id="wp9-O7-F8q"/>
                 </constraints>
             </collectionViewCellContentView>
-            <size key="customSize" width="437" height="274"/>
+            <size key="customSize" width="437" height="230"/>
             <connections>
                 <outlet property="compatibility" destination="0ix-LE-FrZ" id="U9M-KV-zJc"/>
                 <outlet property="compatibilityButton" destination="lGa-sd-Ixx" id="rPX-SQ-3sm"/>
-                <outlet property="label1" destination="ZpB-AE-6WH" id="hzG-GY-JwL"/>
-                <outlet property="travel" destination="6V2-iA-Oaa" id="uJo-oy-FaH"/>
+                <outlet property="travel" destination="pNN-RN-nps" id="WUi-HO-1iX"/>
                 <outlet property="travelButton" destination="ujY-Bw-OPn" id="Y9Y-lk-jBc"/>
             </connections>
-            <point key="canvasLocation" x="302.29007633587787" y="17.605633802816904"/>
+            <point key="canvasLocation" x="302.29007633587787" y="22.535211267605636"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <image name="link" catalog="system" width="128" height="124"/>
+        <image name="suitcase.rolling.fill" catalog="system" width="91" height="128"/>
     </resources>
 </document>
