@@ -44,3 +44,17 @@ class MainDataModel {
     ]
 
 }
+
+
+struct CalendarEventInfo {
+    var eventTitle:String
+    var eventStartDate:Date
+    var eventEndDate:Date
+    var eventLocation:String
+
+    
+}
+
+class AllAddedEventDetails {
+    var allEventsinformation:[CalendarEventInfo] = []
+}
