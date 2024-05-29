@@ -10,11 +10,10 @@ import UIKit
 
 class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-    @IBOutlet var label1: UILabel!
     
     @IBOutlet var compatibility: UIButton!
     
-    @IBOutlet var travel: UILabel!
+    @IBOutlet var travel: UIButton!
     
     var selectedImage: UIImage?
     @IBOutlet var compatibilityButton: UIButton!
@@ -55,38 +54,28 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
     }
     //updating after selecting
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-      // Update selectedImage after image selection
-//      if let image = info[.originalImage] as? UIImage {
-//        selectedImage = image
-//      }
         guard let imageToUse = info[.originalImage] as? UIImage else {
             print(#function)
             return}
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
         
-        
-        var storyboard = UIStoryboard(name: "Home", bundle: nil)
-        
-        var nextVC = storyboard.instantiateViewController(identifier: "CompatibilityViewController") as! CompatibilityViewController
+        let nextVC = storyboard.instantiateViewController(identifier: "CompatibilityViewController") as! CompatibilityViewController
         nextVC.selectedImage = imageToUse
         
         let navVC = homeViewController?.navigationController
         
         homeViewController?.navigationController?.presentedViewController?.dismiss(animated: true, completion: nil)
         navVC?.pushViewController(nextVC, animated: true)
-        
-        
-//        homeViewController?.performSegue(withIdentifier: "wardrobeCompatibility", sender: self)
-//        homeViewController?.navigationController?.presentedViewController?.dismiss(animated: true, completion: nil)
-//        
-        
     }
     
     
-//    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//      if segue.identifier == "wardrobeCompatibility", let image = selectedImage {
-//        let compatibilityViewController = segue.destination as! CompatibilityViewController
-//          compatibilityViewController.title = "hey"
-//          print(#function)
-//      }
-//    }
+    @IBAction func travelTapped(_ sender: UIButton) {
+        let nextStoryboard = UIStoryboard(name: "BagPacker", bundle: nil) // Replace "NextStoryboard" with the name of your storyboard
+            
+            // Instantiate the next view controller from the storyboard
+            let nextViewController = nextStoryboard.instantiateViewController(withIdentifier: "ClothesCellViewController") as! ClothesCellViewController
+
+            // Present the next view controller
+            homeViewController?.present(nextViewController, animated: true)
+    }
 }

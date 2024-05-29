@@ -10,6 +10,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--EventSuggestionsViewController-->
+        <scene sceneID="uIk-7U-DwI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EventSugeestions" referencedIdentifier="EventSuggestionsViewController" id="DoO-n9-hqF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7Hw-Ot-ayC"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ojt-Kf-kNG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1992" y="-248"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="1a5-2l-wQ4">
+            <objects>
+                <viewControllerPlaceholder id="CcZ-Gy-nD7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4f3-0Q-xRO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nb0-ph-8y4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2045" y="-119"/>
+        </scene>
         <!--homeViewController-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -55,9 +75,21 @@
                             <constraint firstItem="TH7-OA-b0n" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jRp-f9-G9t"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IdD-Mb-Jk9"/>
+                    <navigationItem key="navigationItem" id="IdD-Mb-Jk9">
+                        <barButtonItem key="rightBarButtonItem" id="44r-Hc-dgm">
+                            <imageReference key="image" image="person.crop.circle" catalog="system" renderingMode="hierarchical-single">
+                                <hierarchicalColors>
+                                    <color systemColor="labelColor"/>
+                                    <color systemColor="secondaryLabelColor"/>
+                                    <color systemColor="tertiaryLabelColor"/>
+                                </hierarchicalColors>
+                            </imageReference>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="TH7-OA-b0n" id="poH-WA-kRS"/>
+                        <segue destination="CcZ-Gy-nD7" kind="show" id="6o8-wW-eq9"/>
+                        <segue destination="DoO-n9-hqF" kind="show" id="HXb-xQ-YcJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -84,7 +116,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="zcQ-eo-qGV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -370,16 +402,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6QM-L7-D1K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2046.564885496183" y="-44.366197183098592"/>
+            <point key="canvasLocation" x="2198" y="275"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OXz-Hl-VA8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YRH-g9-5Qc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Py0-r9-ykW">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Py0-r9-ykW">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.57254901960000004" green="0.10980392160000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -395,6 +430,7 @@
         <image name="Image_1" width="800" height="1000"/>
         <image name="Image_2" width="550" height="754"/>
         <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

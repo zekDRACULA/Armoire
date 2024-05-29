@@ -15,7 +15,6 @@ class imageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var viewImage: UIView!
     
-    @IBOutlet var button: [UIButton]!
     
     
     func configure(picture1 : UIImage,picture2: UIImage ){
