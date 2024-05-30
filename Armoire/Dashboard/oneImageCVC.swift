@@ -19,8 +19,6 @@ class oneImageCVC: UICollectionViewCell,UINavigationControllerDelegate {
         let nextVC = storyboard.instantiateViewController(identifier: "EventSuggestionsViewController") as! EventSuggestionsViewController
         
         let navVC = homeViewController?.navigationController
-        
-        homeViewController?.navigationController?.presentedViewController?.dismiss(animated: true, completion: nil)
         navVC?.pushViewController(nextVC, animated: true)
 
     }

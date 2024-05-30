@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="1992" y="-248"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--ProfileTabViewController-->
         <scene sceneID="1a5-2l-wQ4">
             <objects>
-                <viewControllerPlaceholder id="CcZ-Gy-nD7" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ProfileTab" referencedIdentifier="ProfileTabViewController" id="CcZ-Gy-nD7" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="4f3-0Q-xRO"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nb0-ph-8y4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -84,11 +84,13 @@
                                     <color systemColor="tertiaryLabelColor"/>
                                 </hierarchicalColors>
                             </imageReference>
+                            <connections>
+                                <segue destination="CcZ-Gy-nD7" kind="show" id="khG-iA-ug2"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="TH7-OA-b0n" id="poH-WA-kRS"/>
-                        <segue destination="CcZ-Gy-nD7" kind="show" id="6o8-wW-eq9"/>
                         <segue destination="DoO-n9-hqF" kind="show" id="HXb-xQ-YcJ"/>
                     </connections>
                 </viewController>
@@ -436,13 +438,13 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
