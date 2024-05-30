@@ -8,7 +8,9 @@
 import UIKit
 
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate {
+class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate, UICollectionViewDelegate{
+    
+    
     var isExpanded: Bool = false
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -31,6 +33,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         let thirdNib = UINib(nibName: "footer", bundle: nil)
         
         
+        collectionView.delegate = self
+        
         collectionView.register(firstNib, forCellWithReuseIdentifier: "header")
         collectionView.register(secondNib, forCellWithReuseIdentifier: "image")
         collectionView.register(second1Nib, forCellWithReuseIdentifier: "OneImageHome")
@@ -42,6 +46,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     func toggleLayout(isExpanded: Bool) {
             self.isExpanded = isExpanded
             collectionView.collectionViewLayout = generateLayout()
+        collectionView.reloadData()
         }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -62,6 +67,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath) as! headerCollectionViewCell
+            cell.delegate = self
             cell.waetherLabel.layer.cornerRadius = 20.0
             cell.waetherLabel.clipsToBounds = true
             cell.calenderLabel.layer.cornerRadius = 20.0
@@ -128,9 +134,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
                 item.contentInsets.bottom = 8
                 let groupSize: NSCollectionLayoutSize
                 if self.isExpanded {
-                    groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(500))
-                } else {
                     groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(442))
+                } else {
+                    groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(238))
                 }
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 //                row spacing ke liye
@@ -152,6 +158,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
                 section.contentInsets.leading = 16
+                
                 
                 return section
                 
