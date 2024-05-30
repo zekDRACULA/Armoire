@@ -52,11 +52,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         
         switch section {
         case 0:
-            return DataModel.section1.count
+            return 1
         case 1:
-            return DataModel.section2.count
+            return MainDataModel.outfit.count
         case 2:
-            return DataModel.section3.count
+            return 1
         default:
             return 0
         }

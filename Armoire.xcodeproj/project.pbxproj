@@ -55,7 +55,6 @@
 		BC11BC782BFB6B220093DDBE /* footerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */; };
 		BC11BC7A2BFB6B2C0093DDBE /* headerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */; };
 		BC11BC7C2BFB6B340093DDBE /* imageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11BC7B2BFB6B340093DDBE /* imageCollectionViewCell.swift */; };
-		BC11BC7E2BFB70530093DDBE /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11BC7D2BFB70530093DDBE /* HomeModel.swift */; };
 		BC28A2F52C011F02009B833E /* OneImageHome.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC28A2F42C011F02009B833E /* OneImageHome.xib */; };
 		BC28A2F72C012089009B833E /* oneImageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28A2F62C012089009B833E /* oneImageCVC.swift */; };
 		BCCEF7EF2BFD244A00DDC726 /* CompatibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCEF7EE2BFD244A00DDC726 /* CompatibilityViewController.swift */; };
@@ -112,7 +111,6 @@
 		BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = footerCollectionViewCell.swift; sourceTree = "<group>"; };
 		BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerCollectionViewCell.swift; sourceTree = "<group>"; };
 		BC11BC7B2BFB6B340093DDBE /* imageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = imageCollectionViewCell.swift; path = Armoire/Dashboard/imageCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		BC11BC7D2BFB70530093DDBE /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		BC28A2F42C011F02009B833E /* OneImageHome.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneImageHome.xib; sourceTree = "<group>"; };
 		BC28A2F62C012089009B833E /* oneImageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneImageCVC.swift; sourceTree = "<group>"; };
 		BCCEF7EE2BFD244A00DDC726 /* CompatibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilityViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 		05B9922D2C05CDCC00EAC5C8 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				BC11BC7D2BFB70530093DDBE /* HomeModel.swift */,
 				674274592BF617B6001304A8 /* HomeViewController.swift */,
 				BCCEF7EE2BFD244A00DDC726 /* CompatibilityViewController.swift */,
 				674274532BF61665001304A8 /* Home.storyboard */,
@@ -368,7 +365,6 @@
 				B1D800502C03AFF00081F999 /* BagPackerDetailViewController.swift in Sources */,
 				BC11BC7A2BFB6B2C0093DDBE /* headerCollectionViewCell.swift in Sources */,
 				BC11BC782BFB6B220093DDBE /* footerCollectionViewCell.swift in Sources */,
-				BC11BC7E2BFB70530093DDBE /* HomeModel.swift in Sources */,
 				679E649A2BFF925500CB211F /* WardrobeTagCollectionViewCell.swift in Sources */,
 				4881AA862BFF6672008052DF /* EventSuggestionsViewController.swift in Sources */,
 				B1BFFAEC2C023ACA00B2EC9B /* ClothesCellCollectionViewCell.swift in Sources */,
