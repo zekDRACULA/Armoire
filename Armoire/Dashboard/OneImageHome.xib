@@ -30,7 +30,7 @@
                                     <color key="baseBackgroundColor" red="0.57254901960000004" green="0.10980392160000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="suggestionTapped:" destination="fpr-zJ-cuE" eventType="touchUpInside" id="PAw-Fp-1RR"/>
+                                    <action selector="suggestionTapped:" destination="fpr-zJ-cuE" eventType="touchUpInside" id="aIx-10-MN6"/>
                                 </connections>
                             </button>
                         </subviews>

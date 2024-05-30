@@ -26,7 +26,7 @@ class headerCollectionViewCell: UICollectionViewCell {
     
 //    @IBOutlet var myStackView: UIStackView!
     
-    weak var delegate: HeaderCollectionViewCellDelegate?
+    weak var delegate: HeaderCollectionViewCellDelegate? 
     var button = false
     
     func showButtonVisibility(){

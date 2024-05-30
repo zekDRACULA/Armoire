@@ -10,16 +10,22 @@ import UIKit
 class oneImageCVC: UICollectionViewCell,UINavigationControllerDelegate {
     @IBOutlet var image: UIImageView!
     @IBOutlet var suggestionButton: UIButton!
-    
-    @IBOutlet var viewImage: UIView!
     weak var homeViewController: HomeViewController?
+    @IBOutlet var viewImage: UIView!
+    weak var  eventSuggestionsViewController:  EventSuggestionsViewController?
     @IBAction func suggestionTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let storyboard = UIStoryboard(name: "EventSugeestions", bundle: nil)
         
-        let nextVC = storyboard.instantiateViewController(identifier: "EventSuggestionsViewController") as! EventSuggestionsViewController
         
-        let navVC = homeViewController?.navigationController
-        navVC?.pushViewController(nextVC, animated: true)
-
+        if let nextVC = storyboard.instantiateViewController(withIdentifier: "EventSuggestionsViewController") as? EventSuggestionsViewController {
+            
+            if let navVC = homeViewController?.navigationController {
+                navVC.pushViewController(nextVC, animated: true)
+            } else {
+                print("Navigation controller is nil")
+            }
+        } else {
+            print("EventSuggestionsViewController could not be instantiated")
+        }
     }
 }

@@ -70,12 +70,10 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
     
     
     @IBAction func travelTapped(_ sender: UIButton) {
-        let nextStoryboard = UIStoryboard(name: "BagPacker", bundle: nil) // Replace "NextStoryboard" with the name of your storyboard
-            
-            // Instantiate the next view controller from the storyboard
-            let nextViewController = nextStoryboard.instantiateViewController(withIdentifier: "ClothesCellViewController") as! ClothesCellViewController
+        let nextStoryboard = UIStoryboard(name: "BagPacker", bundle: nil)
+        
+        let nextViewController = nextStoryboard.instantiateViewController(withIdentifier: "ClothesCellViewController") as! ClothesCellViewController
 
-            // Present the next view controller
-            homeViewController?.present(nextViewController, animated: true)
+        homeViewController?.present(nextViewController, animated: true)
     }
 }
