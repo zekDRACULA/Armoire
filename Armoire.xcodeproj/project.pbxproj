@@ -14,6 +14,8 @@
 		0A546A292BED34C7004EBA3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A546A282BED34C7004EBA3D /* Assets.xcassets */; };
 		0A546A2C2BED34C7004EBA3D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0A546A2B2BED34C7004EBA3D /* Base */; };
 		4804B2F92C01D55E00FAC9A3 /* ProfileTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4804B2F82C01D55E00FAC9A3 /* ProfileTab.storyboard */; };
+		4817FA182C08EA2900BE06A8 /* EventFullDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4817FA172C08EA2900BE06A8 /* EventFullDetails.storyboard */; };
+		4866D7C82C08ECD9007E0279 /* EventFullDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4866D7C72C08ECD9007E0279 /* EventFullDetailsViewController.swift */; };
 		487A828F2BFE2F1A004AF22A /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487A828B2BFE2F1A004AF22A /* DetailsTableViewCell.swift */; };
 		487A82902BFE2F1A004AF22A /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487A828C2BFE2F1A004AF22A /* DetailsTableViewController.swift */; };
 		487A82912BFE2F1A004AF22A /* itemDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487A828D2BFE2F1A004AF22A /* itemDetails.storyboard */; };
@@ -75,6 +77,8 @@
 		0A546A2B2BED34C7004EBA3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A546A2D2BED34C7004EBA3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4804B2F82C01D55E00FAC9A3 /* ProfileTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileTab.storyboard; sourceTree = "<group>"; };
+		4817FA172C08EA2900BE06A8 /* EventFullDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventFullDetails.storyboard; sourceTree = "<group>"; };
+		4866D7C72C08ECD9007E0279 /* EventFullDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFullDetailsViewController.swift; sourceTree = "<group>"; };
 		487A828B2BFE2F1A004AF22A /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		487A828C2BFE2F1A004AF22A /* DetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		487A828D2BFE2F1A004AF22A /* itemDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = itemDetails.storyboard; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 				B19994342C05A96B0045ADD1 /* EventCollectionViewCell.swift */,
 				B19994362C05B0980045ADD1 /* EventsPageViewController.swift */,
 				B19994382C05B7430045ADD1 /* eventsData.swift */,
+				4817FA172C08EA2900BE06A8 /* EventFullDetails.storyboard */,
+				4866D7C72C08ECD9007E0279 /* EventFullDetailsViewController.swift */,
 			);
 			path = EventDetails;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 				BC06A91A2BFF60980071F6FE /* MixAndMatch.storyboard in Resources */,
 				BC28A2F52C011F02009B833E /* OneImageHome.xib in Resources */,
 				0A546A2C2BED34C7004EBA3D /* Base in Resources */,
+				4817FA182C08EA2900BE06A8 /* EventFullDetails.storyboard in Resources */,
 				B1BFFAEB2C023ACA00B2EC9B /* clothesCell.xib in Resources */,
 				0A546A272BED34C6004EBA3D /* Base in Resources */,
 				4881AA822BFF5DA2008052DF /* EventSugeestions.storyboard in Resources */,
@@ -373,6 +380,7 @@
 				BC11BC7C2BFB6B340093DDBE /* imageCollectionViewCell.swift in Sources */,
 				4881AA8A2BFF6B70008052DF /* EventSuggestionsTagCollectionViewCell.swift in Sources */,
 				B1BFFAEE2C023ACA00B2EC9B /* BagPackerDataModel.swift in Sources */,
+				4866D7C82C08ECD9007E0279 /* EventFullDetailsViewController.swift in Sources */,
 				487A82902BFE2F1A004AF22A /* DetailsTableViewController.swift in Sources */,
 				4881AA8E2BFF6C8D008052DF /* EventSuggestionOutfitsCollectionViewCell.swift in Sources */,
 				0A546A242BED34C6004EBA3D /* ViewController.swift in Sources */,
