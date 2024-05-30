@@ -15,6 +15,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBOutlet var segmentedControl: UISegmentedControl!
 
+
     var imageToUse: UIImage = UIImage(named: "Image_1")!
     
     required init?(coder: NSCoder) {

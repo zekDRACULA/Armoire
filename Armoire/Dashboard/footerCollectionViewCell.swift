@@ -75,5 +75,6 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
         let nextViewController = nextStoryboard.instantiateViewController(withIdentifier: "ClothesCellViewController") as! ClothesCellViewController
 
         homeViewController?.present(nextViewController, animated: true)
+
     }
 }

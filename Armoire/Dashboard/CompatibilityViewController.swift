@@ -31,16 +31,14 @@ class CompatibilityViewController: UIViewController {
         
         let saveButton = UIAlertAction(title: "OK", style: .default){(action) in
             print("Saved Successfully")
+         
+            
             self.navigationController?.popViewController(animated: true)
         }
-//        self.performSegue(withIdentifier: "unwindSegueToHome", sender: self)
+        
         
         alert.addAction(saveButton)
         present(alert, animated: true, completion: nil)
-        
-//        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//        self.navigationController?.pushViewController(detailVC, animated: true)
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
