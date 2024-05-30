@@ -59,6 +59,7 @@
             <connections>
                 <outlet property="lowerOutfitImage" destination="8Kx-r7-kML" id="ded-9r-fCY"/>
                 <outlet property="upperOutfitImage" destination="0wj-RA-HG7" id="x2D-gp-Zm8"/>
+                <outlet property="viewOutlet" destination="6Gl-uh-bML" id="0YN-JJ-7x2"/>
             </connections>
             <point key="canvasLocation" x="441.98473282442745" y="223.59154929577466"/>
         </collectionViewCell>

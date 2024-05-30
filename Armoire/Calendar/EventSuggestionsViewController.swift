@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EventSuggestionsViewController: UIViewController,UICollectionViewDataSource {
+class EventSuggestionsViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
     
     
@@ -49,6 +49,21 @@ class EventSuggestionsViewController: UIViewController,UICollectionViewDataSourc
             return cell
         }
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            if let cell = collectionView.cellForItem(at: indexPath) as? EventSuggestionOutfitsCollectionViewCell{
+                var upperOutfitPhoto = cell.upperOutfitImage
+                var lowerOutfitPhoto = cell.lowerOutfitImage
+
+                cell.viewOutlet.backgroundColor = .accent
+                print(upperOutfitPhoto!)
+                print(lowerOutfitPhoto!)
+                
+            }
+        }
+    }
+    
+    
     
     
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
@@ -73,6 +88,7 @@ class EventSuggestionsViewController: UIViewController,UICollectionViewDataSourc
         
         
         collectionViewOutlet.dataSource = self
+        collectionViewOutlet.delegate = self
         // Do any additional setup after loading the view.
     }
     
