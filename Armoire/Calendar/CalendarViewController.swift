@@ -13,7 +13,7 @@ class CalendarViewController: UIViewController, UICalendarViewDelegate, UICalend
 
     let store = EKEventStore()
 //    var eventInfoArray:[CalendarEventInfo] = []
-    var eventInfoEverything = AllAddedEventDetails()
+//    var eventInfoEverything = AllAddedEventDetails()
     
     
     
@@ -139,9 +139,9 @@ class CalendarViewController: UIViewController, UICalendarViewDelegate, UICalend
                 let location = event.location
                 
                 let newEventDetails = CalendarEventInfo(eventTitle: title ?? "No Title", eventStartDate: startDate!, eventEndDate: endDate!, eventLocation: location ?? "No Location")
-                
-                eventInfoEverything.allEventsinformation.append(newEventDetails)
-                print(eventInfoEverything.allEventsinformation)
+                AllAddedEventDetails.allEventsinformation.append(newEventDetails)
+//                eventInfoEverything.allEventsinformation.append(newEventDetails)
+                print(AllAddedEventDetails.allEventsinformation)
                 
 //                eventInfoArray.append(newEventDetails)
                 

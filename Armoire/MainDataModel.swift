@@ -56,5 +56,7 @@ struct CalendarEventInfo {
 }
 
 class AllAddedEventDetails {
-    var allEventsinformation:[CalendarEventInfo] = []
+    
+    
+    static var allEventsinformation:[CalendarEventInfo] = []
 }
