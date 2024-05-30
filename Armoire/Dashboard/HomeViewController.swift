@@ -128,7 +128,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
                 item.contentInsets.bottom = 8
                 let groupSize: NSCollectionLayoutSize
                 if self.isExpanded {
-                    groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(442))
+                    groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(500))
                 } else {
                     groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(442))
                 }

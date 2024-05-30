@@ -12,7 +12,7 @@
         <!--Profile-->
         <scene sceneID="cbr-He-9TC">
             <objects>
-                <viewController id="iQR-CC-qZZ" customClass="ProfileTabViewController" customModule="Armoire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileTabViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iQR-CC-qZZ" customClass="ProfileTabViewController" customModule="Armoire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fXA-Lf-6Qb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,7 +75,7 @@
                             <constraint firstItem="PGh-FH-rsH" firstAttribute="trailing" secondItem="dZO-Rf-0FA" secondAttribute="trailing" id="tej-xg-Quy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="UBN-AF-oo9">
+                    <navigationItem key="navigationItem" title="Profile" largeTitleDisplayMode="never" id="UBN-AF-oo9">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="wNG-AV-eqA">
                             <connections>
                                 <action selector="doneButtonTapped:" destination="iQR-CC-qZZ" id="8fP-Ak-Ffn"/>
@@ -133,7 +133,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemCyanColor">
-            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
