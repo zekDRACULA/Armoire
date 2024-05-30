@@ -7,21 +7,25 @@
 
 import UIKit
 
-class FavouritesViewController: UIViewController, UICollectionViewDataSource {
+class FavouritesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet var collectionView: UICollectionView!
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("haloo")
+    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        MainDataModel.Favourites.count
+        MainDataModel.favourites.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeApparel", for: indexPath) as! WardrobeApparelCollectionViewCell
-        cell.apparelImage.image = MainDataModel.Favourites[indexPath.row].image
+        cell.apparelImage.image = MainDataModel.favourites[indexPath.row].image
         return cell
     }
     
@@ -34,6 +38,8 @@ class FavouritesViewController: UIViewController, UICollectionViewDataSource {
         
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
         collectionView.dataSource = self
+        
+        collectionView.delegate = self
     }
     
     func generateLayout() -> UICollectionViewLayout{

@@ -7,7 +7,9 @@
 
 import UIKit
 
-class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class WardrobeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var apparelsToDisplay: [MainDataModel.Apparel] = []
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -21,6 +23,12 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
         self.tabBarItem.image = UIImage(systemName: "hanger")
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toDetails", sender: self)
+        var selectedApparel = MainDataModel.wardrobe[indexPath.row].image
+    }
+    
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         2
     }
@@ -30,7 +38,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
         case 0:
             return MainDataModel.tags.count
         case 1:
-            return MainDataModel.Wardrobe.count
+            return apparelsToDisplay.count
         default:
             return 0
         }
@@ -45,7 +53,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeApparel", for: indexPath) as! WardrobeApparelCollectionViewCell
-            cell.apparelImage.image = MainDataModel.Wardrobe[indexPath.row].image
+            cell.apparelImage.image = apparelsToDisplay[indexPath.row].image
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeTag", for: indexPath) as! WardrobeTagCollectionViewCell
@@ -61,6 +69,15 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
         tabBarItem.title = "Wardrobe"
         tabBarItem.image = UIImage(systemName: "hanger")
         
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundColor = .foreground
+        
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        
+        changedSegment(segmentedControl)
+        
         // setting nib files for collection view
         let firstNib = UINib(nibName: "WardrobeTag", bundle: nil)
         collectionView.register(firstNib, forCellWithReuseIdentifier: "WardrobeTag")
@@ -71,6 +88,8 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
         // setting collection view
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
         collectionView.dataSource = self
+        collectionView.delegate = self
+        
     }
     
     // to generate layout for collection view
@@ -123,13 +142,27 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
     }
     
     @IBAction func changedSegment(_ sender: UISegmentedControl) {
-        
-        
+        switch segmentedControl.selectedSegmentIndex {
+        // for all
+        case 0:
+            apparelsToDisplay = MainDataModel.wardrobe
+            collectionView.reloadData()
+            
+        // for tops
+        case 1:
+            apparelsToDisplay = MainDataModel.wardrobe.filter { $0.type == .top }
+            collectionView.reloadData()
+            
+        // for bottoms
+        case 2:
+            apparelsToDisplay = MainDataModel.wardrobe.filter { $0.type == .bottom}
+            collectionView.reloadData()
+            
+        default:
+            apparelsToDisplay = MainDataModel.wardrobe
+            collectionView.reloadData()
+        }
     }
-    
-    
-    
-    
     
     // for alert controller on pressing add button
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
@@ -164,15 +197,22 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
         guard let selectedImage = info[.originalImage] as? UIImage else {return}
         imageToUse = selectedImage
         dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: "toDetails", sender: nil)
+        performSegue(withIdentifier: "toAdd", sender: nil)
     }
     
     // to use image in details screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetails"{
-//            let something = segue.destination as! DetailsTableViewController
-//            something.imageToUse = imageToUse
-            
+        if segue.identifier == "toAdd"{
+            let detailsTVC = segue.destination as! DetailsTableViewController
+            detailsTVC.imageToUse = imageToUse
+        }
+        
+        if segue.identifier == "toDetails" {
+            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+                let detailsTVC = segue.destination as! DetailsTableViewController
+                let selectedApparel = MainDataModel.wardrobe[indexPath.row]
+                detailsTVC.imageToUse = selectedApparel.image
+            }
         }
     }
     

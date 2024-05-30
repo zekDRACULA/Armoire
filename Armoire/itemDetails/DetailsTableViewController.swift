@@ -10,6 +10,11 @@ import UIKit
 class DetailsTableViewController: UITableViewController {
 
     
+    @IBOutlet var apparelImage: UIImageView!
+    var imageToUse: UIImage?
+    
+    var apparel: MainDataModel.Apparel?
+    
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var patternLabel: UILabel!
@@ -44,7 +49,8 @@ class DetailsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        apparelImage.image = imageToUse
     }
     
 
