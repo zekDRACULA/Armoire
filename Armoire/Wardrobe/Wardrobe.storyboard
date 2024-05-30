@@ -11,7 +11,7 @@
         <!--Wardrobe-->
         <scene sceneID="JDs-Gw-rCL">
             <objects>
-                <viewController id="9mE-SX-vm8" customClass="WardrobeViewController" customModule="Armoire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WardrobeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9mE-SX-vm8" customClass="WardrobeViewController" customModule="Armoire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jlm-A6-nVI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

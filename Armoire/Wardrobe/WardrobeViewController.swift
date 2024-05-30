@@ -11,6 +11,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDataSource, UIIm
     
     @IBOutlet var collectionView: UICollectionView!
 
+
     var imageToUse: UIImage = UIImage(named: "Image_1")!
     
     required init?(coder: NSCoder) {
