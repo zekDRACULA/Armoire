@@ -13,7 +13,7 @@ class DetailsTableViewController: UITableViewController {
     @IBOutlet var apparelImage: UIImageView!
     var imageToUse: UIImage?
     
-    var apparel: MainDataModel.Apparel?
+    var apparel: Apparel?
     
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var colorLabel: UILabel!

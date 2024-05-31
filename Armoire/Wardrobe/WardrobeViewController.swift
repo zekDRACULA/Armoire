@@ -9,7 +9,7 @@ import UIKit
 
 class WardrobeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var apparelsToDisplay: [MainDataModel.Apparel] = []
+    var apparelsToDisplay: [Apparel] = []
     
     @IBOutlet var collectionView: UICollectionView!
     
