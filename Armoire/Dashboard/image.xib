@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,31 +33,15 @@
                                     <constraint firstAttribute="width" constant="461" id="k0h-4k-Gbm"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bF0-1x-euC">
-                                <rect key="frame" x="405.33333333333331" y="349.33333333333331" width="55.666666666666686" height="36.666666666666686"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="heart" catalog="system" renderingMode="hierarchical-single">
-                                        <hierarchicalColors>
-                                            <color systemColor="labelColor"/>
-                                            <color systemColor="secondaryLabelColor"/>
-                                            <color systemColor="tertiaryLabelColor"/>
-                                        </hierarchicalColors>
-                                    </imageReference>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
-                                </buttonConfiguration>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843159999998" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sLb-ev-c2i" secondAttribute="trailing" id="0jV-jA-NTg"/>
                             <constraint firstAttribute="trailing" secondItem="Qmy-nO-YwN" secondAttribute="trailing" id="8Kn-fN-WnZ"/>
-                            <constraint firstAttribute="bottom" secondItem="bF0-1x-euC" secondAttribute="bottom" id="CuZ-df-ab0"/>
                             <constraint firstItem="sLb-ev-c2i" firstAttribute="leading" secondItem="65y-Cz-b5o" secondAttribute="leading" id="EMV-wG-rJm"/>
                             <constraint firstItem="Qmy-nO-YwN" firstAttribute="top" secondItem="65y-Cz-b5o" secondAttribute="top" id="M69-fe-VlI"/>
                             <constraint firstItem="Qmy-nO-YwN" firstAttribute="leading" secondItem="65y-Cz-b5o" secondAttribute="leading" id="d6V-gB-TfB"/>
                             <constraint firstAttribute="bottom" secondItem="sLb-ev-c2i" secondAttribute="bottom" id="dsQ-e7-gcE"/>
-                            <constraint firstAttribute="trailing" secondItem="bF0-1x-euC" secondAttribute="trailing" id="mgm-hi-EdA"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -82,15 +64,5 @@
     <resources>
         <image name="Image_1" width="800" height="1000"/>
         <image name="Image_2" width="550" height="754"/>
-        <image name="heart" catalog="system" width="128" height="107"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
