@@ -48,15 +48,30 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Events" id="pVq-z5-w3s">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="qqD-zo-Vr5"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="qqD-zo-Vr5">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="Y6W-OH-hqX" id="v5h-lb-4xM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="eventPageCollectionView" destination="Trm-Zd-drR" id="Fae-bM-cfF"/>
+                        <segue destination="PnH-i6-2hk" kind="show" identifier="toFullDetailsPage" id="2Pd-jR-qhq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063.3587786259541" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1016" y="-14"/>
+        </scene>
+        <!--EventFullDetails-->
+        <scene sceneID="nbr-3T-lAP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EventFullDetails" id="PnH-i6-2hk" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="rFE-nP-NQL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7tj-Vq-IUC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1764" y="-125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bNX-fU-wk2">

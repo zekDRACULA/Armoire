@@ -12,6 +12,7 @@ class EventSuggestionOutfitsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var upperOutfitImage: UIImageView!
     
+    @IBOutlet weak var viewOutlet: UIView!
     
     @IBOutlet weak var lowerOutfitImage: UIImageView!
     
