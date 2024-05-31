@@ -10,7 +10,7 @@ import UIKit
 class WardrobeApparelCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var apparelImage: UIImageView!
-    var image: UIImage?
+//    var image: UIImage?
     
     
 }
