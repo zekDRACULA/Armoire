@@ -45,15 +45,6 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="8mW-I0-Puu"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXV-tk-dPG">
-                                <rect key="frame" x="148" y="651" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <segue destination="hnf-g7-vsv" kind="presentation" id="79l-vb-Tu3"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.89019607840000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -72,14 +63,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1225" y="-35"/>
-        </scene>
-        <!--BagPacker-->
-        <scene sceneID="sQw-vg-Ro2">
-            <objects>
-                <viewControllerPlaceholder storyboardName="BagPacker" id="hnf-g7-vsv" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5qP-ol-a0t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1224" y="396"/>
         </scene>
         <!--WardrobeCompatibility-->
         <scene sceneID="GNP-ev-1rI">
