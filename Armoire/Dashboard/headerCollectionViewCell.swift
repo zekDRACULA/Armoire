@@ -57,7 +57,7 @@ class headerCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func eventAction(_ sender: UIButton) {
-        showButtonVisibility()
+//        showButtonVisibility()
         switch sender.configuration!.title!{
         case "Presentation":
             partyButton.setTitle("Presentation", for: .normal)

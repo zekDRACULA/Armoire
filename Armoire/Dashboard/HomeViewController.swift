@@ -47,6 +47,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             self.isExpanded = isExpanded
             collectionView.collectionViewLayout = generateLayout()
         collectionView.reloadData()
+//        collectionView.reloadSections(IndexSet(integer: 0))
         }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -135,6 +136,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
                 let groupSize: NSCollectionLayoutSize
                 if self.isExpanded {
                     groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(442))
+                    
                 } else {
                     groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(238))
                 }
