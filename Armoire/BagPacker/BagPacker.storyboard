@@ -76,6 +76,7 @@
                     <connections>
                         <outlet property="BagPackerNavigationBar" destination="HyZ-AN-MGg" id="kB9-hw-ohK"/>
                         <outlet property="bagPackerCollectionView" destination="AFn-Fy-I0o" id="Fb4-gv-gYV"/>
+                        <segue destination="O6a-Qy-6ce" kind="show" identifier="extraSegue" id="df4-QK-P10"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -140,7 +141,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfL-eX-Gv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="-11"/>
+            <point key="canvasLocation" x="1844" y="-377"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rFU-7P-Ayp">
+            <objects>
+                <viewController id="O6a-Qy-6ce" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fNS-NM-jzR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="NG1-RA-ud9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kxd-LY-Ucx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7cQ-hA-nFO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2675" y="9"/>
         </scene>
     </scenes>
     <resources>

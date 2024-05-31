@@ -13,7 +13,7 @@ class BagPackerDetailViewController: UIViewController, UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BagPackerDetailCell", for: indexPath) as! BagPackerDetailCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BagPackerDetailCollectionViewCell", for: indexPath) as! BagPackerDetailCollectionViewCell
         cell.imageView.image = UIImage(named: selectedItems[indexPath.row].imageName)
         return cell
     }
@@ -30,14 +30,14 @@ class BagPackerDetailViewController: UIViewController, UICollectionViewDelegate,
         super.viewDidLoad()
         
         let bagPackerDetailCellNib = UINib(nibName: "BagPackerDetailCollectionViewCell", bundle: nil)
-        BagPackerDetailCollectionView.register(bagPackerDetailCellNib, forCellWithReuseIdentifier: "BagPackerDetailCell")
+        BagPackerDetailCollectionView.register(bagPackerDetailCellNib, forCellWithReuseIdentifier: "BagPackerDetailCollectionViewCell")
         
         BagPackerDetailCollectionView.setCollectionViewLayout(generateLayout(), animated: true)
         BagPackerDetailCollectionView.delegate = self
         BagPackerDetailCollectionView.dataSource = self
         print("BagPackerDetailViewController: \(selectedItems.count)")
-        print(selectedItems[0])
-        print(selectedItems[0])
+        //print(selectedItems[0])
+        //print(selectedItems[0])
     }
     
     func generateLayout() -> UICollectionViewLayout{
