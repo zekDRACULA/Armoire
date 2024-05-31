@@ -66,27 +66,37 @@
                     </view>
                     <navigationItem key="navigationItem" title="Wardrobe" largeTitleDisplayMode="always" id="iBZ-29-CMZ">
                         <rightBarButtonItems>
+                            <barButtonItem image="ellipsis.circle" catalog="system" id="jcQ-LM-4I8">
+                                <connections>
+                                    <segue destination="WWR-B8-szP" kind="show" id="XqL-Iv-8E4"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="add" id="AVH-Mb-rUT">
                                 <color key="tintColor" red="0.57254901960000004" green="0.10980392160000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="addButtonTapped:" destination="9mE-SX-vm8" id="aOd-1u-dZZ"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="heart" catalog="system" changesSelectionAsPrimaryAction="YES" id="5xT-jb-ZwG" userLabel="Favorites">
-                                <color key="tintColor" red="0.57254901960000004" green="0.10980392160000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <segue destination="WWR-B8-szP" kind="show" id="KHp-2j-Sb1"/>
-                                </connections>
-                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="C73-DC-sH9" id="vIA-wt-pMT"/>
+                        <outlet property="segmentedControl" destination="quw-zl-UC3" id="eSl-oW-g6q"/>
+                        <segue destination="QvU-qt-3wi" kind="presentation" identifier="toAdd" id="Dg9-YJ-LdS"/>
+                        <segue destination="G0z-IG-U55" kind="presentation" identifier="toDetails" id="EJ0-gH-yR4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eO0-eK-ULF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1979.3893129770991" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="2127" y="-45"/>
+        </scene>
+        <!--itemDetails-->
+        <scene sceneID="D9U-dD-bbg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="itemDetails" id="QvU-qt-3wi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BG7-KE-FU5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1992" y="418"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="akb-dw-MZQ">
@@ -160,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hts-fw-fnp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2824" y="-469"/>
+            <point key="canvasLocation" x="3126" y="-344"/>
         </scene>
         <!--Custom-->
         <scene sceneID="Dv5-HI-4LA">
@@ -205,10 +215,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5c-mV-3ay" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2824" y="198"/>
+            <point key="canvasLocation" x="3126" y="299"/>
+        </scene>
+        <!--itemDetails-->
+        <scene sceneID="tIH-Oe-K0J">
+            <objects>
+                <viewControllerPlaceholder storyboardName="itemDetails" id="G0z-IG-U55" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fPn-VX-F9F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2266" y="418"/>
         </scene>
     </scenes>
     <resources>
-        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
     </resources>
 </document>
