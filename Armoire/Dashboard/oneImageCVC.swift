@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol CollectionViewCellDelegate: AnyObject {
+    func suggestionTapped(cell: oneImageCVC)
+}
+
 class oneImageCVC: UICollectionViewCell,UINavigationControllerDelegate {
     @IBOutlet var image: UIImageView!
     @IBOutlet var suggestionButton: UIButton!
     weak var homeViewController: HomeViewController?
     @IBOutlet var viewImage: UIView!
+    weak var delegate: CollectionViewCellDelegate?
     weak var  eventSuggestionsViewController:  EventSuggestionsViewController?
     override func awakeFromNib() {
             super.awakeFromNib()
@@ -20,18 +25,6 @@ class oneImageCVC: UICollectionViewCell,UINavigationControllerDelegate {
             suggestionButton.addGestureRecognizer(tapGestureRecognizer)
         }
     @IBAction func suggestionTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "EventSugeestions", bundle: nil)
-        
-        
-        if let nextVC = storyboard.instantiateViewController(withIdentifier: "EventSuggestionsViewController") as? EventSuggestionsViewController {
-            
-            if let navVC = homeViewController?.navigationController {
-                navVC.pushViewController(nextVC, animated: true)
-            } else {
-                print("Navigation controller is nil")
-            }
-        } else {
-            print("EventSuggestionsViewController could not be instantiated")
-        }
+        delegate?.suggestionTapped(cell: self)
     }
 }

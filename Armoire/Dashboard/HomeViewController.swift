@@ -8,7 +8,20 @@
 import UIKit
 
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate, UICollectionViewDelegate{
+class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate, UICollectionViewDelegate, CollectionViewCellDelegate{
+    func suggestionTapped(cell: oneImageCVC) {
+//        let storyboard = UIStoryboard(name: "EventSugeestions", bundle: nil)
+//        if let nextVC = storyboard.instantiateViewController(withIdentifier: "EventSuggestionsViewController") as? EventSuggestionsViewController {
+//            if let navVC = self.navigationController {
+//                navVC.pushViewController(nextVC, animated: true)
+//            } else {
+//                print("Navigation controller is nil")
+//            }
+//        } else {
+//            print("EventSuggestionsViewController could not be instantiated")
+//        }
+    }
+    
     
     
     var isExpanded: Bool = false
@@ -102,6 +115,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
                 cell.image.layer.cornerRadius = 14.0
                 cell.viewImage.layer.masksToBounds = false
                 cell.viewImage.layer.cornerRadius = 14.0
+                cell.delegate = self
                 return cell
             }
 //            cell.viewImage.layer.shadowColor = UIColor.gray.cgColor
