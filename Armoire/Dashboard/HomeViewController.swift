@@ -85,7 +85,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             return cell
         case 1:
             if indexPath.row != 3{
+                
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
+                let outfit = MainDataModel.outfit[indexPath.row]
+                cell.image1.image = outfit.top.image
+                cell.image2.image = outfit.bottom.image
                 cell.viewImage.layer.masksToBounds = false
                 cell.viewImage.layer.cornerRadius = 14.0
                 

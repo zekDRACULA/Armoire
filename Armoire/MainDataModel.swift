@@ -39,7 +39,7 @@ class MainDataModel {
         Apparel(image: UIImage(named: "Image_3")!, id: 3, color: .black, pattern: .solid, tag: ["Party", "Top"])
     ]
     
-    static var outfit:[Outfit] = [Outfit(top: Wardrobe[0], bottom: Wardrobe[1]), Outfit(top: Wardrobe[0], bottom: Wardrobe[1]), Outfit(top: Wardrobe[0], bottom: Wardrobe[1]), Outfit(top: Wardrobe[0], bottom: Wardrobe[1])]
+    static var outfit:[Outfit] = [Outfit(top: Wardrobe[0], bottom: Wardrobe[1]), Outfit(top: Wardrobe[0], bottom: Wardrobe[2]), Outfit(top: Wardrobe[0], bottom: Wardrobe[3]), Outfit(top: Wardrobe[0], bottom: Wardrobe[4])]
 
 //    static var favourites: [Apparel] = wardrobe.filter{$0.isFavourite}
     
