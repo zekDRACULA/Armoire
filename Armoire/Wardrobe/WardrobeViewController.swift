@@ -19,6 +19,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet var segmentedControl: UISegmentedControl!
 
     var imageToUse: UIImage = UIImage(named: "Image_1")!
+    var selectedApparel: Apparel?
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -27,6 +28,10 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+            selectedApparel = apparelsToDisplay[indexPath.row]
+            print(selectedApparel!)
+        }
         performSegue(withIdentifier: "toDetails", sender: self)
     }
     
@@ -248,17 +253,20 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     // to use image in details screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailsTVC = segue.destination as! DetailsTableViewController
         if segue.identifier == "toAdd"{
-            let detailsTVC = segue.destination as! DetailsTableViewController
             detailsTVC.imageToUse = imageToUse
         }
         
+//        if segue.identifier == "toDetails" {
+//            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+//                let detailsTVC = segue.destination as! DetailsTableViewController
+//                let selectedApparel = apparelsToDisplay[indexPath.row]
+//                detailsTVC.apparel?.image = selectedApparel.image
+//            }
+//        }
         if segue.identifier == "toDetails" {
-            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
-                let detailsTVC = segue.destination as! DetailsTableViewController
-                let selectedApparel = apparelsToDisplay[indexPath.row]
-                detailsTVC.apparel?.image = selectedApparel.image
-            }
+            detailsTVC.apparel = selectedApparel
         }
     }
     
