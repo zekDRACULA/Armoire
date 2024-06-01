@@ -37,12 +37,20 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9G-pU-zHB">
+                                <rect key="frame" x="141.66666666666666" y="411" width="109.66666666666666" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="foreground"/>
                         <constraints>
                             <constraint firstItem="Trm-Zd-drR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2jq-Tb-xJR"/>
+                            <constraint firstItem="a9G-pU-zHB" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="4N2-yk-nc1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Trm-Zd-drR" secondAttribute="trailing" id="FrR-dx-neV"/>
+                            <constraint firstItem="a9G-pU-zHB" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="I6X-MA-6GW"/>
                             <constraint firstItem="Trm-Zd-drR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="W1Q-ir-xae"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Trm-Zd-drR" secondAttribute="bottom" id="zsx-Io-r6k"/>
                         </constraints>
@@ -56,6 +64,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="eventPageCollectionView" destination="Trm-Zd-drR" id="Fae-bM-cfF"/>
+                        <outlet property="noEventsLabel" destination="a9G-pU-zHB" id="TYi-ho-d9k"/>
                         <segue destination="PnH-i6-2hk" kind="show" identifier="toFullDetailsPage" id="2Pd-jR-qhq"/>
                         <segue destination="N3c-PQ-WPk" kind="show" identifier="toBagPacker" id="FrZ-Og-QvC"/>
                     </connections>

@@ -11,6 +11,7 @@ class EventsPageViewController: UIViewController, UICollectionViewDelegate, UICo
     
     var indexPathOfSelected:Int?
 
+    @IBOutlet weak var noEventsLabel: UILabel!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return DataController.shared.countEvents()
@@ -69,6 +70,10 @@ class EventsPageViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if DataController.shared.countEvents() != 0 {
+            noEventsLabel.isHidden = true
+        }
         let eventCellNib = UINib(nibName: "EventCell", bundle: nil)
         eventPageCollectionView.register(eventCellNib, forCellWithReuseIdentifier: "EventCell")
         eventPageCollectionView.setCollectionViewLayout(generateLayout(), animated: true)
