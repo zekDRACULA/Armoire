@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,16 +17,79 @@
                 <rect key="frame" x="0.0" y="0.0" width="365" height="135"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vgO-gV-WE7">
-                        <rect key="frame" x="16" y="14" width="100" height="101"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9QB-7i-feF">
+                        <rect key="frame" x="7" y="7" width="351" height="121"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vgO-gV-WE7">
+                                <rect key="frame" x="8" y="10" width="100" height="101"/>
+                                <color key="backgroundColor" name="selected"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHY-R7-T4T">
+                                <rect key="frame" x="116" y="10" width="97" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYt-ee-bSJ">
+                                <rect key="frame" x="116" y="50" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXz-8h-9u3">
+                                <rect key="frame" x="266" y="50" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="foreground"/>
+                        <constraints>
+                            <constraint firstItem="JYt-ee-bSJ" firstAttribute="leading" secondItem="vgO-gV-WE7" secondAttribute="trailing" constant="8" id="4j8-sB-NEy"/>
+                            <constraint firstItem="vHY-R7-T4T" firstAttribute="top" secondItem="9QB-7i-feF" secondAttribute="top" constant="10" id="5TL-YB-aDc"/>
+                            <constraint firstItem="vgO-gV-WE7" firstAttribute="leading" secondItem="9QB-7i-feF" secondAttribute="leading" constant="8" id="8wo-m4-Njw"/>
+                            <constraint firstAttribute="trailing" secondItem="vHY-R7-T4T" secondAttribute="trailing" constant="138" id="Gyh-tY-joO"/>
+                            <constraint firstAttribute="trailing" secondItem="JYt-ee-bSJ" secondAttribute="trailing" constant="194" id="JI9-cD-9iH"/>
+                            <constraint firstAttribute="bottom" secondItem="vHY-R7-T4T" secondAttribute="bottom" constant="90" id="T4T-20-2Rm"/>
+                            <constraint firstAttribute="trailing" secondItem="vgO-gV-WE7" secondAttribute="trailing" constant="243" id="cTr-nk-in8"/>
+                            <constraint firstItem="vgO-gV-WE7" firstAttribute="top" secondItem="9QB-7i-feF" secondAttribute="top" constant="10" id="cUc-Nm-HXg"/>
+                            <constraint firstItem="JYt-ee-bSJ" firstAttribute="top" secondItem="vHY-R7-T4T" secondAttribute="bottom" constant="19" id="e4i-o0-uYE"/>
+                            <constraint firstItem="wXz-8h-9u3" firstAttribute="leading" secondItem="vgO-gV-WE7" secondAttribute="trailing" constant="158" id="eV8-Mt-nFi"/>
+                            <constraint firstItem="wXz-8h-9u3" firstAttribute="top" secondItem="9QB-7i-feF" secondAttribute="top" constant="50" id="o7Y-VB-BD7"/>
+                            <constraint firstAttribute="bottom" secondItem="wXz-8h-9u3" secondAttribute="bottom" constant="50" id="pMy-XR-Ven"/>
+                            <constraint firstItem="vHY-R7-T4T" firstAttribute="leading" secondItem="vgO-gV-WE7" secondAttribute="trailing" constant="8" symbolic="YES" id="q1H-1X-85p"/>
+                            <constraint firstAttribute="bottom" secondItem="vgO-gV-WE7" secondAttribute="bottom" constant="10" id="qC2-T0-37w"/>
+                            <constraint firstAttribute="trailing" secondItem="wXz-8h-9u3" secondAttribute="trailing" constant="21" id="qnd-Nn-1xD"/>
+                            <constraint firstAttribute="bottom" secondItem="JYt-ee-bSJ" secondAttribute="bottom" constant="50" id="yDT-O6-2Oh"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="14"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="9QB-7i-feF" firstAttribute="top" secondItem="VuV-FU-eRA" secondAttribute="top" constant="7" id="9Jz-Fa-mS1"/>
+                    <constraint firstAttribute="bottom" secondItem="9QB-7i-feF" secondAttribute="bottom" constant="7" id="SJw-P6-KMN"/>
+                    <constraint firstAttribute="trailing" secondItem="9QB-7i-feF" secondAttribute="trailing" constant="7" id="g1O-7j-02g"/>
+                    <constraint firstItem="9QB-7i-feF" firstAttribute="leading" secondItem="VuV-FU-eRA" secondAttribute="leading" constant="7" id="voe-U9-kLW"/>
+                </constraints>
             </collectionViewCellContentView>
             <connections>
+                <outlet property="clothColor" destination="wXz-8h-9u3" id="zZw-yU-0MX"/>
+                <outlet property="clothType" destination="vHY-R7-T4T" id="IkU-V6-aK1"/>
                 <outlet property="imageView" destination="vgO-gV-WE7" id="5y9-JR-x1t"/>
             </connections>
-            <point key="canvasLocation" x="-93" y="-181"/>
+            <point key="canvasLocation" x="-93.89312977099236" y="-181.33802816901408"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="foreground">
+            <color red="1" green="0.96899998188018799" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="selected">
+            <color red="0.70599997043609619" green="0.63099998235702515" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
