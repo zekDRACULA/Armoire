@@ -9,16 +9,29 @@ import UIKit
 
 protocol HeaderCollectionViewCellDelegate: AnyObject {
     func toggleLayout(isExpanded: Bool)
+    func eventSelected(eventType: EventType)
 }
+enum EventType: String {
+    case presentation = "Presentation"
+    case meeting = "Meeting"
+    case workout = "Workout"
+    case party = "Party"
+}
+
 
 class headerCollectionViewCell: UICollectionViewCell {
     
     
+    @IBOutlet var weatherStack: UIStackView!
     @IBOutlet var dropDownButton: UIButton!
+    @IBOutlet var weatherImage: UIImageView!
     
     @IBOutlet var partyButton: UIButton!
     
     @IBOutlet var calenderLabel: UILabel!
+    
+    @IBOutlet var weatherDescription: UILabel!
+    
     @IBOutlet var waetherLabel: UILabel!
     @IBOutlet var outfitLabel: UILabel!
     
@@ -28,6 +41,47 @@ class headerCollectionViewCell: UICollectionViewCell {
     
     weak var delegate: HeaderCollectionViewCellDelegate? 
     var button = false
+    
+   
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        updateCalendarLabel()
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=94040,us&units=imperial&appid=0998bf296ab8bf39403c259f84b91beb") else {return}
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let data = data, error == nil{
+                do{
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else{return}
+                    guard let weatherDetails = json["weather"] as? [[String: Any]], let weatherMain = json["main"] as? [String: Any] else {return}
+                    let temp = Int(weatherMain["temp"] as? Double ?? 0)
+                    let description = (weatherDetails.first?["description"] as? String)?.capitalizingFirstLetter()
+                    DispatchQueue.main.async {
+                        self.setWeather(weather: weatherDetails.first?["main"] as? String, description: description ?? "...",temp: temp)
+                    }
+                    
+                }
+                catch{
+                    print("We have an error in retrieving the weather")
+                }
+            }
+            
+        }
+        task.resume()
+    }
+    
+    
+    func setWeather(weather: String?, description: String, temp: Int){
+        weatherDescription.text = description
+        waetherLabel.text = "\(temp)°"
+        
+        switch weather{
+        case "Sunny":
+            weatherImage.image = UIImage(named: "sunny")
+        default:
+            weatherImage.image = UIImage(named: "cloudy")
+        }
+    }
+    
+    
     
     func showButtonVisibility(){
         eventButton.forEach{button in
@@ -57,7 +111,10 @@ class headerCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func eventAction(_ sender: UIButton) {
-//        showButtonVisibility()
+        guard let title = sender.configuration?.title,
+                  let eventType = EventType(rawValue: title) else { return }
+            
+            delegate?.eventSelected(eventType: eventType)
         switch sender.configuration!.title!{
         case "Presentation":
             partyButton.setTitle("Presentation", for: .normal)
@@ -77,6 +134,17 @@ class headerCollectionViewCell: UICollectionViewCell {
             partyButton.setImage(UIImage(named: "party.popper.fill"), for: .normal)
         }
     }
+    private func updateCalendarLabel() {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .full
+            let currentDate = Date()
+            calenderLabel.text = dateFormatter.string(from: currentDate)
+        }
     
     
+}
+extension String{
+    func capitalizingFirstLetter() -> String{
+        return prefix(1).uppercased() + self.lowercased().dropFirst()
+    }
 }
