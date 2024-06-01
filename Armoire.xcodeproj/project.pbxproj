@@ -33,6 +33,8 @@
 		6742745C2BF617E3001304A8 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742745B2BF617E3001304A8 /* CalendarViewController.swift */; };
 		6742745E2BF617F5001304A8 /* WardrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6742745D2BF617F5001304A8 /* WardrobeViewController.swift */; };
 		677FAA172C03D0A900E2C783 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677FAA162C03D0A900E2C783 /* FavouritesViewController.swift */; };
+		6781325C2C09A4FE00FC03C5 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6781325B2C09A4FE00FC03C5 /* Structs.swift */; };
+		6781325E2C09A50700FC03C5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6781325D2C09A50700FC03C5 /* DataController.swift */; };
 		679E649A2BFF925500CB211F /* WardrobeTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679E64992BFF925500CB211F /* WardrobeTagCollectionViewCell.swift */; };
 		67A285EA2C022F900086997B /* MainDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A285E92C022F900086997B /* MainDataModel.swift */; };
 		67A3E4E52C00596500CC5880 /* WardrobeApparel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67A3E4E42C00596500CC5880 /* WardrobeApparel.xib */; };
@@ -96,6 +98,8 @@
 		6742745B2BF617E3001304A8 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		6742745D2BF617F5001304A8 /* WardrobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
 		677FAA162C03D0A900E2C783 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		6781325B2C09A4FE00FC03C5 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
+		6781325D2C09A50700FC03C5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		679E64992BFF925500CB211F /* WardrobeTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		67A285E92C022F900086997B /* MainDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataModel.swift; sourceTree = "<group>"; };
 		67A3E4E42C00596500CC5880 /* WardrobeApparel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WardrobeApparel.xib; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 		0A546A1E2BED34C6004EBA3D /* Armoire */ = {
 			isa = PBXGroup;
 			children = (
+				6781325B2C09A4FE00FC03C5 /* Structs.swift */,
+				6781325D2C09A50700FC03C5 /* DataController.swift */,
 				67A285E92C022F900086997B /* MainDataModel.swift */,
 				B15F21322C05300800C46793 /* EventDetails */,
 				B1BFFAE92C023ACA00B2EC9B /* BagPacker */,
@@ -384,10 +390,12 @@
 				487A82902BFE2F1A004AF22A /* DetailsTableViewController.swift in Sources */,
 				4881AA8E2BFF6C8D008052DF /* EventSuggestionOutfitsCollectionViewCell.swift in Sources */,
 				0A546A242BED34C6004EBA3D /* ViewController.swift in Sources */,
+				6781325E2C09A50700FC03C5 /* DataController.swift in Sources */,
 				B12D51772BF68197002324F4 /* CardCell.swift in Sources */,
 				6742745E2BF617F5001304A8 /* WardrobeViewController.swift in Sources */,
 				B1BFFAED2C023ACA00B2EC9B /* ClothesCellViewController.swift in Sources */,
 				B1D800502C03AFF00081F999 /* BagPackerDetailViewController.swift in Sources */,
+				6781325C2C09A4FE00FC03C5 /* Structs.swift in Sources */,
 				BC11BC7A2BFB6B2C0093DDBE /* headerCollectionViewCell.swift in Sources */,
 				BC11BC782BFB6B220093DDBE /* footerCollectionViewCell.swift in Sources */,
 				BC11BC7E2BFB70530093DDBE /* HomeModel.swift in Sources */,
@@ -556,10 +564,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QZMU65G2C8;
+				DEVELOPMENT_TEAM = 63W22LRA9Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armoire/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "Please allow acces to see stuf";
+				INFOPLIST_KEY_NSCameraUsageDescription = camera;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = " PhotoLibrary";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -571,7 +581,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = teamggg.Armoire;
+				PRODUCT_BUNDLE_IDENTIFIER = teamgg.Armoirewe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -586,10 +596,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QZMU65G2C8;
+				DEVELOPMENT_TEAM = 63W22LRA9Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armoire/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "Please allow acces to see stuf";
+				INFOPLIST_KEY_NSCameraUsageDescription = camera;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = " PhotoLibrary";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -601,7 +613,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = teamggg.Armoire;
+				PRODUCT_BUNDLE_IDENTIFIER = teamgg.Armoirewe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

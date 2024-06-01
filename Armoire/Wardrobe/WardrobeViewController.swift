@@ -25,7 +25,6 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "toDetails", sender: self)
-        var selectedApparel = MainDataModel.wardrobe[indexPath.row].image
     }
     
     
@@ -36,7 +35,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return MainDataModel.tags.count
+            return DataController.shared.countTags()
         case 1:
             return apparelsToDisplay.count
         default:
@@ -48,7 +47,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeTag", for: indexPath) as! WardrobeTagCollectionViewCell
-            let buttonTitle = MainDataModel.tags[indexPath.row]
+            let buttonTitle = DataController.shared.getTags(with: indexPath.row)
             cell.tagButton.setTitle("\(buttonTitle)", for: .normal)
             return cell
         case 1:
@@ -57,7 +56,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeTag", for: indexPath) as! WardrobeTagCollectionViewCell
-            let buttonTitle = MainDataModel.tags[indexPath.row]
+            let buttonTitle = DataController.shared.getTags(with: indexPath.row)
             cell.tagButton.setTitle("\(buttonTitle)", for: .normal)
             return cell
         }
@@ -145,21 +144,21 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         switch segmentedControl.selectedSegmentIndex {
         // for all
         case 0:
-            apparelsToDisplay = MainDataModel.wardrobe
+            apparelsToDisplay = DataController.shared.getWardrobe()
             collectionView.reloadData()
             
         // for tops
         case 1:
-            apparelsToDisplay = MainDataModel.wardrobe.filter { $0.type == .top }
+            apparelsToDisplay = DataController.shared.getWardrobe().filter { $0.type == .top }
             collectionView.reloadData()
             
         // for bottoms
         case 2:
-            apparelsToDisplay = MainDataModel.wardrobe.filter { $0.type == .bottom}
+            apparelsToDisplay = DataController.shared.getWardrobe().filter { $0.type == .bottom}
             collectionView.reloadData()
             
         default:
-            apparelsToDisplay = MainDataModel.wardrobe
+            apparelsToDisplay = DataController.shared.getWardrobe()
             collectionView.reloadData()
         }
     }
@@ -210,8 +209,8 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         if segue.identifier == "toDetails" {
             if let indexPath = collectionView.indexPathsForSelectedItems?.first {
                 let detailsTVC = segue.destination as! DetailsTableViewController
-                let selectedApparel = MainDataModel.wardrobe[indexPath.row]
-                detailsTVC.imageToUse = selectedApparel.image
+                let selectedApparel = apparelsToDisplay[indexPath.row]
+                detailsTVC.apparel?.image = selectedApparel.image
             }
         }
     }

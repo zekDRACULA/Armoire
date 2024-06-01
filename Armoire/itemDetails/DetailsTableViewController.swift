@@ -49,7 +49,7 @@ class DetailsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         apparelImage.image = imageToUse
     }
     
