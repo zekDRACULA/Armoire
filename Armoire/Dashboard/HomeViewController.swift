@@ -10,17 +10,18 @@ import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate, UICollectionViewDelegate, CollectionViewCellDelegate{
     func suggestionTapped(cell: oneImageCVC) {
-        let storyboard = UIStoryboard(name: "EventSugeestions", bundle: nil)
-        if let nextVC = storyboard.instantiateViewController(withIdentifier: "EventSuggestionsViewController") as? EventSuggestionsViewController {
-            if let navVC = self.navigationController {
-                navVC.pushViewController(nextVC, animated: true)
+            let storyboard = UIStoryboard(name: "TodaySuggestion", bundle: nil)
+            if let nextVC = storyboard.instantiateViewController(withIdentifier: "TodaySugestionViewController") as? TodaySugestionViewController {
+                if let navVC = self.navigationController {
+                    navVC.pushViewController(nextVC, animated: true)
+                } else {
+                    print("Navigation controller is nil")
+                }
             } else {
-                print("Navigation controller is nil")
+                print("TodaySuggestionsViewController could not be instantiated")
             }
-        } else {
-            print("EventSuggestionsViewController could not be instantiated")
-        }
     }
+
     
     
     

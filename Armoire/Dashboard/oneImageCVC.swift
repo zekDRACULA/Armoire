@@ -17,13 +17,10 @@ class oneImageCVC: UICollectionViewCell,UINavigationControllerDelegate {
     weak var homeViewController: HomeViewController?
     @IBOutlet var viewImage: UIView!
     weak var delegate: CollectionViewCellDelegate?
-    weak var  eventSuggestionsViewController:  EventSuggestionsViewController?
     override func awakeFromNib() {
             super.awakeFromNib()
-            // Add gesture recognizer to the button
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(suggestionTapped))
-            suggestionButton.addGestureRecognizer(tapGestureRecognizer)
         }
+    
     @IBAction func suggestionTapped(_ sender: UIButton) {
         delegate?.suggestionTapped(cell: self)
     }
