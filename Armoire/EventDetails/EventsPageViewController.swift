@@ -13,7 +13,7 @@ class EventsPageViewController: UIViewController, UICollectionViewDelegate, UICo
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return AllAddedEventDetails.allEventsinformation.count
+        return DataController.shared.countEvents()
     }
     
     
@@ -25,13 +25,12 @@ class EventsPageViewController: UIViewController, UICollectionViewDelegate, UICo
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMM d yyyy"
         
-        let eventStartFormattedDate = dateFormatter.string(from: AllAddedEventDetails.allEventsinformation[indexPath.row].eventStartDate)
+        let eventStartFormattedDate = dateFormatter.string(from: DataController.shared.getEvents()[indexPath.row].eventStartDate)
         
 //        cell.eventDate.text = "\(AllAddedEventDetails.allEventsinformation[indexPath.row].eventStartDate)"
         cell.eventDate.text = eventStartFormattedDate
-        cell.eventTitle.text = AllAddedEventDetails.allEventsinformation[indexPath.row].eventTitle
-        cell.eventLocation.text = AllAddedEventDetails.allEventsinformation[indexPath.row].eventLocation
-        cell.eventDuration.text = EventDataModel.eventData[indexPath.row].eventDuration
+        cell.eventTitle.text = DataController.shared.getEvents()[indexPath.row].eventTitle
+        cell.eventLocation.text = DataController.shared.getEvents()[indexPath.row].eventLocation
         cell.eventType.backgroundColor = UIColor(named: "AccentColor")
         return cell
     }

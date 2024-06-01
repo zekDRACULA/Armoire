@@ -138,10 +138,10 @@ class CalendarViewController: UIViewController, UICalendarViewDelegate, UICalend
                 let endDate = event.endDate
                 let location = event.location
                 
-                let newEventDetails = CalendarEventInfo(eventTitle: title ?? "No Title", eventStartDate: startDate!, eventEndDate: endDate!, eventLocation: location ?? "No Location")
-                AllAddedEventDetails.allEventsinformation.append(newEventDetails)
+                let newEventDetails = CalendarEvent(eventTitle: title ?? "No Title", eventStartDate: startDate!, eventEndDate: endDate!, eventLocation: location ?? "No Location")
+                DataController.shared.appendEvent(event: newEventDetails)
 //                eventInfoEverything.allEventsinformation.append(newEventDetails)
-                print(AllAddedEventDetails.allEventsinformation)
+                print(DataController.shared.getEvents())
                 
 //                eventInfoArray.append(newEventDetails)
                 

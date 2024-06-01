@@ -28,13 +28,14 @@ class EventFullDetailsViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMM d yyyy"
         
-        let eventStartFormattedDate = dateFormatter.string(from: AllAddedEventDetails.allEventsinformation[indexPathOfSelcted!].eventStartDate)
-        let eventEndFormattedDate = dateFormatter.string(from: AllAddedEventDetails.allEventsinformation[indexPathOfSelcted!].eventEndDate)
+        let eventStartFormattedDate = dateFormatter.string(from: DataController.shared.getEvents()[indexPathOfSelcted!].eventStartDate)
+        
+        let eventEndFormattedDate = dateFormatter.string(from: DataController.shared.getEvents()[indexPathOfSelcted!].eventEndDate)
 
         
         
-        titleLabel.text = "\(AllAddedEventDetails.allEventsinformation[indexPathOfSelcted!].eventTitle)"
-        locationLabel.text = "\(AllAddedEventDetails.allEventsinformation[indexPathOfSelcted!].eventLocation)"
+        titleLabel.text = "\(DataController.shared.getEvents()[indexPathOfSelcted!].eventTitle)"
+        locationLabel.text = "\(DataController.shared.getEvents()[indexPathOfSelcted!].eventLocation)"
         
         startDateLabel.text = "from \(eventStartFormattedDate)"
         endDateLabel.text = "to \(eventEndFormattedDate)"

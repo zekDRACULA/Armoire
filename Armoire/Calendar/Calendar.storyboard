@@ -39,6 +39,11 @@
                         <color key="tintColor" red="0.5725490196078431" green="0.10980392156862745" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" title="Calendar" id="hEq-1s-jEu">
+                        <barButtonItem key="leftBarButtonItem" title="Events" id="HQ9-qD-7rP">
+                            <connections>
+                                <segue destination="tnr-XI-Oaf" kind="show" id="bHa-7v-MFd"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3e9-cW-VIL">
                             <color key="tintColor" red="0.57254901960000004" green="0.10980392160000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
@@ -58,6 +63,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0b-kk-M5S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="737" y="341"/>
+        </scene>
+        <!--EventDetails-->
+        <scene sceneID="pNF-kX-1LK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EventDetails" id="tnr-XI-Oaf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="QAa-Ih-opi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bz2-Xu-FRR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1711" y="-163"/>
         </scene>
         <!--EventSugeestions-->
         <scene sceneID="CGo-aT-DJ6">
