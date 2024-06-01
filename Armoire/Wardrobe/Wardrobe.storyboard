@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="C73-DC-sH9">
-                                <rect key="frame" x="0.0" y="150" width="393" height="668"/>
+                                <rect key="frame" x="0.0" y="150" width="393" height="619"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.89019607840000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fgo-JK-e8k">
                                     <size key="itemSize" width="128" height="128"/>
@@ -64,21 +64,32 @@
                             <constraint firstItem="0eP-mk-QUE" firstAttribute="trailing" secondItem="quw-zl-UC3" secondAttribute="trailing" constant="16" id="hZE-YQ-tP5"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Wardrobe" largeTitleDisplayMode="always" id="iBZ-29-CMZ">
-                        <rightBarButtonItems>
-                            <barButtonItem image="ellipsis.circle" catalog="system" id="jcQ-LM-4I8">
-                                <connections>
-                                    <segue destination="WWR-B8-szP" kind="show" id="XqL-Iv-8E4"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="add" id="AVH-Mb-rUT">
-                                <color key="tintColor" red="0.57254901960000004" green="0.10980392160000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="addButtonTapped:" destination="9mE-SX-vm8" id="aOd-1u-dZZ"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <centerItemGroups>
+                            <barButtonItemGroup customizationDisposition="fixed" id="CDs-PA-e6a">
+                                <barButtonItems>
+                                    <barButtonItem title="Favourites" image="heart" catalog="system" id="SYe-TK-7Cr">
+                                        <connections>
+                                            <segue destination="WWR-B8-szP" kind="show" id="9p4-8L-7sa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Custom" image="tshirt" catalog="system" id="oPX-3F-M9C">
+                                        <connections>
+                                            <segue destination="8Sr-dJ-ydj" kind="show" id="1t9-bv-apY"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" id="kR5-4o-obJ"/>
+                                </barButtonItems>
+                            </barButtonItemGroup>
+                        </centerItemGroups>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="AVH-Mb-rUT">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="9mE-SX-vm8" id="aOd-1u-dZZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="C73-DC-sH9" id="vIA-wt-pMT"/>
                         <outlet property="segmentedControl" destination="quw-zl-UC3" id="eSl-oW-g6q"/>
@@ -88,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eO0-eK-ULF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2127" y="-45"/>
+            <point key="canvasLocation" x="2126" y="-35"/>
         </scene>
         <!--itemDetails-->
         <scene sceneID="D9U-dD-bbg">
@@ -133,7 +144,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uAe-E5-X08">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.89019607840000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XgK-7l-Ly8">
                                     <size key="itemSize" width="128" height="128"/>
@@ -181,7 +192,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UA8-rp-5DC">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.89019607840000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BpQ-2K-wWO">
                                     <size key="itemSize" width="128" height="128"/>
@@ -227,6 +238,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="tshirt" catalog="system" width="128" height="98"/>
     </resources>
 </document>

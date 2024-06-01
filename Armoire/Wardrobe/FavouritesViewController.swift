@@ -12,7 +12,6 @@ class FavouritesViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet var collectionView: UICollectionView!
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("haloo")
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -20,12 +19,14 @@ class FavouritesViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        MainDataModel.favourites.count
+//        MainDataModel.favourites.count
+        DataController.shared.countFavourites()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeApparel", for: indexPath) as! WardrobeApparelCollectionViewCell
-        cell.apparelImage.image = MainDataModel.favourites[indexPath.row].image
+//        cell.apparelImage.image = MainDataModel.favourites[indexPath.row].image
+        cell.apparelImage.image = DataController.shared.getFavourites(with: indexPath.row).image
         return cell
     }
     
