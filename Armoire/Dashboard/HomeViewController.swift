@@ -24,7 +24,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     
     
     
+    
     var isExpanded: Bool = false
+    var selectedEventType: EventType = .party
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.tabBarItem.title = "Home"
@@ -62,13 +64,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         collectionView.reloadData()
 //        collectionView.reloadSections(IndexSet(integer: 0))
         }
+    func eventSelected(eventType: EventType) {
+            self.selectedEventType = eventType
+            collectionView.reloadSections(IndexSet(integer: 1)) // Reload the section containing the images
+        }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         switch section {
         case 0:
             return 1
         case 1:
-            return MainDataModel.outfit.count
+            return outfitsForEventType(selectedEventType).count
         case 2:
             return 1
         default:
@@ -82,8 +88,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath) as! headerCollectionViewCell
             cell.delegate = self
-            cell.waetherLabel.layer.cornerRadius = 20.0
-            cell.waetherLabel.clipsToBounds = true
+            cell.weatherStack.layer.cornerRadius = 20.0
+            cell.weatherStack.clipsToBounds = true
             cell.calenderLabel.layer.cornerRadius = 20.0
             cell.calenderLabel.clipsToBounds = true
             cell.partyButton.layer.cornerRadius = 8.0
@@ -100,9 +106,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             if indexPath.row != 3{
                 
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
-                let outfit = MainDataModel.outfit[indexPath.row]
-                cell.image1.image = outfit.top.image
-                cell.image2.image = outfit.bottom.image
+                let outfit = outfitsForEventType(selectedEventType)[indexPath.row]
+                cell.configure(picture1: outfit.top.image, picture2: outfit.bottom.image)
                 cell.viewImage.layer.masksToBounds = false
                 cell.viewImage.layer.cornerRadius = 14.0
                 
@@ -228,6 +233,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
 //        header.backgroundColor = .cyan
         return header
+    }
+    func outfitsForEventType(_ eventType: EventType) -> [MainDataModel.Outfit] {
+        switch eventType {
+        case .presentation:
+            return MainDataModel.presentationOutfits
+        case .meeting:
+            return MainDataModel.meetingOutfits
+        case .workout:
+            return MainDataModel.workoutOutfits
+        case .party:
+            return MainDataModel.partyOutfits
+        }
     }
     
 }

@@ -31,7 +31,6 @@ class CompatibilityViewController: UIViewController {
     @IBOutlet var bottom3: UIImageView!
     @IBOutlet var bottom4: UIImageView!
     
-    
     @IBAction func saveOutfitButton(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Item Saved Successfully", message: "You can find this item in wardrobe section", preferredStyle: .alert)
         
@@ -46,11 +45,12 @@ class CompatibilityViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     fileprivate func extractedFunc() {
-        //        tabBarController?.tabBar.isHidden = true
-        bottom1.image = MainDataModel.outfit[0].bottom.image
-        bottom2.image = MainDataModel.outfit[1].bottom.image
-        bottom3.image = MainDataModel.outfit[2].bottom.image
-        bottom4.image = MainDataModel.outfit[3].bottom.image
+        //tabBarController?.tabBar.isHidden = true
+        let outfits = MainDataModel.partyOutfits
+        bottom1.image = outfits[0].bottom.image
+        bottom2.image = outfits[1].bottom.image
+        bottom3.image = outfits[2].bottom.image
+        bottom4.image = outfits[3].bottom.image
         imageView.image = selectedImage
         image1.image = selectedImage
         image2.image = selectedImage

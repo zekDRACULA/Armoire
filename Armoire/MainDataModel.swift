@@ -39,7 +39,33 @@ class MainDataModel {
         Apparel(image: UIImage(named: "Image_3")!, id: 3, color: .black, pattern: .solid, tag: ["Party", "Top"])
     ]
     
-    static var outfit:[Outfit] = [Outfit(top: Wardrobe[0], bottom: Wardrobe[1]), Outfit(top: Wardrobe[0], bottom: Wardrobe[2]), Outfit(top: Wardrobe[0], bottom: Wardrobe[3]), Outfit(top: Wardrobe[0], bottom: Wardrobe[4])]
+    static var partyOutfits: [Outfit] = [
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[1]),
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[2]),
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[3]),
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[4])
+        ]
+
+        static var meetingOutfits: [Outfit] = [
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[2]),
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[3]),
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[4]),
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[1])
+        ]
+
+        static var presentationOutfits: [Outfit] = [
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[3]),
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[4]),
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[1]),
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[2])
+        ]
+
+        static var workoutOutfits: [Outfit] = [
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[4]),
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[1]),
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[2]),
+            Outfit(top: Wardrobe[0], bottom: Wardrobe[3])
+        ]
 
 //    static var favourites: [Apparel] = wardrobe.filter{$0.isFavourite}
     
