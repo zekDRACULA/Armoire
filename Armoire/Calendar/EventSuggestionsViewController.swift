@@ -10,7 +10,6 @@ import UIKit
 class EventSuggestionsViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
     
-    var selectedSuggestions:[Outfit] = []
 //    var tagTitle:[String] = ["Summer","Black","White","Tshirts","Pants","Uper","Kuchtoh"]
 //    var suggestionImages:[String] = ["Image_2","Image_3","Image_4"]
     
@@ -53,7 +52,7 @@ class EventSuggestionsViewController: UIViewController,UICollectionViewDataSourc
         if indexPath.section == 1 {
             if let cell = collectionView.cellForItem(at: indexPath) as? EventSuggestionOutfitsCollectionViewCell{
                 
-                selectedSuggestions.append(DataController.shared.outfits[indexPath.row])
+                DataController.shared.selectedSuggestions.append(DataController.shared.outfits[indexPath.row])
 //                var upperOutfitPhoto = cell.upperOutfitImage
 //                var lowerOutfitPhoto = cell.lowerOutfitImage
 
@@ -61,7 +60,7 @@ class EventSuggestionsViewController: UIViewController,UICollectionViewDataSourc
 //                print(upperOutfitPhoto!)
 //                print(lowerOutfitPhoto!)
 //                
-                print(selectedSuggestions.count)
+                print(DataController.shared.selectedSuggestions.count)
 //                print(selectedSuggestions)
                 
             }

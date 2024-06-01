@@ -60,6 +60,15 @@
                                     <segue destination="nmf-13-LGP" kind="presentation" id="7aT-TU-RJ4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhP-Qb-90w">
+                                <rect key="frame" x="133" y="369" width="127" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Saved Outfits"/>
+                                <connections>
+                                    <segue destination="Dri-ij-NDK" kind="show" id="VHk-d1-mtv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="bgColorProfile"/>
@@ -97,6 +106,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85V-Qq-s88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1554" y="-53"/>
+        </scene>
+        <!--SavedSuggestions-->
+        <scene sceneID="1tX-L4-Adh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SavedSuggestions" id="Dri-ij-NDK" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="FWn-ma-KR0"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Rf-05-Tbf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1524" y="78"/>
         </scene>
     </scenes>
     <resources>

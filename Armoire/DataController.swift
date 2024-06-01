@@ -16,6 +16,10 @@ class DataController{
     
     var outfits: [Outfit] = []
     
+    // for seleted outfits in suggestions page when you add event
+    var selectedSuggestions:[Outfit] = []
+
+    
     private var allCalendarEvents: [CalendarEvent] = []
     
     // simple implementation of singleton

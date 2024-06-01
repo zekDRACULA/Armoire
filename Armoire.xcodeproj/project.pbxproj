@@ -15,6 +15,8 @@
 		0A546A2C2BED34C7004EBA3D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0A546A2B2BED34C7004EBA3D /* Base */; };
 		4804B2F92C01D55E00FAC9A3 /* ProfileTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4804B2F82C01D55E00FAC9A3 /* ProfileTab.storyboard */; };
 		4817FA182C08EA2900BE06A8 /* EventFullDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4817FA172C08EA2900BE06A8 /* EventFullDetails.storyboard */; };
+		485C564F2C0BAD3C00C6ACC4 /* SavedSuggestions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485C564E2C0BAD3C00C6ACC4 /* SavedSuggestions.xib */; };
+		485C56512C0BB67600C6ACC4 /* SavedSuggestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485C56502C0BB67600C6ACC4 /* SavedSuggestionCollectionViewCell.swift */; };
 		4866D7C82C08ECD9007E0279 /* EventFullDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4866D7C72C08ECD9007E0279 /* EventFullDetailsViewController.swift */; };
 		487A828F2BFE2F1A004AF22A /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487A828B2BFE2F1A004AF22A /* DetailsTableViewCell.swift */; };
 		487A82902BFE2F1A004AF22A /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487A828C2BFE2F1A004AF22A /* DetailsTableViewController.swift */; };
@@ -25,6 +27,8 @@
 		4881AA8A2BFF6B70008052DF /* EventSuggestionsTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881AA892BFF6B70008052DF /* EventSuggestionsTagCollectionViewCell.swift */; };
 		4881AA8C2BFF6C14008052DF /* SuggestionOutfits.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4881AA8B2BFF6C14008052DF /* SuggestionOutfits.xib */; };
 		4881AA8E2BFF6C8D008052DF /* EventSuggestionOutfitsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881AA8D2BFF6C8D008052DF /* EventSuggestionOutfitsCollectionViewCell.swift */; };
+		489D22562C0BA7CC00C829C1 /* SavedSuggestions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489D22552C0BA7CC00C829C1 /* SavedSuggestions.storyboard */; };
+		489D22582C0BA95B00C829C1 /* SavedSuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489D22572C0BA95B00C829C1 /* SavedSuggestionsViewController.swift */; };
 		48BD02CF2C0B72E2007CC906 /* EventPackYourBag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48BD02CE2C0B72E2007CC906 /* EventPackYourBag.storyboard */; };
 		48BD02D12C0B76A4007CC906 /* EventPackYourBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD02D02C0B76A4007CC906 /* EventPackYourBagViewController.swift */; };
 		48D67B532C03534A0096A520 /* ProfileTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D67B522C03534A0096A520 /* ProfileTabViewController.swift */; };
@@ -82,6 +86,8 @@
 		0A546A2D2BED34C7004EBA3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4804B2F82C01D55E00FAC9A3 /* ProfileTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileTab.storyboard; sourceTree = "<group>"; };
 		4817FA172C08EA2900BE06A8 /* EventFullDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventFullDetails.storyboard; sourceTree = "<group>"; };
+		485C564E2C0BAD3C00C6ACC4 /* SavedSuggestions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedSuggestions.xib; sourceTree = "<group>"; };
+		485C56502C0BB67600C6ACC4 /* SavedSuggestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSuggestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		4866D7C72C08ECD9007E0279 /* EventFullDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFullDetailsViewController.swift; sourceTree = "<group>"; };
 		487A828B2BFE2F1A004AF22A /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		487A828C2BFE2F1A004AF22A /* DetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +98,8 @@
 		4881AA892BFF6B70008052DF /* EventSuggestionsTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSuggestionsTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		4881AA8B2BFF6C14008052DF /* SuggestionOutfits.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionOutfits.xib; sourceTree = "<group>"; };
 		4881AA8D2BFF6C8D008052DF /* EventSuggestionOutfitsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSuggestionOutfitsCollectionViewCell.swift; sourceTree = "<group>"; };
+		489D22552C0BA7CC00C829C1 /* SavedSuggestions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SavedSuggestions.storyboard; sourceTree = "<group>"; };
+		489D22572C0BA95B00C829C1 /* SavedSuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSuggestionsViewController.swift; sourceTree = "<group>"; };
 		48BD02CE2C0B72E2007CC906 /* EventPackYourBag.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventPackYourBag.storyboard; sourceTree = "<group>"; };
 		48BD02D02C0B76A4007CC906 /* EventPackYourBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPackYourBagViewController.swift; sourceTree = "<group>"; };
 		48D67B522C03534A0096A520 /* ProfileTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +270,10 @@
 				B19994362C05B0980045ADD1 /* EventsPageViewController.swift */,
 				B19994382C05B7430045ADD1 /* eventsData.swift */,
 				4817FA172C08EA2900BE06A8 /* EventFullDetails.storyboard */,
+				489D22552C0BA7CC00C829C1 /* SavedSuggestions.storyboard */,
+				489D22572C0BA95B00C829C1 /* SavedSuggestionsViewController.swift */,
+				485C564E2C0BAD3C00C6ACC4 /* SavedSuggestions.xib */,
+				485C56502C0BB67600C6ACC4 /* SavedSuggestionCollectionViewCell.swift */,
 				48BD02D02C0B76A4007CC906 /* EventPackYourBagViewController.swift */,
 				4866D7C72C08ECD9007E0279 /* EventFullDetailsViewController.swift */,
 				48BD02CE2C0B72E2007CC906 /* EventPackYourBag.storyboard */,
@@ -367,12 +379,14 @@
 				67A3E4E52C00596500CC5880 /* WardrobeApparel.xib in Resources */,
 				4804B2F92C01D55E00FAC9A3 /* ProfileTab.storyboard in Resources */,
 				674274542BF61665001304A8 /* Home.storyboard in Resources */,
+				489D22562C0BA7CC00C829C1 /* SavedSuggestions.storyboard in Resources */,
 				B1BFFAEA2C023ACA00B2EC9B /* BagPacker.storyboard in Resources */,
 				48BD02CF2C0B72E2007CC906 /* EventPackYourBag.storyboard in Resources */,
 				B19994332C0597FA0045ADD1 /* EventCell.xib in Resources */,
 				487A82912BFE2F1A004AF22A /* itemDetails.storyboard in Resources */,
 				67A3E4E92C0063D600CC5880 /* WardrobeTag.xib in Resources */,
 				4881AA882BFF6ADC008052DF /* SuggestionsTag.xib in Resources */,
+				485C564F2C0BAD3C00C6ACC4 /* SavedSuggestions.xib in Resources */,
 				BC11BC742BFB6AFA0093DDBE /* image.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,9 +424,11 @@
 				4881AA862BFF6672008052DF /* EventSuggestionsViewController.swift in Sources */,
 				B1BFFAEC2C023ACA00B2EC9B /* ClothesCellCollectionViewCell.swift in Sources */,
 				B19994372C05B0980045ADD1 /* EventsPageViewController.swift in Sources */,
+				489D22582C0BA95B00C829C1 /* SavedSuggestionsViewController.swift in Sources */,
 				677FAA172C03D0A900E2C783 /* FavouritesViewController.swift in Sources */,
 				0A546A202BED34C6004EBA3D /* AppDelegate.swift in Sources */,
 				BC28A2F72C012089009B833E /* oneImageCVC.swift in Sources */,
+				485C56512C0BB67600C6ACC4 /* SavedSuggestionCollectionViewCell.swift in Sources */,
 				0A546A222BED34C6004EBA3D /* SceneDelegate.swift in Sources */,
 				67A3E4E72C0059F200CC5880 /* WardrobeApparelCollectionViewCell.swift in Sources */,
 				6742745A2BF617B6001304A8 /* HomeViewController.swift in Sources */,
