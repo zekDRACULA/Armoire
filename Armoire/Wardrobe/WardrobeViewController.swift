@@ -30,7 +30,6 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let indexPath = collectionView.indexPathsForSelectedItems?.first {
             selectedApparel = apparelsToDisplay[indexPath.row]
-            print(selectedApparel!)
         }
         performSegue(withIdentifier: "toDetails", sender: self)
     }
@@ -85,6 +84,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         changedSegment(segmentedControl)
         
+        collectionView.reloadData()
         // setting nib files for collection view
         let firstNib = UINib(nibName: "WardrobeTag", bundle: nil)
         collectionView.register(firstNib, forCellWithReuseIdentifier: "WardrobeTag")
@@ -254,20 +254,22 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     // to use image in details screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detailsTVC = segue.destination as! DetailsTableViewController
+        detailsTVC.segueIdentifier = segue.identifier
         if segue.identifier == "toAdd"{
-            detailsTVC.imageToUse = imageToUse
+            selectedApparel = Apparel(image: imageToUse, id: 123, color: .red, pattern: .solid, tag: ["Summer"])
+            detailsTVC.apparel = selectedApparel
         }
         
-//        if segue.identifier == "toDetails" {
-//            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
-//                let detailsTVC = segue.destination as! DetailsTableViewController
-//                let selectedApparel = apparelsToDisplay[indexPath.row]
-//                detailsTVC.apparel?.image = selectedApparel.image
-//            }
-//        }
         if segue.identifier == "toDetails" {
             detailsTVC.apparel = selectedApparel
         }
+        //        if segue.identifier == "toDetails" {
+        //            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+        //                let detailsTVC = segue.destination as! DetailsTableViewController
+        //                let selectedApparel = apparelsToDisplay[indexPath.row]
+        //                detailsTVC.apparel?.image = selectedApparel.image
+        //            }
+        //        }
     }
     
     // for 3 dot button

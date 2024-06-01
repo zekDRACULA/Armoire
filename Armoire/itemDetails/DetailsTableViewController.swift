@@ -11,9 +11,10 @@ class DetailsTableViewController: UITableViewController {
 
     
     @IBOutlet var apparelImage: UIImageView!
-    var imageToUse: UIImage?
     
+    var imageToUse: UIImage?
     var apparel: Apparel?
+    var segueIdentifier: String?
     
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var colorLabel: UILabel!
@@ -50,7 +51,13 @@ class DetailsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        apparelImage.image = imageToUse
+        apparelImage.image = apparel?.image
+        DataController.shared.appendApparel(apparel: apparel!)
+//        if segueIdentifier == "toAdd" {
+//            apparelImage.image = imageToUse
+//        } else if segueIdentifier == "toDetails" {
+//            apparelImage.image = apparel?.image
+//        }
     }
     
 
