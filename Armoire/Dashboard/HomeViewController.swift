@@ -10,16 +10,16 @@ import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate, UICollectionViewDelegate, CollectionViewCellDelegate{
     func suggestionTapped(cell: oneImageCVC) {
-//        let storyboard = UIStoryboard(name: "EventSugeestions", bundle: nil)
-//        if let nextVC = storyboard.instantiateViewController(withIdentifier: "EventSuggestionsViewController") as? EventSuggestionsViewController {
-//            if let navVC = self.navigationController {
-//                navVC.pushViewController(nextVC, animated: true)
-//            } else {
-//                print("Navigation controller is nil")
-//            }
-//        } else {
-//            print("EventSuggestionsViewController could not be instantiated")
-//        }
+        let storyboard = UIStoryboard(name: "EventSugeestions", bundle: nil)
+        if let nextVC = storyboard.instantiateViewController(withIdentifier: "EventSuggestionsViewController") as? EventSuggestionsViewController {
+            if let navVC = self.navigationController {
+                navVC.pushViewController(nextVC, animated: true)
+            } else {
+                print("Navigation controller is nil")
+            }
+        } else {
+            print("EventSuggestionsViewController could not be instantiated")
+        }
     }
     
     
@@ -27,6 +27,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     
     var isExpanded: Bool = false
     var selectedEventType: EventType = .party
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.tabBarItem.title = "Home"
