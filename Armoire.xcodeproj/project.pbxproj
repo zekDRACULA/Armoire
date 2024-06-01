@@ -25,6 +25,8 @@
 		4881AA8A2BFF6B70008052DF /* EventSuggestionsTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881AA892BFF6B70008052DF /* EventSuggestionsTagCollectionViewCell.swift */; };
 		4881AA8C2BFF6C14008052DF /* SuggestionOutfits.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4881AA8B2BFF6C14008052DF /* SuggestionOutfits.xib */; };
 		4881AA8E2BFF6C8D008052DF /* EventSuggestionOutfitsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881AA8D2BFF6C8D008052DF /* EventSuggestionOutfitsCollectionViewCell.swift */; };
+		48BD02CF2C0B72E2007CC906 /* EventPackYourBag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48BD02CE2C0B72E2007CC906 /* EventPackYourBag.storyboard */; };
+		48BD02D12C0B76A4007CC906 /* EventPackYourBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD02D02C0B76A4007CC906 /* EventPackYourBagViewController.swift */; };
 		48D67B532C03534A0096A520 /* ProfileTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D67B522C03534A0096A520 /* ProfileTabViewController.swift */; };
 		674274542BF61665001304A8 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 674274532BF61665001304A8 /* Home.storyboard */; };
 		674274562BF6168D001304A8 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 674274552BF6168D001304A8 /* Calendar.storyboard */; };
@@ -90,6 +92,8 @@
 		4881AA892BFF6B70008052DF /* EventSuggestionsTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSuggestionsTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		4881AA8B2BFF6C14008052DF /* SuggestionOutfits.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionOutfits.xib; sourceTree = "<group>"; };
 		4881AA8D2BFF6C8D008052DF /* EventSuggestionOutfitsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSuggestionOutfitsCollectionViewCell.swift; sourceTree = "<group>"; };
+		48BD02CE2C0B72E2007CC906 /* EventPackYourBag.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventPackYourBag.storyboard; sourceTree = "<group>"; };
+		48BD02D02C0B76A4007CC906 /* EventPackYourBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPackYourBagViewController.swift; sourceTree = "<group>"; };
 		48D67B522C03534A0096A520 /* ProfileTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabViewController.swift; sourceTree = "<group>"; };
 		674274532BF61665001304A8 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		674274552BF6168D001304A8 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
@@ -149,11 +153,11 @@
 			isa = PBXGroup;
 			children = (
 				BC11BC7D2BFB70530093DDBE /* HomeModel.swift */,
-				674274592BF617B6001304A8 /* HomeViewController.swift */,
 				BCCEF7EE2BFD244A00DDC726 /* CompatibilityViewController.swift */,
 				674274532BF61665001304A8 /* Home.storyboard */,
 				BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */,
 				BC11BC712BFB6AF00093DDBE /* header.xib */,
+				674274592BF617B6001304A8 /* HomeViewController.swift */,
 				BC11BC7B2BFB6B340093DDBE /* imageCollectionViewCell.swift */,
 				BC11BC732BFB6AFA0093DDBE /* image.xib */,
 				BC28A2F62C012089009B833E /* oneImageCVC.swift */,
@@ -258,7 +262,9 @@
 				B19994362C05B0980045ADD1 /* EventsPageViewController.swift */,
 				B19994382C05B7430045ADD1 /* eventsData.swift */,
 				4817FA172C08EA2900BE06A8 /* EventFullDetails.storyboard */,
+				48BD02D02C0B76A4007CC906 /* EventPackYourBagViewController.swift */,
 				4866D7C72C08ECD9007E0279 /* EventFullDetailsViewController.swift */,
+				48BD02CE2C0B72E2007CC906 /* EventPackYourBag.storyboard */,
 			);
 			path = EventDetails;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 				4804B2F92C01D55E00FAC9A3 /* ProfileTab.storyboard in Resources */,
 				674274542BF61665001304A8 /* Home.storyboard in Resources */,
 				B1BFFAEA2C023ACA00B2EC9B /* BagPacker.storyboard in Resources */,
+				48BD02CF2C0B72E2007CC906 /* EventPackYourBag.storyboard in Resources */,
 				B19994332C0597FA0045ADD1 /* EventCell.xib in Resources */,
 				487A82912BFE2F1A004AF22A /* itemDetails.storyboard in Resources */,
 				67A3E4E92C0063D600CC5880 /* WardrobeTag.xib in Resources */,
@@ -413,6 +420,7 @@
 				B1D8004E2C0379DD0081F999 /* BagPackerDetailCollectionViewCell.swift in Sources */,
 				48D67B532C03534A0096A520 /* ProfileTabViewController.swift in Sources */,
 				BCCEF7EF2BFD244A00DDC726 /* CompatibilityViewController.swift in Sources */,
+				48BD02D12C0B76A4007CC906 /* EventPackYourBagViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

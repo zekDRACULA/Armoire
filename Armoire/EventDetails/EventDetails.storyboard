@@ -57,6 +57,7 @@
                     <connections>
                         <outlet property="eventPageCollectionView" destination="Trm-Zd-drR" id="Fae-bM-cfF"/>
                         <segue destination="PnH-i6-2hk" kind="show" identifier="toFullDetailsPage" id="2Pd-jR-qhq"/>
+                        <segue destination="N3c-PQ-WPk" kind="show" identifier="toBagPacker" id="FrZ-Og-QvC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -72,6 +73,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tj-Vq-IUC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1764" y="-125"/>
+        </scene>
+        <!--EventPackYourBag-->
+        <scene sceneID="jXL-K0-Yrb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EventPackYourBag" id="N3c-PQ-WPk" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kTk-j8-TGi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WuW-Bn-fm7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1740" y="74"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bNX-fU-wk2">

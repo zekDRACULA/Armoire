@@ -55,7 +55,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Bag Packer"/>
+                                <buttonConfiguration key="configuration" style="filled" title="See Suggestions"/>
+                                <connections>
+                                    <segue destination="nmf-13-LGP" kind="presentation" id="7aT-TU-RJ4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -70,9 +73,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Event Details" id="v1i-vH-Krq">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="6Ay-yu-QYG">
+                        <barButtonItem key="rightBarButtonItem" title="Delete" id="jlW-D4-Sm3">
                             <connections>
-                                <segue destination="6yW-z6-Wdv" kind="unwind" unwindAction="unwindToEventsPageViewControllerWithSegue:" id="pOI-Yp-lN6"/>
+                                <action selector="deleteEventTapped:" destination="Y6W-OH-hqX" id="wvU-d9-oFW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -84,9 +87,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="6yW-z6-Wdv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="976.33587786259534" y="-2.1126760563380285"/>
+        </scene>
+        <!--EventSugeestions-->
+        <scene sceneID="YOw-4b-72Q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EventSugeestions" id="nmf-13-LGP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85V-Qq-s88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1554" y="-53"/>
         </scene>
     </scenes>
     <resources>

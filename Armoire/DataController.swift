@@ -138,4 +138,8 @@ class DataController{
     func appendEvent(event: CalendarEvent) {
         allCalendarEvents.append(event)
     }
+    
+    func removeEvent(indexpath:Int){
+        allCalendarEvents.remove(at: indexpath)
+    }
 }

@@ -40,7 +40,27 @@ class EventsPageViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         indexPathOfSelected = indexPath.row
-        performSegue(withIdentifier: "toFullDetailsPage", sender: self)
+        
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d yyyy"
+        
+        let eventStartFormattedDate = dateFormatter.string(from: DataController.shared.getEvents()[indexPath.row].eventStartDate)
+        
+        let eventEndFormattedDate = dateFormatter.string(from: DataController.shared.getEvents()[indexPath.row].eventEndDate)
+        
+        
+        
+//        let startDate = DataController.shared.getEvents()[indexPath.row].eventStartDate
+//        let endDate = DataController.shared.getEvents()[indexPath.row].eventEndDate
+        
+        if eventStartFormattedDate == eventEndFormattedDate{
+            performSegue(withIdentifier: "toFullDetailsPage", sender: self)
+
+        }
+        else{
+            performSegue(withIdentifier: "toBagPacker", sender: self)
+        }
         
     }
     
@@ -84,6 +104,10 @@ class EventsPageViewController: UIViewController, UICollectionViewDelegate, UICo
         if segue.identifier == "toFullDetailsPage"{
             let something = segue.destination as! EventFullDetailsViewController
             something.indexPathOfSelcted = indexPathOfSelected
+        }
+        else{
+            let something = segue.destination as! EventPackYourBagViewController
+            something.indexPathofSelected = indexPathOfSelected
         }
     }
     

@@ -10,9 +10,9 @@ import UIKit
 class EventSuggestionsViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
     
-    
-    var tagTitle:[String] = ["Summer","Black","White","Tshirts","Pants","Uper","Kuchtoh"]
-    var suggestionImages:[String] = ["Image_2","Image_3","Image_4"]
+    var selectedSuggestions:[Outfit] = []
+//    var tagTitle:[String] = ["Summer","Black","White","Tshirts","Pants","Uper","Kuchtoh"]
+//    var suggestionImages:[String] = ["Image_2","Image_3","Image_4"]
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -23,9 +23,9 @@ class EventSuggestionsViewController: UIViewController,UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return tagTitle.count
+            return DataController.shared.countTags()
         case 1:
-            return suggestionImages.count
+            return DataController.shared.outfits.count
         default:
             return 0
         }
@@ -35,32 +35,56 @@ class EventSuggestionsViewController: UIViewController,UICollectionViewDataSourc
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SuggestionsTag", for: indexPath) as! EventSuggestionsTagCollectionViewCell
-            cell.tagButton.setTitle(tagTitle[indexPath.row], for: .normal)
+            cell.tagButton.setTitle(DataController.shared.getTags()[indexPath.row], for: .normal)
             return cell
             
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SuggestionOutfits", for: indexPath) as! EventSuggestionOutfitsCollectionViewCell
-            cell.upperOutfitImage.image = UIImage(named: "Image_1")
-            cell.lowerOutfitImage.image = UIImage(named: suggestionImages[indexPath.row])
+            cell.upperOutfitImage.image = DataController.shared.outfits[indexPath.row].top.image
+            cell.lowerOutfitImage.image = DataController.shared.outfits[indexPath.row].bottom.image
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SuggestionsTag", for: indexPath) as! EventSuggestionsTagCollectionViewCell
-            cell.tagButton.setTitle(tagTitle[indexPath.row], for: .normal)
+            cell.tagButton.setTitle(DataController.shared.getTags()[indexPath.row], for: .normal)
             return cell
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             if let cell = collectionView.cellForItem(at: indexPath) as? EventSuggestionOutfitsCollectionViewCell{
-                var upperOutfitPhoto = cell.upperOutfitImage
-                var lowerOutfitPhoto = cell.lowerOutfitImage
+                
+                selectedSuggestions.append(DataController.shared.outfits[indexPath.row])
+//                var upperOutfitPhoto = cell.upperOutfitImage
+//                var lowerOutfitPhoto = cell.lowerOutfitImage
 
-                cell.viewOutlet.backgroundColor = .accent
-                print(upperOutfitPhoto!)
-                print(lowerOutfitPhoto!)
+                cell.viewOutlet.backgroundColor = .selected
+//                print(upperOutfitPhoto!)
+//                print(lowerOutfitPhoto!)
+//                
+                print(selectedSuggestions.count)
+//                print(selectedSuggestions)
                 
             }
         }
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
+        
+        if let cell = collectionView.cellForItem(at: indexPath) as? EventSuggestionOutfitsCollectionViewCell {
+            cell.viewOutlet.backgroundColor = .cell
+//            let index = indexPath.row - 1
+//            if indexPath.row == 0 {
+//                selectedSuggestions.remove(at: 0)
+//            }
+//            else{
+//                selectedSuggestions.remove(at: index)
+//            }
+            
+//            print(selectedSuggestions.count)
+//            print(selectedSuggestions)
+
+        }
+//        cell.viewOutlet.backgroundColor = .fo
     }
     
     
@@ -82,6 +106,7 @@ class EventSuggestionsViewController: UIViewController,UICollectionViewDataSourc
         
         
         collectionViewOutlet.setCollectionViewLayout(generateLayout(), animated: true)
+        collectionViewOutlet.allowsMultipleSelection = true
         
         
         
