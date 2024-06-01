@@ -254,12 +254,20 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     // to use image in details screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detailsTVC = segue.destination as! DetailsTableViewController
+
         detailsTVC.segueIdentifier = segue.identifier
         if segue.identifier == "toAdd"{
             selectedApparel = Apparel(image: imageToUse, id: 123, color: .red, pattern: .solid, tag: ["Summer"])
             detailsTVC.apparel = selectedApparel
-        }
+
         
+//        if segue.identifier == "toDetails" {
+//            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+//                let detailsTVC = segue.destination as! DetailsTableViewController
+//                let selectedApparel = apparelsToDisplay[indexPath.row]
+//                detailsTVC.apparel?.image = selectedApparel.image
+//            }
+//        }
         if segue.identifier == "toDetails" {
             detailsTVC.apparel = selectedApparel
         }
