@@ -72,10 +72,10 @@
 		BC28A2F52C011F02009B833E /* OneImageHome.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC28A2F42C011F02009B833E /* OneImageHome.xib */; };
 		BC28A2F72C012089009B833E /* oneImageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28A2F62C012089009B833E /* oneImageCVC.swift */; };
 		BCA547F22C0BA98300AC1D52 /* TodaySuggestion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA547F12C0BA98300AC1D52 /* TodaySuggestion.storyboard */; };
-		BCA547F42C0BA9C900AC1D52 /* ImageSuggestion.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA547F32C0BA9C900AC1D52 /* ImageSuggestion.xib */; };
 		BCA547F62C0BAB3F00AC1D52 /* TodaySugestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA547F52C0BAB3F00AC1D52 /* TodaySugestionViewController.swift */; };
 		BCA547F82C0BABC800AC1D52 /* ImageSugestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA547F72C0BABC800AC1D52 /* ImageSugestionCollectionViewCell.swift */; };
 		BCCEF7EF2BFD244A00DDC726 /* CompatibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCEF7EE2BFD244A00DDC726 /* CompatibilityViewController.swift */; };
+		BCDB07902C0BB31800F017A6 /* ImageSuggestion.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDB078F2C0BB31800F017A6 /* ImageSuggestion.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,10 +146,10 @@
 		BC28A2F42C011F02009B833E /* OneImageHome.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneImageHome.xib; sourceTree = "<group>"; };
 		BC28A2F62C012089009B833E /* oneImageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneImageCVC.swift; sourceTree = "<group>"; };
 		BCA547F12C0BA98300AC1D52 /* TodaySuggestion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodaySuggestion.storyboard; sourceTree = "<group>"; };
-		BCA547F32C0BA9C900AC1D52 /* ImageSuggestion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSuggestion.xib; sourceTree = "<group>"; };
 		BCA547F52C0BAB3F00AC1D52 /* TodaySugestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaySugestionViewController.swift; sourceTree = "<group>"; };
 		BCA547F72C0BABC800AC1D52 /* ImageSugestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSugestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		BCCEF7EE2BFD244A00DDC726 /* CompatibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilityViewController.swift; sourceTree = "<group>"; };
+		BCDB078F2C0BB31800F017A6 /* ImageSuggestion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSuggestion.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +181,7 @@
 				BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */,
 				BC11BC6F2BFB6AE50093DDBE /* footer.xib */,
 				BCA547F12C0BA98300AC1D52 /* TodaySuggestion.storyboard */,
-				BCA547F32C0BA9C900AC1D52 /* ImageSuggestion.xib */,
+				BCDB078F2C0BB31800F017A6 /* ImageSuggestion.xib */,
 				BCA547F72C0BABC800AC1D52 /* ImageSugestionCollectionViewCell.swift */,
 				BCA547F52C0BAB3F00AC1D52 /* TodaySugestionViewController.swift */,
 			);
@@ -389,6 +389,7 @@
 				674274562BF6168D001304A8 /* Calendar.storyboard in Resources */,
 				B1D8004C2C0376D70081F999 /* BagPackerDetailCollectionViewCell.xib in Resources */,
 				674274582BF6169D001304A8 /* Wardrobe.storyboard in Resources */,
+				BCDB07902C0BB31800F017A6 /* ImageSuggestion.xib in Resources */,
 				67A3E4E52C00596500CC5880 /* WardrobeApparel.xib in Resources */,
 				4804B2F92C01D55E00FAC9A3 /* ProfileTab.storyboard in Resources */,
 				674274542BF61665001304A8 /* Home.storyboard in Resources */,
@@ -398,7 +399,6 @@
 				B19994332C0597FA0045ADD1 /* EventCell.xib in Resources */,
 				487A82912BFE2F1A004AF22A /* itemDetails.storyboard in Resources */,
 				67A3E4E92C0063D600CC5880 /* WardrobeTag.xib in Resources */,
-				BCA547F42C0BA9C900AC1D52 /* ImageSuggestion.xib in Resources */,
 				4881AA882BFF6ADC008052DF /* SuggestionsTag.xib in Resources */,
 				485C564F2C0BAD3C00C6ACC4 /* SavedSuggestions.xib in Resources */,
 				BC11BC742BFB6AFA0093DDBE /* image.xib in Resources */,
