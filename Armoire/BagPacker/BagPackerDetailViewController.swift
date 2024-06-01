@@ -15,6 +15,8 @@ class BagPackerDetailViewController: UIViewController, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BagPackerDetailCollectionViewCell", for: indexPath) as! BagPackerDetailCollectionViewCell
         cell.imageView.image = UIImage(named: selectedItems[indexPath.row].imageName)
+        cell.clothType.text = selectedItems[indexPath.row].imageType
+        cell.clothColor.text = selectedItems[indexPath.row].imageColor
         return cell
     }
     
@@ -23,6 +25,13 @@ class BagPackerDetailViewController: UIViewController, UICollectionViewDelegate,
     }
     
     @IBOutlet var BagPackerDetailCollectionView: UICollectionView!
+    @IBOutlet weak var DoneBarButton : UIBarButtonItem!
+    
+    @IBOutlet weak var deleteButton : UIBarButtonItem!
+    @IBOutlet weak var buttomNavigation : UINavigationBar!
+    
+    
+    
     
     var selectedItems: [ClothesData] = []
     
@@ -35,15 +44,13 @@ class BagPackerDetailViewController: UIViewController, UICollectionViewDelegate,
         BagPackerDetailCollectionView.setCollectionViewLayout(generateLayout(), animated: true)
         BagPackerDetailCollectionView.delegate = self
         BagPackerDetailCollectionView.dataSource = self
-        print("BagPackerDetailViewController: \(selectedItems.count)")
-        //print(selectedItems[0])
-        //print(selectedItems[0])
+
     }
     
     func generateLayout() -> UICollectionViewLayout{
        
         let layout = UICollectionViewCompositionalLayout{(section, env) -> NSCollectionLayoutSection? in
-            let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(100), heightDimension: .absolute(100))
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(100))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             
             
@@ -51,8 +58,7 @@ class BagPackerDetailViewController: UIViewController, UICollectionViewDelegate,
             let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
             
             let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = .init(top: 16, leading: 16, bottom: 0, trailing: 0)
-            
+            section.contentInsets = .init(top: 16, leading: 16, bottom: 0, trailing: 16)
             return section
             
         }

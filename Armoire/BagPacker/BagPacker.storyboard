@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,18 +19,13 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AFn-Fy-I0o" customClass="bagPackerCollectionView">
                                 <rect key="frame" x="0.0" y="44" width="393" height="808"/>
-                                <color key="backgroundColor" red="0.92156862750000001" green="0.89019607840000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="bgColorProfile"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aTl-VN-zjU">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <view key="backgroundView" contentMode="scaleToFill" id="SN8-yn-2gj">
-                                    <rect key="frame" x="0.0" y="-15" width="393" height="808"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                </view>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ri3-Lz-rbH">
                                         <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
@@ -61,7 +55,7 @@
                             </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" red="0.92941176469999998" green="0.89019607840000003" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="bgColorProfile"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="AFn-Fy-I0o" secondAttribute="bottom" id="6qX-UN-Rbu"/>
                             <constraint firstItem="HyZ-AN-MGg" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Clv-2R-Oq3"/>
@@ -76,7 +70,6 @@
                     <connections>
                         <outlet property="BagPackerNavigationBar" destination="HyZ-AN-MGg" id="kB9-hw-ohK"/>
                         <outlet property="bagPackerCollectionView" destination="AFn-Fy-I0o" id="Fb4-gv-gYV"/>
-                        <segue destination="O6a-Qy-6ce" kind="show" identifier="extraSegue" id="df4-QK-P10"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -93,6 +86,7 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qK-ON-fgo">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                                <color key="backgroundColor" name="bgColorProfile"/>
                                 <color key="tintColor" name="assentColor"/>
                                 <color key="barTintColor" name="foreground"/>
                                 <items>
@@ -104,7 +98,7 @@
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XYA-xg-69P">
                                 <rect key="frame" x="0.0" y="56" width="393" height="786"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="bgColorProfile"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fIb-cJ-gTe">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -124,7 +118,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hwk-lM-Frb"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="bgColorProfile"/>
                         <constraints>
                             <constraint firstItem="Hwk-lM-Frb" firstAttribute="bottom" secondItem="XYA-xg-69P" secondAttribute="bottom" id="G1B-aI-0wp"/>
                             <constraint firstItem="1qK-ON-fgo" firstAttribute="leading" secondItem="Hwk-lM-Frb" secondAttribute="leading" id="HA9-Q4-Isk"/>
@@ -137,38 +131,23 @@
                     </view>
                     <connections>
                         <outlet property="BagPackerDetailCollectionView" destination="XYA-xg-69P" id="f9L-Cl-CFv"/>
+                        <outlet property="DoneBarButton" destination="Twn-s6-SaX" id="6v1-ni-YNM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfL-eX-Gv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1844" y="-377"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="rFU-7P-Ayp">
-            <objects>
-                <viewController id="O6a-Qy-6ce" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fNS-NM-jzR">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="NG1-RA-ud9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="kxd-LY-Ucx"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7cQ-hA-nFO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2675" y="9"/>
-        </scene>
     </scenes>
     <resources>
         <namedColor name="assentColor">
             <color red="0.57300001382827759" green="0.10999999940395355" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="bgColorProfile">
+            <color red="0.92199999094009399" green="0.88999998569488525" blue="0.85500001907348633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="foreground">
             <color red="1" green="0.96899998188018799" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

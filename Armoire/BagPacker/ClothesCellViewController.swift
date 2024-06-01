@@ -164,9 +164,9 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
 
     // going to next page when next is clicked
     @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
-        //performSegue(withIdentifier: "BagPackerDetail", sender: nil)
+        performSegue(withIdentifier: "BagPackerDetail", sender: nil)
         
-        performSegue(withIdentifier: "extraSegue", sender: nil)
+       
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
