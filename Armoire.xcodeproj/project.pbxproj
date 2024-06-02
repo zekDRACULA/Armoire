@@ -66,6 +66,11 @@
 		B19994352C05A96B0045ADD1 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19994342C05A96B0045ADD1 /* EventCollectionViewCell.swift */; };
 		B19994372C05B0980045ADD1 /* EventsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19994362C05B0980045ADD1 /* EventsPageViewController.swift */; };
 		B19994392C05B7430045ADD1 /* eventsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19994382C05B7430045ADD1 /* eventsData.swift */; };
+		B19BD16C2C0C7E94007FE9E7 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B19BD16B2C0C7E94007FE9E7 /* SignIn.storyboard */; };
+		B19BD16E2C0C7EA3007FE9E7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BD16D2C0C7EA3007FE9E7 /* SignInViewController.swift */; };
+		B19BD1702C0C8A48007FE9E7 /* alertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BD16F2C0C8A48007FE9E7 /* alertManager.swift */; };
+		B19BD1722C0C9122007FE9E7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BD1712C0C9122007FE9E7 /* AuthService.swift */; };
+		B19BD1742C0CC7C0007FE9E7 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BD1732C0CC7C0007FE9E7 /* Validator.swift */; };
 		B1BFFAEA2C023ACA00B2EC9B /* BagPacker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BFFAE42C023ACA00B2EC9B /* BagPacker.storyboard */; };
 		B1BFFAEB2C023ACA00B2EC9B /* clothesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1BFFAE52C023ACA00B2EC9B /* clothesCell.xib */; };
 		B1BFFAEC2C023ACA00B2EC9B /* ClothesCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFFAE62C023ACA00B2EC9B /* ClothesCellCollectionViewCell.swift */; };
@@ -142,6 +147,11 @@
 		B19994342C05A96B0045ADD1 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		B19994362C05B0980045ADD1 /* EventsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPageViewController.swift; sourceTree = "<group>"; };
 		B19994382C05B7430045ADD1 /* eventsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventsData.swift; sourceTree = "<group>"; };
+		B19BD16B2C0C7E94007FE9E7 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		B19BD16D2C0C7EA3007FE9E7 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B19BD16F2C0C8A48007FE9E7 /* alertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertManager.swift; sourceTree = "<group>"; };
+		B19BD1712C0C9122007FE9E7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		B19BD1732C0CC7C0007FE9E7 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		B1BFFAE42C023ACA00B2EC9B /* BagPacker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BagPacker.storyboard; sourceTree = "<group>"; };
 		B1BFFAE52C023ACA00B2EC9B /* clothesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = clothesCell.xib; sourceTree = "<group>"; };
 		B1BFFAE62C023ACA00B2EC9B /* ClothesCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesCellCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -228,7 +238,7 @@
 				6781325D2C09A50700FC03C5 /* DataController.swift */,
 				67A285E92C022F900086997B /* MainDataModel.swift */,
 				B15F21322C05300800C46793 /* EventDetails */,
-				B103DF1C2C0C4DC900C6577D /* Login */,
+				B103DF1C2C0C4DC900C6577D /* Auth */,
 				B1BFFAE92C023ACA00B2EC9B /* BagPacker */,
 				05B9922D2C05CDCC00EAC5C8 /* Dashboard */,
 				487A828E2BFE2F1A004AF22A /* itemDetails */,
@@ -292,13 +302,18 @@
 			path = Wardrobe;
 			sourceTree = "<group>";
 		};
-		B103DF1C2C0C4DC900C6577D /* Login */ = {
+		B103DF1C2C0C4DC900C6577D /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				B19BD16F2C0C8A48007FE9E7 /* alertManager.swift */,
+				B19BD1712C0C9122007FE9E7 /* AuthService.swift */,
 				B103DF1D2C0C4DE600C6577D /* Login.storyboard */,
 				B103DF1F2C0C4DF800C6577D /* LoginViewController.swift */,
+				B19BD16B2C0C7E94007FE9E7 /* SignIn.storyboard */,
+				B19BD16D2C0C7EA3007FE9E7 /* SignInViewController.swift */,
+				B19BD1732C0CC7C0007FE9E7 /* Validator.swift */,
 			);
-			path = Login;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		B15F21322C05300800C46793 /* EventDetails */ = {
@@ -437,6 +452,7 @@
 				B18BFFDD2C0C337D00CE5A26 /* GoogleService-Info.plist in Resources */,
 				B1D8004C2C0376D70081F999 /* BagPackerDetailCollectionViewCell.xib in Resources */,
 				674274582BF6169D001304A8 /* Wardrobe.storyboard in Resources */,
+				B19BD16C2C0C7E94007FE9E7 /* SignIn.storyboard in Resources */,
 				67A3E4E52C00596500CC5880 /* WardrobeApparel.xib in Resources */,
 				4804B2F92C01D55E00FAC9A3 /* ProfileTab.storyboard in Resources */,
 				674274542BF61665001304A8 /* Home.storyboard in Resources */,
@@ -472,10 +488,13 @@
 				4881AA8A2BFF6B70008052DF /* EventSuggestionsTagCollectionViewCell.swift in Sources */,
 				B1BFFAEE2C023ACA00B2EC9B /* BagPackerDataModel.swift in Sources */,
 				4866D7C82C08ECD9007E0279 /* EventFullDetailsViewController.swift in Sources */,
+				B19BD1722C0C9122007FE9E7 /* AuthService.swift in Sources */,
 				487A82902BFE2F1A004AF22A /* DetailsTableViewController.swift in Sources */,
 				4881AA8E2BFF6C8D008052DF /* EventSuggestionOutfitsCollectionViewCell.swift in Sources */,
 				0A546A242BED34C6004EBA3D /* ViewController.swift in Sources */,
 				6781325E2C09A50700FC03C5 /* DataController.swift in Sources */,
+				B19BD1702C0C8A48007FE9E7 /* alertManager.swift in Sources */,
+				B19BD1742C0CC7C0007FE9E7 /* Validator.swift in Sources */,
 				B12D51772BF68197002324F4 /* CardCell.swift in Sources */,
 				6742745E2BF617F5001304A8 /* WardrobeViewController.swift in Sources */,
 				B1BFFAED2C023ACA00B2EC9B /* ClothesCellViewController.swift in Sources */,
@@ -498,6 +517,7 @@
 				67A3E4E72C0059F200CC5880 /* WardrobeApparelCollectionViewCell.swift in Sources */,
 				6742745A2BF617B6001304A8 /* HomeViewController.swift in Sources */,
 				B19994392C05B7430045ADD1 /* eventsData.swift in Sources */,
+				B19BD16E2C0C7EA3007FE9E7 /* SignInViewController.swift in Sources */,
 				B1D8004E2C0379DD0081F999 /* BagPackerDetailCollectionViewCell.swift in Sources */,
 				48D67B532C03534A0096A520 /* ProfileTabViewController.swift in Sources */,
 				BCCEF7EF2BFD244A00DDC726 /* CompatibilityViewController.swift in Sources */,

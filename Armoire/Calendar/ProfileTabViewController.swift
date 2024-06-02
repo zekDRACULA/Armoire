@@ -9,7 +9,7 @@ import UIKit
 
 class ProfileTabViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    var thingsWeNeed:[String] = ["Profile","Notifications","Wardrobe Utilisation","Contact Us","Terms Of Use","Privacy Policy"]
+    var thingsWeNeed:[String] = ["Profile","Notifications","Wardrobe Utilisation","Contact Us","Terms Of Use","Privacy Policy","Logout"]
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,10 +26,8 @@ class ProfileTabViewController: UIViewController,UITableViewDelegate,UITableView
         return cell
     }
     
-    
-    
-    
 
+    
     @IBOutlet weak var myTable: UITableView!
     
     
@@ -43,19 +41,20 @@ class ProfileTabViewController: UIViewController,UITableViewDelegate,UITableView
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-        
-        dismiss(animated: true, completion: nil)
+    @IBAction func logoutButtonTapped(_ sender: UIBarButtonItem) {
+        AuthService.shared.signOut{[weak self] error in
+            guard let self = self else {return}
+            if let error = error{
+                AlertManager.showLogoutError(on: self, with: error)
+                return
+            }
+            if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate{
+                sceneDelegate.checkAuthentication()
+            }
+        }
+        //dismiss(animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
 
 }
