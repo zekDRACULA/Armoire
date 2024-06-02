@@ -32,6 +32,7 @@
 		48BD02CF2C0B72E2007CC906 /* EventPackYourBag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48BD02CE2C0B72E2007CC906 /* EventPackYourBag.storyboard */; };
 		48BD02D12C0B76A4007CC906 /* EventPackYourBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD02D02C0B76A4007CC906 /* EventPackYourBagViewController.swift */; };
 		48D67B532C03534A0096A520 /* ProfileTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D67B522C03534A0096A520 /* ProfileTabViewController.swift */; };
+		48F2BDBF2C0CAA5E0011AA25 /* ClothTypeClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 48F2BDBE2C0CAA5E0011AA25 /* ClothTypeClassifier.mlmodel */; };
 		674274542BF61665001304A8 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 674274532BF61665001304A8 /* Home.storyboard */; };
 		674274562BF6168D001304A8 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 674274552BF6168D001304A8 /* Calendar.storyboard */; };
 		674274582BF6169D001304A8 /* Wardrobe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 674274572BF6169D001304A8 /* Wardrobe.storyboard */; };
@@ -103,6 +104,7 @@
 		48BD02CE2C0B72E2007CC906 /* EventPackYourBag.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventPackYourBag.storyboard; sourceTree = "<group>"; };
 		48BD02D02C0B76A4007CC906 /* EventPackYourBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPackYourBagViewController.swift; sourceTree = "<group>"; };
 		48D67B522C03534A0096A520 /* ProfileTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabViewController.swift; sourceTree = "<group>"; };
+		48F2BDBE2C0CAA5E0011AA25 /* ClothTypeClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ClothTypeClassifier.mlmodel; sourceTree = "<group>"; };
 		674274532BF61665001304A8 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		674274552BF6168D001304A8 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		674274572BF6169D001304A8 /* Wardrobe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wardrobe.storyboard; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		0A546A1E2BED34C6004EBA3D /* Armoire */ = {
 			isa = PBXGroup;
 			children = (
+				48F2BDBE2C0CAA5E0011AA25 /* ClothTypeClassifier.mlmodel */,
 				6781325B2C09A4FE00FC03C5 /* Structs.swift */,
 				6781325D2C09A50700FC03C5 /* DataController.swift */,
 				67A285E92C022F900086997B /* MainDataModel.swift */,
@@ -402,6 +405,7 @@
 				B19994352C05A96B0045ADD1 /* EventCollectionViewCell.swift in Sources */,
 				487A828F2BFE2F1A004AF22A /* DetailsTableViewCell.swift in Sources */,
 				BC06A9182BFF60860071F6FE /* MixMatchViewController.swift in Sources */,
+				48F2BDBF2C0CAA5E0011AA25 /* ClothTypeClassifier.mlmodel in Sources */,
 				67A285EA2C022F900086997B /* MainDataModel.swift in Sources */,
 				6742745C2BF617E3001304A8 /* CalendarViewController.swift in Sources */,
 				BC11BC7C2BFB6B340093DDBE /* imageCollectionViewCell.swift in Sources */,
@@ -588,7 +592,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 63W22LRA9Q;
+				DEVELOPMENT_TEAM = QZMU65G2C8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armoire/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "Please allow acces to see stuf";
@@ -605,7 +609,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = teamgg.Armoirewe;
+				PRODUCT_BUNDLE_IDENTIFIER = teamgg.Armoirewee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -620,7 +624,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 63W22LRA9Q;
+				DEVELOPMENT_TEAM = QZMU65G2C8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armoire/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "Please allow acces to see stuf";
@@ -637,7 +641,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = teamgg.Armoirewe;
+				PRODUCT_BUNDLE_IDENTIFIER = teamgg.Armoirewee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import CoreML
+import Vision
+
 
 class WardrobeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -195,9 +198,53 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[.originalImage] as? UIImage else {return}
         imageToUse = selectedImage
+        
+        
+        //converting image to Ciimage for ml model processing
+        guard let ciimage = CIImage(image: selectedImage) else {
+            fatalError("Could Not conver UIimage to CIimage")
+        }
+        
+        detect(image: ciimage)
+        
         dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "toAdd", sender: nil)
     }
+    
+    
+    //making func for using ml model in that photo
+    
+    func detect(image:CIImage) {
+        
+        
+        guard let model = try? VNCoreMLModel(for: ClothTypeClassifier().model) else {
+            fatalError("Loading CoreML model Failed.")
+        }
+        
+        let request = VNCoreMLRequest(model: model) { (request, error) in
+            guard let results = request.results as? [VNClassificationObservation] else{
+                fatalError("Model failed to process image")
+            }
+            print(results)
+        }
+        
+        let handler = VNImageRequestHandler(ciImage: image)
+        
+        do {
+            try handler.perform([request])
+
+        }
+        catch {
+            print(error)
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
     
     // to use image in details screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
