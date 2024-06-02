@@ -7,24 +7,9 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate, UICollectionViewDelegate, CollectionViewCellDelegate{
-    func suggestionTapped(cell: oneImageCVC) {
-            let storyboard = UIStoryboard(name: "TodaySuggestion", bundle: nil)
-            if let nextVC = storyboard.instantiateViewController(withIdentifier: "TodaySugestionViewController") as? TodaySugestionViewController {
-                if let navVC = self.navigationController {
-                    navVC.pushViewController(nextVC, animated: true)
-                } else {
-                    print("Navigation controller is nil")
-                }
-            } else {
-                print("TodaySuggestionsViewController could not be instantiated")
-            }
-    }
-
-    
-    
-    
-    
+class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate, UICollectionViewDelegate, CollectionViewCellDelegate, TodaySuggestionDelegate {
+        
+    var selectedOutfitFromSuggestion: Outfit?
     var isExpanded: Bool = false
     var selectedEventType: EventType = .presentation
     
@@ -60,22 +45,27 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         collectionView.register(Header.self, forSupplementaryViewOfKind: categoryHeaderId, withReuseIdentifier: headerId)
     }
     func toggleLayout(isExpanded: Bool) {
-            self.isExpanded = isExpanded
-            collectionView.collectionViewLayout = generateLayout()
+        self.isExpanded = isExpanded
+        collectionView.collectionViewLayout = generateLayout()
         collectionView.reloadData()
 //        collectionView.reloadSections(IndexSet(integer: 0))
-        }
+    }
     func eventSelected(eventType: EventType) {
-            self.selectedEventType = eventType
-            collectionView.reloadSections(IndexSet(integer: 1)) // Reload the section containing the images
-        }
+        self.selectedEventType = eventType
+        collectionView.reloadSections(IndexSet(integer: 1)) // Reload the section containing the images
+    }
+    func didSelectOutfit(_ outfit: Outfit) {
+        selectedOutfitFromSuggestion = outfit
+        collectionView.reloadSections(IndexSet(integer: 1))
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         switch section {
         case 0:
             return 1
         case 1:
-            return outfitsForEventType(selectedEventType).count
+            return outfitsForEventType(selectedEventType).count + (selectedOutfitFromSuggestion != nil ? 1 : 0)
         case 2:
             return 1
         default:
@@ -104,29 +94,32 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             
             return cell
         case 1:
-            if indexPath.row != 3{
-                
+            if let selectedOutfit = selectedOutfitFromSuggestion, indexPath.row != 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
-                let outfit = outfitsForEventType(selectedEventType)[indexPath.row]
-                cell.configure(picture1: outfit.top.image, picture2: outfit.bottom.image)
+                cell.configure(picture1: selectedOutfit.top.image, picture2: selectedOutfit.bottom.image)
                 cell.viewImage.layer.masksToBounds = false
                 cell.viewImage.layer.cornerRadius = 14.0
-                
-                let config = UIImage.SymbolConfiguration(hierarchicalColor: .black)
                 return cell
+            } else {
+                if indexPath.row == 3 {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneImageHome", for: indexPath) as! oneImageCVC
+                    cell.image.layer.masksToBounds = false
+                    cell.image.layer.cornerRadius = 14.0
+                    cell.viewImage.layer.masksToBounds = false
+                    cell.viewImage.layer.cornerRadius = 14.0
+                    cell.delegate = self
+                    return cell
+                } else {
+                    let adjustedIndex = selectedOutfitFromSuggestion != nil ? (indexPath.row > 3 ? indexPath.row - 1 : indexPath.row) : indexPath.row
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
+                    let outfit = outfitsForEventType(selectedEventType)[adjustedIndex]
+                    cell.configure(picture1: outfit.top.image, picture2: outfit.bottom.image)
+                    
+                    cell.viewImage.layer.masksToBounds = false
+                    cell.viewImage.layer.cornerRadius = 14.0
+                    return cell
+                }
             }
-            else{
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneImageHome", for: indexPath) as! oneImageCVC
-                cell.image.layer.masksToBounds = false
-                cell.image.layer.cornerRadius = 14.0
-                cell.viewImage.layer.masksToBounds = false
-                cell.viewImage.layer.cornerRadius = 14.0
-                cell.delegate = self
-                return cell
-            }
-//            cell.viewImage.layer.shadowColor = UIColor.gray.cgColor
-//            cell.viewImage.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-//            cell.viewImage.layer.shadowOpacity = 1.0
             
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "footer", for: indexPath) as! footerCollectionViewCell
@@ -245,6 +238,19 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             return MainDataModel.workoutOutfits
         case .party:
             return MainDataModel.partyOutfits
+        }
+    }
+    func suggestionTapped(cell: oneImageCVC) {
+        let storyboard = UIStoryboard(name: "TodaySuggestion", bundle: nil)
+        if let nextVC = storyboard.instantiateViewController(withIdentifier: "TodaySugestionViewController") as? TodaySugestionViewController {
+            nextVC.todaySuggestionDelegate = self  // Set the delegate
+            if let navVC = self.navigationController {
+                navVC.pushViewController(nextVC, animated: true)
+            } else {
+                print("Navigation controller is nil")
+            }
+        } else {
+            print("TodaySuggestionsViewController could not be instantiated")
         }
     }
     

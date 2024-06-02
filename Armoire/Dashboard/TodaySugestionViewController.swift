@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol TodaySuggestionDelegate: AnyObject {
+    func didSelectOutfit(_ outfit: Outfit)
+}
+
+
 class TodaySugestionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     var selectedEventType: EventType = .party
+    weak var todaySuggestionDelegate: TodaySuggestionDelegate?
     
-
     func outfitsForEventType(_ eventType: EventType) -> [Outfit] {
         switch eventType {
         case .presentation:
@@ -34,6 +39,7 @@ class TodaySugestionViewController: UIViewController, UICollectionViewDataSource
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonTapped))
         navigationItem.leftBarButtonItem = nil
         navigationItem.hidesBackButton = true
+        
 
         
     }
@@ -45,11 +51,24 @@ class TodaySugestionViewController: UIViewController, UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageSuggestion", for: indexPath) as! ImageSugestionCollectionViewCell
         let outfit = outfitsForEventType(selectedEventType)[indexPath.row]
         cell.configure(picture1: outfit.top.image, picture2: outfit.bottom.image)
-        cell.viewImage.layer.masksToBounds = false
-        cell.viewImage.layer.cornerRadius = 14.0
         return cell
+                
     }
    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedOutfit = outfitsForEventType(selectedEventType)[indexPath.row]
+        DataController.shared.selectedSuggestions.append(selectedOutfit)
+        todaySuggestionDelegate?.didSelectOutfit(selectedOutfit)
+        
+    }
+
+        func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+            if let index = DataController.shared.selectedSuggestions.firstIndex(of: outfitsForEventType(selectedEventType)[indexPath.row]) {
+                DataController.shared.selectedSuggestions.remove(at: index)
+            }
+        }
+    
     @IBOutlet var collectionView: UICollectionView!
     
 
