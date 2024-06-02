@@ -118,20 +118,16 @@ class headerCollectionViewCell: UICollectionViewCell {
         switch sender.configuration!.title!{
         case "Presentation":
             partyButton.setTitle("Presentation", for: .normal)
-            partyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-            partyButton.setImage(UIImage(named: "network"), for: .normal)
+            
         case "Meeting":
             partyButton.setTitle("Meeting", for: .normal)
-            partyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-            partyButton.setImage(UIImage(named: "filemenu.and.cursorarrow"), for: .normal)
+            
         case "Workout":
             partyButton.setTitle("Workout", for: .normal)
-            partyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-            partyButton.setImage(UIImage(named: "figure.yoga"), for: .normal)
+            
         default:
-            partyButton.setTitle("Party", for: .normal)
-            partyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-            partyButton.setImage(UIImage(named: "party.popper.fill"), for: .normal)
+            partyButton.setTitle("Presentation", for: .normal)
+            
         }
     }
     private func updateCalendarLabel() {

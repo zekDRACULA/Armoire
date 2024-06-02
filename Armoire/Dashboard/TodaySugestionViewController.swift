@@ -11,7 +11,7 @@ class TodaySugestionViewController: UIViewController, UICollectionViewDataSource
     var selectedEventType: EventType = .party
     
 
-    func outfitsForEventType(_ eventType: EventType) -> [MainDataModel.Outfit] {
+    func outfitsForEventType(_ eventType: EventType) -> [Outfit] {
         switch eventType {
         case .presentation:
             return MainDataModel.presentationOutfits

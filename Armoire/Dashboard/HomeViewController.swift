@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate, UICollectionViewDelegate, CollectionViewCellDelegate{
     func suggestionTapped(cell: oneImageCVC) {
             let storyboard = UIStoryboard(name: "TodaySuggestion", bundle: nil)
@@ -27,7 +26,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     
     
     var isExpanded: Bool = false
-    var selectedEventType: EventType = .party
+    var selectedEventType: EventType = .presentation
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -236,7 +235,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
 //        header.backgroundColor = .cyan
         return header
     }
-    func outfitsForEventType(_ eventType: EventType) -> [MainDataModel.Outfit] {
+    func outfitsForEventType(_ eventType: EventType) -> [Outfit] {
         switch eventType {
         case .presentation:
             return MainDataModel.presentationOutfits
