@@ -38,6 +38,10 @@ class MainDataModel {
         Apparel(image: UIImage(named: "Image_2")!, id: 2, color: .black, pattern: .solid, tag: ["Party", "Top"]),
         Apparel(image: UIImage(named: "Image_3")!, id: 3, color: .black, pattern: .solid, tag: ["Party", "Top"])
     ]
+    struct Outfit {
+        var top: Apparel
+        var bottom: Apparel
+    }
     
     static var partyOutfits: [Outfit] = [
             Outfit(top: Wardrobe[0], bottom: Wardrobe[1]),
