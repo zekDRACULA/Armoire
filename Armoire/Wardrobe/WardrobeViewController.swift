@@ -27,6 +27,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.tabBarItem.image = UIImage(systemName: "hanger")
     }
     
+    //
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let indexPath = collectionView.indexPathsForSelectedItems?.first {
             selectedApparel = apparelsToDisplay[indexPath.row]
@@ -34,11 +35,12 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         performSegue(withIdentifier: "toDetails", sender: self)
     }
     
-    
+    // number of sections
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         2
     }
     
+    // number of items to be displayed in the collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -50,6 +52,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
+    // using nib files to display the items in collection view
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
@@ -171,7 +174,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
-    // for alert controller on pressing add button
+    // for alert controller on pressing + button
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         
         let imagePicker = UIImagePickerController()
@@ -216,6 +219,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         performSegue(withIdentifier: "toAdd", sender: nil)
     }
     
+
     
     //making func for using ml model in that photo
     
@@ -247,40 +251,21 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         
     }
     
-    
-    
-    
-    
-    // to use image in details screen
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let detailsTVC = segue.destination as! DetailsTableViewController
 
-        detailsTVC.segueIdentifier = segue.identifier
+    // to pass data according to the source of segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let itemDetailsTVC = segue.destination as! ItemDetailsTableViewController
+        itemDetailsTVC.segueIdentifier = segue.identifier
+        
         if segue.identifier == "toAdd"{
             selectedApparel = Apparel(image: imageToUse, id: 123, color: .red, pattern: .solid, tag: ["Summer"])
-            detailsTVC.apparel = selectedApparel
-
-        
-//        if segue.identifier == "toDetails" {
-//            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
-//                let detailsTVC = segue.destination as! DetailsTableViewController
-//                let selectedApparel = apparelsToDisplay[indexPath.row]
-//                detailsTVC.apparel?.image = selectedApparel.image
-//            }
-//        }
-        if segue.identifier == "toDetails" {
-            detailsTVC.apparel = selectedApparel
+            itemDetailsTVC.apparel = selectedApparel
         }
-        //        if segue.identifier == "toDetails" {
-        //            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
-        //                let detailsTVC = segue.destination as! DetailsTableViewController
-        //                let selectedApparel = apparelsToDisplay[indexPath.row]
-        //                detailsTVC.apparel?.image = selectedApparel.image
-        //            }
-        //        }
+
+        if segue.identifier == "toDetails" {
+            itemDetailsTVC.apparel = selectedApparel
+        }
     }
     
-    // for 3 dot button
-    @IBAction func DotButtonTapped(_ sender: UIBarButtonItem) {
-    }
+    
 }
