@@ -60,6 +60,7 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PGh-FH-rsH"/>
@@ -76,9 +77,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="UBN-AF-oo9">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="wNG-AV-eqA">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="wNG-AV-eqA">
                             <connections>
-                                <action selector="doneButtonTapped:" destination="iQR-CC-qZZ" id="8fP-Ak-Ffn"/>
+                                <action selector="logoutButtonTapped:" destination="iQR-CC-qZZ" id="8fP-Ak-Ffn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

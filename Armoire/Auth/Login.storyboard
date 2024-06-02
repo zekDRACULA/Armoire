@@ -18,10 +18,11 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="bgColorProfile"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Abw-Xq-BgG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37.404580152671755" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="964.12213740458014" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>

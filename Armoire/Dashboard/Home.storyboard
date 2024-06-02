@@ -53,15 +53,6 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="8mW-I0-Puu"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxU-Vj-qnJ">
-                                <rect key="frame" x="142" y="707" width="109" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Login Page"/>
-                                <connections>
-                                    <segue destination="bT0-9q-uVn" kind="presentation" id="XJj-uZ-Wkr"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBf-18-ICJ">
                                 <rect key="frame" x="16" y="580" width="115" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -89,14 +80,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1223.6641221374045" y="-35.211267605633807"/>
-        </scene>
-        <!--Login-->
-        <scene sceneID="Omn-6D-FDB">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="bT0-9q-uVn" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uvc-3j-TmA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1262" y="394"/>
         </scene>
         <!--WardrobeCompatibility-->
         <scene sceneID="GNP-ev-1rI">

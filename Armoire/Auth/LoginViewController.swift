@@ -35,7 +35,8 @@ class LoginViewController: UIViewController {
             foregroundView.heightAnchor.constraint(equalToConstant: 650)
         ])
         
-        
+        didTapButton()
+        newUserTapped()
         configureLablesInForegroundView()
     }
     
@@ -95,12 +96,22 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private let newUser: UILabel = {
+            let label = UILabel()
+            label.text = "New User? Create Account"
+            label.textAlignment = .center
+            label.font = .systemFont(ofSize: 17)
+            label.textColor = .systemBlue
+            return label
+        }()
+    
     func configureLablesInForegroundView() {
         
         foregroundView.addSubview(loginLabel)
         foregroundView.addSubview(emailField)
         foregroundView.addSubview(passwordField)
         foregroundView.addSubview(loginButton)
+        foregroundView.addSubview(newUser)
         
         
         //        NSLayoutConstraint.activate([
@@ -137,11 +148,27 @@ class LoginViewController: UIViewController {
             loginButton.widthAnchor.constraint(equalToConstant: 60)
         ])
         
+        newUser.translatesAutoresizingMaskIntoConstraints = false
+                    NSLayoutConstraint.activate([
+                        newUser.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 16),
+                        newUser.centerXAnchor.constraint(equalTo: foregroundView.centerXAnchor)
+                    ])
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(newUserTapped))
+            newUser.isUserInteractionEnabled = true
+            newUser.addGestureRecognizer(tapGestureRecognizer)
         
         loginButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        
+        
     }
     
+    @objc private func newUserTapped(){
+        print("label tapped")
+        let SignInViewController = SignInViewController()
+        SignInViewController.modalPresentationStyle = .automatic
+        self.present(SignInViewController, animated: true, completion: nil)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         emailField.becomeFirstResponder()
