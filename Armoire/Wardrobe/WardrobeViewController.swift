@@ -11,7 +11,7 @@ import Vision
 import FirebaseAuth  //for authentication
 import FirebaseCore  //idk
 import FirebaseStorage //for storing image
-import FirebaseDatabase //for retriving image as url
+import FirebaseFirestore //for retriving image as url
 
 
 class WardrobeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -237,9 +237,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         guard let selectedImage = info[.originalImage] as? UIImage else {return}
         imageToUse = selectedImage
         
-        //from here
-        
-        //uploadPhoto()
+       
         
         //converting image to Ciimage for ml model processing
         guard let ciimage = CIImage(image: selectedImage) else {
@@ -254,10 +252,53 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
 
-    //func for uploading image in forebase storage
+    //func for appending image from forebase storage to apparelsToDisplay
     
     
-    
+    func retrievePhotos(){
+        
+        //get Data in the database
+        let db = Firestore.firestore()
+        guard let user = Auth.auth().currentUser else{
+            print ("user is not Authenticated")
+            return
+        }
+        let userID = user.uid
+        let apparelRef = db.collection("users").document(userID).collection("Apparels").getDocuments { snapshot, error in
+            if error == nil && snapshot != nil{
+                
+                var paths = [String]()
+                
+                // loop through all the returned docs
+                for doc in snapshot!.documents{
+                    //extract the file paths and add to array
+                    paths.append(doc["url"] as! String)
+                }
+                //Loop through each file path and fetch the data from storage
+                for path in paths{
+                    // get a reference to storage
+                    let storageRef = Storage.storage().reference()
+                    //specify the path
+                    let fileRef = storageRef.child(path)
+                    //retrieve the data
+                    fileRef.getData(maxSize: 5 * 1024 * 1025) { data, error in
+                        
+                        if error == nil && data != nil{
+                            let image = UIImage(data: data!)
+                            let apparel = Apparel(image: image!, id: 876, color: .blue, pattern: .dots, tag:["lower"] )
+                            print(apparel)
+                            self.apparelsToDisplay.append(apparel)
+                            
+                        }else{
+                            print("Failed to create UIImage from data")
+                            return
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
     
     
     //making func for using ml model in that photo

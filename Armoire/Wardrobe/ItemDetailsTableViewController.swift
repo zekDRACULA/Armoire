@@ -151,11 +151,4 @@ class ItemDetailsTableViewController: UITableViewController {
             }
         }
     }
-    
-    func retrievePhotos(){
-        
-    }
-
-    
-
 }
