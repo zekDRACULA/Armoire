@@ -34,18 +34,41 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     public func checkAuthentication(){
-        if Auth.auth().currentUser == nil{
-                    let vc = LoginViewController()
-                    let nav = UINavigationController(rootViewController: vc)
-                    nav.modalPresentationStyle = .fullScreen
-                    self.window?.rootViewController = nav
-        }else{
-            let vc = ViewController()
+        UserDefaults.standard.register(defaults: ["isLoggedIn": false])
+        let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
+        
+        
+        
+        
+        if isLoggedIn{
+            let storyBoard = UIStoryboard(name: "Home", bundle: nil)
+            let vc =  storyBoard.instantiateInitialViewController()
+            //HomeViewController(coder: NSCoder())
+            window?.rootViewController = vc
+            print(isLoggedIn)
+//            let nav = UINavigationController(rootViewController: vc)
+//            nav.modalPresentationStyle = .fullScreen
+//            self.window?.rootViewController = nav
+            
+        }else {
+            let vc = LoginViewController()
             let nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .fullScreen
             self.window?.rootViewController = nav
+            print(isLoggedIn)
         }
+        
+//        if Auth.auth().currentUser == nil{
+//                    let vc = LoginViewController()
+//                    let nav = UINavigationController(rootViewController: vc)
+//                    nav.modalPresentationStyle = .fullScreen
+//                    self.window?.rootViewController = nav
+//        } else{
+//            let vc = ViewController()
+//            let nav = UINavigationController(rootViewController: vc)
+//            nav.modalPresentationStyle = .fullScreen
+//            self.window?.rootViewController = nav
+//        }
     }
-
 }
 

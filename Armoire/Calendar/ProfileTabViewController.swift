@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileTabViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -52,7 +53,8 @@ class ProfileTabViewController: UIViewController,UITableViewDelegate,UITableView
                 sceneDelegate.checkAuthentication()
             }
         }
-        //dismiss(animated: true, completion: nil)
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+                //dismiss(animated: true, completion: nil)
     }
     
   
