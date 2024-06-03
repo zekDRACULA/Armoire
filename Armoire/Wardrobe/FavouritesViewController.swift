@@ -43,6 +43,13 @@ class FavouritesViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        DataController.shared.loadFavourites()
+        collectionView.reloadData()
+        print(#function)
+        print(DataController.shared.getWardrobe())
+    }
+    
     func generateLayout() -> UICollectionViewLayout{
         let layout = UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection? in
             

@@ -43,6 +43,9 @@
                         <state key="normal" image="heart" catalog="system"/>
                         <state key="selected" image="heart.fill" catalog="system"/>
                         <state key="highlighted" image="heart.fill" catalog="system"/>
+                        <connections>
+                            <action selector="heartButtonPressed:" destination="Okz-g0-7Qe" eventType="touchUpInside" id="Kus-ed-zAd"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -57,8 +60,9 @@
             <size key="customSize" width="381" height="344"/>
             <connections>
                 <outlet property="apparelImage" destination="Ilu-dX-T0q" id="i8w-QU-nJi"/>
+                <outlet property="heartButton" destination="Kt1-db-9KG" id="3uq-c8-tV6"/>
             </connections>
-            <point key="canvasLocation" x="-334" y="-494"/>
+            <point key="canvasLocation" x="-335.1145038167939" y="-494.36619718309862"/>
         </collectionViewCell>
     </objects>
     <resources>

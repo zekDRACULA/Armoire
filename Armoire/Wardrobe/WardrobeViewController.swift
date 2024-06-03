@@ -12,13 +12,21 @@ import Vision
 
 class WardrobeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var apparelsToDisplay: [Apparel] = []
-    
     @IBOutlet var collectionView: UICollectionView!
     
     @IBOutlet var segmentedControl: UISegmentedControl!
+    
+    // apparels to be displayed in the collection view
+    var apparelsToDisplay: [Apparel] = []{
+        didSet{
+            collectionView.reloadData()
+        }
+    }
 
+    // image stored here, to be used for, adding new apparel
     var imageToUse: UIImage = UIImage(named: "Image_1")!
+    
+    // apparel that has been tapped on
     var selectedApparel: Apparel?
     
     required init?(coder: NSCoder) {
@@ -27,7 +35,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.tabBarItem.image = UIImage(systemName: "hanger")
     }
     
-    //
+    // to store the item and use toDetails segue to see details
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let indexPath = collectionView.indexPathsForSelectedItems?.first {
             selectedApparel = apparelsToDisplay[indexPath.row]
@@ -62,7 +70,12 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeApparel", for: indexPath) as! WardrobeApparelCollectionViewCell
+            cell.delegate = self
+            cell.indexPath = indexPath
+            print(cell.indexPath)
+            apparelsToDisplay[indexPath.row].isFavourite ? cell.heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : cell.heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
             cell.apparelImage.image = apparelsToDisplay[indexPath.row].image
+//            cell.heartButton.addTarget(self, action: #selector(setIsFavourite), for: .touchUpInside)
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeTag", for: indexPath) as! WardrobeTagCollectionViewCell
@@ -99,8 +112,13 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.reloadData()
         
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        collectionView.reloadData()
+//    }
     
     // to generate layout for collection view
     func generateLayout() -> UICollectionViewLayout{
@@ -151,6 +169,10 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         return layout
     }
     
+//    @IBAction private func setIsFavourite() {
+//        print("Set as Favourite")
+//    }
+    
     @IBAction func changedSegment(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         // for all
@@ -173,6 +195,8 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
             collectionView.reloadData()
         }
     }
+    
+
     
     // for alert controller on pressing + button
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
@@ -254,18 +278,40 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     // to pass data according to the source of segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let itemDetailsTVC = segue.destination as! ItemDetailsTableViewController
-        itemDetailsTVC.segueIdentifier = segue.identifier
+//        let itemDetailsTVC = segue.destination as! ItemDetailsTableViewController
+//        itemDetailsTVC.segueIdentifier = segue.identifier
         
         if segue.identifier == "toAdd"{
-            selectedApparel = Apparel(image: imageToUse, id: 123, color: .red, pattern: .solid, tag: ["Summer"])
+            let itemDetailsTVC = segue.destination as! ItemDetailsTableViewController
+            itemDetailsTVC.segueIdentifier = segue.identifier
+            selectedApparel = Apparel(image: imageToUse, id: 123, color: .red, pattern: .solid,type: .top, tag: ["Summer"])
             itemDetailsTVC.apparel = selectedApparel
         }
 
         if segue.identifier == "toDetails" {
+            let itemDetailsTVC = segue.destination as! ItemDetailsTableViewController
+            itemDetailsTVC.segueIdentifier = segue.identifier
             itemDetailsTVC.apparel = selectedApparel
         }
     }
+}
+
+extension WardrobeViewController: WardrobeApparelCollectionViewCellDelegateProtocol {
+    func toggleIsFavourite(sender: WardrobeApparelCollectionViewCell, indexPath: IndexPath) {
+//        sender.delegate = self
+        apparelsToDisplay[indexPath.row].isFavourite.toggle()
+        DataController.shared.setWardrobe(with: indexPath.row, isFavourite: apparelsToDisplay[indexPath.row].isFavourite)
+        collectionView.reloadData()
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+            sender.heartButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            sender.heartButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+//            sender.transform = CGAffineTransform.identity
+        }, completion: nil)
+    }
+    
+    
+
     
     
 }

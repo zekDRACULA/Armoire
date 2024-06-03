@@ -58,6 +58,10 @@ class DataController{
         wardrobe
     }
     
+    func setWardrobe(with index: Int, isFavourite: Bool) {
+        wardrobe[index].isFavourite = isFavourite
+    }
+    
     func getWardrobe(with index: Int) -> Apparel {
         wardrobe[index]
     }
@@ -71,6 +75,7 @@ class DataController{
     }
     
     // MARK: - tags
+    
     func loadTags() {
         tags = ["Summer", "Winter", "Top", "Bottom", "Dress"]
     }
@@ -92,6 +97,7 @@ class DataController{
     }
     
     // MARK: - outfits
+    
     func loadOutfits() {
         let outfit = Outfit(top: wardrobe[0], bottom: wardrobe[1])
         let outfit1 = Outfit(top: wardrobe[0], bottom: wardrobe[2])
@@ -105,6 +111,7 @@ class DataController{
     }
     
     // MARK: - favourites
+    
     func loadFavourites() {
         favourites = wardrobe.filter { $0.isFavourite }
     }

@@ -11,8 +11,10 @@ import UIKit
 struct Apparel {
     var image: UIImage
     var id: Int
+//    var color: String
     var color: UIColor
     var pattern: Pattern
+//    var category: String
     var type: OfType?
     var tag: [String]
     var isFavourite: Bool = false
@@ -23,8 +25,13 @@ struct Outfit {
     var bottom: Apparel
 }
 
-enum Pattern{
-    case solid, stripes, checks, printed, dots, floral
+enum Pattern: String {
+    case solid = "Solid"
+    case stripes = "Striped"
+    case checks = "Checkered"
+    case printed = "Printed"
+    case dots = "Dots"
+    case floral = "Floral"
 }
 
 enum OfType {
