@@ -8,6 +8,10 @@
 import UIKit
 import CoreML
 import Vision
+import FirebaseAuth  //for authentication
+import FirebaseCore  //idk
+import FirebaseStorage //for storing image
+import FirebaseDatabase //for retriving image as url
 
 
 class WardrobeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -224,6 +228,8 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         alertController.popoverPresentationController?.sourceItem = sender
         present(alertController, animated: true, completion: nil)
+        
+        //uploadPhoto()
     }
     
     // to get image from camera and photo library selection
@@ -231,19 +237,28 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         guard let selectedImage = info[.originalImage] as? UIImage else {return}
         imageToUse = selectedImage
         
+        //from here
+        
+        //uploadPhoto()
         
         //converting image to Ciimage for ml model processing
         guard let ciimage = CIImage(image: selectedImage) else {
             fatalError("Could Not conver UIimage to CIimage")
         }
         
-        detect(image: ciimage)
+        // MARK: have to remove below comment to run the model
+        //detect(image: ciimage)
         
         dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "toAdd", sender: nil)
     }
     
 
+    //func for uploading image in forebase storage
+    
+    
+    
+    
     
     //making func for using ml model in that photo
     

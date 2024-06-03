@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import FirebaseAuth  //for authentication
+import FirebaseCore  //idk
+import FirebaseStorage //for storing image
+import FirebaseDatabase //for retriving image as url
 
 class ItemDetailsTableViewController: UITableViewController {
     
@@ -49,6 +53,7 @@ class ItemDetailsTableViewController: UITableViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         DataController.shared.appendApparel(apparel: apparel!)
+        uploadPhoto()
         self.dismiss(animated: true)
     }
     
@@ -96,6 +101,45 @@ class ItemDetailsTableViewController: UITableViewController {
         } else {
             return 35
         }
+    }
+    
+    func uploadPhoto(){
+        
+        // checking if user is authenticated
+        
+        guard let user = Auth.auth().currentUser else{
+            print ("user is not Authenticated")
+            return
+        }
+        let userID = user.uid
+        
+        // create storage reference
+        let storageRef = Storage.storage().reference()
+        
+        // turn image into data
+        let imageData = apparel?.image.jpegData(compressionQuality: 0.80)
+        
+        // checking that we can convert image into data
+        guard imageData != nil else{
+            return
+        }
+        // speccify the file path and name
+        
+        let fileRef = storageRef.child("\(userID)/apparels/\(UUID().uuidString).jpg")
+        
+        // upload that data
+        
+        let uploadTask = fileRef.putData(imageData!, metadata: nil) { metadata, error in
+            
+            //check for errors
+            if error == nil && metadata != nil{
+                
+                
+            }
+        }
+
+        // save a refernce to the file in firebase database
+        
     }
 
     // MARK: - Table view data source
