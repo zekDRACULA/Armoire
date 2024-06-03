@@ -181,6 +181,14 @@ class LoginViewController: UIViewController {
             print("missing field data")
             return
         }
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            guard let uid = result?.user.uid else{
+                print("unable to login")
+                return
+            }
+            print("Login Success")
+            UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
+        }
         
     }
 }

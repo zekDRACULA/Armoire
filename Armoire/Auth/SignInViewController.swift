@@ -222,21 +222,23 @@ class SignInViewController: UIViewController {
             return
         }
         print(registerUserRequest)
-        AuthService.shared.registerUser(with: registerUserRequest){
-            wasRegsitered, error in
-            
-            if let error = error {
-                AlertManager.showRegistrationErrorAlert(on: self, with: error)
-                return
-            }
-            if wasRegsitered{
-                if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate{
-                    sceneDelegate.checkAuthentication()
-                }else {
-                    AlertManager.showRegistrationErrorAlert(on: self)
-                }
-            }
-        }
+//        AuthService.shared.registerUser(with: registerUserRequest){
+//            wasRegsitered, error in
+//            
+//            if let error = error {
+//                AlertManager.showRegistrationErrorAlert(on: self, with: error)
+//                return
+//            }
+//            if wasRegsitered{
+//                if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate{
+//                    sceneDelegate.checkAuthentication()
+//                }else {
+//                    AlertManager.showRegistrationErrorAlert(on: self)
+//                }
+//            }
+//        }
+        Auth.auth().createUser(withEmail: registerUserRequest.email, password: registerUserRequest.password)
+        
     }
     
 }
