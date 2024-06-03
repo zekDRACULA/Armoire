@@ -49,7 +49,14 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Suggestions" largeTitleDisplayMode="never" id="an4-Ck-0eW"/>
+                    <navigationItem key="navigationItem" title="Suggestions" largeTitleDisplayMode="never" id="an4-Ck-0eW">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9t6-tl-c8a">
+                            <color key="tintColor" red="0.57254901960000004" green="0.10980392160000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="cancelTapped:" destination="Y6W-OH-hqX" id="uPQ-Xu-2AM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="ggh-zP-FgL" id="0ZU-j4-U7T"/>

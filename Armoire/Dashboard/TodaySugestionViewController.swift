@@ -36,12 +36,7 @@ class TodaySugestionViewController: UIViewController, UICollectionViewDataSource
         let firstNib = UINib(nibName: "ImageSuggestion", bundle: nil)
         collectionView.register(firstNib, forCellWithReuseIdentifier: "ImageSuggestion")
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonTapped))
-        navigationItem.leftBarButtonItem = nil
-        navigationItem.hidesBackButton = true
-        
 
-        
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return outfitsForEventType(selectedEventType).count
@@ -89,14 +84,9 @@ class TodaySugestionViewController: UIViewController, UICollectionViewDataSource
         }
         return layout
     }
-    @objc func doneButtonTapped() {
-            // Check if this view controller was presented modally
-            if self.presentingViewController != nil {
-                self.dismiss(animated: true, completion: nil)
-            } else {
-                // Otherwise, navigate back to the root view controller in the navigation stack
-                navigationController?.popToRootViewController(animated: true)
-            }
-        }
 
+    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }

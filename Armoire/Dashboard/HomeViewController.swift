@@ -261,7 +261,7 @@ class Header: UICollectionReusableView{
         super.init(frame: frame)
         
         label.text = "More"
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         addSubview(label)
     }
     override func layoutSubviews() {

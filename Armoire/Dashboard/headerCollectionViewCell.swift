@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol HeaderCollectionViewCellDelegate: AnyObject {
     func toggleLayout(isExpanded: Bool)
@@ -23,14 +24,13 @@ class headerCollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet var weatherStack: UIStackView!
+    
     @IBOutlet var dropDownButton: UIButton!
     @IBOutlet var weatherImage: UIImageView!
     
     @IBOutlet var partyButton: UIButton!
     
     @IBOutlet var calenderLabel: UILabel!
-    
-    @IBOutlet var weatherDescription: UILabel!
     
     @IBOutlet var waetherLabel: UILabel!
     @IBOutlet var outfitLabel: UILabel!
@@ -42,92 +42,77 @@ class headerCollectionViewCell: UICollectionViewCell {
     weak var delegate: HeaderCollectionViewCellDelegate? 
     var button = false
     
-   
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        updateCalendarLabel()
-//        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=94040,us&units=imperial&appid=0998bf296ab8bf39403c259f84b91beb") else {return}
-//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            if let data = data, error == nil{
-//                do{
-//                    guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else{return}
-//                    guard let weatherDetails = json["weather"] as? [[String: Any]], let weatherMain = json["main"] as? [String: Any] else {return}
-//                    let temp = Int(weatherMain["temp"] as? Double ?? 0)
-//                    let description = (weatherDetails.first?["description"] as? String)?.capitalizingFirstLetter()
-//                    DispatchQueue.main.async {
-//                        self.setWeather(weather: weatherDetails.first?["main"] as? String, description: description ?? "...",temp: temp)
-//                    }
-//                    
-//                }
-//                catch{
-//                    print("We have an error in retrieving the weather")
-//                }
-//            }
-//            
-//        }
-//        task.resume()
-//    }
-//    
-//    
-//    func setWeather(weather: String?, description: String, temp: Int){
-//        weatherDescription.text = description
-//        waetherLabel.text = "\(temp)°"
-//        
-//        switch weather{
-//        case "Sunny":
-//            weatherImage.image = UIImage(named: "sunny")
-//        default:
-//            weatherImage.image = UIImage(named: "cloudy")
-//        }
-//    }
-    
     override func awakeFromNib() {
-        super.awakeFromNib()
-        updateCalendarLabel()
+            super.awakeFromNib()
+            updateCalendarLabel()
+            fetchCurrentLocationWeather()
+        }
+   
+    
+    func fetchCurrentLocationWeather() {
+            LocationManager.shared.didUpdateLocation = { [weak self] location in
+                self?.fetchWeather(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            }
+            LocationManager.shared.startUpdatingLocation()
+        }
         
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=94040,us&units=imperial&appid=0998bf296ab8bf39403c259f84b91beb") else { return }
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let data = data, error == nil {
-                do {
-                    guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else { return }
-                    
-                    // Print the entire JSON response
-                    print("JSON Response: \(json)")
-                    
-                    guard let weatherDetails = json["weather"] as? [[String: Any]],
-                          let weatherMain = json["main"] as? [String: Any] else { return }
-                    
-                    let temp = weatherMain["temp"] as? Double ?? 0.0
-                    let description = (weatherDetails.first?["description"] as? String)?.capitalizingFirstLetter() ?? "..."
-                    let weather = weatherDetails.first?["main"] as? String ?? "Unknown"
-                    
-                    // Print the temperature value
-                    print("Temperature: \(temp)")
-
-                    DispatchQueue.main.async {
-                        self.setWeather(weather: weather, description: description, temp: Int(temp))
+        func fetchWeather(latitude: Double, longitude: Double) {
+            guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&units=imperial&appid=0998bf296ab8bf39403c259f84b91beb") else { return }
+            
+            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let data = data, error == nil {
+                    do {
+                        guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {
+                            print("Error: Could not parse JSON")
+                            return
+                        }
+                        
+                        // Print the entire JSON response
+                        print("JSON Response: \(json)")
+                        
+                        guard let weatherDetails = json["weather"] as? [[String: Any]],
+                              let weatherMain = json["main"] as? [String: Any] else {
+                            print("Error: Missing 'weather' or 'main' in JSON")
+                            return
+                        }
+                        
+                        let temp = weatherMain["temp"] as? Double ?? 0.0
+                        let roundedTemp = Int(round(temp))
+                        let description = (weatherDetails.first?["description"] as? String)?.capitalizingFirstLetter() ?? "..."
+                        let weather = weatherDetails.first?["main"] as? String ?? "Unknown"
+                        
+                        // Print the temperature and weather details
+                        print("Temperature: \(temp)")
+                        print("Weather: \(weather)")
+                        print("Description: \(description)")
+                        
+                        DispatchQueue.main.async {
+                            self.setWeather(weather: weather, description: description, temp: roundedTemp)
+                        }
+                        
+                    } catch {
+                        print("We have an error in retrieving the weather: \(error.localizedDescription)")
                     }
-                    
-                } catch {
-                    print("We have an error in retrieving the weather")
+                } 
+                else {
+                    print("Network error: \(error?.localizedDescription ?? "unknown error")")
                 }
             }
+            task.resume()
         }
-        task.resume()
-    }
-
-    func setWeather(weather: String, description: String, temp: Int) {
-        weatherDescription.text = description
-        waetherLabel.text = "\(temp)°"
         
-        switch weather {
-        case "Sunny":
-            weatherImage.image = UIImage(named: "sunny")
-        default:
-            weatherImage.image = UIImage(named: "cloudy")
+        func setWeather(weather: String, description: String, temp: Int) {
+            
+            waetherLabel.text = "\(((temp - 32) * 5)/9)°C"
+            
+            switch weather {
+            case "Sunny":
+                weatherImage.image = UIImage(named: "sunny")
+            default:
+                weatherImage.image = UIImage(named: "cloudy")
+            }
         }
-    }
-
+        
     
 
     func showButtonVisibility(){
@@ -186,11 +171,6 @@ class headerCollectionViewCell: UICollectionViewCell {
     
     
 }
-//extension String{
-//    func capitalizingFirstLetter() -> String{
-//        return prefix(1).uppercased() + self.lowercased().dropFirst()
-//    }
-//}
 
 extension String {
     func capitalizingFirstLetter() -> String {
