@@ -189,9 +189,10 @@ class LoginViewController: UIViewController {
             UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
             let storyBoard = UIStoryboard(name: "Home", bundle: nil)
             
-            guard let vc = storyBoard.instantiateInitialViewController() else{return}
+            let vc = storyBoard.instantiateViewController(withIdentifier: "HomeViewController")
             let navigationController = self.navigationController
             navigationController?.pushViewController(vc, animated: true)
+            //self.present(vc, animated: true)
         }
         
     }
