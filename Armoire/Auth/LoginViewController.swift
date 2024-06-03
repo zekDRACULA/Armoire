@@ -68,6 +68,8 @@ class LoginViewController: UIViewController {
     private let emailField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Email"
+        textField.autocapitalizationType = .none
+        textField.text = "abhay2@gmail.com"
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.selected.cgColor
         textField.layer.cornerRadius = 5
@@ -78,6 +80,7 @@ class LoginViewController: UIViewController {
     private let passwordField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Password"
+        textField.text = "12345678"
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.selected.cgColor
         textField.layer.cornerRadius = 5
@@ -187,12 +190,12 @@ class LoginViewController: UIViewController {
             }
             print("Login Success")
             UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
-            let storyBoard = UIStoryboard(name: "Home", bundle: nil)
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             
-            let vc = storyBoard.instantiateViewController(withIdentifier: "HomeViewController")
-            let navigationController = self.navigationController
-            navigationController?.pushViewController(vc, animated: true)
-            //self.present(vc, animated: true)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "toHomePage")
+//            let navigationController = self.navigationController
+//            navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
     }

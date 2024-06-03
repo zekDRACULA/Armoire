@@ -61,6 +61,9 @@ class ProfileTabViewController: UIViewController,UITableViewDelegate,UITableView
         let navigationController = self.navigationController
         navigationController?.pushViewController(vc, animated: true)
         
+        
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 //segue.source as ViewController
