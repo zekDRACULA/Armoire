@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "Email"
         textField.autocapitalizationType = .none
-        textField.text = "abhay2@gmail.com"
+        //textField.text = "abhay2@gmail.com"
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.selected.cgColor
         textField.layer.cornerRadius = 5
@@ -80,7 +80,7 @@ class LoginViewController: UIViewController {
     private let passwordField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Password"
-        textField.text = "12345678"
+        //textField.text = "12345678"
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.selected.cgColor
         textField.layer.cornerRadius = 5

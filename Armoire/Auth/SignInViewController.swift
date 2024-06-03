@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class SignInViewController: UIViewController {
     
@@ -220,23 +221,33 @@ class SignInViewController: UIViewController {
             AlertManager.showInvalidPasswordAlert(on: self)
             return
         }
+        
         print(registerUserRequest)
-//        AuthService.shared.registerUser(with: registerUserRequest){
-//            wasRegsitered, error in
-//            
-//            if let error = error {
-//                AlertManager.showRegistrationErrorAlert(on: self, with: error)
-//                return
-//            }
-//            if wasRegsitered{
-//                if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate{
-//                    sceneDelegate.checkAuthentication()
-//                }else {
-//                    AlertManager.showRegistrationErrorAlert(on: self)
-//                }
-//            }
-//        }
-        Auth.auth().createUser(withEmail: registerUserRequest.email, password: registerUserRequest.password)
+       
+        Auth.auth().createUser(withEmail: registerUserRequest.email, password: registerUserRequest.password) { authResult, error in
+            
+            if let error = error{
+                print("error: \(error.localizedDescription)")
+                return
+            }
+            let db = Firestore.firestore()
+            guard let user = Auth.auth().currentUser else{
+                print("user not Authenticated")
+                return
+            }
+            let userID = user.uid
+            print(userID)
+            db.collection("users").document(userID).setData(["email": registerUserRequest.email,
+                                                             "username" : registerUserRequest.username]){
+                error in
+                if let error = error {
+                    print("error : \(error.localizedDescription)")
+                    return
+                }else{
+                    print("user data saved successfully")
+                }
+            }
+        }
         
     }
     
