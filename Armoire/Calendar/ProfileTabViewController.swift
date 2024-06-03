@@ -55,9 +55,13 @@ class ProfileTabViewController: UIViewController,UITableViewDelegate,UITableView
         }
         UserDefaults.standard.set(false, forKey: "isLoggedIn")
                 //dismiss(animated: true, completion: nil)
+        let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+        
+        let vc = storyBoard.instantiateViewController(withIdentifier: "LoginStoryboard")
+        let navigationController = self.navigationController
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
-    
-  
-
 }
 //segue.source as ViewController
+//LoginStoryboard
