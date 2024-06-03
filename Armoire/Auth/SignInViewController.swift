@@ -182,8 +182,7 @@ class SignInViewController: UIViewController {
     @objc private func oldUserTapped(){
         print("label tapped")
         let LoginViewController = LoginViewController()
-        LoginViewController.modalPresentationStyle = .automatic
-        self.present(LoginViewController, animated: true, completion: nil)
+            self.show(LoginViewController, sender: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
