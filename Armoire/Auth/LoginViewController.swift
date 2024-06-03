@@ -166,8 +166,7 @@ class LoginViewController: UIViewController {
     @objc private func newUserTapped(){
         print("label tapped")
         let SignInViewController = SignInViewController()
-        SignInViewController.modalPresentationStyle = .automatic
-        self.present(SignInViewController, animated: true, completion: nil)
+        self.show(SignInViewController, sender: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -188,7 +187,16 @@ class LoginViewController: UIViewController {
             }
             print("Login Success")
             UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
+            let storyBoard = UIStoryboard(name: "Home", bundle: nil)
+            
+            guard let vc = storyBoard.instantiateInitialViewController() else{return}
+            let navigationController = self.navigationController
+            navigationController?.pushViewController(vc, animated: true)
         }
+        
+    }
+    
+    @IBAction func unwindToLogin(segue: UIStoryboardSegue){
         
     }
 }
