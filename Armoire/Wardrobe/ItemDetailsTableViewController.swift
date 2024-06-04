@@ -119,14 +119,14 @@ class ItemDetailsTableViewController: UITableViewController {
         let storageRef = Storage.storage().reference()
         
         // turn image into data
-        let imageData = apparel?.image.jpegData(compressionQuality: 0.80)
+        let imageData = apparel?.image.pngData()
         
         // checking that we can convert image into data
         guard imageData != nil else{
             return
         }
         // speccify the file path and name
-        let path = "\(userID)/apparels/\(UUID().uuidString).jpg"
+        let path = "\(userID)/apparels/\(UUID().uuidString).png"
         let fileRef = storageRef.child(path)
         print(userID)
         // upload that data

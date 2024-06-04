@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>teamgg.Armoire</string>
+	<string>teamgg.Armoire.abhay</string>
 	<key>PROJECT_ID</key>
 	<string>armoire-f156a</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:360553214739:ios:e367fb5ec4b565667be0e6</string>
+	<string>1:360553214739:ios:c3c50d8000bdcd247be0e6</string>
+	<key>DATABASE_URL</key>
+	<string>https://armoire-f156a-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>
 </plist>
