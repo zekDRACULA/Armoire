@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseAuth  //for authentication
+import FirebaseAuth//for authentication
 import FirebaseCore  //idk
 import FirebaseStorage //for storing image
 import FirebaseFirestore //for retriving image as url
@@ -35,6 +35,7 @@ class ItemDetailsTableViewController: UITableViewController {
         }
         
         apparelImage.image = apparel?.image
+        typeLabel.text = apparel?.category
 //        typeLabel.text = apparel?.type
         colourLabel.text = apparel?.color.accessibilityName.capitalized
         patternLabel.text = apparel?.pattern.rawValue
@@ -120,7 +121,6 @@ class ItemDetailsTableViewController: UITableViewController {
         
         // turn image into data
         let imageData = apparel?.image.pngData()
-        
         // checking that we can convert image into data
         guard imageData != nil else{
             return

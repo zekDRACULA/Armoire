@@ -36,6 +36,7 @@ class DataController{
     // MARK: - wardrobe items
     
     func loadWardrobe() {
+        
 //        let apparel = Apparel(image: UIImage(named: "Image_1")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Party", "Top"], isFavourite: true)
 //        
 //        let apparel1 = Apparel(image: UIImage(named: "Image_2")!, id: 2, color: .brown, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
@@ -55,6 +56,7 @@ class DataController{
     }
     
     func getWardrobe() -> [Apparel] {
+        
         wardrobe
     }
     

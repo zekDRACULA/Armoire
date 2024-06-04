@@ -29,7 +29,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     // image stored here, to be used for, adding new apparel
     var imageToUse: UIImage = UIImage(named: "Image_1")!
-    
+    var clothType : String?
     // apparel that has been tapped on
     var selectedApparel: Apparel?
     
@@ -116,13 +116,11 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
         collectionView.dataSource = self
         collectionView.delegate = self
+        retrievePhotos()
+        print(apparelsToDisplay.count)
         collectionView.reloadData()
-        
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        collectionView.reloadData()
-//    }
     
     // to generate layout for collection view
     func generateLayout() -> UICollectionViewLayout{
@@ -229,7 +227,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         alertController.popoverPresentationController?.sourceItem = sender
         present(alertController, animated: true, completion: nil)
         
-        //uploadPhoto()
+        
     }
     
     // to get image from camera and photo library selection
@@ -245,7 +243,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
         
         // MARK: have to remove below comment to run the model
-        //detect(image: ciimage)
+        detect(image: ciimage)
         
         dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "toAdd", sender: nil)
@@ -281,11 +279,12 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
                     //specify the path
                     let fileRef = storageRef.child(path)
                     //retrieve the data
-                    fileRef.getData(maxSize: 5 * 1024 * 1025) { data, error in
-                        
+                    fileRef.getData(maxSize: 20 * 1024 * 1024) { data, error in
+                      print(path)
                         if error == nil && data != nil{
                             let image = UIImage(data: data!)
-                            let apparel = Apparel(image: image!, id: 876, color: .blue, pattern: .dots, tag:["lower"] )
+                        
+                            let apparel = Apparel(category: self.clothType!,image: image!, id: 876, color: .blue, pattern: .dots,type: .top, tag:["lower"] )
                             print(apparel)
                             self.apparelsToDisplay.append(apparel)
                             
@@ -295,12 +294,13 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
                         }
                         
                     }
+                    print(paths.count)
                 }
             }
         }
     }
     
-    
+    // MARK: ML model
     //making func for using ml model in that photo
     
     func detect(image:CIImage) {
@@ -314,7 +314,13 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
             guard let results = request.results as? [VNClassificationObservation] else{
                 fatalError("Model failed to process image")
             }
-            print(results)
+            if let highestConfidenceResult = results.max(by: { $0.confidence < $1.confidence }) {
+                self.clothType = highestConfidenceResult.identifier
+                print(self.clothType)
+                print("Highest confidence result: \(highestConfidenceResult.identifier) with confidence \(highestConfidenceResult.confidence)")} else {
+                    print("No results found.")
+                }
+            //print(results)
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
@@ -326,9 +332,6 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         catch {
             print(error)
         }
-        
-        
-        
     }
     
 
@@ -340,7 +343,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         if segue.identifier == "toAdd"{
             let itemDetailsTVC = segue.destination as! ItemDetailsTableViewController
             itemDetailsTVC.segueIdentifier = segue.identifier
-            selectedApparel = Apparel(image: imageToUse, id: 123, color: .red, pattern: .solid,type: .top, tag: ["Summer"])
+            selectedApparel = Apparel(category: clothType!, image: imageToUse, id: 123, color: .red, pattern: .solid,type: .top, tag: ["Summer"])
             itemDetailsTVC.apparel = selectedApparel
         }
 
@@ -365,9 +368,4 @@ extension WardrobeViewController: WardrobeApparelCollectionViewCellDelegateProto
 //            sender.transform = CGAffineTransform.identity
         }, completion: nil)
     }
-    
-    
-
-    
-    
 }

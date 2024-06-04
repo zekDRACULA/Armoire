@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 
 struct Apparel {
+    var category : String
     var image: UIImage
     var id: Int
-//    var color: String
+//   var color: String
     var color: UIColor
     var pattern: Pattern
-//    var category: String
     var type: OfType?
     var tag: [String]
     var isFavourite: Bool = false
