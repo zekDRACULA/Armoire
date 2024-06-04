@@ -53,7 +53,7 @@
 		B12D51732BF67BC8002324F4 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D51722BF67BC8002324F4 /* SuggestionViewController.swift */; };
 		B12D51772BF68197002324F4 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D51762BF68197002324F4 /* CardCell.swift */; };
 		B15F21342C05303B00C46793 /* EventDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15F21332C05303B00C46793 /* EventDetails.storyboard */; };
-		B162B34C2C0EF9FC0066FEFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B162B34B2C0EF9FC0066FEFD /* GoogleService-Info.plist */; };
+		B18BFFDD2C0C337D00CE5A26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B18BFFDC2C0C337D00CE5A26 /* GoogleService-Info.plist */; };
 		B19994332C0597FA0045ADD1 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B19994322C0597FA0045ADD1 /* EventCell.xib */; };
 		B19994352C05A96B0045ADD1 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19994342C05A96B0045ADD1 /* EventCollectionViewCell.swift */; };
 		B19994372C05B0980045ADD1 /* EventsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19994362C05B0980045ADD1 /* EventsPageViewController.swift */; };
@@ -145,7 +145,7 @@
 		B12D51722BF67BC8002324F4 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		B12D51762BF68197002324F4 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		B15F21332C05303B00C46793 /* EventDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventDetails.storyboard; sourceTree = "<group>"; };
-		B162B34B2C0EF9FC0066FEFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B18BFFDC2C0C337D00CE5A26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B19994322C0597FA0045ADD1 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		B19994342C05A96B0045ADD1 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		B19994362C05B0980045ADD1 /* EventsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPageViewController.swift; sourceTree = "<group>"; };
@@ -259,9 +259,9 @@
 				BC06A9172BFF60860071F6FE /* MixMatchViewController.swift */,
 				BC06A9192BFF60980071F6FE /* MixAndMatch.storyboard */,
 				0A546A282BED34C7004EBA3D /* Assets.xcassets */,
+				B18BFFDC2C0C337D00CE5A26 /* GoogleService-Info.plist */,
 				0A546A2A2BED34C7004EBA3D /* LaunchScreen.storyboard */,
 				0A546A2D2BED34C7004EBA3D /* Info.plist */,
-				B162B34B2C0EF9FC0066FEFD /* GoogleService-Info.plist */,
 			);
 			path = Armoire;
 			sourceTree = "<group>";
@@ -458,11 +458,11 @@
 				BC11BC702BFB6AE50093DDBE /* footer.xib in Resources */,
 				BC11BC722BFB6AF00093DDBE /* header.xib in Resources */,
 				674274562BF6168D001304A8 /* Calendar.storyboard in Resources */,
+				B18BFFDD2C0C337D00CE5A26 /* GoogleService-Info.plist in Resources */,
 				B1D8004C2C0376D70081F999 /* BagPackerDetailCollectionViewCell.xib in Resources */,
 				674274582BF6169D001304A8 /* Wardrobe.storyboard in Resources */,
 				B19BD16C2C0C7E94007FE9E7 /* SignIn.storyboard in Resources */,
 				67A3E4E52C00596500CC5880 /* WardrobeApparel.xib in Resources */,
-				B162B34C2C0EF9FC0066FEFD /* GoogleService-Info.plist in Resources */,
 				4804B2F92C01D55E00FAC9A3 /* ProfileTab.storyboard in Resources */,
 				674274542BF61665001304A8 /* Home.storyboard in Resources */,
 				489D22562C0BA7CC00C829C1 /* SavedSuggestions.storyboard in Resources */,
@@ -699,7 +699,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = teamgg.Armoire.abhay;
+				PRODUCT_BUNDLE_IDENTIFIER = teamgg.Armoire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -731,7 +731,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = teamgg.Armoire.abhay;
+				PRODUCT_BUNDLE_IDENTIFIER = teamgg.Armoire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

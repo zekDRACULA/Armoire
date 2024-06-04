@@ -36,21 +36,21 @@ class DataController{
     // MARK: - wardrobe items
     
     func loadWardrobe() {
-//        let apparel = Apparel(image: UIImage(named: "Image_1")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Party", "Top"], isFavourite: true)
-//        
-//        let apparel1 = Apparel(image: UIImage(named: "Image_2")!, id: 2, color: .brown, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
-//        
-//        let apparel2 =  Apparel(image: UIImage(named: "Image_3")!, id: 3, color: .black, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
-//        
-//        let apparel3 = Apparel(image: UIImage(named: "Image_4")!, id: 4, color: .blue, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
-//        
-//        let apparel4 = Apparel(image: UIImage(named: "Image_5")!, id: 5, color: .blue, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
-//        
-//        wardrobe.append(apparel)
-//        wardrobe.append(apparel1)
-//        wardrobe.append(apparel2)
-//        wardrobe.append(apparel3)
-//        wardrobe.append(apparel4)
+        let apparel = Apparel(image: UIImage(named: "Image_1")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Party", "Top"], isFavourite: true)
+        
+        let apparel1 = Apparel(image: UIImage(named: "Image_2")!, id: 2, color: .brown, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
+        
+        let apparel2 =  Apparel(image: UIImage(named: "Image_3")!, id: 3, color: .black, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
+        
+        let apparel3 = Apparel(image: UIImage(named: "Image_4")!, id: 4, color: .blue, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
+        
+        let apparel4 = Apparel(image: UIImage(named: "Image_5")!, id: 5, color: .blue, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
+        
+        wardrobe.append(apparel)
+        wardrobe.append(apparel1)
+        wardrobe.append(apparel2)
+        wardrobe.append(apparel3)
+        wardrobe.append(apparel4)
         
     }
     
@@ -99,15 +99,15 @@ class DataController{
     // MARK: - outfits
     
     func loadOutfits() {
-//        let outfit = Outfit(top: wardrobe[0], bottom: wardrobe[1])
-//        let outfit1 = Outfit(top: wardrobe[0], bottom: wardrobe[2])
-//        let outfit2 = Outfit(top: wardrobe[0], bottom: wardrobe[3])
-//        let outfit3 = Outfit(top: wardrobe[0], bottom: wardrobe[4])
-//        
-//        outfits.append(outfit)
-//        outfits.append(outfit1)
-//        outfits.append(outfit2)
-//        outfits.append(outfit3)
+        let outfit = Outfit(top: wardrobe[0], bottom: wardrobe[1])
+        let outfit1 = Outfit(top: wardrobe[0], bottom: wardrobe[2])
+        let outfit2 = Outfit(top: wardrobe[0], bottom: wardrobe[3])
+        let outfit3 = Outfit(top: wardrobe[0], bottom: wardrobe[4])
+        
+        outfits.append(outfit)
+        outfits.append(outfit1)
+        outfits.append(outfit2)
+        outfits.append(outfit3)
     }
     
     // MARK: - favourites
