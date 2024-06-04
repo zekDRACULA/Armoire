@@ -249,10 +249,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         performSegue(withIdentifier: "toAdd", sender: nil)
     }
     
-
     //func for appending image from forebase storage to apparelsToDisplay
-    
-    
     func retrievePhotos(){
         
         //get Data in the database
@@ -270,32 +267,44 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
                 // loop through all the returned docs
                 for doc in snapshot!.documents{
                     //extract the file paths and add to array
-                    paths.append(doc["url"] as! String)
+                   // paths.append(doc["url"] as! String)
+                    var clothData = ["category" : self.clothType, "url" : doc["url"] as! String]
+                    
+                    db.collection("users").document(userID).collection("Apparels").addDocument(data: clothData){
+                        error in
+                        if let error = error{
+                            print("\(error.localizedDescription)")
+                        }else{
+                            print("Document added")
+                        }
+                    }
                 }
                 //Loop through each file path and fetch the data from storage
-                for path in paths{
-                    // get a reference to storage
-                    let storageRef = Storage.storage().reference()
-                    //specify the path
-                    let fileRef = storageRef.child(path)
-                    //retrieve the data
-                    fileRef.getData(maxSize: 20 * 1024 * 1024) { data, error in
-                      print(path)
-                        if error == nil && data != nil{
-                            let image = UIImage(data: data!)
-                        
-                            let apparel = Apparel(category: self.clothType!,image: image!, id: 876, color: .blue, pattern: .dots,type: .top, tag:["lower"] )
-                            print(apparel)
-                            self.apparelsToDisplay.append(apparel)
-                            
-                        }else{
-                            print("Failed to create UIImage from data")
-                            return
-                        }
-                        
-                    }
-                    print(paths.count)
-                }
+//                for path in paths{
+//                    // get a reference to storage
+//                    let storageRef = Storage.storage().reference()
+//                    //specify the path
+//                    let fileRef = storageRef.child(path)
+//
+//                    
+//                    //retrieve the data
+//                    fileRef.getData(maxSize: 20 * 1024 * 1024) { data, error in
+//                      print(path)
+//                        if error == nil && data != nil{
+//                            let image = UIImage(data: data!)
+//                        
+//                            let apparel = Apparel(category: self.clothType!,image: image!, id: 876, color: .blue, pattern: .dots,type: .top, tag:["lower"] )
+//                            print(apparel)
+//                            self.apparelsToDisplay.append(apparel)
+//                            
+//                        }else{
+//                            print("Failed to create UIImage from data")
+//                            return
+//                        }
+//                        
+//                    }
+//                    print(paths.count)
+//                }
             }
         }
     }
