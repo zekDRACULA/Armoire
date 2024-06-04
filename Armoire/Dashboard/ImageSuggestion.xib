@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="WfD-id-M5g" customClass="ImageSugestionCollectionViewCell" customModule="Armoire" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="338" height="344"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OYn-a4-xCx">
+                <rect key="frame" x="0.0" y="0.0" width="338" height="344"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iDc-Bn-SfA">
+                        <rect key="frame" x="0.0" y="0.0" width="338" height="344"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Noz-ly-y5L">
+                                <rect key="frame" x="10" y="10" width="318" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="spD-Sc-eog"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7QB-nw-saq">
+                                <rect key="frame" x="10" y="184" width="318" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="XO0-9F-jSw"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99607843159999998" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Noz-ly-y5L" secondAttribute="trailing" constant="10" id="KGM-hq-1Is"/>
+                            <constraint firstItem="7QB-nw-saq" firstAttribute="leading" secondItem="iDc-Bn-SfA" secondAttribute="leading" constant="10" id="MsT-wB-yz3"/>
+                            <constraint firstAttribute="bottom" secondItem="7QB-nw-saq" secondAttribute="bottom" constant="10" id="Obt-qG-CRY"/>
+                            <constraint firstItem="Noz-ly-y5L" firstAttribute="leading" secondItem="iDc-Bn-SfA" secondAttribute="leading" constant="10" id="b7a-dn-Vhl"/>
+                            <constraint firstAttribute="trailing" secondItem="7QB-nw-saq" secondAttribute="trailing" constant="10" id="bls-Fk-3WN"/>
+                            <constraint firstItem="Noz-ly-y5L" firstAttribute="top" secondItem="iDc-Bn-SfA" secondAttribute="top" constant="10" id="s2F-47-p0w"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="iDc-Bn-SfA" firstAttribute="leading" secondItem="OYn-a4-xCx" secondAttribute="leading" id="OaU-Dr-k7p"/>
+                    <constraint firstItem="iDc-Bn-SfA" firstAttribute="top" secondItem="OYn-a4-xCx" secondAttribute="top" id="ay1-Zk-57x"/>
+                    <constraint firstAttribute="trailing" secondItem="iDc-Bn-SfA" secondAttribute="trailing" id="jVm-w9-3Ts"/>
+                    <constraint firstAttribute="bottom" secondItem="iDc-Bn-SfA" secondAttribute="bottom" id="mZV-Yb-M1e"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="362" height="328"/>
+            <connections>
+                <outlet property="image1" destination="Noz-ly-y5L" id="eUD-dc-BeT"/>
+                <outlet property="image2" destination="7QB-nw-saq" id="8bx-WF-sxW"/>
+                <outlet property="viewImage" destination="iDc-Bn-SfA" id="9mL-BZ-5kv"/>
+            </connections>
+            <point key="canvasLocation" x="332.82442748091603" y="20.070422535211268"/>
+        </collectionViewCell>
+    </objects>
+</document>

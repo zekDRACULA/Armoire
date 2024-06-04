@@ -7,11 +7,21 @@
 
 import UIKit
 
-class oneImageCVC: UICollectionViewCell {
+protocol CollectionViewCellDelegate: AnyObject {
+    func suggestionTapped(cell: oneImageCVC)
+}
+
+class oneImageCVC: UICollectionViewCell,UINavigationControllerDelegate {
     @IBOutlet var image: UIImageView!
     @IBOutlet var suggestionButton: UIButton!
-    
-    @IBOutlet var button: [UIButton]!
+    weak var homeViewController: HomeViewController?
     @IBOutlet var viewImage: UIView!
+    weak var delegate: CollectionViewCellDelegate?
+    override func awakeFromNib() {
+            super.awakeFromNib()
+        }
     
+    @IBAction func suggestionTapped(_ sender: UIButton) {
+        delegate?.suggestionTapped(cell: self)
+    }
 }

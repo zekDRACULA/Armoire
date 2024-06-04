@@ -18,6 +18,7 @@ class WardrobeApparelCollectionViewCell: UICollectionViewCell {
     var indexPath: IndexPath?
     
     @IBOutlet var apparelImage: UIImageView!
+//    var image: UIImage?
     
     @IBOutlet var heartButton: UIButton!
 

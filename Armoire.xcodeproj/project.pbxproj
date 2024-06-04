@@ -71,10 +71,14 @@
 		BC11BC782BFB6B220093DDBE /* footerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */; };
 		BC11BC7A2BFB6B2C0093DDBE /* headerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */; };
 		BC11BC7C2BFB6B340093DDBE /* imageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11BC7B2BFB6B340093DDBE /* imageCollectionViewCell.swift */; };
-		BC11BC7E2BFB70530093DDBE /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC11BC7D2BFB70530093DDBE /* HomeModel.swift */; };
 		BC28A2F52C011F02009B833E /* OneImageHome.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC28A2F42C011F02009B833E /* OneImageHome.xib */; };
 		BC28A2F72C012089009B833E /* oneImageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28A2F62C012089009B833E /* oneImageCVC.swift */; };
+		BC3C54582C0D7DBD004D5ED5 /* LocationAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3C54572C0D7DBD004D5ED5 /* LocationAccess.swift */; };
+		BCA547F22C0BA98300AC1D52 /* TodaySuggestion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA547F12C0BA98300AC1D52 /* TodaySuggestion.storyboard */; };
+		BCA547F62C0BAB3F00AC1D52 /* TodaySugestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA547F52C0BAB3F00AC1D52 /* TodaySugestionViewController.swift */; };
+		BCA547F82C0BABC800AC1D52 /* ImageSugestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA547F72C0BABC800AC1D52 /* ImageSugestionCollectionViewCell.swift */; };
 		BCCEF7EF2BFD244A00DDC726 /* CompatibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCEF7EE2BFD244A00DDC726 /* CompatibilityViewController.swift */; };
+		BCDB07902C0BB31800F017A6 /* ImageSuggestion.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDB078F2C0BB31800F017A6 /* ImageSuggestion.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,10 +148,14 @@
 		BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = footerCollectionViewCell.swift; sourceTree = "<group>"; };
 		BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerCollectionViewCell.swift; sourceTree = "<group>"; };
 		BC11BC7B2BFB6B340093DDBE /* imageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = imageCollectionViewCell.swift; path = Armoire/Dashboard/imageCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		BC11BC7D2BFB70530093DDBE /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		BC28A2F42C011F02009B833E /* OneImageHome.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneImageHome.xib; sourceTree = "<group>"; };
 		BC28A2F62C012089009B833E /* oneImageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneImageCVC.swift; sourceTree = "<group>"; };
+		BC3C54572C0D7DBD004D5ED5 /* LocationAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAccess.swift; sourceTree = "<group>"; };
+		BCA547F12C0BA98300AC1D52 /* TodaySuggestion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodaySuggestion.storyboard; sourceTree = "<group>"; };
+		BCA547F52C0BAB3F00AC1D52 /* TodaySugestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaySugestionViewController.swift; sourceTree = "<group>"; };
+		BCA547F72C0BABC800AC1D52 /* ImageSugestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSugestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		BCCEF7EE2BFD244A00DDC726 /* CompatibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilityViewController.swift; sourceTree = "<group>"; };
+		BCDB078F2C0BB31800F017A6 /* ImageSuggestion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSuggestion.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +172,6 @@
 		05B9922D2C05CDCC00EAC5C8 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				BC11BC7D2BFB70530093DDBE /* HomeModel.swift */,
 				BCCEF7EE2BFD244A00DDC726 /* CompatibilityViewController.swift */,
 				674274532BF61665001304A8 /* Home.storyboard */,
 				BC11BC792BFB6B2C0093DDBE /* headerCollectionViewCell.swift */,
@@ -176,6 +183,11 @@
 				BC28A2F42C011F02009B833E /* OneImageHome.xib */,
 				BC11BC772BFB6B220093DDBE /* footerCollectionViewCell.swift */,
 				BC11BC6F2BFB6AE50093DDBE /* footer.xib */,
+				BCA547F12C0BA98300AC1D52 /* TodaySuggestion.storyboard */,
+				BCDB078F2C0BB31800F017A6 /* ImageSuggestion.xib */,
+				BCA547F72C0BABC800AC1D52 /* ImageSugestionCollectionViewCell.swift */,
+				BCA547F52C0BAB3F00AC1D52 /* TodaySugestionViewController.swift */,
+				BC3C54572C0D7DBD004D5ED5 /* LocationAccess.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -369,6 +381,7 @@
 			files = (
 				4881AA8C2BFF6C14008052DF /* SuggestionOutfits.xib in Resources */,
 				0A546A292BED34C7004EBA3D /* Assets.xcassets in Resources */,
+				BCA547F22C0BA98300AC1D52 /* TodaySuggestion.storyboard in Resources */,
 				BC06A91A2BFF60980071F6FE /* MixAndMatch.storyboard in Resources */,
 				BC28A2F52C011F02009B833E /* OneImageHome.xib in Resources */,
 				0A546A2C2BED34C7004EBA3D /* Base in Resources */,
@@ -382,6 +395,7 @@
 				674274562BF6168D001304A8 /* Calendar.storyboard in Resources */,
 				B1D8004C2C0376D70081F999 /* BagPackerDetailCollectionViewCell.xib in Resources */,
 				674274582BF6169D001304A8 /* Wardrobe.storyboard in Resources */,
+				BCDB07902C0BB31800F017A6 /* ImageSuggestion.xib in Resources */,
 				67A3E4E52C00596500CC5880 /* WardrobeApparel.xib in Resources */,
 				4804B2F92C01D55E00FAC9A3 /* ProfileTab.storyboard in Resources */,
 				674274542BF61665001304A8 /* Home.storyboard in Resources */,
@@ -404,9 +418,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC3C54582C0D7DBD004D5ED5 /* LocationAccess.swift in Sources */,
 				B12D51732BF67BC8002324F4 /* SuggestionViewController.swift in Sources */,
 				B19994352C05A96B0045ADD1 /* EventCollectionViewCell.swift in Sources */,
 				487A828F2BFE2F1A004AF22A /* DetailsTableViewCell.swift in Sources */,
+				BCA547F62C0BAB3F00AC1D52 /* TodaySugestionViewController.swift in Sources */,
 				BC06A9182BFF60860071F6FE /* MixMatchViewController.swift in Sources */,
 				48F2BDBF2C0CAA5E0011AA25 /* ClothTypeClassifier.mlmodel in Sources */,
 				67A285EA2C022F900086997B /* MainDataModel.swift in Sources */,
@@ -427,12 +443,12 @@
 				6781325C2C09A4FE00FC03C5 /* Structs.swift in Sources */,
 				BC11BC7A2BFB6B2C0093DDBE /* headerCollectionViewCell.swift in Sources */,
 				BC11BC782BFB6B220093DDBE /* footerCollectionViewCell.swift in Sources */,
-				BC11BC7E2BFB70530093DDBE /* HomeModel.swift in Sources */,
 				679E649A2BFF925500CB211F /* WardrobeTagCollectionViewCell.swift in Sources */,
 				4881AA862BFF6672008052DF /* EventSuggestionsViewController.swift in Sources */,
 				B1BFFAEC2C023ACA00B2EC9B /* ClothesCellCollectionViewCell.swift in Sources */,
 				B19994372C05B0980045ADD1 /* EventsPageViewController.swift in Sources */,
 				489D22582C0BA95B00C829C1 /* SavedSuggestionsViewController.swift in Sources */,
+				BCA547F82C0BABC800AC1D52 /* ImageSugestionCollectionViewCell.swift in Sources */,
 				677FAA172C03D0A900E2C783 /* FavouritesViewController.swift in Sources */,
 				0A546A202BED34C6004EBA3D /* AppDelegate.swift in Sources */,
 				BC28A2F72C012089009B833E /* oneImageCVC.swift in Sources */,

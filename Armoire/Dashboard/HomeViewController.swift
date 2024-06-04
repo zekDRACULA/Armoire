@@ -7,8 +7,11 @@
 
 import UIKit
 
-
-class HomeViewController: UIViewController, UICollectionViewDataSource {
+class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate, UICollectionViewDelegate, CollectionViewCellDelegate, TodaySuggestionDelegate {
+        
+    var selectedOutfitFromSuggestion: Outfit?
+    var isExpanded: Bool = false
+    var selectedEventType: EventType = .presentation
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -21,7 +24,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = "Hi Shreya"
         tabBarItem.title = "Home"
         tabBarItem.image = UIImage(systemName: "house")
         // Do any additional setup after loading the view.
@@ -31,22 +34,40 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         let thirdNib = UINib(nibName: "footer", bundle: nil)
         
         
+        collectionView.delegate = self
+        
         collectionView.register(firstNib, forCellWithReuseIdentifier: "header")
         collectionView.register(secondNib, forCellWithReuseIdentifier: "image")
         collectionView.register(second1Nib, forCellWithReuseIdentifier: "OneImageHome")
         collectionView.register(thirdNib, forCellWithReuseIdentifier: "footer")
         collectionView.dataSource = self
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
+        collectionView.register(Header.self, forSupplementaryViewOfKind: categoryHeaderId, withReuseIdentifier: headerId)
     }
+    func toggleLayout(isExpanded: Bool) {
+        self.isExpanded = isExpanded
+        collectionView.collectionViewLayout = generateLayout()
+        collectionView.reloadData()
+//        collectionView.reloadSections(IndexSet(integer: 0))
+    }
+    func eventSelected(eventType: EventType) {
+        self.selectedEventType = eventType
+        collectionView.reloadSections(IndexSet(integer: 1)) // Reload the section containing the images
+    }
+    func didSelectOutfit(_ outfit: Outfit) {
+        selectedOutfitFromSuggestion = outfit
+        collectionView.reloadSections(IndexSet(integer: 1))
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         switch section {
         case 0:
-            return DataModel.section1.count
+            return 1
         case 1:
-            return DataModel.section2.count
+            return outfitsForEventType(selectedEventType).count + (selectedOutfitFromSuggestion != nil ? 1 : 0)
         case 2:
-            return DataModel.section3.count
+            return 1
         default:
             return 0
         }
@@ -57,11 +78,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath) as! headerCollectionViewCell
-            cell.username.layer.cornerRadius = 10.0
-            cell.username.clipsToBounds = true
-            cell.waetherLabel.layer.cornerRadius = 10.0
-            cell.waetherLabel.clipsToBounds = true
-            cell.calenderLabel.layer.cornerRadius = 10.0
+            cell.delegate = self
+            cell.weatherStack.layer.cornerRadius = 20.0
+            cell.weatherStack.clipsToBounds = true
+            cell.calenderLabel.layer.cornerRadius = 20.0
             cell.calenderLabel.clipsToBounds = true
             cell.partyButton.layer.cornerRadius = 8.0
             cell.partyButton.clipsToBounds = true
@@ -74,45 +94,41 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
             
             return cell
         case 1:
-            if indexPath.row != 3{
+            if let selectedOutfit = selectedOutfitFromSuggestion, indexPath.row != 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
+                cell.configure(picture1: selectedOutfit.top.image, picture2: selectedOutfit.bottom.image)
                 cell.viewImage.layer.masksToBounds = false
                 cell.viewImage.layer.cornerRadius = 14.0
-
-                cell.button[indexPath.row].tintColor = .black
-                let config = UIImage.SymbolConfiguration(hierarchicalColor: .black)
-                cell.button[indexPath.row].setImage(UIImage(systemName: "circle.fill", withConfiguration: config), for: .normal)
                 return cell
+            } else {
+                if indexPath.row == 3 {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneImageHome", for: indexPath) as! oneImageCVC
+                    cell.image.layer.masksToBounds = false
+                    cell.image.layer.cornerRadius = 14.0
+                    cell.viewImage.layer.masksToBounds = false
+                    cell.viewImage.layer.cornerRadius = 14.0
+                    cell.delegate = self
+                    return cell
+                } else {
+                    let adjustedIndex = selectedOutfitFromSuggestion != nil ? (indexPath.row > 3 ? indexPath.row - 1 : indexPath.row) : indexPath.row
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
+                    let outfit = outfitsForEventType(selectedEventType)[adjustedIndex]
+                    cell.configure(picture1: outfit.top.image, picture2: outfit.bottom.image)
+                    
+                    cell.viewImage.layer.masksToBounds = false
+                    cell.viewImage.layer.cornerRadius = 14.0
+                    return cell
+                }
             }
-            else{
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneImageHome", for: indexPath) as! oneImageCVC
-                cell.image.layer.masksToBounds = false
-                cell.image.layer.cornerRadius = 14.0
-                cell.viewImage.layer.masksToBounds = false
-                cell.viewImage.layer.cornerRadius = 14.0
-                let config = UIImage.SymbolConfiguration(hierarchicalColor: .black)
-                cell.button[indexPath.row].setImage(UIImage(systemName: "circle.fill", withConfiguration: config), for: .normal)
-                return cell
-            }
-//            cell.viewImage.layer.shadowColor = UIColor.gray.cgColor
-//            cell.viewImage.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-//            cell.viewImage.layer.shadowOpacity = 1.0
             
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "footer", for: indexPath) as! footerCollectionViewCell
             
             cell.homeViewController = self
-            
-//            cell.compatibilityButton.tag = indexPath.row
-//            cell.compatibilityButton.addTarget(self, action: #selector(viewDetail), for: .touchUpInside)
-//            cell.travelButton.tag = indexPath.row
-//            cell.travelButton.addTarget(self, action: #selector(viewDetail1), for: .touchUpInside)
- 
-            
+
             cell.compatibility.layer.cornerRadius = 10.0
             cell.compatibility.clipsToBounds = true
-            cell.travel.layer.cornerRadius = 10.0
-            cell.travel.clipsToBounds = true
+            
             
 
             return cell
@@ -121,70 +137,72 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
             return cell
         }
     }
-//    @objc func viewDetail(sender: UIButton){
-//        let home = self.storyboard?.instantiateViewController(identifier: "WardrobeCompatibilityViewController") as! CompatibilityViewController
-//        self.navigationController?.pushViewController(home, animated: true)
-//        
-//    }
-    
-//    @objc func viewDetail1(sender: UIButton){
-//        let ipath = IndexPath(row: sender.tag, section: 0)
-//        let home = self.storyboard?.instantiateViewController(identifier: "TravelBagViewController") as! TravelBagViewController
-//        self.navigationController?.pushViewController(home, animated: true)
-//
-//    }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
     
-    func generateLayout()->UICollectionViewLayout{
-        let layout = UICollectionViewCompositionalLayout{(section, env)-> NSCollectionLayoutSection? in
+    func generateLayout()->UICollectionViewCompositionalLayout{
+        return  UICollectionViewCompositionalLayout{(section, env)-> NSCollectionLayoutSection? in
             switch section {
             case 0:
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.90), heightDimension: .fractionalHeight(0.90))
+                
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                
-                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(633), heightDimension: .absolute(463))
-                let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
+                item.contentInsets.trailing = 16
+                item.contentInsets.bottom = 8
+                let groupSize: NSCollectionLayoutSize
+                if self.isExpanded {
+                    groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(442))
+                    
+                } else {
+                    groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(238))
+                }
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 //                row spacing ke liye
-                
-                group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
-                
                 let section = NSCollectionLayoutSection(group: group)
 //                column ke space ke liye
-                section.interGroupSpacing = 8.0
-                section.orthogonalScrollingBehavior = .groupPagingCentered
+                section.contentInsets.leading = 16
                 
                 return section
             case 1:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                
-                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(461), heightDimension: .absolute(386))
+                item.contentInsets.trailing = 32
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8), heightDimension: .absolute(386))
 
                 
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 
                 let section = NSCollectionLayoutSection(group: group)
-                section.orthogonalScrollingBehavior = .groupPagingCentered
+                section.orthogonalScrollingBehavior = .continuous
+                section.contentInsets.leading = 16
+                
                 
                 return section
                 
             
             case 2:
                 
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(300))
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(149))
+                
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
                 
-                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(396), heightDimension: .absolute(184))
-                let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
-                group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
+                item.contentInsets.trailing = 16
+                item.contentInsets.bottom = 16
+                // creating the group size
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(1000))
+                
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                //        group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0)
+ //               group.contentInsets.leading = 16
                 let section = NSCollectionLayoutSection(group: group)
-                section.interGroupSpacing = 8.0
-                section.orthogonalScrollingBehavior = .groupPagingCentered
-                
+ //               section.orthogonalScrollingBehavior = .paging
+                section.contentInsets = .init(top: 0, leading: 16, bottom: 0, trailing: 0)
+ //               section.contentInsets.leading = 16
+                section.boundarySupplementaryItems = [
+                 .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: self.categoryHeaderId, alignment: .topLeading)
+                ]
                 return section
                 
             default:
@@ -201,7 +219,57 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 
             }
         }
-        return layout
     }
-
+    let headerId = "headerId"
+    let categoryHeaderId = "More"
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
+//        header.backgroundColor = .cyan
+        return header
+    }
+    func outfitsForEventType(_ eventType: EventType) -> [Outfit] {
+        switch eventType {
+        case .presentation:
+            return MainDataModel.presentationOutfits
+        case .meeting:
+            return MainDataModel.meetingOutfits
+        case .workout:
+            return MainDataModel.workoutOutfits
+        case .party:
+            return MainDataModel.partyOutfits
+        }
+    }
+    func suggestionTapped(cell: oneImageCVC) {
+        let storyboard = UIStoryboard(name: "TodaySuggestion", bundle: nil)
+        if let nextVC = storyboard.instantiateViewController(withIdentifier: "TodaySugestionViewController") as? TodaySugestionViewController {
+            nextVC.todaySuggestionDelegate = self  // Set the delegate
+            if let navVC = self.navigationController {
+                navVC.pushViewController(nextVC, animated: true)
+            } else {
+                print("Navigation controller is nil")
+            }
+        } else {
+            print("TodaySuggestionsViewController could not be instantiated")
+        }
+    }
+    
 }
+class Header: UICollectionReusableView{
+    let label = UILabel()
+    override init(frame: CGRect){
+        super.init(frame: frame)
+        
+        label.text = "More"
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        addSubview(label)
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        label.frame = bounds
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+

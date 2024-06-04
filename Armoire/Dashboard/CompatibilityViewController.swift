@@ -26,25 +26,31 @@ class CompatibilityViewController: UIViewController {
     @IBOutlet var image3: UIImageView!
     @IBOutlet var image4: UIImageView!
     
+    @IBOutlet var bottom1: UIImageView!
+    @IBOutlet var bottom2: UIImageView!
+    @IBOutlet var bottom3: UIImageView!
+    @IBOutlet var bottom4: UIImageView!
+    
     @IBAction func saveOutfitButton(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Item Saved Successfully", message: "You can find this item in wardrobe section", preferredStyle: .alert)
         
         let saveButton = UIAlertAction(title: "OK", style: .default){(action) in
             print("Saved Successfully")
+            
             self.navigationController?.popViewController(animated: true)
         }
-//        self.performSegue(withIdentifier: "unwindSegueToHome", sender: self)
+        
         
         alert.addAction(saveButton)
         present(alert, animated: true, completion: nil)
-        
-//        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//        self.navigationController?.pushViewController(detailVC, animated: true)
-        
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        tabBarController?.tabBar.isHidden = true
+    fileprivate func extractedFunc() {
+        //tabBarController?.tabBar.isHidden = true
+        let outfits = MainDataModel.partyOutfits
+        bottom1.image = outfits[0].bottom.image
+        bottom2.image = outfits[1].bottom.image
+        bottom3.image = outfits[2].bottom.image
+        bottom4.image = outfits[3].bottom.image
         imageView.image = selectedImage
         image1.image = selectedImage
         image2.image = selectedImage
@@ -60,5 +66,12 @@ class CompatibilityViewController: UIViewController {
         view3.layer.masksToBounds = false
         view4.layer.cornerRadius = 20.0
         view4.layer.masksToBounds = false
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        extractedFunc()
     }
 }
