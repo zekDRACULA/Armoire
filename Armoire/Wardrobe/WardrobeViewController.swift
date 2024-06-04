@@ -103,7 +103,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         
         changedSegment(segmentedControl)
-        retrievePhotos()
+        
         collectionView.reloadData()
         // setting nib files for collection view
         let firstNib = UINib(nibName: "WardrobeTag", bundle: nil)
@@ -182,25 +182,20 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         // for all
         case 0:
             apparelsToDisplay = DataController.shared.getWardrobe()
-            retrievePhotos()
             collectionView.reloadData()
-            
             
         // for tops
         case 1:
             apparelsToDisplay = DataController.shared.getWardrobe().filter { $0.type == .top }
-            retrievePhotos()
             collectionView.reloadData()
             
         // for bottoms
         case 2:
             apparelsToDisplay = DataController.shared.getWardrobe().filter { $0.type == .bottom}
-            retrievePhotos()
             collectionView.reloadData()
             
         default:
             apparelsToDisplay = DataController.shared.getWardrobe()
-            retrievePhotos()
             collectionView.reloadData()
         }
     }

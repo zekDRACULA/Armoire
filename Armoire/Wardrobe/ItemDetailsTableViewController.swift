@@ -52,7 +52,7 @@ class ItemDetailsTableViewController: UITableViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        //DataController.shared.appendApparel(apparel: apparel!)
+        DataController.shared.appendApparel(apparel: apparel!)
         uploadPhoto()
         self.dismiss(animated: true)
     }
@@ -119,15 +119,14 @@ class ItemDetailsTableViewController: UITableViewController {
         let storageRef = Storage.storage().reference()
         
         // turn image into data
-        let imageData = apparel?.image.pngData()
-        //Data(compressionQuality: 0.80)
+        let imageData = apparel?.image.jpegData(compressionQuality: 0.80)
         
         // checking that we can convert image into data
         guard imageData != nil else{
             return
         }
         // speccify the file path and name
-        let path = "\(userID)/apparels/\(UUID().uuidString).png"
+        let path = "\(userID)/apparels/\(UUID().uuidString).jpg"
         let fileRef = storageRef.child(path)
         print(userID)
         // upload that data
