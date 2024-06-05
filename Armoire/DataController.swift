@@ -55,6 +55,8 @@ class DataController{
         
     }
     
+    
+    
     func getWardrobe() -> [Apparel] {
         
         wardrobe
@@ -156,4 +158,9 @@ class DataController{
         allCalendarEvents.remove(at: indexpath)
     }
     
+    
+    
 }
+
+
+//MARK: add vala

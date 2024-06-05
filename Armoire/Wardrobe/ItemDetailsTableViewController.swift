@@ -11,9 +11,10 @@ import FirebaseCore  //idk
 import FirebaseStorage //for storing image
 import FirebaseFirestore //for retriving image as url
 
+
 class ItemDetailsTableViewController: UITableViewController {
     
-    
+    var wvc : WardrobeViewController?
     @IBOutlet var apparelImage: UIImageView!
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var colourLabel: UILabel!
@@ -26,6 +27,8 @@ class ItemDetailsTableViewController: UITableViewController {
     
     // source identifier
     var segueIdentifier: String?
+    
+    var clothType:String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +42,7 @@ class ItemDetailsTableViewController: UITableViewController {
 //        typeLabel.text = apparel?.type
         colourLabel.text = apparel?.color.accessibilityName.capitalized
         patternLabel.text = apparel?.pattern.rawValue
-        
+        print("inside item details: \(clothType!)")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -131,7 +134,7 @@ class ItemDetailsTableViewController: UITableViewController {
         print(userID)
         // upload that data
         
-        let uploadTask = fileRef.putData(imageData!, metadata: nil) { metadata, error in
+        let uploadTask = fileRef.putData(imageData!, metadata: nil) { [self] metadata, error in
             
             //check for errors
             if error == nil && metadata != nil{
@@ -140,7 +143,9 @@ class ItemDetailsTableViewController: UITableViewController {
                 
                 let db = Firestore.firestore()
                 let apparelRef = db.collection("users").document(userID).collection("Apparels").document(UUID().uuidString)
-                apparelRef.setData(["url": path]){ error in
+                apparelRef.setData(["url": path, "cloth type" : clothType])
+           
+                { error in
                     if let error = error{
                         print("error:\(error.localizedDescription)")
                         return
@@ -148,7 +153,11 @@ class ItemDetailsTableViewController: UITableViewController {
                         print("upload successfull")
                     }
                 }
+                
+                
+
             }
         }
     }
+    
 }
