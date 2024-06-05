@@ -146,4 +146,17 @@ class DataController{
     func removeEvent(indexpath:Int){
         allCalendarEvents.remove(at: indexpath)
     }
+    
+    func getOutfits(forEventType eventType: EventType) -> [Outfit] {
+            var outfits: [Outfit] = []
+            let tops = wardrobe.filter { $0.type == .top && $0.tag.contains(eventType.rawValue) }
+            let bottoms = wardrobe.filter { $0.type == .bottom && $0.tag.contains(eventType.rawValue) }
+            
+            for top in tops {
+                for bottom in bottoms {
+                    outfits.append(Outfit(top: top, bottom: bottom))
+                }
+            }
+            return outfits
+        }
 }

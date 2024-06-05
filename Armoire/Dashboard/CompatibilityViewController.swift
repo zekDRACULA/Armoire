@@ -10,26 +10,26 @@ import UIKit
 
 class CompatibilityViewController: UIViewController {
     
-
-    @IBOutlet var imageView: UIImageView!
     
     var selectedImage: UIImage?
+    
+    // MARK: - Outlets
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var view1: UIView!
     @IBOutlet var view3: UIView!
-    
     @IBOutlet var view2: UIView!
-    
     @IBOutlet var view4: UIView!
-    
     @IBOutlet var image1: UIImageView!
     @IBOutlet var image2: UIImageView!
     @IBOutlet var image3: UIImageView!
     @IBOutlet var image4: UIImageView!
-    
     @IBOutlet var bottom1: UIImageView!
     @IBOutlet var bottom2: UIImageView!
     @IBOutlet var bottom3: UIImageView!
     @IBOutlet var bottom4: UIImageView!
+    
+    
+    // MARK: - Actions
     
     @IBAction func saveOutfitButton(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Item Saved Successfully", message: "You can find this item in wardrobe section", preferredStyle: .alert)
@@ -44,6 +44,9 @@ class CompatibilityViewController: UIViewController {
         alert.addAction(saveButton)
         present(alert, animated: true, completion: nil)
     }
+    
+    //MARK: - Layout
+    
     fileprivate func extractedFunc() {
         //tabBarController?.tabBar.isHidden = true
         let outfits = MainDataModel.partyOutfits
@@ -68,6 +71,7 @@ class CompatibilityViewController: UIViewController {
         view4.layer.masksToBounds = false
     }
     
+//    MARK: - Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()

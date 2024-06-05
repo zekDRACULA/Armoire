@@ -8,10 +8,14 @@
 import UIKit
 import CoreLocation
 
+// MARK: -  Defining Protocols for drop down button opening and closing and then changing image according to event selected
+
 protocol HeaderCollectionViewCellDelegate: AnyObject {
     func toggleLayout(isExpanded: Bool)
     func eventSelected(eventType: EventType)
 }
+
+
 enum EventType: String {
     case presentation = "Presentation"
     case meeting = "Meeting"
@@ -20,8 +24,10 @@ enum EventType: String {
 }
 
 
+
 class headerCollectionViewCell: UICollectionViewCell {
     
+//    MARK: - Outlets
     
     @IBOutlet var weatherStack: UIStackView!
     
@@ -37,18 +43,72 @@ class headerCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var eventButton: [UIButton]!
     
-//    @IBOutlet var myStackView: UIStackView!
+    
+// MARK: - Calling protocol
     
     weak var delegate: HeaderCollectionViewCellDelegate? 
     var button = false
+    
+    
     
     override func awakeFromNib() {
             super.awakeFromNib()
             updateCalendarLabel()
             fetchCurrentLocationWeather()
         }
-   
     
+    //    MARK: - Drop Down Button
+
+        func showButtonVisibility(){
+            eventButton.forEach{button in
+                UIView.animate(withDuration: 0.5, animations: {
+                    button.isHidden = !button.isHidden
+                    self.contentView.layoutIfNeeded()
+                })
+                
+            }
+            
+        }
+            override func layoutSubviews() {
+                super.layoutSubviews()
+                
+        }
+        
+        @IBAction func event(_ sender: UIButton) {
+            button.toggle()
+            showButtonVisibility()
+            if button{
+                dropDownButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+            }else{
+                dropDownButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
+            }
+            delegate?.toggleLayout(isExpanded: button)
+        }
+        
+        
+        @IBAction func eventAction(_ sender: UIButton) {
+            guard let title = sender.configuration?.title,
+                      let eventType = EventType(rawValue: title) else { return }
+                
+                delegate?.eventSelected(eventType: eventType)
+            switch sender.configuration!.title!{
+            case "Presentation":
+                partyButton.setTitle("Presentation", for: .normal)
+                
+            case "Meeting":
+                partyButton.setTitle("Meeting", for: .normal)
+                
+            case "Workout":
+                partyButton.setTitle("Workout", for: .normal)
+                
+            default:
+                partyButton.setTitle("Presentation", for: .normal)
+                
+            }
+        }
+    
+   
+//    MARK: - Fetching Location and Weather
     func fetchCurrentLocationWeather() {
             LocationManager.shared.didUpdateLocation = { [weak self] location in
                 self?.fetchWeather(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
@@ -112,65 +172,20 @@ class headerCollectionViewCell: UICollectionViewCell {
                 weatherImage.image = UIImage(named: "cloudy")
             }
         }
-        
     
+        
 
-    func showButtonVisibility(){
-        eventButton.forEach{button in
-            UIView.animate(withDuration: 0.5, animations: {
-                button.isHidden = !button.isHidden
-                self.contentView.layoutIfNeeded()
-            })
-            
-        }
-        
-    }
-        override func layoutSubviews() {
-            super.layoutSubviews()
-            
-    }
     
-    @IBAction func event(_ sender: UIButton) {
-        button.toggle()
-        showButtonVisibility()
-        if button{
-            dropDownButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
-        }else{
-            dropDownButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
-        }
-        delegate?.toggleLayout(isExpanded: button)
-    }
-    
-    
-    @IBAction func eventAction(_ sender: UIButton) {
-        guard let title = sender.configuration?.title,
-                  let eventType = EventType(rawValue: title) else { return }
-            
-            delegate?.eventSelected(eventType: eventType)
-        switch sender.configuration!.title!{
-        case "Presentation":
-            partyButton.setTitle("Presentation", for: .normal)
-            
-        case "Meeting":
-            partyButton.setTitle("Meeting", for: .normal)
-            
-        case "Workout":
-            partyButton.setTitle("Workout", for: .normal)
-            
-        default:
-            partyButton.setTitle("Presentation", for: .normal)
-            
-        }
-    }
+//    MARK: Date
     private func updateCalendarLabel() {
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .full
             let currentDate = Date()
             calenderLabel.text = dateFormatter.string(from: currentDate)
         }
-    
-    
 }
+
+// MARK: - Extension
 
 extension String {
     func capitalizingFirstLetter() -> String {

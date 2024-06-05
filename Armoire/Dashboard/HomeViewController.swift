@@ -7,17 +7,25 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate, UICollectionViewDelegate, CollectionViewCellDelegate, TodaySuggestionDelegate {
-        
+class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate, UICollectionViewDelegate, CollectionViewCellDelegate {
+    
+//    MARK: - Variables
     var selectedOutfitFromSuggestion: Outfit?
     var isExpanded: Bool = false
     var selectedEventType: EventType = .presentation
+    let headerId = "headerId"
+    let categoryHeaderId = "More"
+    
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.tabBarItem.title = "Home"
         self.tabBarItem.image = UIImage(systemName: "house")
     }
+    
+    
+    
+//    MARK: - Outlets
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -44,20 +52,38 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
         collectionView.register(Header.self, forSupplementaryViewOfKind: categoryHeaderId, withReuseIdentifier: headerId)
     }
+    
+//    MARK: - Defining Protocols
+    // for drop down expanding and closing
     func toggleLayout(isExpanded: Bool) {
         self.isExpanded = isExpanded
         collectionView.collectionViewLayout = generateLayout()
         collectionView.reloadData()
 //        collectionView.reloadSections(IndexSet(integer: 0))
     }
+    
+    // for changing images according to selected event
     func eventSelected(eventType: EventType) {
         self.selectedEventType = eventType
-        collectionView.reloadSections(IndexSet(integer: 1)) // Reload the section containing the images
+        collectionView.reloadSections(IndexSet(integer: 1)) 
     }
-    func didSelectOutfit(_ outfit: Outfit) {
-        selectedOutfitFromSuggestion = outfit
-        collectionView.reloadSections(IndexSet(integer: 1))
+    
+    //MARK: - Defining the events
+        func outfitsForEventType(_ eventType: EventType) -> [Outfit] {
+            switch eventType {
+            case .presentation:
+                return MainDataModel.presentationOutfits
+            case .meeting:
+                return MainDataModel.meetingOutfits
+            case .workout:
+                return MainDataModel.workoutOutfits
+            case .party:
+                return MainDataModel.partyOutfits
+        }
     }
+    
+    
+//    MARK: - Collection view functions
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -77,6 +103,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         
         switch indexPath.section {
         case 0:
+//            MARK: heading
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath) as! headerCollectionViewCell
             cell.delegate = self
             cell.weatherStack.layer.cornerRadius = 20.0
@@ -94,6 +122,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             
             return cell
         case 1:
+            // MARK: making first three images according to event chosen and last is fixed
+            
             if let selectedOutfit = selectedOutfitFromSuggestion, indexPath.row != 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
                 cell.configure(picture1: selectedOutfit.top.image, picture2: selectedOutfit.bottom.image)
@@ -123,23 +153,21 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "footer", for: indexPath) as! footerCollectionViewCell
-            
             cell.homeViewController = self
-
             cell.compatibility.layer.cornerRadius = 10.0
             cell.compatibility.clipsToBounds = true
-            
-            
-
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath) as! headerCollectionViewCell
             return cell
         }
     }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
+    
+//    MARK: - Layout of sections
     
     func generateLayout()->UICollectionViewCompositionalLayout{
         return  UICollectionViewCompositionalLayout{(section, env)-> NSCollectionLayoutSection? in
@@ -220,30 +248,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             }
         }
     }
-    let headerId = "headerId"
-    let categoryHeaderId = "More"
+//    MARK: - Suggestion btton of image 4 of section 1 More Suggestions
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
-//        header.backgroundColor = .cyan
-        return header
-    }
-    func outfitsForEventType(_ eventType: EventType) -> [Outfit] {
-        switch eventType {
-        case .presentation:
-            return MainDataModel.presentationOutfits
-        case .meeting:
-            return MainDataModel.meetingOutfits
-        case .workout:
-            return MainDataModel.workoutOutfits
-        case .party:
-            return MainDataModel.partyOutfits
-        }
-    }
     func suggestionTapped(cell: oneImageCVC) {
         let storyboard = UIStoryboard(name: "TodaySuggestion", bundle: nil)
         if let nextVC = storyboard.instantiateViewController(withIdentifier: "TodaySugestionViewController") as? TodaySugestionViewController {
-            nextVC.todaySuggestionDelegate = self  // Set the delegate
             if let navVC = self.navigationController {
                 navVC.pushViewController(nextVC, animated: true)
             } else {
@@ -254,7 +263,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         }
     }
     
+    
+// MARK: - For heading of section 2("More")
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
+//        header.backgroundColor = .cyan
+        return header
+    }
 }
+
 class Header: UICollectionReusableView{
     let label = UILabel()
     override init(frame: CGRect){
