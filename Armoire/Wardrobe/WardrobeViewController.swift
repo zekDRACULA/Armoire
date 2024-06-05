@@ -7,7 +7,8 @@
 
 import UIKit
 
-class WardrobeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class WardrobeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
     
     var apparelsToDisplay: [Apparel] = []
     
@@ -15,7 +16,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBOutlet var segmentedControl: UISegmentedControl!
 
-
+ 
     var imageToUse: UIImage = UIImage(named: "Image_1")!
     
     required init?(coder: NSCoder) {
@@ -215,6 +216,8 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
             }
         }
     }
+
+
     
     // for 3 dot button
     @IBAction func DotButtonTapped(_ sender: UIBarButtonItem) {

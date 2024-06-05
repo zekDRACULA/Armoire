@@ -15,12 +15,20 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     var selectedEventType: EventType = .presentation
     let headerId = "headerId"
     let categoryHeaderId = "More"
-    
+    // Define static arrays for event-based outfits
+    static var partyOutfits: [Outfit] = []
+    static var presentationOutfits: [Outfit] = []
+    static var meetingOutfits: [Outfit] = []
+    static var workoutOutfits: [Outfit] = []
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.tabBarItem.title = "Home"
         self.tabBarItem.image = UIImage(systemName: "house")
+        HomeViewController.partyOutfits = DataController.shared.getOutfits(forEventType: .party)
+        HomeViewController.presentationOutfits = DataController.shared.getOutfits(forEventType: .presentation)
+        HomeViewController.meetingOutfits = DataController.shared.getOutfits(forEventType: .meeting)
+        HomeViewController.workoutOutfits = DataController.shared.getOutfits(forEventType: .workout)
     }
     
     
@@ -69,18 +77,19 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     }
     
     //MARK: - Defining the events
-        func outfitsForEventType(_ eventType: EventType) -> [Outfit] {
-            switch eventType {
-            case .presentation:
-                return MainDataModel.presentationOutfits
-            case .meeting:
-                return MainDataModel.meetingOutfits
-            case .workout:
-                return MainDataModel.workoutOutfits
-            case .party:
-                return MainDataModel.partyOutfits
+    func outfitsForEventType(_ eventType: EventType) -> [Outfit] {
+        switch eventType {
+        case .party:
+            return HomeViewController.partyOutfits
+        case .presentation:
+            return HomeViewController.presentationOutfits
+        case .meeting:
+            return HomeViewController.meetingOutfits
+        case .workout:
+            return HomeViewController.workoutOutfits
         }
     }
+
     
     
 //    MARK: - Collection view functions
@@ -91,7 +100,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         case 0:
             return 1
         case 1:
-            return outfitsForEventType(selectedEventType).count + (selectedOutfitFromSuggestion != nil ? 1 : 0)
+            return 4
         case 2:
             return 1
         default:
@@ -123,32 +132,23 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             return cell
         case 1:
             // MARK: making first three images according to event chosen and last is fixed
-            
-            if let selectedOutfit = selectedOutfitFromSuggestion, indexPath.row != 0 {
+            if indexPath.row < min(outfitsForEventType(selectedEventType).count, 3) {
+                // Configure cells with dynamic images
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
-                cell.configure(picture1: selectedOutfit.top.image, picture2: selectedOutfit.bottom.image)
+                let outfit = outfitsForEventType(selectedEventType)[indexPath.row]
+                cell.configure(picture1: outfit.top.image, picture2: outfit.bottom.image)
                 cell.viewImage.layer.masksToBounds = false
                 cell.viewImage.layer.cornerRadius = 14.0
                 return cell
             } else {
-                if indexPath.row == 3 {
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneImageHome", for: indexPath) as! oneImageCVC
-                    cell.image.layer.masksToBounds = false
-                    cell.image.layer.cornerRadius = 14.0
-                    cell.viewImage.layer.masksToBounds = false
-                    cell.viewImage.layer.cornerRadius = 14.0
-                    cell.delegate = self
-                    return cell
-                } else {
-                    let adjustedIndex = selectedOutfitFromSuggestion != nil ? (indexPath.row > 3 ? indexPath.row - 1 : indexPath.row) : indexPath.row
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
-                    let outfit = outfitsForEventType(selectedEventType)[adjustedIndex]
-                    cell.configure(picture1: outfit.top.image, picture2: outfit.bottom.image)
-                    
-                    cell.viewImage.layer.masksToBounds = false
-                    cell.viewImage.layer.cornerRadius = 14.0
-                    return cell
-                }
+                // Fourth cell with static image
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneImageHome", for: indexPath) as! oneImageCVC
+                cell.image.layer.masksToBounds = false
+                cell.image.layer.cornerRadius = 14.0
+                cell.viewImage.layer.masksToBounds = false
+                cell.viewImage.layer.cornerRadius = 14.0
+                cell.delegate = self
+                return cell
             }
             
         case 2:
