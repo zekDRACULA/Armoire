@@ -20,23 +20,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="396" height="442"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yQf-s0-rA4">
-                                <rect key="frame" x="246" y="0.0" width="150" height="80"/>
+                                <rect key="frame" x="220" y="0.0" width="176" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="sunny" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Gq-dH-hSf">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="88" height="80"/>
                                         <color key="backgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="10" scale="small" weight="thin"/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="6" scale="small" weight="thin"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="39°" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xT-64-upd">
-                                        <rect key="frame" x="75" y="0.0" width="75" height="80"/>
+                                        <rect key="frame" x="88" y="0.0" width="88" height="80"/>
                                         <color key="backgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="jWz-jE-MUO"/>
+                                    <constraint firstAttribute="width" constant="176" id="jWz-jE-MUO"/>
                                     <constraint firstAttribute="height" constant="80" id="nHU-b7-WE5"/>
                                 </constraints>
                             </stackView>
@@ -45,7 +45,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Lra-N2-Akc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -56,8 +56,8 @@
                                     <constraint firstAttribute="height" constant="60" id="IdN-Hi-Z6b"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="               Meeting">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Meeting">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
@@ -86,7 +86,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Meeting">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
@@ -103,7 +103,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Presentation">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
@@ -119,7 +119,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Workout">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
@@ -128,9 +128,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday, Apr 19" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1g-9X-CmU">
-                                <rect key="frame" x="0.0" y="0.0" width="231" height="80"/>
+                                <rect key="frame" x="5" y="0.0" width="210" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="Sk9-FP-SlD"/>
+                                    <constraint firstAttribute="height" constant="80" id="Wy7-yc-vfo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -140,8 +144,9 @@
                             <constraint firstItem="DEQ-jl-XzJ" firstAttribute="leading" secondItem="YR8-je-DVE" secondAttribute="leading" id="2SZ-dc-thx"/>
                             <constraint firstItem="rpJ-K5-TKV" firstAttribute="leading" secondItem="YR8-je-DVE" secondAttribute="leading" id="66o-vL-eAf"/>
                             <constraint firstItem="N5w-R1-mOi" firstAttribute="leading" secondItem="YR8-je-DVE" secondAttribute="leading" id="8H3-gs-Wku"/>
-                            <constraint firstItem="yQf-s0-rA4" firstAttribute="leading" secondItem="q1g-9X-CmU" secondAttribute="trailing" constant="15" id="BUp-oo-3d0"/>
+                            <constraint firstItem="q1g-9X-CmU" firstAttribute="leading" secondItem="YR8-je-DVE" secondAttribute="leading" constant="5" id="Bie-qL-mOn"/>
                             <constraint firstAttribute="height" constant="442" id="BvS-GN-TwH"/>
+                            <constraint firstItem="yQf-s0-rA4" firstAttribute="leading" secondItem="q1g-9X-CmU" secondAttribute="trailing" constant="5" id="GT2-Sw-2t5"/>
                             <constraint firstAttribute="trailing" secondItem="N5w-R1-mOi" secondAttribute="trailing" id="IsL-ef-M3l"/>
                             <constraint firstItem="DEQ-jl-XzJ" firstAttribute="top" secondItem="q1g-9X-CmU" secondAttribute="bottom" constant="16" id="Jpj-3V-4bn"/>
                             <constraint firstItem="q1g-9X-CmU" firstAttribute="top" secondItem="YR8-je-DVE" secondAttribute="top" id="JxF-Iz-rsA"/>
@@ -155,7 +160,6 @@
                             <constraint firstItem="q1g-9X-CmU" firstAttribute="bottom" secondItem="yQf-s0-rA4" secondAttribute="bottom" id="feW-ae-peu"/>
                             <constraint firstItem="XVP-05-Ivt" firstAttribute="leading" secondItem="YR8-je-DVE" secondAttribute="leading" id="fhe-lE-iz0"/>
                             <constraint firstAttribute="trailing" secondItem="xEv-Ki-Tqs" secondAttribute="trailing" id="haG-aG-XOq"/>
-                            <constraint firstItem="q1g-9X-CmU" firstAttribute="leading" secondItem="DEQ-jl-XzJ" secondAttribute="leading" id="mMp-af-YWd"/>
                             <constraint firstAttribute="trailing" secondItem="yQf-s0-rA4" secondAttribute="trailing" id="nPt-Ff-gS3"/>
                             <constraint firstItem="N5w-R1-mOi" firstAttribute="top" secondItem="K7F-NA-ira" secondAttribute="bottom" constant="8" id="rnj-W8-4t0"/>
                             <constraint firstAttribute="trailing" secondItem="XVP-05-Ivt" secondAttribute="trailing" id="vv7-q5-bLV"/>
@@ -189,6 +193,6 @@
     </objects>
     <resources>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
-        <image name="sunny" width="700" height="700"/>
+        <image name="sunny" width="512" height="512"/>
     </resources>
 </document>
