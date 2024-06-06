@@ -181,7 +181,7 @@ class DataController{
         return outfits
     }
 
-}
+
     
     //MARK: retrieveData function
 
