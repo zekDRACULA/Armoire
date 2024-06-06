@@ -14,6 +14,7 @@ import FirebaseStorage //for storing image
 import FirebaseFirestore //for retriving image as url
 
 
+
 class WardrobeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var collectionView: UICollectionView!
@@ -26,6 +27,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
             collectionView.reloadData()
         }
     }
+    
 
     // image stored here, to be used for, adding new apparel
     var imageToUse: UIImage = UIImage(named: "Image_1")!
@@ -76,7 +78,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeApparel", for: indexPath) as! WardrobeApparelCollectionViewCell
             cell.delegate = self
             cell.indexPath = indexPath
-            print(cell.indexPath)
+//            print(cell.indexPath)
             apparelsToDisplay[indexPath.row].isFavourite ? cell.heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : cell.heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
             cell.apparelImage.image = apparelsToDisplay[indexPath.row].image
 //            cell.heartButton.addTarget(self, action: #selector(setIsFavourite), for: .touchUpInside)
@@ -102,6 +104,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         UITabBar.appearance().standardAppearance = tabBarAppearance
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         
+        print(DataController.shared.getWardrobe())
         changedSegment(segmentedControl)
         
         collectionView.reloadData()
@@ -116,8 +119,8 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
         collectionView.dataSource = self
         collectionView.delegate = self
-        retrievePhotos()
         print(apparelsToDisplay.count)
+        DataController.shared.retrieveData()
         collectionView.reloadData()
     }
     
@@ -228,6 +231,8 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         present(alertController, animated: true, completion: nil)
         
         
+        
+        
     }
     
     // to get image from camera and photo library selection
@@ -239,151 +244,18 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         //converting image to Ciimage for ml model processing
         guard let ciimage = CIImage(image: selectedImage) else {
-            fatalError("Could Not conver UIimage to CIimage")
+            fatalError("Could Not convert UIimage to CIimage")
         }
         
         // MARK: have to remove below comment to run the model
-        detect(image: ciimage)
         
+//        selectedApparel?.category = DataController.shared.detect(image: ciimage)
+//        print(selectedApparel)
         dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "toAdd", sender: nil)
-    }
-    
-    // MARK: func for appending image from forebase storage to apparelsToDisplay
-//    func retrievePhotos(){
-//        
-//        //get Data in the database
-//        let db = Firestore.firestore()
-//        guard let user = Auth.auth().currentUser else{
-//            print ("user is not Authenticated")
-//            return
-//        }
-//        let userID = user.uid
-//        let apparelRef = db.collection("users").document(userID).collection("Apparels").getDocuments { snapshot, error in
-//            if error == nil && snapshot != nil{
-//                
-//                var paths = [String]()
-//                
-//                // loop through all the returned docs
-//                for doc in snapshot!.documents{
-//                    //extract the file paths and add to array
-//                   // paths.append(doc["url"] as! String)
-//                    var clothData = ["category" : self.clothType, "url" : doc["url"] as! String]
-//                    
-//                    db.collection("users").document(userID).collection("Apparels").addDocument(data: clothData){
-//                        error in
-//                        if let error = error{
-//                            print("\(error.localizedDescription)")
-//                        }else{
-//                            print("Document added")
-//                        }
-//                    }
-//                }
-//                //loop through each file path and fetch the data from storage
-//                for path in paths{
-//                    // get a reference to storage
-//                    let storageRef = Storage.storage().reference()
-//                    //specify the path
-//                    let fileRef = storageRef.child(path)
-//
-//                    
-//                    //retrieve the data
-//                    fileRef.getData(maxSize: 20 * 1024 * 1024) { data, error in
-//                      print(path)
-//                        if error == nil && data != nil{
-//                            let image = UIImage(data: data!)
-//                        
-//                            let apparel = Apparel(category: self.clothType!,image: image!, id: 876, color: .blue, pattern: .dots,type: .top, tag:["lower"] )
-//                            print(apparel)
-//                            self.apparelsToDisplay.append(apparel)
-//                            
-//                        }else{
-//                            print("Failed to create UIImage from data")
-//                            return
-//                        }
-//                        
-//                    }
-//                    print(paths.count)
-//                }
-//            }
-//        }
-//    }
-    
-    
-    
-    // MARK: retrievePhotos
-    
-    //func for appending image from forebase storage to apparelsToDisplay
-    func retrievePhotos() {
-        //get Data in the database
-        let db = Firestore.firestore()
-        guard let user = Auth.auth().currentUser else {
-            print("User is not Authenticated")
-            return
-        }
-        let userID = user.uid
-        db.collection("users").document(userID).collection("Apparels").getDocuments { snapshot, error in
-            if error == nil && snapshot != nil {
-                var paths = [String]()
-                
-                // loop through all the returned docs
-                for doc in snapshot!.documents {
-                    //extract the file paths and add to array
-                   paths.append(doc["url"] as! String)
-                    //self.addNewApparelToFirestore(url: doc as! String)
-                }
-                //Loop through each file path and fetch the data from storage
-                for path in paths {
-                    // get a reference to storage
-                    let storageRef = Storage.storage().reference()
-                    //specify the path
-                    let fileRef = storageRef.child(path)
-                    
-                    //retrieve the data
-                    fileRef.getData(maxSize: 20 * 1024 * 1024) { data, error in
-                        if error == nil && data != nil {
-                            let image = UIImage(data: data!)
-                            
-                            let apparel = Apparel(category: self.clothType ?? "Unknown", image: image!, id: 876, color: .blue, pattern: .dots, type: .top, tag: ["lower"])
-                            self.apparelsToDisplay.append(apparel)
-                            
-                        } else {
-                            print("Failed to create UIImage from data")
-                            return
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    
-
-    //MARK:  Adding a new document to Firestore after detecting the image category
-    
-    func addNewApparelToFirestore(url: String) {
         
-        print("inside addNewApparelToFirebase")
-        
-        let db = Firestore.firestore()
-        guard let user = Auth.auth().currentUser else {
-            print("User is not Authenticated")
-            return
-            
-        }
-        let userID = user.uid
-        let clothData = ["category": self.clothType ?? "Unknown", "url": url]
-        
-        db.collection("users").document(userID).collection("Apparels").addDocument(data: clothData) { error in
-            if let error = error {
-                print("\(error.localizedDescription)")
-            } else {
-                print("Document added")
-            }
-        }
+       
     }
-    
-    
     
     //MARK: making a segue here
     
@@ -391,39 +263,39 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     
     
-    // MARK: ML model
+    // MARK: - ML model
     //making func for using ml model in that photo
     
-    func detect(image:CIImage) {
-        
-        
-        guard let model = try? VNCoreMLModel(for: ClothTypeClassifier().model) else {
-            fatalError("Loading CoreML model Failed.")
-        }
-        
-        let request = VNCoreMLRequest(model: model) { (request, error) in
-            guard let results = request.results as? [VNClassificationObservation] else{
-                fatalError("Model failed to process image")
-            }
-            if let highestConfidenceResult = results.max(by: { $0.confidence < $1.confidence }) {
-                self.clothType = highestConfidenceResult.identifier
-                print("inside model : \(self.clothType)")
-                print("Highest confidence result: \(highestConfidenceResult.identifier) with confidence \(highestConfidenceResult.confidence)")} else {
-                    print("No results found.")
-                }
-            //print(results)
-        }
-        
-        let handler = VNImageRequestHandler(ciImage: image)
-        
-        do {
-            try handler.perform([request])
-
-        }
-        catch {
-            print(error)
-        }
-    }
+//    func detect(image:CIImage) {
+//        
+//        
+//        guard let model = try? VNCoreMLModel(for: ClothTypeClassifier().model) else {
+//            fatalError("Loading CoreML model Failed.")
+//        }
+//        
+//        let request = VNCoreMLRequest(model: model) { (request, error) in
+//            guard let results = request.results as? [VNClassificationObservation] else{
+//                fatalError("Model failed to process image")
+//            }
+//            if let highestConfidenceResult = results.max(by: { $0.confidence < $1.confidence }) {
+//                self.selectedApparel?.category = highestConfidenceResult.identifier
+//                print("inside model : \(String(describing: self.clothType))")
+//                print("Highest confidence result: \(highestConfidenceResult.identifier) with confidence \(highestConfidenceResult.confidence)")} else {
+//                    print("No results found.")
+//                }
+//            //print(results)
+//        }
+//        
+//        let handler = VNImageRequestHandler(ciImage: image)
+//        
+//        do {
+//            try handler.perform([request])
+//
+//        }
+//        catch {
+//            print(error)
+//        }
+//    }
     
 
     // to pass data according to the source of segue
@@ -434,9 +306,12 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         if segue.identifier == "toAdd"{
             let itemDetailsTVC = segue.destination as! ItemDetailsTableViewController
             itemDetailsTVC.segueIdentifier = segue.identifier
-            selectedApparel = Apparel(category: clothType!, image: imageToUse, id: 123, color: .red, pattern: .solid,type: .top, tag: ["Summer"])
+            selectedApparel = Apparel(category: DataController.shared.detect(image: CIImage(image: imageToUse)!), image: imageToUse, id: 123, color: .red, pattern: .solid,type: .top, tag: ["Summer"])
+            print(selectedApparel)
+           // itemDetailsTVC.apparel?.image = imageToUse
+           // itemDetailsTVC.clothType = clothType
             itemDetailsTVC.apparel = selectedApparel
-            itemDetailsTVC.clothType = clothType
+            itemDetailsTVC.delegate = self
         }
 
         if segue.identifier == "toDetails" {
@@ -460,4 +335,12 @@ extension WardrobeViewController: WardrobeApparelCollectionViewCellDelegateProto
 //            sender.transform = CGAffineTransform.identity
         }, completion: nil)
     }
+}
+
+extension WardrobeViewController: SavingNewWardrobeApparelDelegateProtocol {
+    func savingAndRefreshingCollectionView() {
+        collectionView.reloadData()
+    }
+    
+    
 }

@@ -11,6 +11,10 @@ import FirebaseCore  //idk
 import FirebaseStorage //for storing image
 import FirebaseFirestore //for retriving image as url
 
+protocol SavingNewWardrobeApparelDelegateProtocol {
+    func savingAndRefreshingCollectionView()
+}
+
 
 class ItemDetailsTableViewController: UITableViewController {
     
@@ -29,6 +33,8 @@ class ItemDetailsTableViewController: UITableViewController {
     var segueIdentifier: String?
     
     var clothType:String?
+    
+    var delegate:SavingNewWardrobeApparelDelegateProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +48,8 @@ class ItemDetailsTableViewController: UITableViewController {
 //        typeLabel.text = apparel?.type
         colourLabel.text = apparel?.color.accessibilityName.capitalized
         patternLabel.text = apparel?.pattern.rawValue
-        print("inside item details: \(clothType!)")
+        print(apparel)
+        //print("inside item details: \(clothType!)")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -56,9 +63,11 @@ class ItemDetailsTableViewController: UITableViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        DataController.shared.appendApparel(apparel: apparel!)
-        uploadPhoto()
+        //DataController.shared.appendApparel(apparel: apparel!)
+        //paasing imageYoUser
+        DataController.shared.uploadData(apparel: apparel!)
         self.dismiss(animated: true)
+        delegate?.savingAndRefreshingCollectionView()
     }
     
 //    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -104,59 +113,6 @@ class ItemDetailsTableViewController: UITableViewController {
             return 16
         } else {
             return 35
-        }
-    }
-    
-    
-    // MARK: uploadPhoto Function
-    func uploadPhoto(){
-        
-        // checking if user is authenticated
-        
-        guard let user = Auth.auth().currentUser else{
-            print ("user is not Authenticated")
-            return
-        }
-        let userID = user.uid
-        
-        // create storage reference
-        let storageRef = Storage.storage().reference()
-        
-        // turn image into data
-        let imageData = apparel?.image.pngData()
-        // checking that we can convert image into data
-        guard imageData != nil else{
-            return
-        }
-        // speccify the file path and name
-        let path = "\(userID)/apparels/\(UUID().uuidString).png"
-        let fileRef = storageRef.child(path)
-        print(userID)
-        // upload that data
-        
-        let uploadTask = fileRef.putData(imageData!, metadata: nil) { [self] metadata, error in
-            
-            //check for errors
-            if error == nil && metadata != nil{
-                
-                // save a reference to the file in firestore DB
-                
-                let db = Firestore.firestore()
-                let apparelRef = db.collection("users").document(userID).collection("Apparels").document(UUID().uuidString)
-                apparelRef.setData(["url": path, "cloth type" : clothType])
-           
-                { error in
-                    if let error = error{
-                        print("error:\(error.localizedDescription)")
-                        return
-                    }else{
-                        print("upload successfull")
-                    }
-                }
-                
-                
-
-            }
         }
     }
     
