@@ -10,20 +10,22 @@ import UIKit
 
 class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-    
+//    MARK: - OUTLETS
     @IBOutlet var compatibility: UIButton!
-    
     @IBOutlet var travel: UIButton!
-    
-    var selectedImage: UIImage?
     @IBOutlet var compatibilityButton: UIButton!
     @IBOutlet var travelButton: UIButton!
+    
+//    MARK: - VARIABLES
     weak var homeViewController: HomeViewController?
+    var selectedImage: UIImage?
+    
     
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+//    MARK: - PHOTO LIBRARY AND CAMERA ACCESS ACTION SHEET
+    // MARK: ACTION SHEET
     @IBAction func compatibilityTapped(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -52,7 +54,7 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
         
         
     }
-    //updating after selecting
+    //MARK: updating after selecting
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let imageToUse = info[.originalImage] as? UIImage else {
             print(#function)
@@ -68,7 +70,7 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
         navVC?.pushViewController(nextVC, animated: true)
     }
     
-    
+//    MARK: TRAVEL BAG VIEW CONTROLLER
     @IBAction func travelTapped(_ sender: UIButton) {
         let nextStoryboard = UIStoryboard(name: "BagPacker", bundle: nil)
         

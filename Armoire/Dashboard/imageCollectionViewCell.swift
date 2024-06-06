@@ -16,7 +16,10 @@ class imageCollectionViewCell: UICollectionViewCell {
     @IBOutlet var viewImage: UIView!
     
     
-    
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+    }
+//    MARK: - For top and bottom
     func configure(picture1 : UIImage,picture2: UIImage ){
         image1.image = picture1
         image2.image = picture2

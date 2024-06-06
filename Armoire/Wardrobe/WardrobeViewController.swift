@@ -10,7 +10,8 @@ import CoreML
 import Vision
 
 
-class WardrobeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class WardrobeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -274,6 +275,8 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         
     }
+
+
     
 
     // to pass data according to the source of segue

@@ -8,6 +8,7 @@
 import UIKit
 
 class ImageSugestionCollectionViewCell: UICollectionViewCell {
+//    MARK: OUTLETS
     @IBOutlet var image1: UIImageView!
     @IBOutlet var image2: UIImageView!
     @IBOutlet var viewImage: UIView!
@@ -17,7 +18,7 @@ class ImageSugestionCollectionViewCell: UICollectionViewCell {
                 viewImage.backgroundColor = isSelected ? .selected : .cell
             }
         }
-    
+    //MARK: FOR TOP AND BOTTOM
     func configure(picture1 : UIImage,picture2: UIImage ){
         image1.image = picture1
         image2.image = picture2

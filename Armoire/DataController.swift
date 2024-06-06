@@ -38,19 +38,65 @@ class DataController{
     func loadWardrobe() {
         let apparel = Apparel(image: UIImage(named: "Image_1")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Party", "Top"], isFavourite: true)
         
-        let apparel1 = Apparel(image: UIImage(named: "Image_2")!, id: 2, color: .brown, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
+        let apparel1 = Apparel(image: UIImage(named: "Image_2")!, id: 2, color: .brown, pattern: .solid, type: .bottom, tag: ["Party", "Bottom"])
         
-        let apparel2 =  Apparel(image: UIImage(named: "Image_3")!, id: 3, color: .black, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
+        let apparel2 =  Apparel(image: UIImage(named: "Image_3")!, id: 3, color: .black, pattern: .solid, type: .bottom, tag: ["Party", "Bottom"])
         
-        let apparel3 = Apparel(image: UIImage(named: "Image_4")!, id: 4, color: .blue, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
+        let apparel3 = Apparel(image: UIImage(named: "Image_4")!, id: 4, color: .blue, pattern: .solid, type: .bottom, tag: ["Party", "Bottom"])
         
-        let apparel4 = Apparel(image: UIImage(named: "Image_5")!, id: 5, color: .blue, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
+        let apparel4 = Apparel(image: UIImage(named: "Image_5")!, id: 5, color: .blue, pattern: .solid, type: .bottom, tag: ["Party", "Bottom"])
+        
+        let apparel5 = Apparel(image: UIImage(named: "Image_1")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Meeting", "Top"], isFavourite: true)
+        
+        let apparel6 = Apparel(image: UIImage(named: "Image_3")!, id: 3, color: .brown, pattern: .solid, type: .bottom, tag: ["Meeting", "Bottom"])
+        
+        let apparel7 =  Apparel(image: UIImage(named: "Image_4")!, id: 4, color: .black, pattern: .solid, type: .bottom, tag: ["Meeting", "Bottom"])
+        
+        let apparel8 = Apparel(image: UIImage(named: "Image_5")!, id: 5, color: .blue, pattern: .solid, type: .bottom, tag: ["Meeting", "Bottom"])
+        
+        let apparel9 = Apparel(image: UIImage(named: "Image_2")!, id: 2, color: .blue, pattern: .solid, type: .bottom, tag: ["Meeting", "Bottom"])
+        
+        let apparel10 = Apparel(image: UIImage(named: "Image_1")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Presentation", "Top"], isFavourite: true)
+        
+        let apparel11 = Apparel(image: UIImage(named: "Image_4")!, id: 4, color: .brown, pattern: .solid, type: .bottom, tag: ["Presentation", "Bottom"])
+        
+        let apparel12 =  Apparel(image: UIImage(named: "Image_5")!, id: 5, color: .black, pattern: .solid, type: .bottom, tag: ["Presentation", "Bottom"])
+        
+        let apparel13 = Apparel(image: UIImage(named: "Image_2")!, id: 2, color: .blue, pattern: .solid, type: .bottom, tag: ["Presentation", "Bottom"])
+        
+        let apparel14 = Apparel(image: UIImage(named: "Image_3")!, id: 3, color: .blue, pattern: .solid, type: .bottom, tag: ["Presentation", "Bottom"])
+        
+        let apparel15 = Apparel(image: UIImage(named: "Image_1")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Workout", "Top"], isFavourite: true)
+        
+        let apparel16 = Apparel(image: UIImage(named: "Image_5")!, id: 5, color: .brown, pattern: .solid, type: .bottom, tag: ["Workout", "Bottom"])
+        
+        let apparel17 =  Apparel(image: UIImage(named: "Image_2")!, id: 2, color: .black, pattern: .solid, type: .bottom, tag: ["Workout", "Bottom"])
+        
+        let apparel18 = Apparel(image: UIImage(named: "Image_3")!, id: 3, color: .blue, pattern: .solid, type: .bottom, tag: ["Workout", "Bottom"])
+        
+        let apparel19 = Apparel(image: UIImage(named: "Image_4")!, id: 4, color: .blue, pattern: .solid, type: .bottom, tag: ["Workout", "Bottom"])
         
         wardrobe.append(apparel)
         wardrobe.append(apparel1)
         wardrobe.append(apparel2)
         wardrobe.append(apparel3)
         wardrobe.append(apparel4)
+        wardrobe.append(apparel5)
+        wardrobe.append(apparel6)
+        wardrobe.append(apparel7)
+        wardrobe.append(apparel8)
+        wardrobe.append(apparel9)
+        wardrobe.append(apparel10)
+        wardrobe.append(apparel11)
+        wardrobe.append(apparel12)
+        wardrobe.append(apparel13)
+        wardrobe.append(apparel14)
+        wardrobe.append(apparel15)
+        wardrobe.append(apparel16)
+        wardrobe.append(apparel17)
+        wardrobe.append(apparel18)
+        wardrobe.append(apparel19)
+        
         
     }
     
@@ -153,4 +199,22 @@ class DataController{
     func removeEvent(indexpath:Int){
         allCalendarEvents.remove(at: indexpath)
     }
+    
+    func getOutfits(forEventType eventType: EventType) -> [Outfit] {
+        var outfits: [Outfit] = []
+        
+        // Filter wardrobe items for tops and bottoms matching the event type
+        let tops = wardrobe.filter { $0.type == .top && $0.tag.contains(eventType.rawValue) }
+        let bottoms = wardrobe.filter { $0.type == .bottom && $0.tag.contains(eventType.rawValue) }
+        
+        // Generate outfits combinations from filtered tops and bottoms
+        for top in tops {
+            for bottom in bottoms {
+                outfits.append(Outfit(top: top, bottom: bottom))
+            }
+        }
+        
+        return outfits
+    }
+
 }
