@@ -286,7 +286,6 @@ class DataController{
                     }
                     print("Data controller : \(self.getWardrobe())")
                 }
-                //paths.removeAll()
             }
         }
     }
