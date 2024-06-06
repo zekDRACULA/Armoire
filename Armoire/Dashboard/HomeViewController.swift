@@ -274,6 +274,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
 //        header.backgroundColor = .cyan
         return header
     }
+    
 }
 
 class Header: UICollectionReusableView{
