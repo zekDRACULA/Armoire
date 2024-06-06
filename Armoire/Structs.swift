@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 
 struct Apparel: Equatable {
+    var category : String
     var image: UIImage
     var id: Int
-//    var color: String
+//   var color: String
     var color: UIColor
     var pattern: Pattern
-//    var category: String
     var type: OfType?
     var tag: [String]
     var isFavourite: Bool = false
@@ -52,3 +52,13 @@ struct CalendarEvent {
     var eventLocation: String
 }
 
+struct RegisterUserRequest{
+    let username : String
+    let email : String
+    let password : String
+}
+
+struct LoginUserRequest{
+    let email : String
+    let password : String
+}

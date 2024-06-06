@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate, UICollectionViewDelegate, CollectionViewCellDelegate {
     
@@ -20,6 +22,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     static var presentationOutfits: [Outfit] = []
     static var meetingOutfits: [Outfit] = []
     static var workoutOutfits: [Outfit] = []
+
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
