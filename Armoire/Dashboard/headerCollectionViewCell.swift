@@ -78,9 +78,9 @@ class headerCollectionViewCell: UICollectionViewCell {
             button.toggle()
             showButtonVisibility()
             if button{
-                dropDownButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
-            }else{
                 dropDownButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
+            }else{
+                dropDownButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
             }
             delegate?.toggleLayout(isExpanded: button)
         }
@@ -178,11 +178,12 @@ class headerCollectionViewCell: UICollectionViewCell {
     
 //    MARK: Date
     private func updateCalendarLabel() {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .full
-            let currentDate = Date()
-            calenderLabel.text = dateFormatter.string(from: currentDate)
-        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E d MMM"
+        let currentDate = Date()
+        calenderLabel.text = dateFormatter.string(from: currentDate)
+    }
+
 }
 
 // MARK: - Extension
