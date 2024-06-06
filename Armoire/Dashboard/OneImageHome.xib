@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWD-4h-1I3">
                         <rect key="frame" x="0.0" y="0.0" width="461" height="386"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wardrobe" translatesAutoresizingMaskIntoConstraints="NO" id="8Rr-gP-CXE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wardrobe 1" translatesAutoresizingMaskIntoConstraints="NO" id="8Rr-gP-CXE">
                                 <rect key="frame" x="0.0" y="0.0" width="461" height="386"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVl-IW-zjh">
@@ -31,9 +31,9 @@
                                     <constraint firstAttribute="height" constant="40" id="XrC-25-ytP"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="More Suggestions">
+                                <buttonConfiguration key="configuration" style="tinted" title="More Suggestions">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" name="floatingViewColor"/>
+                                    <color key="baseBackgroundColor" name="assentColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="suggestionTapped:" destination="fpr-zJ-cuE" eventType="touchUpInside" id="aIx-10-MN6"/>
@@ -69,9 +69,9 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Wardrobe" width="640" height="498"/>
-        <namedColor name="floatingViewColor">
-            <color red="0.71799999475479126" green="0.64300000667572021" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="wardrobe 1" width="640" height="498"/>
+        <namedColor name="assentColor">
+            <color red="0.57300001382827759" green="0.10999999940395355" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
