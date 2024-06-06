@@ -200,7 +200,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
                 
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets.trailing = 32
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8), heightDimension: .absolute(386))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(386))
 
                 
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
