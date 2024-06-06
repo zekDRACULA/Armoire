@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Apparel: Equatable {
+struct Apparel{
     var image: UIImage
     var id: Int
     var color: UIColor
@@ -17,17 +17,17 @@ struct Apparel: Equatable {
     var tag: [String]
     var isFavourite: Bool = false
     
-    static func == (lhs: Apparel, rhs: Apparel) -> Bool {
-            return lhs.id == rhs.id
-        }
+//    static func == (lhs: Apparel, rhs: Apparel) -> Bool {
+//            return lhs.id == rhs.id
+//        }
 }
 
-struct Outfit: Equatable {
+struct Outfit {
     var top: Apparel
     var bottom: Apparel
-    static func == (lhs: Outfit, rhs: Outfit) -> Bool {
-            return lhs.top == rhs.top && lhs.bottom == rhs.bottom
-        }
+//    static func == (lhs: Outfit, rhs: Outfit) -> Bool {
+//            return lhs.top == rhs.top && lhs.bottom == rhs.bottom
+//        }
 }
 
 enum Pattern{
