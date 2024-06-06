@@ -162,6 +162,8 @@ class CalendarViewController: UIViewController, UICalendarViewDelegate, UICalend
             //            controller.dismiss(animated: true, completion: nil)
             //        }
         }
+        controller.dismiss(animated: true, completion: nil)
+
     }
     
     
