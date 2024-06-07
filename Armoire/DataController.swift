@@ -118,8 +118,8 @@ class DataController{
     func loadOutfits() {
         let outfit = Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)
         let outfit1 = Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_3")!)
-        let outfit2 = Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_4")!)
-        let outfit3 = Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_5")!)
+        let outfit2 = Outfit(top: UIImage(named: "image_6")!, bottom: UIImage(named: "Image_4")!)
+        let outfit3 = Outfit(top: UIImage(named: "image_6")!, bottom: UIImage(named: "Image_5")!)
 //        let outfit1 = Outfit(top: wardrobe[0], bottom: wardrobe[2])
 //        let outfit2 = Outfit(top: wardrobe[0], bottom: wardrobe[3])
 //        let outfit3 = Outfit(top: wardrobe[0], bottom: wardrobe[4])

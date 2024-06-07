@@ -28,6 +28,7 @@
 		489D22582C0BA95B00C829C1 /* SavedSuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489D22572C0BA95B00C829C1 /* SavedSuggestionsViewController.swift */; };
 		48BD02CF2C0B72E2007CC906 /* EventPackYourBag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48BD02CE2C0B72E2007CC906 /* EventPackYourBag.storyboard */; };
 		48BD02D12C0B76A4007CC906 /* EventPackYourBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD02D02C0B76A4007CC906 /* EventPackYourBagViewController.swift */; };
+		48CB1CBD2C1383E300D25852 /* TypeClassfierModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 48CB1CBC2C1383E300D25852 /* TypeClassfierModel.mlmodel */; };
 		48D67B532C03534A0096A520 /* ProfileTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D67B522C03534A0096A520 /* ProfileTabViewController.swift */; };
 		48F2BDBF2C0CAA5E0011AA25 /* ClothTypeClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 48F2BDBE2C0CAA5E0011AA25 /* ClothTypeClassifier.mlmodel */; };
 		674274542BF61665001304A8 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 674274532BF61665001304A8 /* Home.storyboard */; };
@@ -119,6 +120,7 @@
 		489D22572C0BA95B00C829C1 /* SavedSuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSuggestionsViewController.swift; sourceTree = "<group>"; };
 		48BD02CE2C0B72E2007CC906 /* EventPackYourBag.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventPackYourBag.storyboard; sourceTree = "<group>"; };
 		48BD02D02C0B76A4007CC906 /* EventPackYourBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPackYourBagViewController.swift; sourceTree = "<group>"; };
+		48CB1CBC2C1383E300D25852 /* TypeClassfierModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TypeClassfierModel.mlmodel; sourceTree = "<group>"; };
 		48D67B522C03534A0096A520 /* ProfileTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabViewController.swift; sourceTree = "<group>"; };
 		48F2BDBE2C0CAA5E0011AA25 /* ClothTypeClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ClothTypeClassifier.mlmodel; sourceTree = "<group>"; };
 		674274532BF61665001304A8 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				67F5042D2BFF8EE100FBB7A3 /* Wardrobe */,
 				0A546A2A2BED34C7004EBA3D /* LaunchScreen.storyboard */,
 				48F2BDBE2C0CAA5E0011AA25 /* ClothTypeClassifier.mlmodel */,
+				48CB1CBC2C1383E300D25852 /* TypeClassfierModel.mlmodel */,
 				0A546A282BED34C7004EBA3D /* Assets.xcassets */,
 				0A546A2D2BED34C7004EBA3D /* Info.plist */,
 				B162B34B2C0EF9FC0066FEFD /* GoogleService-Info.plist */,
@@ -519,6 +522,7 @@
 				48D67B532C03534A0096A520 /* ProfileTabViewController.swift in Sources */,
 				BCCEF7EF2BFD244A00DDC726 /* CompatibilityViewController.swift in Sources */,
 				48BD02D12C0B76A4007CC906 /* EventPackYourBagViewController.swift in Sources */,
+				48CB1CBD2C1383E300D25852 /* TypeClassfierModel.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,7 +674,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 63W22LRA9Q;
+				DEVELOPMENT_TEAM = QZMU65G2C8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armoire/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "Please allow acces to see stuf";
@@ -704,7 +708,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 63W22LRA9Q;
+				DEVELOPMENT_TEAM = QZMU65G2C8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Armoire/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "Please allow acces to see stuf";

@@ -240,12 +240,22 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         guard let selectedImage = info[.originalImage] as? UIImage else {return}
         imageToUse = selectedImage
         
+        
+//        guard let ciimage = CIImage(image: imageToUse) else {
+//            fatalError("Could not convert")
+//        }
+        
+        
        
         
         //converting image to Ciimage for ml model processing
         guard let ciimage = CIImage(image: selectedImage) else {
             fatalError("Could Not convert UIimage to CIimage")
         }
+        
+        
+        typeDetect(image: ciimage)
+        
         
         // MARK: have to remove below comment to run the model
         
@@ -264,6 +274,43 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     
     // MARK: - ML model
+    
+    func typeDetect(image:CIImage){
+        
+        guard let model = try? VNCoreMLModel(for: TypeClassfierModel().model) else{
+            fatalError("Loading CoreMl Model Fsiled")
+        }
+        
+        let request = VNCoreMLRequest(model: model) { (request, error) in
+            guard let results = request.results as? [VNClassificationObservation] else{
+                fatalError("Model Failed to process image")
+            }
+//            print(" TYpe classfier model details are from here \(results)")
+            if let highestConfidenceResult = results.max(by: { $0.confidence < $1.confidence }) {
+                print("Highest confidence is \(highestConfidenceResult.identifier)")
+                }
+            
+            
+        }
+        
+        let handler = VNImageRequestHandler(ciImage: image)
+        
+        do {
+            try handler.perform([request])
+
+        }
+        catch {
+            print(error)
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
     //making func for using ml model in that photo
     
 //    func detect(image:CIImage) {
