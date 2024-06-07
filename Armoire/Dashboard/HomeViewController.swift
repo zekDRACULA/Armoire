@@ -7,7 +7,10 @@
 
 import UIKit
 import FirebaseDatabase
-
+import FirebaseAuth  //for authentication
+import FirebaseCore  //idk
+import FirebaseStorage //for storing image
+import FirebaseFirestore //for retriving image as url
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate, UICollectionViewDelegate, CollectionViewCellDelegate {
     
@@ -17,6 +20,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     var selectedEventType: EventType = .presentation
     let headerId = "headerId"
     let categoryHeaderId = "More"
+    var userName : String?
     // Define static arrays for event-based outfits
     static var partyOutfits: [Outfit] = []
     static var presentationOutfits: [Outfit] = []
@@ -43,7 +47,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Hi Shreya"
+        fetchUsername()
+        
         tabBarItem.title = "Home"
         tabBarItem.image = UIImage(systemName: "house")
         // Do any additional setup after loading the view.
@@ -266,6 +271,40 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         }
     }
     
+    
+//MARK: - fetching username
+    
+    func fetchUsername(){
+        let db = Firestore.firestore()
+        
+        guard let user = Auth.auth().currentUser else{
+            print("user is not authenticated")
+                return
+        }
+        let userID = user.uid
+        
+        db.collection("users").document(userID).getDocument { (document, error) in
+            if let error = error {
+                print("Error fetching document: \(error.localizedDescription)")
+                return
+            }
+            guard let document = document, document.exists, let data = document.data() else{
+                print("document is nil")
+//                exit(1)
+                return
+            }
+            if let username = data["username"] as? String{
+                self.navigationItem.title = "Hi, ß\(username)"
+                //print(self.usernamestore)
+                //self.username = username
+                //print("username in home : \(self.userName)")
+//                self.setUsername(username: username)
+            }else{
+                print("user name is nil")
+            }
+        }
+//        return username!
+    }
     
 // MARK: - For heading of section 2("More")
     

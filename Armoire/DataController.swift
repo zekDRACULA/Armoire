@@ -19,8 +19,10 @@ class DataController{
     private var wardrobe: [Apparel] = []
     private var tags: [String] = []
     private var favourites: [Apparel] = []
-    
+     var username : String?
     var outfits: [Outfit] = []
+    var usernamestore:[String] = []
+    
     
     // for seleted outfits in suggestions page when you add event
     var selectedSuggestions:[Outfit] = []
@@ -37,6 +39,7 @@ class DataController{
         loadFavourites()
         loadTags()
         loadOutfits()
+        //getUsername()
     }
     
     // MARK: - wardrobe items
@@ -83,6 +86,7 @@ class DataController{
         wardrobe.append(apparel)
     }
     
+   
     // MARK: - tags
     
     func loadTags() {
@@ -112,7 +116,7 @@ class DataController{
 //        let outfit1 = Outfit(top: wardrobe[0], bottom: wardrobe[2])
 //        let outfit2 = Outfit(top: wardrobe[0], bottom: wardrobe[3])
 //        let outfit3 = Outfit(top: wardrobe[0], bottom: wardrobe[4])
-//        
+//
 //        outfits.append(outfit)
 //        outfits.append(outfit1)
 //        outfits.append(outfit2)
@@ -182,65 +186,57 @@ class DataController{
     }
 
 
+    // MARK: - getting userData
     
-    //MARK: retrieveData function
-
-
-//    func retrieveData()   {
-//        //get Data in the database
-//        let db = Firestore.firestore()
-//        guard let user = Auth.auth().currentUser else {
-//            print("User is not Authenticated")
-//            return
-//        }
-//        let userID = user.uid
-//        db.collection("users").document(userID).collection("Apparels").getDocuments { snapshot, error in
-//            if error == nil && snapshot != nil {
-//                var paths = [String]()
-//                
-//                // loop through all the returned docs
-//                for doc in snapshot!.documents {
-//                    //extract the file paths and add to array
-//                   paths.append(doc["url"] as! String)
-//                    print(doc["cloth type"])
-//                    //self.addNewApparelToFirestore(url: doc as! String)
-//                }
-//                //Loop through each file path and fetch the data from storage
-//                for (path, clothType) in paths {
-//                    // get a reference to storage
-//                    let storageRef = Storage.storage().reference()
-//                    //specify the path
-//                    let fileRef = storageRef.child(path)
-//                    
-//                    //retrieve the data
-//                    fileRef.getData(maxSize: 20 * 1024 * 1024) { data, error in
-//                        if error == nil && data != nil {
-//                            let image = UIImage(data: data!)
-//                            
-//                            let apparel = Apparel(category: doc["cloth Type"] ?? "Unknown", image: image!, id: 876, color: .blue, pattern: .dots, type: .top, tag: ["lower"])
-//                                wardrobe.append(apparel)
-//                            
-//                        } else {
-//                            print("Failed to create UIImage from data")
-//                            return
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
+    func getUsername() -> String{
+        username!
+    }
+    
+    func setUsername(username : String){
+        self.username = username
+    }
+    
+    
+    func fetchUsername(){
+        let db = Firestore.firestore()
+        
+        guard let user = Auth.auth().currentUser else{
+            print("user is not authenticated")
+                return
+        }
+        let userID = user.uid
+        
+        db.collection("users").document(userID).getDocument { (document, error) in
+            if let error = error {
+                print("Error fetching document: \(error.localizedDescription)")
+                return
+            }
+            guard let document = document, document.exists, let data = document.data() else{
+                print("document is nil")
+//                exit(1)
+                return
+            }
+            if let username = data["username"] as? String{
+                self.usernamestore.append(username)
+                print(self.usernamestore)
+                self.username = username
+                print("username: \(username)")
+//                self.setUsername(username: username)
+            }else{
+                print("user name is nil")
+            }
+        }
+//        return username!
+    }
     
     
     
-    
-//    func retrieveData(){
-//        print("going in")
-//    }
+    //MARK: -retrieveData function
     
     
     func retrieveData() {
         
-        wardrobe.removeAll()
+       // wardrobe.removeAll()
         
         // Get reference to Firestore
         let db = Firestore.firestore()
@@ -306,6 +302,7 @@ class DataController{
                 }
             }
         }
+        wardrobe.removeAll()
     }
 
     
@@ -357,6 +354,7 @@ class DataController{
                 }
             }
         }
+        self.retrieveData()
     }
     
     //MARK:  Adding a new document to Firestore after detecting the image category

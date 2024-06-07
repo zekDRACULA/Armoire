@@ -83,9 +83,6 @@
                                 </hierarchicalColors>
                             </imageReference>
                             <color key="tintColor" red="0.57254901960000004" green="0.10980392160000001" blue="0.070588235289999995" alpha="0.78457515499999997" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <segue destination="CcZ-Gy-nD7" kind="show" id="khG-iA-ug2"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -444,13 +441,13 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
