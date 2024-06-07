@@ -14,7 +14,9 @@
         <!--ProfileTab-->
         <scene sceneID="XgD-4x-UAi">
             <objects>
-                <viewControllerPlaceholder storyboardName="ProfileTab" id="G6q-bt-XDH" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ProfileTab" id="G6q-bt-XDH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="vzi-GS-tDL"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKi-pc-ACH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1224" y="375"/>
@@ -54,15 +56,6 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="8mW-I0-Puu"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBf-18-ICJ">
-                                <rect key="frame" x="16" y="580" width="115" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Profile page"/>
-                                <connections>
-                                    <segue destination="G6q-bt-XDH" kind="showDetail" id="iSz-9X-nG9"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.89019607840000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -84,7 +77,7 @@
                             </imageReference>
                             <color key="tintColor" red="0.57254901960000004" green="0.10980392160000001" blue="0.070588235289999995" alpha="0.78457515499999997" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="CcZ-Gy-nD7" kind="show" id="khG-iA-ug2"/>
+                                <segue destination="G6q-bt-XDH" kind="show" id="XyQ-6d-azl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -110,6 +103,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="213" id="p4G-pL-xLS"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggestions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iY-lE-TaY">
                                 <rect key="frame" x="16" y="324" width="361" height="49"/>
@@ -142,19 +140,6 @@
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2SH-d5-Ick">
-                                                        <rect key="frame" x="0.0" y="0.0" width="47" height="34.333333333333336"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain">
-                                                            <imageReference key="image" image="plus" catalog="system" renderingMode="hierarchical-single">
-                                                                <hierarchicalColors>
-                                                                    <color systemColor="labelColor"/>
-                                                                    <color systemColor="secondaryLabelColor"/>
-                                                                    <color systemColor="tertiaryLabelColor"/>
-                                                                </hierarchicalColors>
-                                                            </imageReference>
-                                                        </buttonConfiguration>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4A-pz-jL3">
                                                         <rect key="frame" x="249.33333333333329" y="380.66666666666663" width="50.666666666666657" height="34.333333333333314"/>
                                                         <state key="normal" title="Button"/>
@@ -176,11 +161,15 @@
                                                     <constraint firstAttribute="bottom" secondItem="w4A-pz-jL3" secondAttribute="bottom" id="K7J-pO-CLI"/>
                                                     <constraint firstAttribute="trailing" secondItem="IK5-NZ-WrW" secondAttribute="trailing" id="SLq-oH-vWi"/>
                                                     <constraint firstAttribute="bottom" secondItem="IK5-NZ-WrW" secondAttribute="bottom" id="nMs-95-TsC"/>
-                                                    <constraint firstItem="2SH-d5-Ick" firstAttribute="top" secondItem="Fkp-my-2G7" secondAttribute="top" id="vXm-VS-S3y"/>
                                                     <constraint firstAttribute="trailing" secondItem="w4A-pz-jL3" secondAttribute="trailing" id="xgC-FM-YOj"/>
                                                     <constraint firstAttribute="width" constant="300" id="yGC-Yz-eKC"/>
-                                                    <constraint firstItem="2SH-d5-Ick" firstAttribute="leading" secondItem="Fkp-my-2G7" secondAttribute="leading" id="yOH-Aj-qKl"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="14"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0A-LK-fAz">
                                                 <rect key="frame" x="316" y="0.0" width="300" height="415"/>
@@ -198,19 +187,6 @@
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ci3-kG-GGY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="47" height="34.333333333333336"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain">
-                                                            <imageReference key="image" image="plus" catalog="system" renderingMode="hierarchical-single">
-                                                                <hierarchicalColors>
-                                                                    <color systemColor="labelColor"/>
-                                                                    <color systemColor="secondaryLabelColor"/>
-                                                                    <color systemColor="tertiaryLabelColor"/>
-                                                                </hierarchicalColors>
-                                                            </imageReference>
-                                                        </buttonConfiguration>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gc9-Kj-59M">
                                                         <rect key="frame" x="249.33333333333334" y="380.66666666666663" width="50.666666666666657" height="34.333333333333314"/>
                                                         <state key="normal" title="Button"/>
@@ -233,10 +209,13 @@
                                                     <constraint firstAttribute="trailing" secondItem="gc9-Kj-59M" secondAttribute="trailing" id="HEq-Z4-nLu"/>
                                                     <constraint firstAttribute="bottom" secondItem="bBt-6C-cc9" secondAttribute="bottom" id="XMu-Sn-Kty"/>
                                                     <constraint firstItem="bBt-6C-cc9" firstAttribute="top" secondItem="o0A-LK-fAz" secondAttribute="top" id="Zdy-iW-Yys"/>
-                                                    <constraint firstItem="Ci3-kG-GGY" firstAttribute="top" secondItem="o0A-LK-fAz" secondAttribute="top" id="bRO-BT-L7I"/>
-                                                    <constraint firstItem="Ci3-kG-GGY" firstAttribute="leading" secondItem="o0A-LK-fAz" secondAttribute="leading" id="dNU-iU-7Du"/>
                                                     <constraint firstItem="bBt-6C-cc9" firstAttribute="leading" secondItem="o0A-LK-fAz" secondAttribute="leading" id="iYX-Ln-f0V"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="14"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ql4-Ms-JzI">
                                                 <rect key="frame" x="632" y="0.0" width="300" height="415"/>
@@ -254,19 +233,6 @@
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ei2-52-URc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="47" height="34.333333333333336"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain">
-                                                            <imageReference key="image" image="plus" catalog="system" renderingMode="hierarchical-single">
-                                                                <hierarchicalColors>
-                                                                    <color systemColor="labelColor"/>
-                                                                    <color systemColor="secondaryLabelColor"/>
-                                                                    <color systemColor="tertiaryLabelColor"/>
-                                                                </hierarchicalColors>
-                                                            </imageReference>
-                                                        </buttonConfiguration>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLc-Se-5rQ">
                                                         <rect key="frame" x="249.33333333333334" y="380.66666666666663" width="50.666666666666657" height="34.333333333333314"/>
                                                         <state key="normal" title="Button"/>
@@ -283,16 +249,19 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="ei2-52-URc" firstAttribute="leading" secondItem="ql4-Ms-JzI" secondAttribute="leading" id="20K-FI-Dbb"/>
                                                     <constraint firstItem="QAW-2K-an1" firstAttribute="top" secondItem="ql4-Ms-JzI" secondAttribute="top" id="50H-KZ-cgh"/>
                                                     <constraint firstAttribute="trailing" secondItem="QAW-2K-an1" secondAttribute="trailing" id="9uO-T4-7ge"/>
                                                     <constraint firstAttribute="trailing" secondItem="uLc-Se-5rQ" secondAttribute="trailing" id="CPd-qU-LfO"/>
                                                     <constraint firstAttribute="bottom" secondItem="uLc-Se-5rQ" secondAttribute="bottom" id="Mak-q3-JWl"/>
                                                     <constraint firstAttribute="bottom" secondItem="QAW-2K-an1" secondAttribute="bottom" id="PGZ-ne-t79"/>
-                                                    <constraint firstItem="ei2-52-URc" firstAttribute="top" secondItem="ql4-Ms-JzI" secondAttribute="top" id="SvU-eh-vh9"/>
                                                     <constraint firstAttribute="width" constant="300" id="t3L-78-AQR"/>
                                                     <constraint firstItem="QAW-2K-an1" firstAttribute="leading" secondItem="ql4-Ms-JzI" secondAttribute="leading" id="zmb-t2-N5q"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="14"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4j-VA-koW">
                                                 <rect key="frame" x="948" y="0.0" width="300" height="415"/>
@@ -310,19 +279,6 @@
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmd-1f-Exx">
-                                                        <rect key="frame" x="0.0" y="0.0" width="47" height="34.333333333333336"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain">
-                                                            <imageReference key="image" image="plus" catalog="system" renderingMode="hierarchical-single">
-                                                                <hierarchicalColors>
-                                                                    <color systemColor="labelColor"/>
-                                                                    <color systemColor="secondaryLabelColor"/>
-                                                                    <color systemColor="tertiaryLabelColor"/>
-                                                                </hierarchicalColors>
-                                                            </imageReference>
-                                                        </buttonConfiguration>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k19-hm-C5L">
                                                         <rect key="frame" x="249.33333333333323" y="380.66666666666663" width="50.666666666666657" height="34.333333333333314"/>
                                                         <state key="normal" title="Button"/>
@@ -341,14 +297,17 @@
                                                 <constraints>
                                                     <constraint firstItem="acu-H6-R07" firstAttribute="top" secondItem="z4j-VA-koW" secondAttribute="top" id="5rS-Qd-v7k"/>
                                                     <constraint firstAttribute="bottom" secondItem="acu-H6-R07" secondAttribute="bottom" id="6go-ZD-HYb"/>
-                                                    <constraint firstItem="fmd-1f-Exx" firstAttribute="leading" secondItem="z4j-VA-koW" secondAttribute="leading" id="DdO-x3-DbO"/>
                                                     <constraint firstItem="acu-H6-R07" firstAttribute="leading" secondItem="z4j-VA-koW" secondAttribute="leading" id="DxS-aG-pLU"/>
                                                     <constraint firstAttribute="bottom" secondItem="k19-hm-C5L" secondAttribute="bottom" id="Pw9-cW-orl"/>
-                                                    <constraint firstItem="fmd-1f-Exx" firstAttribute="top" secondItem="z4j-VA-koW" secondAttribute="top" id="aRg-g8-cqJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="acu-H6-R07" secondAttribute="trailing" id="h1q-4A-Lc2"/>
                                                     <constraint firstAttribute="width" constant="300" id="kHv-D9-hNF"/>
                                                     <constraint firstAttribute="trailing" secondItem="k19-hm-C5L" secondAttribute="trailing" id="ol0-Yf-LiC"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="14"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92156862750000001" green="0.89019607840000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -436,7 +395,6 @@
         <image name="Image_2" width="550" height="754"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="bgColorProfile">
             <color red="0.92199999094009399" green="0.88999998569488525" blue="0.85500001907348633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

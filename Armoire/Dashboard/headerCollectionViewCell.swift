@@ -179,7 +179,7 @@ class headerCollectionViewCell: UICollectionViewCell {
 //    MARK: Date
     private func updateCalendarLabel() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "E, d MMM"
+        dateFormatter.dateFormat = "EEEE, d MMM"
         let currentDate = Date()
         calenderLabel.text = dateFormatter.string(from: currentDate)
     }

@@ -79,7 +79,7 @@ class EventsPageViewController: UIViewController, UICollectionViewDelegate, UICo
         eventPageCollectionView.setCollectionViewLayout(generateLayout(), animated: true)
         eventPageCollectionView.dataSource = self
         eventPageCollectionView.delegate = self
-        print(EventDataModel.eventData.count)
+//        print(EventDataModel.eventData.count)
     }
 
     
