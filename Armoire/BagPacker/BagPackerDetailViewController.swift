@@ -65,5 +65,11 @@ class BagPackerDetailViewController: UIViewController, UICollectionViewDelegate,
             return layout
         }
     
-
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
+    @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true)
+    }
 }

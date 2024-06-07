@@ -21,8 +21,8 @@ class SavedSuggestionsViewController: UIViewController,UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SavedSuggestions", for: indexPath) as! SavedSuggestionCollectionViewCell
-        cell.upperOutfitImage.image = DataController.shared.selectedSuggestions[indexPath.row].top.image
-        cell.lowerOutfitImage.image = DataController.shared.selectedSuggestions[indexPath.row].bottom.image
+        cell.upperOutfitImage.image = DataController.shared.selectedSuggestions[indexPath.row].top
+        cell.lowerOutfitImage.image = DataController.shared.selectedSuggestions[indexPath.row].bottom
         return cell
         
     }
