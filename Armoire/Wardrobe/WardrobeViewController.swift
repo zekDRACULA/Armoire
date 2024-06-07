@@ -110,7 +110,6 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         DataController.shared.retrieveData()
         
-        collectionView.reloadData()
         // setting nib files for collection view
         let firstNib = UINib(nibName: "WardrobeTag", bundle: nil)
         collectionView.register(firstNib, forCellWithReuseIdentifier: "WardrobeTag")
@@ -122,6 +121,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.reloadData()
     }
     
     
