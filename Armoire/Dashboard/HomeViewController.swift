@@ -294,7 +294,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
                 return
             }
             if let username = data["username"] as? String{
-                self.navigationItem.title = "Hi, ß\(username)"
+                self.navigationItem.title = "Hi, \(username)"
                 //print(self.usernamestore)
                 //self.username = username
                 //print("username in home : \(self.userName)")

@@ -66,6 +66,7 @@ class ItemDetailsTableViewController: UITableViewController {
         //DataController.shared.appendApparel(apparel: apparel!)
         //paasing imageYoUser
         DataController.shared.uploadData(apparel: apparel!)
+        DataController.shared.appendApparel(apparel: apparel!)
         self.dismiss(animated: true)
         delegate?.savingAndRefreshingCollectionView()
     }
