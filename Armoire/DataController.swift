@@ -16,6 +16,8 @@ import Vision
 
 class DataController{
     
+    
+    
     private var wardrobe: [Apparel] = []
     private var tags: [String] = []
     private var favourites: [Apparel] = []
@@ -25,11 +27,12 @@ class DataController{
     
     
     // for seleted outfits in suggestions page when you add event
-    var selectedSuggestions:[Outfit] = []
+    var selectedSuggestions: [Outfit] = []
 
     
     private var allCalendarEvents: [CalendarEvent] = []
     
+
     // simple implementation of singleton
     static let shared = DataController()
     
@@ -45,7 +48,8 @@ class DataController{
     // MARK: - wardrobe items
     
     func loadWardrobe() {
-//        let apparel = Apparel(image: UIImage(named: "Image_1")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Party", "Top"], isFavourite: true)
+//        let apparel = Apparel(category: detect(image: CIImage(image: UIImage(named: "Image_1")!)!), image: UIImage(named: "Image_1")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Party", "Top"], isFavourite: true)
+//        let apparel1 = Apparel(category: detect(image: CIImage(image: UIImage(named: "Image_2")!)!), image: UIImage(named: "Image_2")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Party", "Top"], isFavourite: true)
 //        
 //        let apparel1 = Apparel(image: UIImage(named: "Image_2")!, id: 2, color: .brown, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
 //        
@@ -60,7 +64,7 @@ class DataController{
 //        wardrobe.append(apparel2)
 //        wardrobe.append(apparel3)
 //        wardrobe.append(apparel4)
-        
+//        
     }
     
     
@@ -90,7 +94,7 @@ class DataController{
     // MARK: - tags
     
     func loadTags() {
-        tags = ["Summer", "Winter", "Top", "Bottom", "Dress"]
+        tags = ["Blazer", "Blouse", "Body", "Dress", "Hat", "Hoodie", " Outwear", "Pants", "Polo", "Shirt", "Shoes", "Shorts", "Skirt", "T-Shirt", "Top", "Undershirt"]
     }
     
     func getTags() -> [String] {
@@ -112,15 +116,22 @@ class DataController{
     // MARK: - outfits
     
     func loadOutfits() {
-//        let outfit = Outfit(top: wardrobe[0], bottom: wardrobe[1])
+        let outfit = Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)
+        let outfit1 = Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_3")!)
+        let outfit2 = Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_4")!)
+        let outfit3 = Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_5")!)
 //        let outfit1 = Outfit(top: wardrobe[0], bottom: wardrobe[2])
 //        let outfit2 = Outfit(top: wardrobe[0], bottom: wardrobe[3])
 //        let outfit3 = Outfit(top: wardrobe[0], bottom: wardrobe[4])
-//
-//        outfits.append(outfit)
-//        outfits.append(outfit1)
-//        outfits.append(outfit2)
-//        outfits.append(outfit3)
+        
+        outfits.append(outfit)
+        outfits.append(outfit1)
+        outfits.append(outfit2)
+        outfits.append(outfit3)
+    }
+    
+    func getOutfit(at index: Int) -> Outfit {
+        outfits[index]
     }
     
     // MARK: - favourites
@@ -168,22 +179,22 @@ class DataController{
     }
     
 
-    func getOutfits(forEventType eventType: EventType) -> [Outfit] {
-        var outfits: [Outfit] = []
-        
-        // Filter wardrobe items for tops and bottoms matching the event type
-        let tops = wardrobe.filter { $0.type == .top && $0.tag.contains(eventType.rawValue) }
-        let bottoms = wardrobe.filter { $0.type == .bottom && $0.tag.contains(eventType.rawValue) }
-        
-        // Generate outfits combinations from filtered tops and bottoms
-        for top in tops {
-            for bottom in bottoms {
-                outfits.append(Outfit(top: top, bottom: bottom))
-            }
-        }
-        
-        return outfits
-    }
+//    func getOutfits(forEventType eventType: EventType) -> [Outfit] {
+//        var outfits: [Outfit] = []
+//        
+//        // Filter wardrobe items for tops and bottoms matching the event type
+//        let tops = wardrobe.filter { $0.type == .top && $0.tag.contains(eventType.rawValue) }
+//        let bottoms = wardrobe.filter { $0.type == .bottom && $0.tag.contains(eventType.rawValue) }
+//        
+//        // Generate outfits combinations from filtered tops and bottoms
+//        for top in tops {
+//            for bottom in bottoms {
+//                outfits.append(Outfit(top: top, bottom: bottom))
+//            }
+//        }
+//
+//        return outfits
+//    }
 
 
     // MARK: - getting userData

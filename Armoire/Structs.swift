@@ -24,12 +24,17 @@ struct Apparel: Equatable {
         }
 }
 
-struct Outfit: Equatable {
-    var top: Apparel
-    var bottom: Apparel
-    static func == (lhs: Outfit, rhs: Outfit) -> Bool {
-            return lhs.top == rhs.top && lhs.bottom == rhs.bottom
-        }
+//struct Outfit: Equatable {
+//    var top: Apparel
+//    var bottom: Apparel
+//    static func == (lhs: Outfit, rhs: Outfit) -> Bool {
+//            return lhs.top == rhs.top && lhs.bottom == rhs.bottom
+//        }
+//}
+
+struct Outfit {
+    var top: UIImage
+    var bottom: UIImage
 }
 
 enum Pattern: String {

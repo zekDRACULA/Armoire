@@ -32,10 +32,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         super.init(coder: coder)
         self.tabBarItem.title = "Home"
         self.tabBarItem.image = UIImage(systemName: "house")
-        HomeViewController.partyOutfits = DataController.shared.getOutfits(forEventType: .party)
-        HomeViewController.presentationOutfits = DataController.shared.getOutfits(forEventType: .presentation)
-        HomeViewController.meetingOutfits = DataController.shared.getOutfits(forEventType: .meeting)
-        HomeViewController.workoutOutfits = DataController.shared.getOutfits(forEventType: .workout)
+//        HomeViewController.partyOutfits = DataController.shared.getOutfits(forEventType: .party)
+//        HomeViewController.presentationOutfits = DataController.shared.getOutfits(forEventType: .presentation)
+//        HomeViewController.meetingOutfits = DataController.shared.getOutfits(forEventType: .meeting)
+//        HomeViewController.workoutOutfits = DataController.shared.getOutfits(forEventType: .workout)
+        
+        HomeViewController.partyOutfits = [DataController.shared.getOutfit(at: 0), DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 3)]
+        HomeViewController.presentationOutfits = [DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 2), DataController.shared.getOutfit(at: 0)]
+        HomeViewController.meetingOutfits = [DataController.shared.getOutfit(at: 2),
+                                             DataController.shared.getOutfit(at: 3), DataController.shared.getOutfit(at: 1)]
+        HomeViewController.workoutOutfits = [DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 3), DataController.shared.getOutfit(at: 2)]
     }
     
     
@@ -144,7 +150,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
                 // Configure cells with dynamic images
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
                 let outfit = outfitsForEventType(selectedEventType)[indexPath.row]
-                cell.configure(picture1: outfit.top.image, picture2: outfit.bottom.image)
+                cell.configure(picture1: outfit.top, picture2: outfit.bottom)
                 cell.viewImage.layer.masksToBounds = false
                 cell.viewImage.layer.cornerRadius = 14.0
                 return cell
@@ -313,6 +319,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
 //        header.backgroundColor = .cyan
         return header
     }
+    
 }
 
 class Header: UICollectionReusableView{

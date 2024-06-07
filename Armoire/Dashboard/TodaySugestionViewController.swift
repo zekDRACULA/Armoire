@@ -37,7 +37,7 @@ class TodaySugestionViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageSuggestion", for: indexPath) as! ImageSugestionCollectionViewCell
         let outfit = DataController.shared.outfits[indexPath.row]
-        cell.configure(picture1: outfit.top.image, picture2: outfit.bottom.image)
+        cell.configure(picture1: outfit.top, picture2: outfit.bottom)
         return cell
                 
     }

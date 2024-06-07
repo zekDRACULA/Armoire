@@ -43,7 +43,11 @@
                                 <color key="barTintColor" red="1" green="0.96862745100000003" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Bag Packer" id="50M-7Q-aWU">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="9LL-y8-tmo"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="9LL-y8-tmo">
+                                            <connections>
+                                                <action selector="backButtonTapped:" destination="Y6W-OH-hqX" id="Xbl-Ww-vS3"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Next" id="SNh-lD-6dS">
                                             <connections>
                                                 <action selector="nextButtonPressed:" destination="Y6W-OH-hqX" id="ZhF-3D-AgX"/>
@@ -91,8 +95,16 @@
                                 <color key="barTintColor" name="foreground"/>
                                 <items>
                                     <navigationItem title="Bag Packer" id="fIe-V5-JXH">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="hGU-jZ-uH4"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Done" id="Twn-s6-SaX"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="hGU-jZ-uH4">
+                                            <connections>
+                                                <action selector="backButtonTapped:" destination="hOf-b1-cIF" id="PZm-aW-hjC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="Twn-s6-SaX">
+                                            <connections>
+                                                <action selector="doneButtonTapped:" destination="hOf-b1-cIF" id="h7b-UK-hsg"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -136,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfL-eX-Gv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844" y="-377"/>
+            <point key="canvasLocation" x="1842" y="-11"/>
         </scene>
     </scenes>
     <resources>

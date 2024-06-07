@@ -76,7 +76,7 @@
                             <constraint firstItem="PGh-FH-rsH" firstAttribute="trailing" secondItem="dZO-Rf-0FA" secondAttribute="trailing" id="tej-xg-Quy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="UBN-AF-oo9">
+                    <navigationItem key="navigationItem" title="Profile" largeTitleDisplayMode="never" id="UBN-AF-oo9">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="wNG-AV-eqA">
                             <connections>
                                 <action selector="logoutButtonTapped:" destination="iQR-CC-qZZ" id="8fP-Ak-Ffn"/>

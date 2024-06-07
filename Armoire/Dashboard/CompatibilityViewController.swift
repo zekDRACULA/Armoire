@@ -59,17 +59,17 @@ class CompatibilityViewController: UIViewController {
     
     fileprivate func extractedFunc() {
         // Retrieve party outfits from the DataController
-        let outfits = DataController.shared.getOutfits(forEventType: .party)
+        let outfits = DataController.shared.outfits
 
         // Assign the selected image to the main image view
         imageView.image = selectedImage
 
         // Assign bottom images to each cell based on the outfits
         if outfits.count >= 4 {
-            bottom1.image = outfits[0].bottom.image
-            bottom2.image = outfits[1].bottom.image
-            bottom3.image = outfits[2].bottom.image
-            bottom4.image = outfits[3].bottom.image
+            bottom1.image = outfits[0].bottom
+            bottom2.image = outfits[1].bottom
+            bottom3.image = outfits[2].bottom
+            bottom4.image = outfits[3].bottom
         }
 
         // Assign the selected image to each image view

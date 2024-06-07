@@ -19,16 +19,20 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWD-4h-1I3">
                         <rect key="frame" x="0.0" y="0.0" width="461" height="386"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pngwing.com-11" translatesAutoresizingMaskIntoConstraints="NO" id="8Rr-gP-CXE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wardrobe1" translatesAutoresizingMaskIntoConstraints="NO" id="8Rr-gP-CXE">
                                 <rect key="frame" x="0.0" y="0.0" width="461" height="386"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVl-IW-zjh">
-                                <rect key="frame" x="16" y="176" width="429" height="34.333333333333343"/>
+                                <rect key="frame" x="140.66666666666666" y="173" width="179.99999999999997" height="40"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="9hi-L9-ZyB"/>
+                                    <constraint firstAttribute="height" constant="40" id="XrC-25-ytP"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="More Suggestions">
+                                <buttonConfiguration key="configuration" style="filled" title="More Suggestions">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="0.57254901960000004" green="0.10980392160000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseBackgroundColor" red="0.73725497719999999" green="0.67450982329999998" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="suggestionTapped:" destination="fpr-zJ-cuE" eventType="touchUpInside" id="aIx-10-MN6"/>
@@ -38,22 +42,20 @@
                         <color key="backgroundColor" red="1" green="0.96862745289999996" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="8Rr-gP-CXE" secondAttribute="bottom" id="4fc-Vd-89b"/>
-                            <constraint firstItem="8Rr-gP-CXE" firstAttribute="top" secondItem="QWD-4h-1I3" secondAttribute="top" id="5pw-bN-U4P"/>
-                            <constraint firstItem="PVl-IW-zjh" firstAttribute="leading" secondItem="QWD-4h-1I3" secondAttribute="leading" constant="16" id="HKS-cK-UI2"/>
-                            <constraint firstAttribute="trailing" secondItem="8Rr-gP-CXE" secondAttribute="trailing" id="JTo-eP-GHK"/>
-                            <constraint firstItem="PVl-IW-zjh" firstAttribute="centerX" secondItem="QWD-4h-1I3" secondAttribute="centerX" id="PaX-Ho-HLA"/>
-                            <constraint firstItem="8Rr-gP-CXE" firstAttribute="leading" secondItem="QWD-4h-1I3" secondAttribute="leading" id="bsv-gY-xPj"/>
-                            <constraint firstAttribute="trailing" secondItem="PVl-IW-zjh" secondAttribute="trailing" constant="16" id="gOk-Ub-HFy"/>
-                            <constraint firstItem="PVl-IW-zjh" firstAttribute="centerY" secondItem="QWD-4h-1I3" secondAttribute="centerY" id="tLl-KH-DIp"/>
+                            <constraint firstItem="8Rr-gP-CXE" firstAttribute="leading" secondItem="QWD-4h-1I3" secondAttribute="leading" id="0O6-9Q-GCP"/>
+                            <constraint firstAttribute="trailing" secondItem="8Rr-gP-CXE" secondAttribute="trailing" id="FWb-mp-8F8"/>
+                            <constraint firstItem="8Rr-gP-CXE" firstAttribute="top" secondItem="QWD-4h-1I3" secondAttribute="top" id="WJT-uA-vLj"/>
+                            <constraint firstAttribute="bottom" secondItem="8Rr-gP-CXE" secondAttribute="bottom" id="jv7-By-DqH"/>
+                            <constraint firstItem="PVl-IW-zjh" firstAttribute="centerY" secondItem="8Rr-gP-CXE" secondAttribute="centerY" id="pO8-sn-XJ0"/>
+                            <constraint firstItem="PVl-IW-zjh" firstAttribute="centerX" secondItem="QWD-4h-1I3" secondAttribute="centerX" id="tXf-NE-mfN"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="QWD-4h-1I3" firstAttribute="leading" secondItem="CVp-G1-O2p" secondAttribute="leading" id="RxF-SZ-wEC"/>
-                    <constraint firstAttribute="bottom" secondItem="QWD-4h-1I3" secondAttribute="bottom" id="SZY-bs-UK9"/>
-                    <constraint firstAttribute="trailing" secondItem="QWD-4h-1I3" secondAttribute="trailing" id="T54-0t-Tf8"/>
-                    <constraint firstItem="QWD-4h-1I3" firstAttribute="top" secondItem="CVp-G1-O2p" secondAttribute="top" id="VkA-Tl-JOz"/>
+                    <constraint firstAttribute="trailing" secondItem="QWD-4h-1I3" secondAttribute="trailing" id="Vxp-gE-t4R"/>
+                    <constraint firstItem="QWD-4h-1I3" firstAttribute="top" secondItem="CVp-G1-O2p" secondAttribute="top" id="khD-8a-dF6"/>
+                    <constraint firstAttribute="bottom" secondItem="QWD-4h-1I3" secondAttribute="bottom" id="psg-Be-s2g"/>
+                    <constraint firstItem="QWD-4h-1I3" firstAttribute="leading" secondItem="CVp-G1-O2p" secondAttribute="leading" id="rUm-oT-bMC"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="574" height="508"/>
@@ -62,10 +64,10 @@
                 <outlet property="suggestionButton" destination="PVl-IW-zjh" id="Yan-jL-1AR"/>
                 <outlet property="viewImage" destination="QWD-4h-1I3" id="FTK-br-g0F"/>
             </connections>
-            <point key="canvasLocation" x="-370" y="-139"/>
+            <point key="canvasLocation" x="-370.2290076335878" y="-139.43661971830986"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="pngwing.com-11" width="800" height="800"/>
+        <image name="Wardrobe1" width="640" height="498"/>
     </resources>
 </document>

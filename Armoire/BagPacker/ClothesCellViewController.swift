@@ -169,6 +169,11 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
        
     }
     
+    @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "BagPackerDetail" {
             if let destinationVC = segue.destination as? BagPackerDetailViewController {
