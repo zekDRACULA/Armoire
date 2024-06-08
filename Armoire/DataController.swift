@@ -179,22 +179,6 @@ class DataController{
     }
     
 
-//    func getOutfits(forEventType eventType: EventType) -> [Outfit] {
-//        var outfits: [Outfit] = []
-//        
-//        // Filter wardrobe items for tops and bottoms matching the event type
-//        let tops = wardrobe.filter { $0.type == .top && $0.tag.contains(eventType.rawValue) }
-//        let bottoms = wardrobe.filter { $0.type == .bottom && $0.tag.contains(eventType.rawValue) }
-//        
-//        // Generate outfits combinations from filtered tops and bottoms
-//        for top in tops {
-//            for bottom in bottoms {
-//                outfits.append(Outfit(top: top, bottom: bottom))
-//            }
-//        }
-//
-//        return outfits
-//    }
 
 
     // MARK: - getting userData
@@ -368,29 +352,6 @@ class DataController{
         self.retrieveData()
     }
     
-    //MARK:  Adding a new document to Firestore after detecting the image category
-    
-//    func addNewApparelToFirestore(url: String) {
-//        
-//        print("inside addNewApparelToFirebase")
-//        
-//        let db = Firestore.firestore()
-//        guard let user = Auth.auth().currentUser else {
-//            print("User is not Authenticated")
-//            return
-//            
-//        }
-//        let userID = user.uid
-//        let clothData = ["category": self.clothType ?? "Unknown", "url": url]
-//        
-//        db.collection("users").document(userID).collection("Apparels").addDocument(data: clothData) { error in
-//            if let error = error {
-//                print("\(error.localizedDescription)")
-//            } else {
-//                print("Document added")
-//            }
-//        }
-//    }
     
     // MARK: - ML model
     //making func for using ml model in that photo

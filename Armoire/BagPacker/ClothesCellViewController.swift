@@ -15,7 +15,9 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
     var selectedItems = [ClothesData]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return BagPackerDataModel.clothData.count
+        //return BagPackerDataModel.clothData.count
+        print(DataController.shared.countWardrobe())
+        return DataController.shared.countWardrobe()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -28,7 +30,7 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
+
     //select and deseletItemRow at refresh the UIView so changes can be shows by updating
     //    them inside selected and deselet method if they are connected to those func
     

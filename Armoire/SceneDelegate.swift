@@ -46,6 +46,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             //HomeViewController(coder: NSCoder())
             window?.rootViewController = vc
             print(isLoggedIn)
+            DataController.shared.retrieveData()
 //            let nav = UINavigationController(rootViewController: vc)
 //            nav.modalPresentationStyle = .fullScreen
 //            self.window?.rootViewController = nav
