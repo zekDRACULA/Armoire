@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol WardrobeTagCollectionViewCellDelegateProtocol {
+    func selectTag(sender: WardrobeTagCollectionViewCell, indexPath: IndexPath)
+}
+
 class WardrobeTagCollectionViewCell: UICollectionViewCell {
     
     var isActive: Bool = false

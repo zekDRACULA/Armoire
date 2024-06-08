@@ -15,7 +15,7 @@ struct Apparel: Equatable {
 //   var color: String
     var color: UIColor
     var pattern: Pattern
-    var type: OfType?
+    var type: String
     var tag: [String]
     var isFavourite: Bool = false
     

@@ -16,23 +16,20 @@ import Vision
 
 class DataController{
     
+    private var wardrobe: [Apparel] = [] // all the apparels
+    private var tags: [String] = [] // all the tags
+    private var favourites: [Apparel] = [] // favourite apparels
     
-    
-    private var wardrobe: [Apparel] = []
-    private var tags: [String] = []
-    private var favourites: [Apparel] = []
-     var username : String?
     var outfits: [Outfit] = []
-    var usernamestore:[String] = []
     
+    var username : String?
+    var usernamestore:[String] = []
     
     // for seleted outfits in suggestions page when you add event
     var selectedSuggestions: [Outfit] = []
 
-    
     private var allCalendarEvents: [CalendarEvent] = []
     
-
     // simple implementation of singleton
     static let shared = DataController()
     
@@ -45,7 +42,7 @@ class DataController{
         //getUsername()
     }
     
-    // MARK: - wardrobe items
+    // MARK: - wardrobe
     
     func loadWardrobe() {
 //        let apparel = Apparel(category: detect(image: CIImage(image: UIImage(named: "Image_1")!)!), image: UIImage(named: "Image_1")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Party", "Top"], isFavourite: true)
@@ -118,8 +115,8 @@ class DataController{
     func loadOutfits() {
         let outfit = Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)
         let outfit1 = Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_3")!)
-        let outfit2 = Outfit(top: UIImage(named: "image_6")!, bottom: UIImage(named: "Image_4")!)
-        let outfit3 = Outfit(top: UIImage(named: "image_6")!, bottom: UIImage(named: "Image_5")!)
+        let outfit2 = Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_4")!)
+        let outfit3 = Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_5")!)
 //        let outfit1 = Outfit(top: wardrobe[0], bottom: wardrobe[2])
 //        let outfit2 = Outfit(top: wardrobe[0], bottom: wardrobe[3])
 //        let outfit3 = Outfit(top: wardrobe[0], bottom: wardrobe[4])
@@ -242,7 +239,7 @@ class DataController{
     
     
     
-    //MARK: -retrieveData function
+    //MARK: - retrieveData function
     
     
     func retrieveData() {
@@ -273,14 +270,14 @@ class DataController{
             }
             
             // Array to store file paths and cloth types
-            var paths = [(path: String, clothType: String)]()
+            var paths = [(path: String, category: String, type: String)]()
             //print(snapshot.documents)
             // Loop through all the returned documents
             for doc in snapshot.documents {
                 print(doc)
-                if let url = doc["url"] as? String, let clothType = doc["clothType"] as? String {
+                if let url = doc["url"] as? String, let category = doc["category"] as? String, let type = doc["type"] as? String {
                     print("doc")
-                    paths.append((path: url, clothType: clothType))
+                    paths.append((path: url, category: category, type: type))
                 }
             }
             
@@ -288,7 +285,7 @@ class DataController{
             let storageRef = Storage.storage().reference()
             
             // Loop through each file path and fetch the data from storage
-            for (path, clothType) in paths {
+            for (path, category, type) in paths {
                 let fileRef = storageRef.child(path)
                 
                 // Retrieve the data
@@ -304,7 +301,7 @@ class DataController{
                     }
                     if let image = UIImage(data: data) {
                         // Initialize Apparel with the fetched data
-                        let apparel = Apparel(category: clothType, image: image, id: 876, color: .blue, pattern: .dots, type: .top, tag: ["lower"])
+                        let apparel = Apparel(category: category, image: image, id: 876, color: .blue, pattern: .dots, type: type, tag: ["lower"])
                         self.appendApparel(apparel: apparel)
                     } else {
                         print("Failed to create UIImage from data")
@@ -342,7 +339,7 @@ class DataController{
         // speccify the file path and name
         let path = "\(userID)/apparels/\(UUID().uuidString).png"
         let fileRef = storageRef.child(path)
-        print(userID)
+        print("uploadData/userID :- \(userID)")
         // upload that data
         
         let uploadTask = fileRef.putData(imageData!, metadata: nil) { metadata, error in
@@ -354,7 +351,7 @@ class DataController{
                 
                 let db = Firestore.firestore()
                 let apparelRef = db.collection("users").document(userID).collection("Apparels").document(UUID().uuidString)
-                apparelRef.setData(["url": path, "clothType" : apparel.category])
+                apparelRef.setData(["url": path, "category": apparel.category, "type": apparel.type])
                 { error in
                     if let error = error{
                         print("error:\(error.localizedDescription)")
@@ -368,7 +365,7 @@ class DataController{
         self.retrieveData()
     }
     
-    //MARK:  Adding a new document to Firestore after detecting the image category
+    //  Adding a new document to Firestore after detecting the image category
     
 //    func addNewApparelToFirestore(url: String) {
 //        
@@ -392,8 +389,7 @@ class DataController{
 //        }
 //    }
     
-    // MARK: - ML model
-    //making func for using ml model in that photo
+    // MARK: - Category ML model
     
     func detect(image:CIImage) -> String{
         var category : String?
@@ -421,8 +417,38 @@ class DataController{
         catch {
             print(error)
         }
-        print("category: \(category)")
+//        print("category: \(category)")
         return category!
     }
     
-}// data controller class closing
+    // MARK: - Type ML Model
+    
+    func typeDetect(image: CIImage) -> String {
+        var type: String?
+        
+        guard let model = try? VNCoreMLModel(for: TypeClassfierModel().model) else{
+            fatalError("Loading CoreMl Model Failed")
+        }
+        
+        let request = VNCoreMLRequest(model: model) { (request, error) in
+            guard let results = request.results as? [VNClassificationObservation] else{
+                fatalError("Model Failed to process image")
+            }
+            
+//            print(" TYpe classfier model details are from here \(results)")
+            if let highestConfidenceResult = results.max(by: { $0.confidence < $1.confidence }) {
+                type = highestConfidenceResult.identifier
+                }
+        }
+        
+        let handler = VNImageRequestHandler(ciImage: image)
+        do {
+            try handler.perform([request])
+        }
+        catch {
+            print(error)
+        }
+        return type!
+    }
+    
+}

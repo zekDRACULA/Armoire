@@ -18,13 +18,10 @@ class WardrobeApparelCollectionViewCell: UICollectionViewCell {
     var indexPath: IndexPath?
     
     @IBOutlet var apparelImage: UIImageView!
-//    var image: UIImage?
     
     @IBOutlet var heartButton: UIButton!
 
     @IBAction func heartButtonPressed(_ sender: UIButton) {
-//        self.isHighlighted = true
-//        self.isSelected = true
         delegate?.toggleIsFavourite(sender: self, indexPath: indexPath!)
         
 //        let button = sender as! UIButton
@@ -35,9 +32,5 @@ class WardrobeApparelCollectionViewCell: UICollectionViewCell {
 //        }, completion: { _ in
 //            sender.transform = CGAffineTransform.identity
 //        })
-        
-        
-//        delegate?.toggleIsFavourite(sender: self, indexPath: indexPath!)
-        
     }
 }

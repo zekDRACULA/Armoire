@@ -325,37 +325,12 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="foreground"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="I03-ai-gzN" detailTextLabel="duN-RW-F1r" style="IBUITableViewCellStyleValue1" id="Nbg-Ah-N9G">
-                                        <rect key="frame" x="20" y="558.33333587646484" width="353" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nbg-Ah-N9G" id="tdt-h2-1wt">
-                                            <rect key="frame" x="0.0" y="0.0" width="353" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Pattern" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I03-ai-gzN">
-                                                    <rect key="frame" x="20.000000000000004" y="11.999999999999998" width="55.333333333333336" height="20.333333333333332"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="duN-RW-F1r">
-                                                    <rect key="frame" x="289.33333333333331" y="11.999999999999998" width="43.666666666666664" height="20.333333333333332"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" name="foreground"/>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Outfit Combinations" id="JqW-sl-GJu">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ELO-I9-SRN" imageView="yx9-g7-8iT" rowHeight="50" style="IBUITableViewCellStyleDefault" id="PGK-aM-ZM6">
-                                        <rect key="frame" x="20" y="658.00000381469727" width="353" height="50"/>
+                                        <rect key="frame" x="20" y="614.33333587646484" width="353" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PGK-aM-ZM6" id="ajk-lp-kAf">
                                             <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="50"/>
@@ -388,7 +363,6 @@
                     <connections>
                         <outlet property="apparelImage" destination="eky-9W-4e2" id="O6Y-7u-1g9"/>
                         <outlet property="colourLabel" destination="mh9-Vl-bUE" id="iVh-29-uGr"/>
-                        <outlet property="patternLabel" destination="duN-RW-F1r" id="xPp-H5-CyI"/>
                         <outlet property="rightBarButton" destination="aoX-6S-gwg" id="XLk-13-Y22"/>
                         <outlet property="typeLabel" destination="5JT-cM-dCO" id="Dws-9t-dC9"/>
                     </connections>

@@ -22,7 +22,7 @@ class ItemDetailsTableViewController: UITableViewController {
     @IBOutlet var apparelImage: UIImageView!
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var colourLabel: UILabel!
-    @IBOutlet var patternLabel: UILabel!
+//    @IBOutlet var patternLabel: UILabel!
     
     @IBOutlet var rightBarButton: UIBarButtonItem!
     
@@ -47,15 +47,8 @@ class ItemDetailsTableViewController: UITableViewController {
         typeLabel.text = apparel?.category
 //        typeLabel.text = apparel?.type
         colourLabel.text = apparel?.color.accessibilityName.capitalized
-        patternLabel.text = apparel?.pattern.rawValue
-        print(apparel)
-        //print("inside item details: \(clothType!)")
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+//        patternLabel.text = apparel?.pattern.rawValue
+//        print(apparel)
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
@@ -64,7 +57,7 @@ class ItemDetailsTableViewController: UITableViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         //DataController.shared.appendApparel(apparel: apparel!)
-        //paasing imageYoUser
+        //passing image To User
         DataController.shared.uploadData(apparel: apparel!)
         DataController.shared.appendApparel(apparel: apparel!)
         self.dismiss(animated: true)

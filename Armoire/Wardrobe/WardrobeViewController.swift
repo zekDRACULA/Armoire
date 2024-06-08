@@ -187,12 +187,12 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
             
         // for tops
         case 1:
-            apparelsToDisplay = DataController.shared.getWardrobe().filter { $0.type == .top }
+            apparelsToDisplay = DataController.shared.getWardrobe().filter { $0.type == "Tops" }
             collectionView.reloadData()
             
         // for bottoms
         case 2:
-            apparelsToDisplay = DataController.shared.getWardrobe().filter { $0.type == .bottom}
+            apparelsToDisplay = DataController.shared.getWardrobe().filter { $0.type == "Bottoms"}
             collectionView.reloadData()
             
         default:
@@ -239,15 +239,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[.originalImage] as? UIImage else {return}
         imageToUse = selectedImage
-        
-        
-//        guard let ciimage = CIImage(image: imageToUse) else {
-//            fatalError("Could not convert")
-//        }
-        
-        
-       
-        
+
         //converting image to Ciimage for ml model processing
         guard let ciimage = CIImage(image: selectedImage) else {
             fatalError("Could Not convert UIimage to CIimage")
@@ -258,7 +250,6 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         
         // MARK: have to remove below comment to run the model
-        
 //        selectedApparel?.category = DataController.shared.detect(image: ciimage)
 //        print(selectedApparel)
         dismiss(animated: true, completion: nil)
@@ -275,35 +266,35 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     // MARK: - ML model
     
-    func typeDetect(image:CIImage){
-        
-        guard let model = try? VNCoreMLModel(for: TypeClassfierModel().model) else{
-            fatalError("Loading CoreMl Model Fsiled")
-        }
-        
-        let request = VNCoreMLRequest(model: model) { (request, error) in
-            guard let results = request.results as? [VNClassificationObservation] else{
-                fatalError("Model Failed to process image")
-            }
-//            print(" TYpe classfier model details are from here \(results)")
-            if let highestConfidenceResult = results.max(by: { $0.confidence < $1.confidence }) {
-                print("Highest confidence is \(highestConfidenceResult.identifier)")
-                }
-            
-            
-        }
-        
-        let handler = VNImageRequestHandler(ciImage: image)
-        
-        do {
-            try handler.perform([request])
-
-        }
-        catch {
-            print(error)
-        }
-        
-    }
+//    func typeDetect(image:CIImage){
+//        
+//        guard let model = try? VNCoreMLModel(for: TypeClassfierModel().model) else{
+//            fatalError("Loading CoreMl Model Fsiled")
+//        }
+//        
+//        let request = VNCoreMLRequest(model: model) { (request, error) in
+//            guard let results = request.results as? [VNClassificationObservation] else{
+//                fatalError("Model Failed to process image")
+//            }
+////            print(" TYpe classfier model details are from here \(results)")
+//            if let highestConfidenceResult = results.max(by: { $0.confidence < $1.confidence }) {
+//                print("Highest confidence is \(highestConfidenceResult.identifier)")
+//                }
+//            
+//            
+//        }
+//        
+//        let handler = VNImageRequestHandler(ciImage: image)
+//        
+//        do {
+//            try handler.perform([request])
+//
+//        }
+//        catch {
+//            print(error)
+//        }
+//        
+//    }
     
     
     
@@ -344,6 +335,8 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
 //        }
 //    }
 
+    // MARK: - Data Passing for Segues
+    
     // to pass data according to the source of segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let itemDetailsTVC = segue.destination as! ItemDetailsTableViewController
@@ -352,10 +345,15 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         if segue.identifier == "toAdd"{
             let itemDetailsTVC = segue.destination as! ItemDetailsTableViewController
             itemDetailsTVC.segueIdentifier = segue.identifier
-            selectedApparel = Apparel(category: DataController.shared.detect(image: CIImage(image: imageToUse)!), image: imageToUse, id: 123, color: .red, pattern: .solid,type: .top, tag: ["Summer"])
-            print(selectedApparel)
-           // itemDetailsTVC.apparel?.image = imageToUse
-           // itemDetailsTVC.clothType = clothType
+            
+            selectedApparel = Apparel(
+                category: DataController.shared.detect(image: CIImage(image: imageToUse)!),
+                image: imageToUse,
+                id: 123, color: .red,
+                pattern: .solid,
+                type: DataController.shared.typeDetect(image: CIImage(image: imageToUse)!),
+                tag: ["Summer"])
+            
             itemDetailsTVC.apparel = selectedApparel
             itemDetailsTVC.delegate = self
         }
@@ -367,6 +365,8 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
 }
+
+// MARK: - Favourites Implementation
 
 extension WardrobeViewController: WardrobeApparelCollectionViewCellDelegateProtocol {
     func toggleIsFavourite(sender: WardrobeApparelCollectionViewCell, indexPath: IndexPath) {
