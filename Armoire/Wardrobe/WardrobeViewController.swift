@@ -244,18 +244,8 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         guard let ciimage = CIImage(image: selectedImage) else {
             fatalError("Could Not convert UIimage to CIimage")
         }
-        
-        
-        typeDetect(image: ciimage)
-        
-        
-        // MARK: have to remove below comment to run the model
-//        selectedApparel?.category = DataController.shared.detect(image: ciimage)
-//        print(selectedApparel)
         dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "toAdd", sender: nil)
-        
-       
     }
     
     //MARK: making a segue here
