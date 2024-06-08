@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataController.shared.fetchUsername()
+        //DataController.shared.fetchUsername()
         // Do any additional setup after loading the view.
     }
 

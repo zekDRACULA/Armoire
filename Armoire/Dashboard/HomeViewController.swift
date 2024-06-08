@@ -53,7 +53,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchUsername()
+        
+        DataController.shared.fetchUsername { [weak self] username in
+            self?.navigationItem.title = "Hi, \(username!)"
+        }
         
         tabBarItem.title = "Home"
         tabBarItem.image = UIImage(systemName: "house")
@@ -278,39 +281,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     }
     
     
-//MARK: - fetching username
-    
-    func fetchUsername(){
-        let db = Firestore.firestore()
-        
-        guard let user = Auth.auth().currentUser else{
-            print("user is not authenticated")
-                return
-        }
-        let userID = user.uid
-        
-        db.collection("users").document(userID).getDocument { (document, error) in
-            if let error = error {
-                print("Error fetching document: \(error.localizedDescription)")
-                return
-            }
-            guard let document = document, document.exists, let data = document.data() else{
-                print("document is nil")
-//                exit(1)
-                return
-            }
-            if let username = data["username"] as? String{
-                self.navigationItem.title = "Hi, \(username)"
-                //print(self.usernamestore)
-                //self.username = username
-                //print("username in home : \(self.userName)")
-//                self.setUsername(username: username)
-            }else{
-                print("user name is nil")
-            }
-        }
-//        return username!
-    }
     
 // MARK: - For heading of section 2("More")
     

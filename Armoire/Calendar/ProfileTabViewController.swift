@@ -34,50 +34,15 @@ class ProfileTabViewController: UIViewController,UITableViewDelegate,UITableView
     
 
     @IBOutlet weak var myTable: UITableView!
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        puttingUsername()
-       //usernameLabel.text = DataController.shared.username
         myTable.dataSource = self
         myTable.backgroundColor = UIColor(named: "bgColorProfile")
-        
+        DataController.shared.fetchUsername { [weak self] username in
+            self?.usernameLabel.text = username
+        }
         // Do any additional setup after loading the view.
-    }
-    
-    //MARK: - username
-    
-    func puttingUsername(){
-        let db = Firestore.firestore()
-        
-        guard let user = Auth.auth().currentUser else{
-            print("user is not authenticated")
-                return
-        }
-        let userID = user.uid
-        
-        db.collection("users").document(userID).getDocument { (document, error) in
-            if let error = error {
-                print("Error fetching document: \(error.localizedDescription)")
-                return
-            }
-            guard let document = document, document.exists, let data = document.data() else{
-                print("document is nil")
-//                exit(1)
-                return
-            }
-            if let username = data["username"] as? String{
-                self.usernameLabel.text = username
-                //print(self.usernamestore)
-                //self.username = username
-                print("username in profile : \(username)")
-//                self.setUsername(username: username)
-            }else{
-                print("user name is nil")
-            }
-        }
-//        return username!
     }
 
     @IBAction func logoutButtonTapped(_ sender: UIBarButtonItem) {

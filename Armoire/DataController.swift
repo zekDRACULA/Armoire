@@ -192,36 +192,64 @@ class DataController{
     }
     
     
-    func fetchUsername(){
+//    func fetchUsername(){
+//        let db = Firestore.firestore()
+//        
+//        guard let user = Auth.auth().currentUser else{
+//            print("user is not authenticated")
+//                return
+//        }
+//        let userID = user.uid
+//        
+//        db.collection("users").document(userID).getDocument { (document, error) in
+//            if let error = error {
+//                print("Error fetching document: \(error.localizedDescription)")
+//                return
+//            }
+//            guard let document = document, document.exists, let data = document.data() else{
+//                print("document is nil")
+//                return
+//            }
+//            if let username = data["username"] as? String{
+//                self.usernamestore.append(username)
+//                print(self.usernamestore)
+//                self.username = username
+//                print("username: \(username)")
+//            }else{
+//                print("user name is nil")
+//            }
+//        }
+//    }
+    func fetchUsername(completion: @escaping(String?) -> Void){
         let db = Firestore.firestore()
         
         guard let user = Auth.auth().currentUser else{
-            print("user is not authenticated")
-                return
+            print("user is not Authenticated")
+            completion(nil)
+            return
         }
         let userID = user.uid
         
-        db.collection("users").document(userID).getDocument { (document, error) in
-            if let error = error {
-                print("Error fetching document: \(error.localizedDescription)")
+        db.collection("users").document(userID).getDocument {  (document, error) in
+            if let error = error{
+                print("\(error.localizedDescription)")
+                completion(nil)
                 return
             }
             guard let document = document, document.exists, let data = document.data() else{
-                print("document is nil")
-//                exit(1)
+                print("Document is nil")
+                completion(nil)
                 return
             }
-            if let username = data["username"] as? String{
-                self.usernamestore.append(username)
-                print(self.usernamestore)
+            if let username = data["username"] as? String
+            {
                 self.username = username
-                print("username: \(username)")
-//                self.setUsername(username: username)
+                completion(username)
             }else{
-                print("user name is nil")
+                print("username is nil")
+                completion(nil)
             }
         }
-//        return username!
     }
     
     
