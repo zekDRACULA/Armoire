@@ -14,7 +14,7 @@ import FirebaseFirestore //for retriving image as url
 
 class ProfileTabViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    var thingsWeNeed:[String] = ["Profile","Notifications","Wardrobe Utilisation","Contact Us","Terms Of Use","Privacy Policy","Logout"]
+    var thingsWeNeed:[String] = ["Profile","Notifications","Contact Us","Terms Of Use","Privacy Policy"]
     
     @IBOutlet var usernameLabel: UILabel!
     
@@ -32,6 +32,30 @@ class ProfileTabViewController: UIViewController,UITableViewDelegate,UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print(indexPath)
+        if indexPath == IndexPath(row: 0, section: 0){
+//            print("Profile Pressed")
+            performSegue(withIdentifier: "toProfilePage", sender: self)
+        }
+        else if indexPath == IndexPath(row: 1, section: 0){
+//            print("Notifications pressed")
+            performSegue(withIdentifier: "toNotifications", sender: self)
+        }
+        else if indexPath == IndexPath(row: 2, section: 0){
+//            print("Notifications pressed")
+            performSegue(withIdentifier: "toContactUs", sender: self)
+        }
+        else if indexPath == IndexPath(row: 3, section: 0){
+//            print("Notifications pressed")
+            performSegue(withIdentifier: "toTermsOfUse", sender: self)
+        }
+        else if indexPath == IndexPath(row: 4, section: 0){
+//            print("Notifications pressed")
+            performSegue(withIdentifier: "toPrivacyPolicy", sender: self)
+        }
+    }
+    
 
     @IBOutlet weak var myTable: UITableView!
     
@@ -41,6 +65,7 @@ class ProfileTabViewController: UIViewController,UITableViewDelegate,UITableView
         puttingUsername()
        //usernameLabel.text = DataController.shared.username
         myTable.dataSource = self
+        myTable.delegate = self
         myTable.backgroundColor = UIColor(named: "bgColorProfile")
         
         // Do any additional setup after loading the view.

@@ -24,6 +24,7 @@
 		4881AA8A2BFF6B70008052DF /* EventSuggestionsTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881AA892BFF6B70008052DF /* EventSuggestionsTagCollectionViewCell.swift */; };
 		4881AA8C2BFF6C14008052DF /* SuggestionOutfits.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4881AA8B2BFF6C14008052DF /* SuggestionOutfits.xib */; };
 		4881AA8E2BFF6C8D008052DF /* EventSuggestionOutfitsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881AA8D2BFF6C8D008052DF /* EventSuggestionOutfitsCollectionViewCell.swift */; };
+		4882F5932C147AAF004E4F8B /* ProfileDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882F5922C147AAF004E4F8B /* ProfileDetailsTableViewController.swift */; };
 		489D22562C0BA7CC00C829C1 /* SavedSuggestions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489D22552C0BA7CC00C829C1 /* SavedSuggestions.storyboard */; };
 		489D22582C0BA95B00C829C1 /* SavedSuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489D22572C0BA95B00C829C1 /* SavedSuggestionsViewController.swift */; };
 		48BD02CF2C0B72E2007CC906 /* EventPackYourBag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48BD02CE2C0B72E2007CC906 /* EventPackYourBag.storyboard */; };
@@ -116,6 +117,7 @@
 		4881AA892BFF6B70008052DF /* EventSuggestionsTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSuggestionsTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		4881AA8B2BFF6C14008052DF /* SuggestionOutfits.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionOutfits.xib; sourceTree = "<group>"; };
 		4881AA8D2BFF6C8D008052DF /* EventSuggestionOutfitsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSuggestionOutfitsCollectionViewCell.swift; sourceTree = "<group>"; };
+		4882F5922C147AAF004E4F8B /* ProfileDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsTableViewController.swift; sourceTree = "<group>"; };
 		489D22552C0BA7CC00C829C1 /* SavedSuggestions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SavedSuggestions.storyboard; sourceTree = "<group>"; };
 		489D22572C0BA95B00C829C1 /* SavedSuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSuggestionsViewController.swift; sourceTree = "<group>"; };
 		48BD02CE2C0B72E2007CC906 /* EventPackYourBag.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventPackYourBag.storyboard; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				B12D51762BF68197002324F4 /* CardCell.swift */,
 				B103DF1C2C0C4DC900C6577D /* Auth */,
 				05B9922D2C05CDCC00EAC5C8 /* Dashboard */,
+				4882F5942C147F0D004E4F8B /* Profile */,
 				B1BFFAE92C023ACA00B2EC9B /* BagPacker */,
 				48B68BA62BF6A90700D9F0E7 /* Calendar */,
 				B15F21322C05300800C46793 /* EventDetails */,
@@ -267,11 +270,19 @@
 			path = Armoire;
 			sourceTree = "<group>";
 		};
-		48B68BA62BF6A90700D9F0E7 /* Calendar */ = {
+		4882F5942C147F0D004E4F8B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				4804B2F82C01D55E00FAC9A3 /* ProfileTab.storyboard */,
+				4882F5922C147AAF004E4F8B /* ProfileDetailsTableViewController.swift */,
 				48D67B522C03534A0096A520 /* ProfileTabViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		48B68BA62BF6A90700D9F0E7 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
 				674274552BF6168D001304A8 /* Calendar.storyboard */,
 				4881AA812BFF5DA2008052DF /* EventSugeestions.storyboard */,
 				4881AA852BFF6672008052DF /* EventSuggestionsViewController.swift */,
@@ -510,6 +521,7 @@
 				489D22582C0BA95B00C829C1 /* SavedSuggestionsViewController.swift in Sources */,
 				BCA547F82C0BABC800AC1D52 /* ImageSugestionCollectionViewCell.swift in Sources */,
 				677FAA172C03D0A900E2C783 /* FavouritesViewController.swift in Sources */,
+				4882F5932C147AAF004E4F8B /* ProfileDetailsTableViewController.swift in Sources */,
 				B103DF202C0C4DF800C6577D /* LoginViewController.swift in Sources */,
 				0A546A202BED34C6004EBA3D /* AppDelegate.swift in Sources */,
 				BC28A2F72C012089009B833E /* oneImageCVC.swift in Sources */,

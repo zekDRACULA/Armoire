@@ -159,6 +159,13 @@ class EventSuggestionsViewController: UIViewController,UICollectionViewDataSourc
     }
     
     
+    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
