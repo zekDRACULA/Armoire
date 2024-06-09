@@ -29,7 +29,6 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         performSegue(withIdentifier: "toDetails", sender: self)
     }
     
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         2
     }
@@ -141,6 +140,12 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
         return layout
     }
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            // Reload data when the view appears
+            changedSegment(segmentedControl) // Apply the current filter
+            collectionView.reloadData()
+        }
     
     @IBAction func changedSegment(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {

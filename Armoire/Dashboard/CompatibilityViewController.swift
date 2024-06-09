@@ -5,16 +5,12 @@
 //  Created by Kanika Gupta on 22/05/24.
 //
 
-protocol ImageSelectionDelegate: AnyObject {
-    func didSelectImage(_ image: UIImage)
-}
 
 
 import UIKit
 
 class CompatibilityViewController: UIViewController {
-    
-    weak var delegate: ImageSelectionDelegate?
+
     var selectedImage: UIImage?
     var eventType: EventType?
     var dataController = DataController.shared
@@ -41,11 +37,10 @@ class CompatibilityViewController: UIViewController {
         let alert = UIAlertController(title: "Item Saved Successfully", message: "You can find this item in the wardrobe section", preferredStyle: .alert)
             
             let saveButton = UIAlertAction(title: "OK", style: .default) { (action) in
-                print("Saved Successfully")
-                
-                // Pass the selected image to the delegate
                 if let selectedImage = self.selectedImage {
-                            self.delegate?.didSelectImage(selectedImage)
+                    let newApparel = Apparel(image: selectedImage, id: 12, color: .black, pattern: .checks, tag: ["party"])
+                    self.dataController.appendApparel(apparel: newApparel)
+                    
                 }
                 
                 self.navigationController?.popViewController(animated: true)
@@ -63,7 +58,9 @@ class CompatibilityViewController: UIViewController {
 
         // Assign the selected image to the main image view
         imageView.image = selectedImage
-
+//        let newApparel = Apparel(image: selectedImage!, id: 12, color: .black, pattern: .checks, tag: ["party"])
+//        dataController.appendApparel(apparel: newApparel)
+        
         // Assign bottom images to each cell based on the outfits
         if outfits.count >= 4 {
             bottom1.image = outfits[0].bottom.image
@@ -85,9 +82,6 @@ class CompatibilityViewController: UIViewController {
 
     
 //    MARK: - Functions
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         extractedFunc()
