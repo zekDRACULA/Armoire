@@ -38,14 +38,17 @@ class CompatibilityViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func saveOutfitButton(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Item Saved Successfully", message: "You can find this item in the wardrobe section", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Apparel saved successfully", message: "You can find this Apparel in the Wardrobe tab.", preferredStyle: .alert)
             
             let saveButton = UIAlertAction(title: "OK", style: .default) { (action) in
-                print("Saved Successfully")
+//                print("Saved Successfully")
                 
                 // Pass the selected image to the delegate
                 if let selectedImage = self.selectedImage {
-                            self.delegate?.didSelectImage(selectedImage)
+                    let newApparel = Apparel(category: DataController.shared.detect(image: CIImage(image: selectedImage)!), image: selectedImage, id: 100 , color: .red, pattern: .dots, type: DataController.shared.typeDetect(image: CIImage(image: selectedImage)!), tag: ["BLEH"])
+                    
+                    DataController.shared.uploadData(apparel: newApparel)
+                    DataController.shared.appendApparel(apparel: newApparel)
                 }
                 
                 self.navigationController?.popViewController(animated: true)
