@@ -104,6 +104,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         }
     }
 
+
+
     
     
 //    MARK: - Collection view functions
@@ -146,15 +148,24 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             return cell
         case 1:
             // MARK: making first three images according to event chosen and last is fixed
-            if indexPath.row < min(outfitsForEventType(selectedEventType).count, 3) {
-                // Configure cells with dynamic images
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
-                let outfit = outfitsForEventType(selectedEventType)[indexPath.row]
-                cell.configure(picture1: outfit.top.image, picture2: outfit.bottom.image)
-                cell.viewImage.layer.masksToBounds = false
-                cell.viewImage.layer.cornerRadius = 14.0
-                return cell
-            } else {
+            if indexPath.row < 3{
+                if indexPath.row < min(outfitsForEventType(selectedEventType).count, 3) {
+                    // Configure cells with dynamic images
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
+                    let outfit = outfitsForEventType(selectedEventType)[indexPath.row]
+                    cell.configure(picture1: outfit.top.image, picture2: outfit.bottom.image)
+                    cell.viewImage.layer.masksToBounds = false
+                    cell.viewImage.layer.cornerRadius = 14.0
+                    return cell
+                }
+                else{
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
+                    let placeholderImage = UIImage(systemName: "photo.badge.plus")!
+                    cell.configure(picture1: placeholderImage, picture2: placeholderImage)
+                    return cell
+                }
+            }
+             else {
                 // Fourth cell with static image
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneImageHome", for: indexPath) as! oneImageCVC
                 cell.image.layer.masksToBounds = false
