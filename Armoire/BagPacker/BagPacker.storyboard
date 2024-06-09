@@ -74,7 +74,6 @@
                     <connections>
                         <outlet property="BagPackerNavigationBar" destination="HyZ-AN-MGg" id="kB9-hw-ohK"/>
                         <outlet property="bagPackerCollectionView" destination="AFn-Fy-I0o" id="Fb4-gv-gYV"/>
-                        <outlet property="collectionView" destination="AFn-Fy-I0o" id="uch-2p-g7b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
