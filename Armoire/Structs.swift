@@ -35,6 +35,11 @@ struct Apparel: Equatable {
 struct Outfit {
     var top: UIImage
     var bottom: UIImage
+    
+    init(topImageNamed topName: String, bottomImageNamed bottomName: String) {
+        top = UIImage(named: topName)!
+        bottom = UIImage(named: bottomName)!
+      }
 }
 
 enum Pattern: String {
