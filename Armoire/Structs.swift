@@ -33,8 +33,8 @@ struct Apparel: Equatable {
 //}
 
 struct Outfit {
-    var top: UIImage
-    var bottom: UIImage
+    var top: Apparel
+    var bottom: Apparel
 }
 
 enum Pattern: String {

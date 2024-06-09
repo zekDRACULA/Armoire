@@ -39,8 +39,8 @@ class EventSuggestionsViewController: UIViewController,UICollectionViewDataSourc
             
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SuggestionOutfits", for: indexPath) as! EventSuggestionOutfitsCollectionViewCell
-            cell.upperOutfitImage.image = DataController.shared.outfits[indexPath.row].top
-            cell.lowerOutfitImage.image = DataController.shared.outfits[indexPath.row].bottom
+            cell.upperOutfitImage.image = DataController.shared.outfits[indexPath.row].top.image
+            cell.lowerOutfitImage.image = DataController.shared.outfits[indexPath.row].bottom.image
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SuggestionsTag", for: indexPath) as! EventSuggestionsTagCollectionViewCell

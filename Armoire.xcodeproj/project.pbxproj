@@ -284,13 +284,13 @@
 			isa = PBXGroup;
 			children = (
 				674274552BF6168D001304A8 /* Calendar.storyboard */,
+				6742745B2BF617E3001304A8 /* CalendarViewController.swift */,
 				4881AA812BFF5DA2008052DF /* EventSugeestions.storyboard */,
 				4881AA852BFF6672008052DF /* EventSuggestionsViewController.swift */,
 				4881AA8B2BFF6C14008052DF /* SuggestionOutfits.xib */,
 				4881AA8D2BFF6C8D008052DF /* EventSuggestionOutfitsCollectionViewCell.swift */,
-				4881AA892BFF6B70008052DF /* EventSuggestionsTagCollectionViewCell.swift */,
 				4881AA872BFF6ADC008052DF /* SuggestionsTag.xib */,
-				6742745B2BF617E3001304A8 /* CalendarViewController.swift */,
+				4881AA892BFF6B70008052DF /* EventSuggestionsTagCollectionViewCell.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";

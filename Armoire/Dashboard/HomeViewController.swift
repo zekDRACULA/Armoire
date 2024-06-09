@@ -130,17 +130,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath) as! headerCollectionViewCell
             cell.delegate = self
-            cell.weatherStack.layer.cornerRadius = 20.0
+            cell.weatherStack.layer.cornerRadius = 14.0
             cell.weatherStack.clipsToBounds = true
-            cell.calenderLabel.layer.cornerRadius = 20.0
+            cell.calenderLabel.layer.cornerRadius = 14.0
             cell.calenderLabel.clipsToBounds = true
             cell.partyButton.layer.cornerRadius = 8.0
             cell.partyButton.clipsToBounds = true
-            cell.eventButton[0].layer.cornerRadius = 10.0
+            cell.eventButton[0].layer.cornerRadius = 14.0
             cell.eventButton[0].clipsToBounds = true
-            cell.eventButton[1].layer.cornerRadius = 10.0
+            cell.eventButton[1].layer.cornerRadius = 14.0
             cell.eventButton[1].clipsToBounds = true
-            cell.eventButton[2].layer.cornerRadius = 10.0
+            cell.eventButton[2].layer.cornerRadius = 14.0
             cell.eventButton[2].clipsToBounds = true
             
             return cell
@@ -150,7 +150,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
                 // Configure cells with dynamic images
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! imageCollectionViewCell
                 let outfit = outfitsForEventType(selectedEventType)[indexPath.row]
-                cell.configure(picture1: outfit.top, picture2: outfit.bottom)
+                cell.configure(picture1: outfit.top.image, picture2: outfit.bottom.image)
                 cell.viewImage.layer.masksToBounds = false
                 cell.viewImage.layer.cornerRadius = 14.0
                 return cell

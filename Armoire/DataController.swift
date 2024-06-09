@@ -67,7 +67,6 @@ class DataController{
     
     
     func getWardrobe() -> [Apparel] {
-        
         wardrobe
     }
     
@@ -113,18 +112,22 @@ class DataController{
     // MARK: - outfits
     
     func loadOutfits() {
-        let outfit = Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)
-        let outfit1 = Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_3")!)
-        let outfit2 = Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_4")!)
-        let outfit3 = Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_5")!)
+//        let outfit = Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)
+//        let outfit1 = Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_3")!)
+//        let outfit2 = Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_4")!)
+//        let outfit3 = Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_5")!)
 //        let outfit1 = Outfit(top: wardrobe[0], bottom: wardrobe[2])
 //        let outfit2 = Outfit(top: wardrobe[0], bottom: wardrobe[3])
 //        let outfit3 = Outfit(top: wardrobe[0], bottom: wardrobe[4])
         
-        outfits.append(outfit)
-        outfits.append(outfit1)
-        outfits.append(outfit2)
-        outfits.append(outfit3)
+//        outfits.append(outfit)
+//        outfits.append(outfit1)
+//        outfits.append(outfit2)
+//        outfits.append(outfit3)
+        
+        for _ in 0..<5 {
+            outfits.append(recommendation()!)
+        }
     }
     
     func getOutfit(at index: Int) -> Outfit {
@@ -193,6 +196,29 @@ class DataController{
 //        return outfits
 //    }
 
+    // MARK: - recommendation
+    
+    func recommendation() -> Outfit? {
+        
+        let tops: [Apparel] = wardrobe.filter{ $0.type == "Tops" }
+        let bottoms: [Apparel] = wardrobe.filter{ $0.type == "Bottoms" }
+        
+        guard tops.isEmpty || bottoms.isEmpty else {
+            print("Please add more apparels.")
+            return nil
+        }
+        
+        if let top = tops.randomElement(), let bottom = bottoms.randomElement() {
+            return Outfit(top: top, bottom: bottom)
+        } else {
+            // Handle the case where randomElement() unexpectedly returns nil
+            print("Error: Unexpected nil value while selecting outfit.")
+            return nil
+        }
+        
+//        return Outfit(top: tops.randomElement()!, bottom: bottoms.randomElement()!)
+    }
+    
 
     // MARK: - getting userData
     
