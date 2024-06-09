@@ -14,9 +14,10 @@ class BagPackerDetailViewController: UIViewController, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BagPackerDetailCollectionViewCell", for: indexPath) as! BagPackerDetailCollectionViewCell
-        cell.imageView.image = UIImage(named: selectedItems[indexPath.row].imageName)
-        cell.clothType.text = selectedItems[indexPath.row].imageType
-        cell.clothColor.text = selectedItems[indexPath.row].imageColor
+        let item = selectedItems[indexPath.row]
+        cell.imageView.image = item.image
+        cell.clothType.text =  item.category
+        cell.clothColor.text = "blue"
         return cell
     }
     
@@ -33,7 +34,7 @@ class BagPackerDetailViewController: UIViewController, UICollectionViewDelegate,
     
     
     
-    var selectedItems: [ClothesData] = []
+    var selectedItems: [Apparel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

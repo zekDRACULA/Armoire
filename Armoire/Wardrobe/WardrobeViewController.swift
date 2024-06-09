@@ -258,44 +258,6 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     //MARK: making a segue here
-    
-
-
-    
-    
-    // MARK: - ML model
-    //making func for using ml model in that photo
-    
-//    func detect(image:CIImage) {
-//        
-//        
-//        guard let model = try? VNCoreMLModel(for: ClothTypeClassifier().model) else {
-//            fatalError("Loading CoreML model Failed.")
-//        }
-//        
-//        let request = VNCoreMLRequest(model: model) { (request, error) in
-//            guard let results = request.results as? [VNClassificationObservation] else{
-//                fatalError("Model failed to process image")
-//            }
-//            if let highestConfidenceResult = results.max(by: { $0.confidence < $1.confidence }) {
-//                self.selectedApparel?.category = highestConfidenceResult.identifier
-//                print("inside model : \(String(describing: self.clothType))")
-//                print("Highest confidence result: \(highestConfidenceResult.identifier) with confidence \(highestConfidenceResult.confidence)")} else {
-//                    print("No results found.")
-//                }
-//            //print(results)
-//        }
-//        
-//        let handler = VNImageRequestHandler(ciImage: image)
-//        
-//        do {
-//            try handler.perform([request])
-//
-//        }
-//        catch {
-//            print(error)
-//        }
-//    }
 
     // to pass data according to the source of segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

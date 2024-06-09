@@ -12,31 +12,33 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
     
     
     //stores indexPath of selected cells
-    var selectedItems = [ClothesData]()
+    var selectedItems = [Apparel]()
+    var apparelsToDisplay = [Apparel]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //return BagPackerDataModel.clothData.count
-        print(DataController.shared.countWardrobe())
-        return DataController.shared.countWardrobe()
+        print("inside Clothes Collection View Cell: \(apparelsToDisplay.count)")
+        return apparelsToDisplay.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "clothesCell", for: indexPath) as! ClothesCellCollectionViewCell
-        cell.imageView.image = UIImage(named: BagPackerDataModel.clothData[indexPath.row].imageName)
+        let apparel = apparelsToDisplay[indexPath.row]
+        cell.imageView.image = apparel.image
         return cell
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
     //select and deseletItemRow at refresh the UIView so changes can be shows by updating
     //    them inside selected and deselet method if they are connected to those func
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedItem = BagPackerDataModel.clothData[indexPath.row]
-        if !selectedItems.contains(where: { $0.imageName == selectedItem.imageName }) {
+        let selectedItem = apparelsToDisplay[indexPath.row]
+        if !selectedItems.contains(where: { $0.id == selectedItem.id }) {
                 selectedItems.append(selectedItem)
             }
         if let cell = collectionView.cellForItem(at: indexPath) as? ClothesCellCollectionViewCell{
@@ -47,8 +49,8 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let deselectedItem = BagPackerDataModel.clothData[indexPath.row]
-        if let index = selectedItems.firstIndex(where: {$0.imageName == deselectedItem.imageName}){
+        let deselectedItem = apparelsToDisplay[indexPath.row]
+        if let index = selectedItems.firstIndex(where: {$0.id == deselectedItem.id}){
             selectedItems.remove(at: index)
         }
         if let cell = collectionView.cellForItem(at: indexPath) as? ClothesCellCollectionViewCell{
@@ -69,6 +71,9 @@ class ClothesCellViewController: UIViewController,UICollectionViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        apparelsToDisplay = DataController.shared.getWardrobe()
+        
         let clothesCellNib = UINib(nibName: "clothesCell", bundle: nil)
         bagPackerCollectionView.register(clothesCellNib, forCellWithReuseIdentifier: "clothesCell")
         bagPackerCollectionView.setCollectionViewLayout(generateLayout(), animated: true)

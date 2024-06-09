@@ -42,7 +42,7 @@ class DataController{
         loadFavourites()
         loadTags()
         loadOutfits()
-        //getUsername()
+        retrieveData()
     }
     
     // MARK: - wardrobe items
@@ -191,35 +191,6 @@ class DataController{
         self.username = username
     }
     
-    
-//    func fetchUsername(){
-//        let db = Firestore.firestore()
-//        
-//        guard let user = Auth.auth().currentUser else{
-//            print("user is not authenticated")
-//                return
-//        }
-//        let userID = user.uid
-//        
-//        db.collection("users").document(userID).getDocument { (document, error) in
-//            if let error = error {
-//                print("Error fetching document: \(error.localizedDescription)")
-//                return
-//            }
-//            guard let document = document, document.exists, let data = document.data() else{
-//                print("document is nil")
-//                return
-//            }
-//            if let username = data["username"] as? String{
-//                self.usernamestore.append(username)
-//                print(self.usernamestore)
-//                self.username = username
-//                print("username: \(username)")
-//            }else{
-//                print("user name is nil")
-//            }
-//        }
-//    }
     func fetchUsername(completion: @escaping(String?) -> Void){
         let db = Firestore.firestore()
         
@@ -331,7 +302,7 @@ class DataController{
     
     
     
-    // MARK: uploadPhoto Function
+    // MARK:- uploadPhoto Function
     func uploadData(apparel: Apparel){
         
         // checking if user is authenticated
