@@ -160,10 +160,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             } else {
                 // Fourth cell with static image
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneImageHome", for: indexPath) as! oneImageCVC
-                cell.image.layer.masksToBounds = false
                 cell.image.layer.cornerRadius = 14.0
-                cell.viewImage.layer.masksToBounds = false
+                cell.image.layer.masksToBounds = true
+                cell.image.contentMode = .scaleAspectFill
                 cell.viewImage.layer.cornerRadius = 14.0
+                cell.viewImage.layer.masksToBounds = true
                 cell.delegate = self
                 return cell
             }
