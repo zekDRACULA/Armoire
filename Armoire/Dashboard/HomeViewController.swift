@@ -17,15 +17,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
 //    MARK: - Variables
     var selectedOutfitFromSuggestion: Outfit?
     var isExpanded: Bool = false
-    var selectedEventType: EventType = .presentation
+    var selectedEventType: EventType = .party
     let headerId = "headerId"
     let categoryHeaderId = "More"
     var userName : String?
     // Define static arrays for event-based outfits
-    static var partyOutfits: [Outfit] = []
-    static var presentationOutfits: [Outfit] = []
-    static var meetingOutfits: [Outfit] = []
-    static var workoutOutfits: [Outfit] = []
+    static var partyOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_7")!, bottom: UIImage(named: "Image_3")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
+    
+    static var presentationOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_4")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
+    
+    static var meetingOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_3")!), Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
+    
+    static var workoutOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_11")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_9")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_11")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
 
     
     required init?(coder: NSCoder) {
@@ -37,11 +40,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
 //        HomeViewController.meetingOutfits = DataController.shared.getOutfits(forEventType: .meeting)
 //        HomeViewController.workoutOutfits = DataController.shared.getOutfits(forEventType: .workout)
         
-        HomeViewController.partyOutfits = [DataController.shared.getOutfit(at: 0), DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 3)]
-        HomeViewController.presentationOutfits = [DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 2), DataController.shared.getOutfit(at: 0)]
-        HomeViewController.meetingOutfits = [DataController.shared.getOutfit(at: 2),
-                                             DataController.shared.getOutfit(at: 3), DataController.shared.getOutfit(at: 1)]
-        HomeViewController.workoutOutfits = [DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 3), DataController.shared.getOutfit(at: 2)]
+//        HomeViewController.partyOutfits = [DataController.shared.getOutfit(at: 0), DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 3)]
+//        HomeViewController.presentationOutfits = [DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 2), DataController.shared.getOutfit(at: 0)]
+//        HomeViewController.meetingOutfits = [DataController.shared.getOutfit(at: 2),
+//                                             DataController.shared.getOutfit(at: 3), DataController.shared.getOutfit(at: 1)]
+//        HomeViewController.workoutOutfits = [DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 3), DataController.shared.getOutfit(at: 2)]
     }
     
     
