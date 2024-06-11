@@ -21,14 +21,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     let headerId = "headerId"
     let categoryHeaderId = "More"
     var userName : String?
+    
     // Define static arrays for event-based outfits
-    static var partyOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_7")!, bottom: UIImage(named: "Image_3")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
+    var partyOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_7")!, bottom: UIImage(named: "Image_3")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
     
-    static var presentationOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_4")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
+    var presentationOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_4")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
     
-    static var meetingOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_3")!), Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
+    var meetingOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_3")!), Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
     
-    static var workoutOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_11")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_9")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_11")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
+    var workoutOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_11")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_9")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_11")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
 
     
     required init?(coder: NSCoder) {
@@ -97,13 +98,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     func outfitsForEventType(_ eventType: EventType) -> [Outfit] {
         switch eventType {
         case .party:
-            return HomeViewController.partyOutfits
+            return partyOutfits
         case .presentation:
-            return HomeViewController.presentationOutfits
+            return presentationOutfits
         case .meeting:
-            return HomeViewController.meetingOutfits
+            return meetingOutfits
         case .workout:
-            return HomeViewController.workoutOutfits
+            return workoutOutfits
         }
     }
 
@@ -323,8 +324,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
 //        header.backgroundColor = .cyan
         return header
     }
-    
 }
+
 
 class Header: UICollectionReusableView{
     let label = UILabel()
