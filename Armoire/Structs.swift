@@ -12,16 +12,15 @@ struct Apparel: Equatable {
     var category : String
     var image: UIImage
     var id: Int
-//   var color: String
-    var color: UIColor
+    var color: String
     var pattern: Pattern
     var type: String
     var tag: [String]
     var isFavourite: Bool = false
     
     static func == (lhs: Apparel, rhs: Apparel) -> Bool {
-            return lhs.id == rhs.id
-        }
+        return lhs.id == rhs.id
+    }
 }
 
 //struct Outfit: Equatable {

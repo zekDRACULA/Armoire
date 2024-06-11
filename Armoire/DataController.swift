@@ -27,7 +27,7 @@ class DataController{
     
     // for seleted outfits in suggestions page when you add event
     var selectedSuggestions: [Outfit] = []
-
+    
     private var allCalendarEvents: [CalendarEvent] = []
     
     // simple implementation of singleton
@@ -45,23 +45,23 @@ class DataController{
     // MARK: - wardrobe
     
     func loadWardrobe() {
-//        let apparel = Apparel(category: detect(image: CIImage(image: UIImage(named: "Image_1")!)!), image: UIImage(named: "Image_1")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Party", "Top"], isFavourite: true)
-//        let apparel1 = Apparel(category: detect(image: CIImage(image: UIImage(named: "Image_2")!)!), image: UIImage(named: "Image_2")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Party", "Top"], isFavourite: true)
-//        
-//        let apparel1 = Apparel(image: UIImage(named: "Image_2")!, id: 2, color: .brown, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
-//        
-//        let apparel2 =  Apparel(image: UIImage(named: "Image_3")!, id: 3, color: .black, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
-//        
-//        let apparel3 = Apparel(image: UIImage(named: "Image_4")!, id: 4, color: .blue, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
-//        
-//        let apparel4 = Apparel(image: UIImage(named: "Image_5")!, id: 5, color: .blue, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
-//        
-//        wardrobe.append(apparel)
-//        wardrobe.append(apparel1)
-//        wardrobe.append(apparel2)
-//        wardrobe.append(apparel3)
-//        wardrobe.append(apparel4)
-//        
+        //        let apparel = Apparel(category: detect(image: CIImage(image: UIImage(named: "Image_1")!)!), image: UIImage(named: "Image_1")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Party", "Top"], isFavourite: true)
+        //        let apparel1 = Apparel(category: detect(image: CIImage(image: UIImage(named: "Image_2")!)!), image: UIImage(named: "Image_2")!, id: 1, color: .black, pattern: .solid, type: .top, tag: ["Party", "Top"], isFavourite: true)
+        //
+        //        let apparel1 = Apparel(image: UIImage(named: "Image_2")!, id: 2, color: .brown, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
+        //
+        //        let apparel2 =  Apparel(image: UIImage(named: "Image_3")!, id: 3, color: .black, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
+        //
+        //        let apparel3 = Apparel(image: UIImage(named: "Image_4")!, id: 4, color: .blue, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
+        //
+        //        let apparel4 = Apparel(image: UIImage(named: "Image_5")!, id: 5, color: .blue, pattern: .solid, type: .bottom, tag: ["Party", "Top"])
+        //
+        //        wardrobe.append(apparel)
+        //        wardrobe.append(apparel1)
+        //        wardrobe.append(apparel2)
+        //        wardrobe.append(apparel3)
+        //        wardrobe.append(apparel4)
+        //
     }
     
     
@@ -87,7 +87,7 @@ class DataController{
         wardrobe.append(apparel)
     }
     
-   
+    
     // MARK: - tags
     
     func loadTags() {
@@ -117,9 +117,9 @@ class DataController{
         let outfit1 = Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_3")!)
         let outfit2 = Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_4")!)
         let outfit3 = Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_5")!)
-//        let outfit1 = Outfit(top: wardrobe[0], bottom: wardrobe[2])
-//        let outfit2 = Outfit(top: wardrobe[0], bottom: wardrobe[3])
-//        let outfit3 = Outfit(top: wardrobe[0], bottom: wardrobe[4])
+        //        let outfit1 = Outfit(top: wardrobe[0], bottom: wardrobe[2])
+        //        let outfit2 = Outfit(top: wardrobe[0], bottom: wardrobe[3])
+        //        let outfit3 = Outfit(top: wardrobe[0], bottom: wardrobe[4])
         
         outfits.append(outfit)
         outfits.append(outfit1)
@@ -175,25 +175,25 @@ class DataController{
         allCalendarEvents.remove(at: indexpath)
     }
     
-
-//    func getOutfits(forEventType eventType: EventType) -> [Outfit] {
-//        var outfits: [Outfit] = []
-//        
-//        // Filter wardrobe items for tops and bottoms matching the event type
-//        let tops = wardrobe.filter { $0.type == .top && $0.tag.contains(eventType.rawValue) }
-//        let bottoms = wardrobe.filter { $0.type == .bottom && $0.tag.contains(eventType.rawValue) }
-//        
-//        // Generate outfits combinations from filtered tops and bottoms
-//        for top in tops {
-//            for bottom in bottoms {
-//                outfits.append(Outfit(top: top, bottom: bottom))
-//            }
-//        }
-//
-//        return outfits
-//    }
-
-
+    
+    //    func getOutfits(forEventType eventType: EventType) -> [Outfit] {
+    //        var outfits: [Outfit] = []
+    //
+    //        // Filter wardrobe items for tops and bottoms matching the event type
+    //        let tops = wardrobe.filter { $0.type == .top && $0.tag.contains(eventType.rawValue) }
+    //        let bottoms = wardrobe.filter { $0.type == .bottom && $0.tag.contains(eventType.rawValue) }
+    //
+    //        // Generate outfits combinations from filtered tops and bottoms
+    //        for top in tops {
+    //            for bottom in bottoms {
+    //                outfits.append(Outfit(top: top, bottom: bottom))
+    //            }
+    //        }
+    //
+    //        return outfits
+    //    }
+    
+    
     // MARK: - getting userData
     
     func getUsername() -> String{
@@ -210,7 +210,7 @@ class DataController{
         
         guard let user = Auth.auth().currentUser else{
             print("user is not authenticated")
-                return
+            return
         }
         let userID = user.uid
         
@@ -221,7 +221,7 @@ class DataController{
             }
             guard let document = document, document.exists, let data = document.data() else{
                 print("document is nil")
-//                exit(1)
+                //                exit(1)
                 return
             }
             if let username = data["username"] as? String{
@@ -229,12 +229,12 @@ class DataController{
                 print(self.usernamestore)
                 self.username = username
                 print("username: \(username)")
-//                self.setUsername(username: username)
+                //                self.setUsername(username: username)
             }else{
                 print("user name is nil")
             }
         }
-//        return username!
+        //        return username!
     }
     
     
@@ -244,7 +244,7 @@ class DataController{
     
     func retrieveData() {
         
-       // wardrobe.removeAll()
+        // wardrobe.removeAll()
         
         // Get reference to Firestore
         let db = Firestore.firestore()
@@ -270,14 +270,14 @@ class DataController{
             }
             
             // Array to store file paths and cloth types
-            var paths = [(path: String, category: String, type: String)]()
+            var paths = [(path: String, category: String, type: String, color: String)]()
             //print(snapshot.documents)
             // Loop through all the returned documents
             for doc in snapshot.documents {
                 print(doc)
-                if let url = doc["url"] as? String, let category = doc["category"] as? String, let type = doc["type"] as? String {
+                if let url = doc["url"] as? String, let category = doc["category"] as? String, let type = doc["type"] as? String, let color = doc["color"] as? String {
                     print("doc")
-                    paths.append((path: url, category: category, type: type))
+                    paths.append((path: url, category: category, type: type, color: color))
                 }
             }
             
@@ -285,7 +285,7 @@ class DataController{
             let storageRef = Storage.storage().reference()
             
             // Loop through each file path and fetch the data from storage
-            for (path, category, type) in paths {
+            for (path, category, type, color) in paths {
                 let fileRef = storageRef.child(path)
                 
                 // Retrieve the data
@@ -301,7 +301,7 @@ class DataController{
                     }
                     if let image = UIImage(data: data) {
                         // Initialize Apparel with the fetched data
-                        let apparel = Apparel(category: category, image: image, id: 876, color: .blue, pattern: .dots, type: type, tag: ["lower"])
+                        let apparel = Apparel(category: category, image: image, id: 876, color: color, pattern: .dots, type: type, tag: ["lower"])
                         self.appendApparel(apparel: apparel)
                     } else {
                         print("Failed to create UIImage from data")
@@ -312,7 +312,7 @@ class DataController{
         }
         wardrobe.removeAll()
     }
-
+    
     
     
     
@@ -351,7 +351,7 @@ class DataController{
                 
                 let db = Firestore.firestore()
                 let apparelRef = db.collection("users").document(userID).collection("Apparels").document(UUID().uuidString)
-                apparelRef.setData(["url": path, "category": apparel.category, "type": apparel.type])
+                apparelRef.setData(["url": path, "category": apparel.category, "type": apparel.type, "color": apparel.color])
                 { error in
                     if let error = error{
                         print("error:\(error.localizedDescription)")
@@ -365,60 +365,73 @@ class DataController{
         self.retrieveData()
     }
     
-    //  Adding a new document to Firestore after detecting the image category
-    
-//    func addNewApparelToFirestore(url: String) {
-//        
-//        print("inside addNewApparelToFirebase")
-//        
-//        let db = Firestore.firestore()
-//        guard let user = Auth.auth().currentUser else {
-//            print("User is not Authenticated")
-//            return
-//            
-//        }
-//        let userID = user.uid
-//        let clothData = ["category": self.clothType ?? "Unknown", "url": url]
-//        
-//        db.collection("users").document(userID).collection("Apparels").addDocument(data: clothData) { error in
-//            if let error = error {
-//                print("\(error.localizedDescription)")
-//            } else {
-//                print("Document added")
-//            }
-//        }
-//    }
-    
     // MARK: - Category ML model
     
-    func detect(image:CIImage) -> String{
+    func detect(image:CIImage) -> String {
         var category : String?
-
+        
         guard let model = try? VNCoreMLModel(for: ClothTypeClassifier().model) else {
             fatalError("Loading CoreML model Failed.")
         }
-
+        
         let request = VNCoreMLRequest(model: model) { (request, error) in
             guard let results = request.results as? [VNClassificationObservation] else{
                 fatalError("Model failed to process image")
             }
             if let highestConfidenceResult = results.max(by: { $0.confidence < $1.confidence }) {
                 category = highestConfidenceResult.identifier
-                }
+            }
         }
         
-
+        
         let handler = VNImageRequestHandler(ciImage: image)
         
         do {
             try handler.perform([request])
-
+            
         }
         catch {
             print(error)
         }
-//        print("category: \(category)")
+        
         return category!
+    }
+    
+    // MARK: - Colour ML model
+    
+    
+    func colorDetect(image:CIImage) -> String {
+        var colour: String?
+        
+        guard let model = try? VNCoreMLModel(for: ColorModel().model) else{
+            fatalError("Loading CoreMl Model Failed")
+        }
+        
+        let request = VNCoreMLRequest(model: model) { (request, error) in
+            guard let results = request.results as? [VNClassificationObservation] else{
+                fatalError("Model Failed to process image")
+            }
+            
+            if let highestConfidenceResult = results.max(by: { $0.confidence < $1.confidence }) {
+                colour = highestConfidenceResult.identifier
+                
+            }
+            
+            
+        }
+        
+        let handler = VNImageRequestHandler(ciImage: image)
+        
+        do {
+            try handler.perform([request])
+            
+        }
+        catch {
+            print(error)
+        }
+        
+        return colour!.capitalized
+        
     }
     
     // MARK: - Type ML Model
@@ -435,10 +448,10 @@ class DataController{
                 fatalError("Model Failed to process image")
             }
             
-//            print(" TYpe classfier model details are from here \(results)")
+            //            print(" TYpe classfier model details are from here \(results)")
             if let highestConfidenceResult = results.max(by: { $0.confidence < $1.confidence }) {
                 type = highestConfidenceResult.identifier
-                }
+            }
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
@@ -448,6 +461,7 @@ class DataController{
         catch {
             print(error)
         }
+        
         return type!
     }
     

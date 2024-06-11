@@ -45,8 +45,7 @@ class ItemDetailsTableViewController: UITableViewController {
         
         apparelImage.image = apparel?.image
         typeLabel.text = apparel?.category
-//        typeLabel.text = apparel?.type
-        colourLabel.text = apparel?.color.accessibilityName.capitalized
+        colourLabel.text = apparel?.color
 //        patternLabel.text = apparel?.pattern.rawValue
 //        print(apparel)
     }

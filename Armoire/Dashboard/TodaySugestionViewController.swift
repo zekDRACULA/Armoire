@@ -14,7 +14,7 @@ class TodaySugestionViewController: UIViewController, UICollectionViewDataSource
     //MARK: -VARIABLES
     var selectedEventType: EventType = .party
     
-//MARK: - outlets
+    //MARK: - outlets
     @IBOutlet var collectionView: UICollectionView!
     
     
@@ -27,7 +27,7 @@ class TodaySugestionViewController: UIViewController, UICollectionViewDataSource
         let firstNib = UINib(nibName: "ImageSuggestion", bundle: nil)
         collectionView.register(firstNib, forCellWithReuseIdentifier: "ImageSuggestion")
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -39,26 +39,26 @@ class TodaySugestionViewController: UIViewController, UICollectionViewDataSource
         let outfit = DataController.shared.outfits[indexPath.row]
         cell.configure(picture1: outfit.top, picture2: outfit.bottom)
         return cell
-                
+        
     }
-//   MARK: - Selectiing outfit
+    //   MARK: - Selectiing outfit
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let selectedOutfit = outfitsForEventType(selectedEventType)[indexPath.row]
-//        DataController.shared.selectedSuggestions.append(selectedOutfit)
-//        todaySuggestionDelegate?.didSelectOutfit(selectedOutfit)
-//
-//    }
-//
-//        func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//            if let index = DataController.shared.selectedSuggestions.firstIndex(of: outfitsForEventType(selectedEventType)[indexPath.row]) {
-//                DataController.shared.selectedSuggestions.remove(at: index)
-//            }
-//        }
-
+    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    //        let selectedOutfit = outfitsForEventType(selectedEventType)[indexPath.row]
+    //        DataController.shared.selectedSuggestions.append(selectedOutfit)
+    //        todaySuggestionDelegate?.didSelectOutfit(selectedOutfit)
+    //
+    //    }
+    //
+    //        func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    //            if let index = DataController.shared.selectedSuggestions.firstIndex(of: outfitsForEventType(selectedEventType)[indexPath.row]) {
+    //                DataController.shared.selectedSuggestions.remove(at: index)
+    //            }
+    //        }
     
-//  MARK: - layout
-
+    
+    //  MARK: - layout
+    
     func generateLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, environment) -> NSCollectionLayoutSection? in
             
@@ -78,8 +78,8 @@ class TodaySugestionViewController: UIViewController, UICollectionViewDataSource
     }
     
     
-//    MARK: - Actions
-
+    //    MARK: - Actions
+    
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }

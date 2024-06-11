@@ -45,7 +45,7 @@ class CompatibilityViewController: UIViewController {
                 
                 // Pass the selected image to the delegate
                 if let selectedImage = self.selectedImage {
-                    let newApparel = Apparel(category: DataController.shared.detect(image: CIImage(image: selectedImage)!), image: selectedImage, id: 100 , color: .red, pattern: .dots, type: DataController.shared.typeDetect(image: CIImage(image: selectedImage)!), tag: ["BLEH"])
+                    let newApparel = Apparel(category: DataController.shared.detect(image: CIImage(image: selectedImage)!), image: selectedImage, id: 100 , color: DataController.shared.colorDetect(image: CIImage(image: selectedImage)!), pattern: .dots, type: DataController.shared.typeDetect(image: CIImage(image: selectedImage)!), tag: ["BLEH"])
                     
                     DataController.shared.uploadData(apparel: newApparel)
                     DataController.shared.appendApparel(apparel: newApparel)

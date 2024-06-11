@@ -8,9 +8,9 @@
 import UIKit
 
 class SuggestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var cardTableView: UITableView!
-
+    
     let suggestionPictures: [UIImage] = [
         UIImage(named: "suggestion1")!,
         UIImage(named: "suggestion2")!,
@@ -18,7 +18,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,6 +32,6 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return cell
     }
-
-
+    
+    
 }
