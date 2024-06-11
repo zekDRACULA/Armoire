@@ -26,8 +26,11 @@ class oneImageCVC: UICollectionViewCell,UINavigationControllerDelegate {
     override func awakeFromNib() {
             super.awakeFromNib()
         }
+    
 //    MARK: - ACTIONS
     @IBAction func suggestionTapped(_ sender: UIButton) {
         delegate?.suggestionTapped(cell: self)
     }
+    
+    
 }

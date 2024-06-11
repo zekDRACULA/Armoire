@@ -17,15 +17,19 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
 //    MARK: - Variables
     var selectedOutfitFromSuggestion: Outfit?
     var isExpanded: Bool = false
-    var selectedEventType: EventType = .presentation
+    var selectedEventType: EventType = .party
     let headerId = "headerId"
     let categoryHeaderId = "More"
     var userName : String?
+    
     // Define static arrays for event-based outfits
-    static var partyOutfits: [Outfit] = []
-    static var presentationOutfits: [Outfit] = []
-    static var meetingOutfits: [Outfit] = []
-    static var workoutOutfits: [Outfit] = []
+    var partyOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_7")!, bottom: UIImage(named: "Image_3")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
+    
+    var presentationOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_4")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
+    
+    var meetingOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_3")!), Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
+    
+    var workoutOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_11")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_9")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_11")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
 
     
     required init?(coder: NSCoder) {
@@ -37,11 +41,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
 //        HomeViewController.meetingOutfits = DataController.shared.getOutfits(forEventType: .meeting)
 //        HomeViewController.workoutOutfits = DataController.shared.getOutfits(forEventType: .workout)
         
-        HomeViewController.partyOutfits = [DataController.shared.getOutfit(at: 0), DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 3)]
-        HomeViewController.presentationOutfits = [DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 2), DataController.shared.getOutfit(at: 0)]
-        HomeViewController.meetingOutfits = [DataController.shared.getOutfit(at: 2),
-                                             DataController.shared.getOutfit(at: 3), DataController.shared.getOutfit(at: 1)]
-        HomeViewController.workoutOutfits = [DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 3), DataController.shared.getOutfit(at: 2)]
+//        HomeViewController.partyOutfits = [DataController.shared.getOutfit(at: 0), DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 3)]
+//        HomeViewController.presentationOutfits = [DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 2), DataController.shared.getOutfit(at: 0)]
+//        HomeViewController.meetingOutfits = [DataController.shared.getOutfit(at: 2),
+//                                             DataController.shared.getOutfit(at: 3), DataController.shared.getOutfit(at: 1)]
+//        HomeViewController.workoutOutfits = [DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 3), DataController.shared.getOutfit(at: 2)]
     }
     
     
@@ -94,13 +98,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     func outfitsForEventType(_ eventType: EventType) -> [Outfit] {
         switch eventType {
         case .party:
-            return HomeViewController.partyOutfits
+            return partyOutfits
         case .presentation:
-            return HomeViewController.presentationOutfits
+            return presentationOutfits
         case .meeting:
-            return HomeViewController.meetingOutfits
+            return meetingOutfits
         case .workout:
-            return HomeViewController.workoutOutfits
+            return workoutOutfits
         }
     }
 
@@ -157,10 +161,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             } else {
                 // Fourth cell with static image
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OneImageHome", for: indexPath) as! oneImageCVC
-                cell.image.layer.masksToBounds = false
                 cell.image.layer.cornerRadius = 14.0
-                cell.viewImage.layer.masksToBounds = false
+                cell.image.layer.masksToBounds = true
+                cell.image.contentMode = .scaleAspectFill
                 cell.viewImage.layer.cornerRadius = 14.0
+                cell.viewImage.layer.masksToBounds = true
                 cell.delegate = self
                 return cell
             }
@@ -319,8 +324,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
 //        header.backgroundColor = .cyan
         return header
     }
-    
 }
+
 
 class Header: UICollectionReusableView{
     let label = UILabel()

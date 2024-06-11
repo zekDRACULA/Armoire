@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWD-4h-1I3">
                         <rect key="frame" x="0.0" y="0.0" width="461" height="386"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wardrobe1" translatesAutoresizingMaskIntoConstraints="NO" id="8Rr-gP-CXE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wardrobe1" translatesAutoresizingMaskIntoConstraints="NO" id="8Rr-gP-CXE">
                                 <rect key="frame" x="0.0" y="0.0" width="461" height="386"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVl-IW-zjh">

@@ -92,8 +92,8 @@ class headerCollectionViewCell: UICollectionViewCell {
                 
                 delegate?.eventSelected(eventType: eventType)
             switch sender.configuration!.title!{
-            case "Presentation":
-                partyButton.setTitle("Presentation", for: .normal)
+            case "Party":
+                partyButton.setTitle("Party", for: .normal)
                 
             case "Meeting":
                 partyButton.setTitle("Meeting", for: .normal)

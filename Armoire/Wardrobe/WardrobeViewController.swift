@@ -244,6 +244,9 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         guard let ciimage = CIImage(image: selectedImage) else {
             fatalError("Could Not convert UIimage to CIimage")
         }
+        colorDetect(image: ciimage)
+        
+        
         dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "toAdd", sender: nil)
     }
@@ -255,6 +258,38 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     
     // MARK: - ML model
+    
+    
+    func colorDetect(image:CIImage){
+            guard let model = try? VNCoreMLModel(for: ColorModel().model) else{
+                fatalError("Loading CoreMl Model Failed")
+            }
+    
+            let request = VNCoreMLRequest(model: model) { (request, error) in
+                guard let results = request.results as? [VNClassificationObservation] else{
+                    fatalError("Model Failed to process image")
+                }
+//                print(results)
+    //            print(" TYpe classfier model details are from here \(results)")
+                if let highestConfidenceResult = results.max(by: { $0.confidence < $1.confidence }) {
+                    print("Highest confidence is \(highestConfidenceResult.identifier)")
+                    }
+    
+    
+            }
+    
+            let handler = VNImageRequestHandler(ciImage: image)
+    
+            do {
+                try handler.perform([request])
+    
+            }
+            catch {
+                print(error)
+            }
+    
+        }
+    
     
 //    func typeDetect(image:CIImage){
 //        
