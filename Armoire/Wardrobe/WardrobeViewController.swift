@@ -261,7 +261,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     
     func colorDetect(image:CIImage){
-            guard let model = try? VNCoreMLModel(for: ColourModel().model) else{
+            guard let model = try? VNCoreMLModel(for: ColorModel().model) else{
                 fatalError("Loading CoreMl Model Failed")
             }
     
