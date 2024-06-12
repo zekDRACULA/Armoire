@@ -59,18 +59,9 @@ class headerCollectionViewCell: UICollectionViewCell {
     
     //    MARK: - Drop Down Button
 
-        func showButtonVisibility(){
-            eventButton.forEach{button in
-                UIView.animate(withDuration: 0.5, animations: {
-                    button.isHidden = !button.isHidden
-                    self.contentView.layoutIfNeeded()
-                })
-                
-            }
-            
-        }
-            override func layoutSubviews() {
-                super.layoutSubviews()
+        
+        override func layoutSubviews() {
+            super.layoutSubviews()
                 
         }
         
@@ -107,6 +98,16 @@ class headerCollectionViewCell: UICollectionViewCell {
             }
         }
     
+        func showButtonVisibility(){
+            eventButton.forEach{button in
+                UIView.animate(withDuration: 0.5, animations: {
+                    button.isHidden = !button.isHidden
+                    self.contentView.layoutIfNeeded()
+                })
+                
+            }
+        
+    }
    
 //    MARK: - Fetching Location and Weather
     func fetchCurrentLocationWeather() {
