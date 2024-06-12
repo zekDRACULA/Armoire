@@ -22,7 +22,7 @@ class ImageSugestionCollectionViewCell: UICollectionViewCell {
     func configure(picture1 : UIImage,picture2: UIImage ){
         image1.image = picture1
         image2.image = picture2
-        viewImage.layer.masksToBounds = false
+        viewImage.layer.masksToBounds = true
         viewImage.layer.cornerRadius = 14.0
         self.viewImage.backgroundColor = .cell
     }

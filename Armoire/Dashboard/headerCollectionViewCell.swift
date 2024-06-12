@@ -58,56 +58,58 @@ class headerCollectionViewCell: UICollectionViewCell {
     }
     
     //    MARK: - Drop Down Button
-    
-    func showButtonVisibility(){
-        eventButton.forEach{button in
-            UIView.animate(withDuration: 0.5, animations: {
-                button.isHidden = !button.isHidden
-                self.contentView.layoutIfNeeded()
-            })
-            
+
+        
+        override func layoutSubviews() {
+            super.layoutSubviews()
+                
         }
         
-    }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-    }
-    
-    @IBAction func event(_ sender: UIButton) {
-        button.toggle()
-        showButtonVisibility()
-        if button{
-            dropDownButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
-        }else{
-            dropDownButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+        @IBAction func event(_ sender: UIButton) {
+            button.toggle()
+            showButtonVisibility()
+            if button{
+                dropDownButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
+            }else{
+                dropDownButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+            }
+            delegate?.toggleLayout(isExpanded: button)
         }
-        delegate?.toggleLayout(isExpanded: button)
-    }
-    
-    
-    @IBAction func eventAction(_ sender: UIButton) {
-        guard let title = sender.configuration?.title,
-              let eventType = EventType(rawValue: title) else { return }
         
-        delegate?.eventSelected(eventType: eventType)
         
-        switch sender.configuration!.title!{
-        case "Party":
-            partyButton.setTitle("Party", for: .normal)
-            
-        case "Meeting":
-            partyButton.setTitle("Meeting", for: .normal)
-            
-        case "Workout":
-            partyButton.setTitle("Workout", for: .normal)
-            
-        default:
-            partyButton.setTitle("Presentation", for: .normal)
-            
+        @IBAction func eventAction(_ sender: UIButton) {
+            guard let title = sender.configuration?.title,
+                      let eventType = EventType(rawValue: title) else { return }
+                
+                delegate?.eventSelected(eventType: eventType)
+            switch sender.configuration!.title!{
+            case "Party":
+                partyButton.setTitle("Party", for: .normal)
+                
+            case "Meeting":
+                partyButton.setTitle("Meeting", for: .normal)
+                
+            case "Workout":
+                partyButton.setTitle("Workout", for: .normal)
+                
+            default:
+                partyButton.setTitle("Presentation", for: .normal)
+                
+            }
         }
-    }
     
+        func showButtonVisibility(){
+            eventButton.forEach{button in
+                UIView.animate(withDuration: 0.5, animations: {
+                    button.isHidden = !button.isHidden
+                    self.contentView.layoutIfNeeded()
+                })
+                
+            }
+        
+    }
+   
+
     
     //    MARK: - Fetching Location and Weather
     func fetchCurrentLocationWeather() {

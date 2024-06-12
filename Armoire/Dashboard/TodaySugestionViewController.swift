@@ -34,6 +34,7 @@ class TodaySugestionViewController: UIViewController, UICollectionViewDataSource
         return DataController.shared.outfits.count
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageSuggestion", for: indexPath) as! ImageSugestionCollectionViewCell
         let outfit = DataController.shared.outfits[indexPath.row]

@@ -17,19 +17,19 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     //    MARK: - Variables
     var selectedOutfitFromSuggestion: Outfit?
     var isExpanded: Bool = false
-    var selectedEventType: EventType = .party
+    var selectedEventType: EventType = .meeting
     let headerId = "headerId"
     let categoryHeaderId = "More"
     var userName : String?
     
     // Define static arrays for event-based outfits
-    var partyOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_7")!, bottom: UIImage(named: "Image_3")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
+    var partyOutfits: [Outfit] = [ Outfit(top: UIImage(named: "Image_15")!, bottom: UIImage(named: "Image_3")!) , Outfit(top: UIImage(named: "Image_14")!, bottom: UIImage(named: "Image_8")!),Outfit(top: UIImage(named: "Image_13")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
     
-    var presentationOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_4")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
+    var presentationOutfits: [Outfit] = [ Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_10")!),Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_4")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
     
-    var meetingOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_3")!), Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
+    var meetingOutfits: [Outfit] = [ Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_16")!), Outfit(top: UIImage(named: "Image_17")!, bottom: UIImage(named: "Image_18")!), Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_18")!)]
     
-    var workoutOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_11")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_9")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_11")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
+    var workoutOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_11")!), Outfit(top: UIImage(named: "Image_19")!, bottom: UIImage(named: "Image_20")!), Outfit(top: UIImage(named: "Image_22")!, bottom: UIImage(named: "Image_21")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
     
     
     required init?(coder: NSCoder) {

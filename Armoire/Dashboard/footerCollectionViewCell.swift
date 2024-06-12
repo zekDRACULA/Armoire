@@ -24,7 +24,10 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
+
+
     //    MARK: - PHOTO LIBRARY AND CAMERA ACCESS ACTION SHEET
+
     // MARK: ACTION SHEET
     @IBAction func compatibilityTapped(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
@@ -54,6 +57,9 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
         
         
     }
+
+    
+    
     //MARK: updating after selecting
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let imageToUse = info[.originalImage] as? UIImage else {
@@ -69,6 +75,7 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
         homeViewController?.navigationController?.presentedViewController?.dismiss(animated: true, completion: nil)
         navVC?.pushViewController(nextVC, animated: true)
     }
+
     
     //    MARK: TRAVEL BAG VIEW CONTROLLER
     @IBAction func travelTapped(_ sender: UIButton) {
@@ -79,4 +86,5 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
         homeViewController?.present(nextViewController, animated: true)
         
     }
+
 }

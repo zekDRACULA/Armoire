@@ -35,6 +35,16 @@ class CompatibilityViewController: UIViewController {
     @IBOutlet var bottom4: UIImageView!
     
     
+    //    MARK: - Functions
+        
+        
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            extractedFunc()
+        }
+    
+    
     // MARK: - Actions
     
     @IBAction func saveOutfitButton(_ sender: UIBarButtonItem) {
@@ -57,6 +67,7 @@ class CompatibilityViewController: UIViewController {
             alert.addAction(saveButton)
             present(alert, animated: true, completion: nil)
     }
+    
     
     //MARK: - Layout
     
@@ -82,19 +93,10 @@ class CompatibilityViewController: UIViewController {
         image4.image = selectedImage
 
         // Apply corner radius to image view and views
-        let cornerRadius: CGFloat = 20.0
-        [imageView, view1, view2, view3, view4].forEach { $0?.layer.cornerRadius = cornerRadius }
+        let cornerRadius: CGFloat = 14.0
+        [imageView, view1, view2, view3, view4].forEach {
+                   $0?.layer.cornerRadius = cornerRadius
+                   $0?.layer.masksToBounds = true
+        }
     }
-
-    
-//    MARK: - Functions
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        extractedFunc()
-    }
-    
-
 }
