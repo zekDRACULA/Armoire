@@ -68,6 +68,7 @@ class CompatibilityViewController: UIViewController {
             present(alert, animated: true, completion: nil)
     }
     
+    
     //MARK: - Layout
     
     fileprivate func extractedFunc() {
@@ -92,7 +93,10 @@ class CompatibilityViewController: UIViewController {
         image4.image = selectedImage
 
         // Apply corner radius to image view and views
-        let cornerRadius: CGFloat = 20.0
-        [imageView, view1, view2, view3, view4].forEach { $0?.layer.cornerRadius = cornerRadius }
+        let cornerRadius: CGFloat = 14.0
+        [imageView, view1, view2, view3, view4].forEach {
+                   $0?.layer.cornerRadius = cornerRadius
+                   $0?.layer.masksToBounds = true
+        }
     }
 }
