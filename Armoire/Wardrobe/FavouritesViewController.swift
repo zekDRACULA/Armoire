@@ -27,6 +27,7 @@ class FavouritesViewController: UIViewController, UICollectionViewDelegate, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeApparel", for: indexPath) as! WardrobeApparelCollectionViewCell
 //        cell.apparelImage.image = MainDataModel.favourites[indexPath.row].image
         cell.apparelImage.image = DataController.shared.getFavourites(with: indexPath.row).image
+        cell.heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         return cell
     }
     

@@ -24,12 +24,13 @@
                                 <rect key="frame" x="5" y="5" width="371" height="334"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kt1-db-9KG">
-                                <rect key="frame" x="338.33333333333331" y="304.33333333333331" width="26.666666666666686" height="23.666666666666686"/>
+                                <rect key="frame" x="333.33333333333331" y="300.33333333333331" width="31.666666666666686" height="27.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="tintColor" red="0.57254901960000004" green="0.10980392160000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
                                     <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                 </state>
                                 <state key="selected" image="heart.fill" catalog="system"/>
                                 <state key="highlighted" image="heart.fill" catalog="system"/>
@@ -40,10 +41,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96862745100000003" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Kt1-db-9KG" secondAttribute="bottom" constant="16" id="1kl-6B-YSl"/>
+                            <constraint firstAttribute="bottom" secondItem="Kt1-db-9KG" secondAttribute="bottom" constant="16" id="3Gx-5v-FgI"/>
                             <constraint firstItem="Ilu-dX-T0q" firstAttribute="leading" secondItem="81K-ZA-YUU" secondAttribute="leading" constant="5" id="Ai2-9X-wfF"/>
                             <constraint firstItem="Ilu-dX-T0q" firstAttribute="top" secondItem="81K-ZA-YUU" secondAttribute="top" constant="5" id="Coz-PA-CuF"/>
-                            <constraint firstAttribute="trailing" secondItem="Kt1-db-9KG" secondAttribute="trailing" constant="16" id="WVz-2m-DMX"/>
+                            <constraint firstAttribute="trailing" secondItem="Kt1-db-9KG" secondAttribute="trailing" constant="16" id="QKe-Iz-RkT"/>
                             <constraint firstAttribute="bottom" secondItem="Ilu-dX-T0q" secondAttribute="bottom" constant="5" id="WWT-em-I2R"/>
                             <constraint firstAttribute="trailing" secondItem="Ilu-dX-T0q" secondAttribute="trailing" constant="5" id="s6d-Ga-hjC"/>
                         </constraints>
