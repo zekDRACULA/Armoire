@@ -14,7 +14,7 @@ import FirebaseFirestore //for retriving image as url
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCollectionViewCellDelegate, UICollectionViewDelegate, CollectionViewCellDelegate {
     
-//    MARK: - Variables
+    //    MARK: - Variables
     var selectedOutfitFromSuggestion: Outfit?
     var isExpanded: Bool = false
     var selectedEventType: EventType = .party
@@ -30,31 +30,31 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     var meetingOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_10")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_3")!), Outfit(top: UIImage(named: "Image_6")!, bottom: UIImage(named: "Image_8")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
     
     var workoutOutfits: [Outfit] = [Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_11")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_9")!), Outfit(top: UIImage(named: "Image_12")!, bottom: UIImage(named: "Image_11")!), Outfit(top: UIImage(named: "Image_1")!, bottom: UIImage(named: "Image_2")!)]
-
+    
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.tabBarItem.title = "Home"
         self.tabBarItem.image = UIImage(systemName: "house")
-//        HomeViewController.partyOutfits = DataController.shared.getOutfits(forEventType: .party)
-//        HomeViewController.presentationOutfits = DataController.shared.getOutfits(forEventType: .presentation)
-//        HomeViewController.meetingOutfits = DataController.shared.getOutfits(forEventType: .meeting)
-//        HomeViewController.workoutOutfits = DataController.shared.getOutfits(forEventType: .workout)
+        //        HomeViewController.partyOutfits = DataController.shared.getOutfits(forEventType: .party)
+        //        HomeViewController.presentationOutfits = DataController.shared.getOutfits(forEventType: .presentation)
+        //        HomeViewController.meetingOutfits = DataController.shared.getOutfits(forEventType: .meeting)
+        //        HomeViewController.workoutOutfits = DataController.shared.getOutfits(forEventType: .workout)
         
-//        HomeViewController.partyOutfits = [DataController.shared.getOutfit(at: 0), DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 3)]
-//        HomeViewController.presentationOutfits = [DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 2), DataController.shared.getOutfit(at: 0)]
-//        HomeViewController.meetingOutfits = [DataController.shared.getOutfit(at: 2),
-//                                             DataController.shared.getOutfit(at: 3), DataController.shared.getOutfit(at: 1)]
-//        HomeViewController.workoutOutfits = [DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 3), DataController.shared.getOutfit(at: 2)]
+        //        HomeViewController.partyOutfits = [DataController.shared.getOutfit(at: 0), DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 3)]
+        //        HomeViewController.presentationOutfits = [DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 2), DataController.shared.getOutfit(at: 0)]
+        //        HomeViewController.meetingOutfits = [DataController.shared.getOutfit(at: 2),
+        //                                             DataController.shared.getOutfit(at: 3), DataController.shared.getOutfit(at: 1)]
+        //        HomeViewController.workoutOutfits = [DataController.shared.getOutfit(at: 1), DataController.shared.getOutfit(at: 3), DataController.shared.getOutfit(at: 2)]
     }
     
     
     
-//    MARK: - Outlets
+    //    MARK: - Outlets
     
     @IBOutlet var collectionView: UICollectionView!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUsername()
@@ -79,19 +79,19 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         collectionView.register(Header.self, forSupplementaryViewOfKind: categoryHeaderId, withReuseIdentifier: headerId)
     }
     
-//    MARK: - Defining Protocols
+    //    MARK: - Defining Protocols
     // for drop down expanding and closing
     func toggleLayout(isExpanded: Bool) {
         self.isExpanded = isExpanded
         collectionView.collectionViewLayout = generateLayout()
         collectionView.reloadData()
-//        collectionView.reloadSections(IndexSet(integer: 0))
+        //        collectionView.reloadSections(IndexSet(integer: 0))
     }
     
     // for changing images according to selected event
     func eventSelected(eventType: EventType) {
         self.selectedEventType = eventType
-        collectionView.reloadSections(IndexSet(integer: 1)) 
+        collectionView.reloadSections(IndexSet(integer: 1))
     }
     
     //MARK: - Defining the events
@@ -107,10 +107,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             return workoutOutfits
         }
     }
-
     
     
-//    MARK: - Collection view functions
+    
+    //    MARK: - Collection view functions
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -130,24 +130,30 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         
         switch indexPath.section {
         case 0:
-//            MARK: heading
+            //            MARK: heading
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath) as! headerCollectionViewCell
             cell.delegate = self
-            cell.weatherStack.layer.cornerRadius = 20.0
+            cell.weatherStack.layer.cornerRadius = 14.0
             cell.weatherStack.clipsToBounds = true
-            cell.calenderLabel.layer.cornerRadius = 20.0
+            
+            cell.calenderLabel.layer.cornerRadius = 14.0
             cell.calenderLabel.clipsToBounds = true
-            cell.partyButton.layer.cornerRadius = 8.0
+            
+            cell.dropDownButton.layer.cornerRadius = 14.0
+            cell.dropDownButton.clipsToBounds = true
+            
+            cell.partyButton.layer.cornerRadius = 14.0
             cell.partyButton.clipsToBounds = true
-            cell.eventButton[0].layer.cornerRadius = 10.0
+            cell.eventButton[0].layer.cornerRadius = 14.0
             cell.eventButton[0].clipsToBounds = true
-            cell.eventButton[1].layer.cornerRadius = 10.0
+            cell.eventButton[1].layer.cornerRadius = 14.0
             cell.eventButton[1].clipsToBounds = true
-            cell.eventButton[2].layer.cornerRadius = 10.0
+            cell.eventButton[2].layer.cornerRadius = 14.0
             cell.eventButton[2].clipsToBounds = true
             
             return cell
+            
         case 1:
             // MARK: making first three images according to event chosen and last is fixed
             if indexPath.row < min(outfitsForEventType(selectedEventType).count, 3) {
@@ -173,8 +179,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "footer", for: indexPath) as! footerCollectionViewCell
             cell.homeViewController = self
-            cell.compatibility.layer.cornerRadius = 10.0
+            cell.compatibility.layer.cornerRadius = 14.0
             cell.compatibility.clipsToBounds = true
+            cell.compatibilityButton.layer.cornerRadius = 14.0
+            cell.compatibilityButton.clipsToBounds = true
+            
+            cell.travel.layer.cornerRadius = 14.0
+            cell.travel.clipsToBounds = true
+            cell.travelButton.layer.cornerRadius = 14.0
+            cell.travelButton.clipsToBounds = true
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath) as! headerCollectionViewCell
@@ -186,7 +199,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
         return 3
     }
     
-//    MARK: - Layout of sections
+    //    MARK: - Layout of sections
     
     func generateLayout()->UICollectionViewCompositionalLayout{
         return  UICollectionViewCompositionalLayout{(section, env)-> NSCollectionLayoutSection? in
@@ -205,9 +218,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
                     groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(238))
                 }
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-//                row spacing ke liye
+                //                row spacing ke liye
                 let section = NSCollectionLayoutSection(group: group)
-//                column ke space ke liye
+                //                column ke space ke liye
                 section.contentInsets.leading = 16
                 
                 return section
@@ -215,9 +228,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets.trailing = 32
+                item.contentInsets.trailing = 16
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(386))
-
+                
                 
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 
@@ -228,7 +241,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
                 
                 return section
                 
-            
+                
             case 2:
                 
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(149))
@@ -242,13 +255,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
                 
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 //        group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0)
- //               group.contentInsets.leading = 16
+                //               group.contentInsets.leading = 16
                 let section = NSCollectionLayoutSection(group: group)
- //               section.orthogonalScrollingBehavior = .paging
+                //               section.orthogonalScrollingBehavior = .paging
                 section.contentInsets = .init(top: 0, leading: 16, bottom: 0, trailing: 0)
- //               section.contentInsets.leading = 16
+                //               section.contentInsets.leading = 16
                 section.boundarySupplementaryItems = [
-                 .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: self.categoryHeaderId, alignment: .topLeading)
+                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: self.categoryHeaderId, alignment: .topLeading)
                 ]
                 return section
                 
@@ -267,7 +280,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             }
         }
     }
-//    MARK: - Suggestion btton of image 4 of section 1 More Suggestions
+    //    MARK: - Suggestion btton of image 4 of section 1 More Suggestions
     
     func suggestionTapped(cell: oneImageCVC) {
         let storyboard = UIStoryboard(name: "TodaySuggestion", bundle: nil)
@@ -283,14 +296,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
     }
     
     
-//MARK: - fetching username
+    //MARK: - fetching username
     
     func fetchUsername(){
         let db = Firestore.firestore()
         
         guard let user = Auth.auth().currentUser else{
             print("user is not authenticated")
-                return
+            return
         }
         let userID = user.uid
         
@@ -301,7 +314,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
             }
             guard let document = document, document.exists, let data = document.data() else{
                 print("document is nil")
-//                exit(1)
+                //                exit(1)
                 return
             }
             if let username = data["username"] as? String{
@@ -309,19 +322,19 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, HeaderCo
                 //print(self.usernamestore)
                 //self.username = username
                 //print("username in home : \(self.userName)")
-//                self.setUsername(username: username)
+                //                self.setUsername(username: username)
             }else{
                 print("user name is nil")
             }
         }
-//        return username!
+        //        return username!
     }
     
-// MARK: - For heading of section 2("More")
+    // MARK: - For heading of section 2("More")
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
-//        header.backgroundColor = .cyan
+        //        header.backgroundColor = .cyan
         return header
     }
 }

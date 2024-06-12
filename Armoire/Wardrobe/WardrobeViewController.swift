@@ -29,7 +29,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
-
+    
     // image stored here, to be used for, adding new apparel
     var imageToUse: UIImage = UIImage(named: "Image_1")!
     var clothType : String?
@@ -79,10 +79,10 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeApparel", for: indexPath) as! WardrobeApparelCollectionViewCell
             cell.delegate = self
             cell.indexPath = indexPath
-//            print(cell.indexPath)
+            //            print(cell.indexPath)
             apparelsToDisplay[indexPath.row].isFavourite ? cell.heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : cell.heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
             cell.apparelImage.image = apparelsToDisplay[indexPath.row].image
-//            cell.heartButton.addTarget(self, action: #selector(setIsFavourite), for: .touchUpInside)
+            //            cell.heartButton.addTarget(self, action: #selector(setIsFavourite), for: .touchUpInside)
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WardrobeTag", for: indexPath) as! WardrobeTagCollectionViewCell
@@ -156,7 +156,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
                 section.contentInsets.top = 20
                 section.contentInsets.leading = 16
                 return section
-            
+                
             default:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -174,23 +174,20 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         return layout
     }
     
-//    @IBAction private func setIsFavourite() {
-//        print("Set as Favourite")
-//    }
     
     @IBAction func changedSegment(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
-        // for all
+            // for all
         case 0:
             apparelsToDisplay = DataController.shared.getWardrobe()
             collectionView.reloadData()
             
-        // for tops
+            // for tops
         case 1:
             apparelsToDisplay = DataController.shared.getWardrobe().filter { $0.type == "Tops" }
             collectionView.reloadData()
             
-        // for bottoms
+            // for bottoms
         case 2:
             apparelsToDisplay = DataController.shared.getWardrobe().filter { $0.type == "Bottoms"}
             collectionView.reloadData()
@@ -200,8 +197,6 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
             collectionView.reloadData()
         }
     }
-    
-
     
     // for alert controller on pressing + button
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
@@ -230,107 +225,28 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
         alertController.popoverPresentationController?.sourceItem = sender
         present(alertController, animated: true, completion: nil)
         
-        
-        
-        
     }
     
     // to get image from camera and photo library selection
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[.originalImage] as? UIImage else {return}
         imageToUse = selectedImage
-
+        
         //converting image to Ciimage for ml model processing
         guard let ciimage = CIImage(image: selectedImage) else {
             fatalError("Could Not convert UIimage to CIimage")
         }
+        
         dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "toAdd", sender: nil)
     }
     
-    //MARK: making a segue here
-    
-
-
-    
-    
-    // MARK: - ML model
-    
-//    func typeDetect(image:CIImage){
-//        
-//        guard let model = try? VNCoreMLModel(for: TypeClassfierModel().model) else{
-//            fatalError("Loading CoreMl Model Fsiled")
-//        }
-//        
-//        let request = VNCoreMLRequest(model: model) { (request, error) in
-//            guard let results = request.results as? [VNClassificationObservation] else{
-//                fatalError("Model Failed to process image")
-//            }
-////            print(" TYpe classfier model details are from here \(results)")
-//            if let highestConfidenceResult = results.max(by: { $0.confidence < $1.confidence }) {
-//                print("Highest confidence is \(highestConfidenceResult.identifier)")
-//                }
-//            
-//            
-//        }
-//        
-//        let handler = VNImageRequestHandler(ciImage: image)
-//        
-//        do {
-//            try handler.perform([request])
-//
-//        }
-//        catch {
-//            print(error)
-//        }
-//        
-//    }
-    
-    
-    
-    
-    
-    
-    
-    //making func for using ml model in that photo
-    
-//    func detect(image:CIImage) {
-//        
-//        
-//        guard let model = try? VNCoreMLModel(for: ClothTypeClassifier().model) else {
-//            fatalError("Loading CoreML model Failed.")
-//        }
-//        
-//        let request = VNCoreMLRequest(model: model) { (request, error) in
-//            guard let results = request.results as? [VNClassificationObservation] else{
-//                fatalError("Model failed to process image")
-//            }
-//            if let highestConfidenceResult = results.max(by: { $0.confidence < $1.confidence }) {
-//                self.selectedApparel?.category = highestConfidenceResult.identifier
-//                print("inside model : \(String(describing: self.clothType))")
-//                print("Highest confidence result: \(highestConfidenceResult.identifier) with confidence \(highestConfidenceResult.confidence)")} else {
-//                    print("No results found.")
-//                }
-//            //print(results)
-//        }
-//        
-//        let handler = VNImageRequestHandler(ciImage: image)
-//        
-//        do {
-//            try handler.perform([request])
-//
-//        }
-//        catch {
-//            print(error)
-//        }
-//    }
-
     // MARK: - Data Passing for Segues
     
     // to pass data according to the source of segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let itemDetailsTVC = segue.destination as! ItemDetailsTableViewController
-//        itemDetailsTVC.segueIdentifier = segue.identifier
+        //        let itemDetailsTVC = segue.destination as! ItemDetailsTableViewController
+        //        itemDetailsTVC.segueIdentifier = segue.identifier
         
         if segue.identifier == "toAdd"{
             let itemDetailsTVC = segue.destination as! ItemDetailsTableViewController
@@ -339,7 +255,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
             selectedApparel = Apparel(
                 category: DataController.shared.detect(image: CIImage(image: imageToUse)!),
                 image: imageToUse,
-                id: 123, color: .red,
+                id: 123, color: DataController.shared.colorDetect(image: CIImage(image: imageToUse)!),
                 pattern: .solid,
                 type: DataController.shared.typeDetect(image: CIImage(image: imageToUse)!),
                 tag: ["Summer"])
@@ -347,7 +263,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
             itemDetailsTVC.apparel = selectedApparel
             itemDetailsTVC.delegate = self
         }
-
+        
         if segue.identifier == "toDetails" {
             let itemDetailsTVC = segue.destination as! ItemDetailsTableViewController
             itemDetailsTVC.segueIdentifier = segue.identifier
@@ -360,7 +276,7 @@ class WardrobeViewController: UIViewController, UICollectionViewDelegate, UIColl
 
 extension WardrobeViewController: WardrobeApparelCollectionViewCellDelegateProtocol {
     func toggleIsFavourite(sender: WardrobeApparelCollectionViewCell, indexPath: IndexPath) {
-//        sender.delegate = self
+        //        sender.delegate = self
         apparelsToDisplay[indexPath.row].isFavourite.toggle()
         DataController.shared.setWardrobe(with: indexPath.row, isFavourite: apparelsToDisplay[indexPath.row].isFavourite)
         collectionView.reloadData()
@@ -368,7 +284,7 @@ extension WardrobeViewController: WardrobeApparelCollectionViewCellDelegateProto
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
             sender.heartButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
             sender.heartButton.transform = CGAffineTransform(scaleX: 1, y: 1)
-//            sender.transform = CGAffineTransform.identity
+            //            sender.transform = CGAffineTransform.identity
         }, completion: nil)
     }
 }

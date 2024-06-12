@@ -24,10 +24,10 @@ class oneImageCVC: UICollectionViewCell,UINavigationControllerDelegate {
     weak var delegate: CollectionViewCellDelegate?
     weak var homeViewController: HomeViewController?
     override func awakeFromNib() {
-            super.awakeFromNib()
-        }
+        super.awakeFromNib()
+    }
     
-//    MARK: - ACTIONS
+    //    MARK: - ACTIONS
     @IBAction func suggestionTapped(_ sender: UIButton) {
         delegate?.suggestionTapped(cell: self)
     }

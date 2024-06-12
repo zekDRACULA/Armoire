@@ -15,6 +15,7 @@
 		0A546A2C2BED34C7004EBA3D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0A546A2B2BED34C7004EBA3D /* Base */; };
 		4804B2F92C01D55E00FAC9A3 /* ProfileTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4804B2F82C01D55E00FAC9A3 /* ProfileTab.storyboard */; };
 		4817FA182C08EA2900BE06A8 /* EventFullDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4817FA172C08EA2900BE06A8 /* EventFullDetails.storyboard */; };
+		484E654F2C18CFB300F69C8E /* ColorModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 484E654E2C18CFB300F69C8E /* ColorModel.mlmodel */; };
 		485C564F2C0BAD3C00C6ACC4 /* SavedSuggestions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485C564E2C0BAD3C00C6ACC4 /* SavedSuggestions.xib */; };
 		485C56512C0BB67600C6ACC4 /* SavedSuggestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485C56502C0BB67600C6ACC4 /* SavedSuggestionCollectionViewCell.swift */; };
 		4866D7C82C08ECD9007E0279 /* EventFullDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4866D7C72C08ECD9007E0279 /* EventFullDetailsViewController.swift */; };
@@ -108,6 +109,7 @@
 		0A546A2D2BED34C7004EBA3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4804B2F82C01D55E00FAC9A3 /* ProfileTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileTab.storyboard; sourceTree = "<group>"; };
 		4817FA172C08EA2900BE06A8 /* EventFullDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventFullDetails.storyboard; sourceTree = "<group>"; };
+		484E654E2C18CFB300F69C8E /* ColorModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ColorModel.mlmodel; sourceTree = "<group>"; };
 		485C564E2C0BAD3C00C6ACC4 /* SavedSuggestions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedSuggestions.xib; sourceTree = "<group>"; };
 		485C56502C0BB67600C6ACC4 /* SavedSuggestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSuggestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		4866D7C72C08ECD9007E0279 /* EventFullDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFullDetailsViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				0A546A2A2BED34C7004EBA3D /* LaunchScreen.storyboard */,
 				48F2BDBE2C0CAA5E0011AA25 /* ClothTypeClassifier.mlmodel */,
 				48CB1CBC2C1383E300D25852 /* TypeClassfierModel.mlmodel */,
+				484E654E2C18CFB300F69C8E /* ColorModel.mlmodel */,
 				0A546A282BED34C7004EBA3D /* Assets.xcassets */,
 				0A546A2D2BED34C7004EBA3D /* Info.plist */,
 				B162B34B2C0EF9FC0066FEFD /* GoogleService-Info.plist */,
@@ -524,6 +527,7 @@
 				4882F5932C147AAF004E4F8B /* ProfileDetailsTableViewController.swift in Sources */,
 				B103DF202C0C4DF800C6577D /* LoginViewController.swift in Sources */,
 				0A546A202BED34C6004EBA3D /* AppDelegate.swift in Sources */,
+				484E654F2C18CFB300F69C8E /* ColorModel.mlmodel in Sources */,
 				BC28A2F72C012089009B833E /* oneImageCVC.swift in Sources */,
 				485C56512C0BB67600C6ACC4 /* SavedSuggestionCollectionViewCell.swift in Sources */,
 				0A546A222BED34C6004EBA3D /* SceneDelegate.swift in Sources */,

@@ -13,7 +13,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     private let locationManager = CLLocationManager()
     var didUpdateLocation: ((CLLocation) -> Void)?
-
+    
     private override init() {
         super.init()
         locationManager.delegate = self

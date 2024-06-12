@@ -67,27 +67,18 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Wardrobe" largeTitleDisplayMode="always" id="iBZ-29-CMZ">
-                        <centerItemGroups>
-                            <barButtonItemGroup customizationDisposition="fixed" id="CDs-PA-e6a">
-                                <barButtonItems>
-                                    <barButtonItem title="Favourites" image="heart" catalog="system" id="SYe-TK-7Cr">
-                                        <connections>
-                                            <segue destination="WWR-B8-szP" kind="show" id="BZ8-pS-Sdp"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Custom" image="tshirt" catalog="system" id="oPX-3F-M9C">
-                                        <connections>
-                                            <segue destination="8Sr-dJ-ydj" kind="show" id="aGY-qP-rlR"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </barButtonItems>
-                            </barButtonItemGroup>
-                        </centerItemGroups>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="AVH-Mb-rUT">
-                            <connections>
-                                <action selector="addButtonTapped:" destination="9mE-SX-vm8" id="aOd-1u-dZZ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Favourites" image="heart" catalog="system" id="SYe-TK-7Cr">
+                                <connections>
+                                    <segue destination="WWR-B8-szP" kind="show" id="BZ8-pS-Sdp"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="AVH-Mb-rUT">
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="9mE-SX-vm8" id="aOd-1u-dZZ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -184,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UA8-rp-5DC">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.89019607840000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BpQ-2K-wWO">
                                     <size key="itemSize" width="128" height="128"/>
@@ -377,7 +368,6 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="107"/>
-        <image name="tshirt" catalog="system" width="128" height="98"/>
         <image name="tshirt.fill" catalog="system" width="128" height="98"/>
         <namedColor name="bgColorProfile">
             <color red="0.92199999094009399" green="0.88999998569488525" blue="0.85500001907348633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

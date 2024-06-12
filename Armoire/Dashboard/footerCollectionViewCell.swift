@@ -10,13 +10,13 @@ import UIKit
 
 class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-//    MARK: - OUTLETS
+    //    MARK: - OUTLETS
     @IBOutlet var compatibility: UIButton!
     @IBOutlet var travel: UIButton!
     @IBOutlet var compatibilityButton: UIButton!
     @IBOutlet var travelButton: UIButton!
     
-//    MARK: - VARIABLES
+    //    MARK: - VARIABLES
     weak var homeViewController: HomeViewController?
     var selectedImage: UIImage?
     
@@ -24,10 +24,10 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    
-//    MARK: - PHOTO LIBRARY AND CAMERA ACCESS ACTION SHEET
-    
+
+
+    //    MARK: - PHOTO LIBRARY AND CAMERA ACCESS ACTION SHEET
+
     // MARK: ACTION SHEET
     @IBAction func compatibilityTapped(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
@@ -59,15 +59,6 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
     }
 
     
-//   MARK: TRAVEL BAG VIEW CONTROLLER
-    @IBAction func travelTapped(_ sender: UIButton) {
-        let nextStoryboard = UIStoryboard(name: "EventDetails", bundle: nil)
-        
-        let nextViewController = nextStoryboard.instantiateViewController(withIdentifier: "eventDetailsIdentifier") as! EventsPageViewController
-
-        homeViewController?.present(nextViewController, animated: true)
-
-    }
     
     //MARK: updating after selecting
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -84,4 +75,16 @@ class footerCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDel
         homeViewController?.navigationController?.presentedViewController?.dismiss(animated: true, completion: nil)
         navVC?.pushViewController(nextVC, animated: true)
     }
+
+    
+    //    MARK: TRAVEL BAG VIEW CONTROLLER
+    @IBAction func travelTapped(_ sender: UIButton) {
+        let nextStoryboard = UIStoryboard(name: "EventDetails", bundle: nil)
+        
+        let nextViewController = nextStoryboard.instantiateViewController(withIdentifier: "eventDetailsIdentifier") as! EventsPageViewController
+        
+        homeViewController?.present(nextViewController, animated: true)
+        
+    }
+
 }
